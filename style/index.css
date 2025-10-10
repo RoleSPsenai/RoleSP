@@ -26,6 +26,7 @@
 
 body {
   overflow-x: hidden;
+
 }
 
 /* ===== HEADER ===== */
@@ -34,7 +35,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 1% 5%;
-  height: 10vh;
+  height: 20vh;
 }
 
 .Button-Login {
@@ -56,7 +57,7 @@ header {
   padding: 1.5%;
   font-size: 1.8rem;
   font-weight: 1rem;
-  height: 5vh;
+  height: 10vh;
 }
 
 li a {
@@ -351,8 +352,48 @@ li a {
   align-items: end;
   filter: grayscale(100%);
   transition: filter 0.2s;
+  background-repeat: no-repeat;
 }
 
+.bgc1-carrossel-section3 {
+  background-image: url(../assets/Img/CarroselSecundario/a\ casa\ de\ antonia.png);
+  --delay: 0s;
+}
+
+.bgc2-carrossel-section3 {
+  --delay: 4s; 
+  background-image: url(../assets/Img/CarroselSecundario/cafezal.png);
+}
+
+.bgc3-carrossel-section3 {
+  --delay: 8s; 
+  background-image: url(../assets/Img/CarroselSecundario/cinemateca1.png);
+}
+
+.bgc4-carrossel-section3 {
+  --delay: 12s;
+  background-image: url(../assets/Img/CarroselSecundario/Jazz\ retro1.png);
+}
+
+.bgc5-carrossel-section3 {
+  --delay: 16s;
+  background-image: url(../assets/Img/CarroselSecundario/London\ coffee.png);
+}
+
+.bgc6-carrossel-section3 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarroselSecundario/museu\ biológico.png);
+}
+
+.bgc7-carrossel-section3 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarroselSecundario/Museu\ das\ ilusões2.png);
+}
+
+.bgc8-carrossel-section3 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarroselSecundario/Sala\ São\ Paulo.png);
+}
 
 .titulo-card-section3 {
   margin-left: 2rem;
