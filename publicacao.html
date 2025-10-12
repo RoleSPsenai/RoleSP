@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <link rel="stylesheet" href="styles/global.css"/>
+    <link rel="stylesheet" href="styles/post.css"/>
+  </head>
+
+  <body>
+    <!-- Botao teste -->
+    <button id="BotaoPost">
+      <img src="assets/img/Ponte.jpg" alt="Adicionar" class="post">
+    </button>
+
+    <!-- Modal inicia fechado -->
+    <dialog id="TelaPost" class="popup">
+      <div class="painel-esquerdo">
+        <!-- Botão de fechar -->
+        <button id="FecharPost" aria-label="Fechar" style="position:absolute;top:1em;right:1em;">&times;</button>
+        <div class="local">
+          <div class="perfil">
+            <figure class="foto-perfil">
+              <img src="assets/img/FotoDePerfil.jpg" alt="Imagem do local"/>
+            </figure>
+            <h3>Sony</h3>
+          </div>
+          <div class="info">
+            <h1>Local</h1>
+            <div class="opcao">
+              <button class="curtida">
+                <span src="assets/icon/Heart.svg" alt="Curtir" class="curtir">
+              </button>
+              <button class="salvo">
+                <span src="assets/icon/Location.svg" alt="Salvar" class="salvar">
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="endereco">
+          <h2>Ipiranga, São Paulo</h2>
+          <p>Rua Bom Pastor, 2224 - 14º Andar - Sala 1404</p>
+        </div>
+      </div>
+      <div class="painel-direito">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet massa vitae.</p>
+      </div>
+    </dialog>
+    <script src="script/post.js"></script>
+  </body>
+</html>

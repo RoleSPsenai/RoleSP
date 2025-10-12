@@ -1,0 +1,132 @@
+.curtir {
+  width: 2em;
+  height: 3em;
+}
+
+.salvar {
+  width: 2em;
+  height: 2.5em;
+}
+
+.curtida,
+.salvo {
+  background: none;
+}
+
+.curtida:hover,
+.salvo:hover {
+  background: none;
+}
+
+.curtir,
+.salvar {
+  transition: background-color 0.1s;
+  display: inline-block;
+  background-color: var(--branco);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.curtir {
+  mask-image: url("../assets/icon/Heart.svg");
+}
+
+.salvar {
+  mask-image: url("../assets/icon/Location.svg");
+}
+
+.curtida:hover .curtir {
+  background-color: var(--rosa);
+}
+
+.salvo:hover .salvar {
+  background-color: var(--destaque);
+}
+
+.endereco {
+  margin: 0.5em 1em 1em;
+}
+
+.endereco p {
+  color: var(--cinza-escuro);
+}
+
+.foto-perfil {
+  align-items: center;
+  border: 0.25em solid var(--verde-escuro);
+  border-radius: 50%;
+  display: flex;
+  height: 4em;
+  justify-content: center;
+  margin-right: 1em;
+  overflow: hidden;
+  width: 4em;
+}
+
+.foto-perfil img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.local {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("../assets/img/Ponte.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 20em;
+  justify-content: space-between;
+  padding: 1em;
+  width: 100%;
+}
+
+.opcao {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.painel-direito {
+  align-items: center;
+  background-color: var(--verde-escuro);
+  display: flex;
+  flex-direction: column;
+  max-width: 20vw;
+  padding: 3em 1em;
+}
+
+.painel-esquerdo {
+  background-color: var(--branco);
+  min-width: 30vw;
+}
+
+.perfil {
+  align-items: center;
+  display: flex;
+}
+
+.post {
+    border-radius: 1em;
+    height: 10em;
+    width: 10em;
+}
+
+#BotaoPost {
+  border-radius: 1em;
+  padding: 1em;
+}
