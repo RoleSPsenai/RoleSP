@@ -1,83 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicação</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/publicacao.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulibcacao</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <body>
     <!-- Botao teste pra abrir a pagina de cadastro -->
     <button id="BotaoPublicar">Publicar</button>
 
     <!-- Aparecer na tela o pop up -->
-    <div id="TelaPublicacao" class="popup">
-        <div class="popup-content">
+    <dialog id="TelaPublicacao" class="popup">
+      <div class="popup-content">
+        <!-- Perfil -->
+        <div class="perfil">
+          <img src="assets/img/FotoDePerfil.jpg" alt="" class="foto-perfil" />
+          <div class="info-perfil">
+            <div class="nome">Sonia Ribeiro</div>
+            <div class="usuario">Sony</div>
+          </div>
+        </div>
 
-            <!-- Perfil -->
-            <div class="perfil">
-                <img src="retrato-de-homem-branco-isolado_53876-40306.jpg" alt="" class="fotoPerfil">
-                <div class="texto-perfil">
-                    <div class="nome">Sonia Ribeiro</div>
-                    <div class="usuario">Sony</div>
-                </div>
+        <div class="conteudo-publicacao">
+          <!-- Imagem do local -->
+          <div class="imagem-local-container">
+            <img src="assets/img/Ponte.jpg" alt="" class="imagem-local" />
+            <div class="avaliacao-container">
+              <div class="avaliacao">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+              </div>
+              <button class="favorito">&#9825;</button>
             </div>
+          </div>
 
-            <div class="Parte-Toda">
+          <!-- Formulario Cadastro -->
+          <form class="form-publicacao">
+            <label class="label">Estabelecimento:</label>
+            <input type="text" placeholder="Digite o nome" required class="input" />
 
-                <div class="esquerda">
-                    <!-- Imagem do local -->
-                    <div class="publicacao">
-                        <img src="istockphoto-1166728645-612x612.jpg" alt="" class="imagem-local">
-                        
-                    </div>
-                    <div class="Baixo-Foto">
-                    <div class="avaliacao">
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                        <span>&#9733;</span>
-                    </div>
-                    <div class="favorito">&#9825;</div>
-                </div>
-                </div>
-        
+            <label class="label">Endereço:</label>
+            <input type="text" placeholder="Digite o Endereco" required class="input" />
 
-                <!-- Formulario Cadastro -->
-                <div class="Formulario">
-
-                    <form>
-                        <p class="texto1">Nome do Estabelecimento:</p>
-                        <div class="caixaTexto">
-                            <input type="text" placeholder="Digite o nome" required>
-                        </div>
-
-                        <p class="texto1">Endereco:</p>
-                        <div class="caixaTexto">
-                            <input type="text" placeholder="Digite o Endereco" required>
-                        </div>
-
-                        <div class="input-comentario">
-                            <p class="texto1">Comentario:</p>
-                            <div class="caixaTexto">
-                                <input type="text" placeholder="Digite seu Comentario" required>
-                            </div>
-                        </div>
-                    </form>
-
-                    
-
-                </div> 
-            </div> 
-                    <button class="BotaoPop">Publicar</button>
-        </div> 
-        
-    </div> 
-
-    <script src="publicacao.js"></script>
-</body>
-
+            <label class="label">Comentario:</label>
+            <textarea placeholder="Digite seu Comentario" required class="input"></textarea>
+          </form>
+        </div>
+        <button class="botao-publicar">Publicar</button>
+      </div>
+    </dialog>
+    <script src="script/publicacao.js"></script>
+  </body>
 </html>
