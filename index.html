@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RolêSP</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-1">
+        <figure>
+          <img
+            src="assets/icon/Logo.svg"
+            class="logo-header"
+            alt="Logo do RolêSP"
+          />
+        </figure>
+        <button class="login" id="btn-abrir-login">Login</button>
+        <button class="login" id="btn-abrir-cadastro">Cadastro</button>
+      </div>
+      <div class="header-2">
+        <a class="menu">Sobre</a>
+        <a class="menu">Comunidade</a>
+        <a class="menu">Contato</a>
+        <a class="menu">Explorar</a>
+      </div>
+    </header>
+
+    <!-- Modal Login -->
+    <dialog id="login-modal">
+      <main class="container-login">
+        <!-- Lado esquerdo -->
+        <aside class="painel-esquerdo"></aside>
+        
+        <!-- Lado direito -->
+        <section class="painel-direito">
+          <button id="btn-fechar-login" class="fechar-modal">
+            <img src="assets/icon/close.svg" alt="Fechar" />
+          </button>
+          <img src="assets/icon/logo.svg" alt="Logo do RolêSP" class="logo" />
+          <div class="cabecalho-modal">
+            <h2 class="titulo-modal">Login</h2>
+            <p class="subtitulo-modal">
+              Entre para começar a explorar o estado de São Paulo
+            </p>
+          </div>
+
+          <form class="form-modal">
+            <label class="campo" for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="email@email.com"
+              required
+            />
+
+            <label class="campo" for="senha">Senha:</label>
+            <input
+              type="password"
+              id="senha"
+              placeholder="*********"
+              required
+            />
+
+            <button type="submit" class="botao-modal">ENTRAR</button>
+
+            <p class="erro-login">E-mail e senha incorretos</p>
+          </form>
+          
+          <a href="#" class="link-esqueci texto-modal">Esqueceu sua senha?</a>
+          <p class="texto-modal p2">
+            Não possui conta?
+            <a href="#" class="abrir-modal-cadastro trocar-modal">Crie uma!</a>
+          </p>
+        </section>
+      </main>
+    </dialog>
+
+    <!-- Modal Cadastro -->
+    <dialog id="cadastro-modal">
+      <main class="container-login">
+        <!-- Lado esquerdo -->
+        <aside class="painel-esquerdo"></aside>
+        
+        <!-- Lado direito -->
+        <section class="painel-direito">
+          <button id="btn-fechar-cadastro" class="fechar-modal">
+            <img src="assets/icon/close.svg" alt="Fechar" />
+          </button>
+          <div class="cabecalho-modal">
+            <h2 class="titulo-modal">Cadastro</h2>
+            <p class="subtitulo-modal">
+              Crie sua conta para explorar o estado de São Paulo
+            </p>
+          </div>
+          <form class="form-modal">
+            <label class="campo" for="usuario">Usuário:</label>
+            <input
+              type="text"
+              id="usuario"
+              placeholder="Digite seu usuário"
+              required
+            />
+
+            <label class="campo" for="email-cadastro">E-mail:</label>
+            <input
+              type="email"
+              id="email-cadastro"
+              placeholder="Digite seu email"
+              required
+            />
+
+            <label class="campo" for="senha-cadastro">Senha:</label>
+            <input
+              type="password"
+              id="senha-cadastro"
+              placeholder="Digite sua senha"
+              required
+            />
+
+            <label class="campo" for="confirmar-senha">Confirmar senha:</label>
+            <input
+              type="password"
+              id="confirmar-senha"
+              placeholder="Confirme sua senha novamente"
+              required
+            />
+
+            <button type="submit" class="botao-modal">Cadastre-se</button>
+          </form>
+          <p class="texto-modal">
+            Já possui uma conta?
+            <a href="#" class="abrir-modal-login trocar-modal">Entrar</a>
+          </p>
+        </section>
+      </main>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

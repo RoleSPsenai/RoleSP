@@ -1,148 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 :root {
-  /* --- Cores --- */
-  
-  /* Principais */
-  --verde-escuro: #085e50;
-  --verde: #0da58c;
-  --verde-claro: #b9e1cd;
-  --aqua: #00bfbf;
-
-  /* Detalhes */
-  --branco: #ffffff;
-  --cinza-escuro: #404040;
-  --preto: #262626;
-  --amarelo: #f7c13c;
-  --vermelho: #ff0000;
-  --botao-hover: #042f28;
-  --destaque: #0fffbf;
-  --rosa: #ff07ff;
-  --filto: rgba(15, 255, 191, 0.25);
-  
-  /* Outros */
-  --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
-  --tipografia: "Nunito", sans-serif;
+    /* --- Cores --- */
+    /* Principais */
+    --verde-escuro: #085E50;
+    --verde: #0DA58C;
+    --verde-claro: rgb(185, 225, 205);
+    --aqua: #00BFBF;
+    
+    /* Detalhes */
+    --branco: #FFFFFF;
+    --preto: hsl(0, 0%, 15%);
+    --amarelo: #F7C13C;
+    --botao-hover: #042f28;
+    --destaque: #0FFFBF;
+    --destaqueOpacity1: rgba(0, 128, 128, 0.75);
+    --destaqueOpacity2: rgba(0, 128, 64, 0.25);
+    
+    /* Outros */
+    --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
+    --tipografia: 'Nunito', sans-serif;
+    --imagem-fundo: url('../assets/img/SãoPaulo.png');
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--tipografia);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--tipografia); 
 }
 
 html {
-  scrollbar-width: auto;
-  scrollbar-color: var(--branco) var(--verde-escuro);
-  scroll-behavior: smooth;
+    scrollbar-width: auto;
+    scrollbar-color: var(--branco) var(--verde-escuro);
+    scroll-behavior: smooth;
 }
 
 header {
-  color: var(--preto);
+    color: var(--preto);
 }
 
 body {
-  background-color: var(--branco);
-  color: var(--branco);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: var(--branco);
+    color: var(--branco);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
+input, button, textarea, select {
+    font: inherit;
 }
 
 button {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  transition: background-color 0.15s;
-  border: none;
+    background-color: var(--verde);
+    color: var(--branco);
+    transition: background-color 0.15s;
+    border: none;
+    max-width: 10em;
 }
 
 button:hover {
-  background-color: var(--botao-hover);
-  cursor: pointer;
+    background-color: var(--botao-hover);
+    cursor: pointer;
 }
 
 dialog {
-  display: flex;
-  border: none;
-  border-radius: 1em;
-  padding: 0;
-  max-width: 75vw;
-  margin: auto;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--branco);
-  overflow: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(95%, 75em);
+    max-width: 60em;
+    border: none;
+    border-radius: 1em;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: var(--branco);
+    overflow: hidden;
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-dialog:not([open]) {
-  display: none;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 p {
-  font-size: 1rem;
-  color: var(--branco);
+    font-size: 1rem;
+    color: var(--branco);
 }
 
 a {
-  text-decoration: none;
-  color: var(--branco);
+    text-decoration: none;
+    color: var(--branco);
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 label {
-  font-weight: 600;
-  align-self: flex-start;
-  margin-bottom: -0.75em;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-bottom: -0.75em;
 }
 
 input {
-  padding: 1vh;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  width: 100%;
-}
-
-textarea {
+    padding: 1vh;
     border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
 }
 
-h2 {
-  color: var(--preto)
-}
-
-h3 {
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+input:focus {
+    outline: 0.25em solid var(--destaque);
 }
