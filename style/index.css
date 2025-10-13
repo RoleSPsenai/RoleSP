@@ -52,12 +52,13 @@ header {
 
 .nav {
   justify-content: space-around;
+  align-items: center;
   list-style: none;
   background-color: var(--bg);
   padding: 1.5%;
   font-size: 1.8rem;
   font-weight: 1rem;
-  height: 10vh;
+  height: 5vh;
 }
 
 li a {
@@ -128,7 +129,7 @@ li a {
 
 /* ===== LEFT ===== */
 
-.left-section1 {
+.esquerda-section1 {
   margin-left: 10%;
   margin-right: 5%;
 }
@@ -207,6 +208,32 @@ li a {
   align-items: end;
 }
 
+.bgc1-carrossel-section1 {
+  --delay: 0s;
+  background-image: url(../assets/Img/CarroselPrincipal/Cafeterias.png);
+}
+.bgc2-carrossel-section1 {
+  --delay: 4s;
+  background-image: url(../assets/Img/CarroselPrincipal/Museu.png);
+}
+.bgc3-carrossel-section1 {
+  --delay: 8s;
+  background-image: url(../assets/Img/CarroselPrincipal/Restaurantes.png);
+}
+.bgc4-carrossel-section1 {
+  --delay: 12s;
+  background-image: url(../assets/Img/CarroselPrincipal/Natureza.png);
+}
+.bgc5-carrossel-section1 {
+  --delay: 16s;
+  background-image: url(../assets/Img/CarroselPrincipal/Livrarias.png);
+}
+.bgc6-carrossel-section1 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarroselPrincipal/Cultura.png);
+}
+
+
 .container:hover .item {
   animation-play-state: paused;
 }
@@ -268,7 +295,18 @@ li a {
   color: var(--branco);
 }
 
-.left-section3 {
+.avaliacao-section3 {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.avaliacao-section3.ativo {
+  opacity: 100%;
+  }
+
+.esquerda-section3 {
   position: relative;
   margin: 5%;
   margin-top: 3%;
@@ -277,7 +315,6 @@ li a {
   border-radius: 2em;
   width: 60%;
   height: 18rem;
-  box-shadow: 3px 3px 30px black;
 }
 
 
@@ -294,6 +331,12 @@ li a {
   padding: 3%;
 }
 
+.titulo-caixa-dialogo{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
 .personagem {
   margin: 5%;
   margin-right: 3%;
@@ -303,10 +346,10 @@ li a {
 .fundo-img-local {
   position: relative;
   width: 30%;
+  height: auto;
   margin-top: 3%;
   margin-right: 5%;
   border-radius: 2rem;
-  box-shadow: 3px 3px 30px black;
 }
 
 
@@ -320,7 +363,7 @@ li a {
 /* ===== CARROSSEL ===== */
 
 .container-section3 {
-  margin-top: 3rem;
+  margin-top: 40%;
   width: 100%;
   height: 17rem;
   mask-image: linear-gradient(to right,
@@ -353,46 +396,52 @@ li a {
   filter: grayscale(100%);
   transition: filter 0.2s;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .bgc1-carrossel-section3 {
-  background-image: url(../assets/Img/CarroselSecundario/a\ casa\ de\ antonia.png);
+  background-image: url(../assets/Img/CarrosselSecundario/a\ casa\ de\ antonia.png);
   --delay: 0s;
 }
 
 .bgc2-carrossel-section3 {
-  --delay: 4s; 
-  background-image: url(../assets/Img/CarroselSecundario/cafezal.png);
+  --delay: 4s;
+  background-image: url(../assets/Img/CarrosselSecundario/cafezal.png);
 }
 
 .bgc3-carrossel-section3 {
-  --delay: 8s; 
-  background-image: url(../assets/Img/CarroselSecundario/cinemateca1.png);
+  --delay: 8s;
+  background-image: url(../assets/Img/CarrosselSecundario/cinemateca.png);
 }
 
 .bgc4-carrossel-section3 {
   --delay: 12s;
-  background-image: url(../assets/Img/CarroselSecundario/Jazz\ retro1.png);
+  background-image: url(../assets/Img/CarrosselSecundario/HiTea.png);
 }
 
 .bgc5-carrossel-section3 {
   --delay: 16s;
-  background-image: url(../assets/Img/CarroselSecundario/London\ coffee.png);
+  background-image: url(../assets/Img/CarrosselSecundario/Jazz\ retro.png);
 }
 
 .bgc6-carrossel-section3 {
-  --delay: 24s;
-  background-image: url(../assets/Img/CarroselSecundario/museu\ biológico.png);
+  --delay: 20s;
+  background-image: url(../assets/Img/CarrosselSecundario/La\ Tertine.png);
 }
 
 .bgc7-carrossel-section3 {
   --delay: 24s;
-  background-image: url(../assets/Img/CarroselSecundario/Museu\ das\ ilusões2.png);
+  background-image: url(../assets/Img/CarrosselSecundario/London\ coffee.png);
 }
 
 .bgc8-carrossel-section3 {
-  --delay: 24s;
-  background-image: url(../assets/Img/CarroselSecundario/Sala\ São\ Paulo.png);
+  --delay: 28s;
+  background-image: url(../assets/Img/CarrosselSecundario/vila.png);
+}
+
+.bgc9-carrossel-section3 {
+  --delay: 32s;
+  background-image: url(../assets/Img/CarrosselSecundario/Kiki\ Café.png);
 }
 
 .titulo-card-section3 {
@@ -456,7 +505,7 @@ footer {
 }
 
 
-.lista-saiba-mais{
+.lista-saiba-mais {
   color: var(--branco);
   text-decoration: none;
   flex-direction: column;
@@ -491,8 +540,8 @@ footer {
 }
 
 .logo-footer {
-width: 5rem;
-height: auto;
+  width: 5rem;
+  height: auto;
 }
 
 .linha-decorativa {
@@ -500,4 +549,4 @@ height: auto;
   height: 5px;
   background: var(--branco);
   margin-top: -3rem;
-  }
+}
