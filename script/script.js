@@ -33,6 +33,7 @@ const vila_crl = document.getElementById('vila-crl');
 const kiki_crl = document.getElementById('kiki-crl');
 
 
+//? =-=-=-=-=-=-==- Function UPDATE =-=-=-=-=-=-==-
 
 function update(local) {
     document.querySelector('.fundo-img-local.ativo').classList.remove('ativo')
@@ -77,6 +78,8 @@ function update(local) {
             break;
     }
 }
+
+//? =-=-=-=-=-=-==- ADD EVENT -=-=-=-=-=-=-=-
 
 casaAntonia_crl.addEventListener('click', () => {
     update(1)

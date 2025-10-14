@@ -1,4 +1,4 @@
-/* ===== VARIAVEIS ===== */
+/*? ===== VARIAVEIS ===== */
 :root {
   --branco: #ffff;
   --bg: #E6F3F1;
@@ -12,7 +12,7 @@
   --sombra-md: 0 10px 24px rgba(2, 6, 23, .08);
 }
 
-/* ===== GLOBAIS ===== */
+/*? ===== GLOBAIS ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,10 +26,9 @@
 
 body {
   overflow-x: hidden;
-
 }
 
-/* ===== HEADER ===== */
+/*? ===== HEADER ===== */
 
 header {
   justify-content: space-between;
@@ -48,7 +47,7 @@ header {
   font-weight: 1.5rem;
 }
 
-/* ===== NAV ===== */
+/*? ===== NAV ===== */
 
 .nav {
   justify-content: space-around;
@@ -67,9 +66,9 @@ li a {
   color: black;
 }
 
-/* ===== MAIN ===== */
+/*? ===== MAIN ===== */
 
-/* ===== SECTION1 ===== */
+/*? ===== SECTION1 ===== */
 
 .section1 {
   margin-top: 3%;
@@ -77,7 +76,7 @@ li a {
   grid-template-columns: 1.3fr 1fr;
 }
 
-/* ===== RINGHT ===== */
+/*? ===== DIREITA ===== */
 
 .container-cadastre-se {
   justify-content: center;
@@ -127,7 +126,7 @@ li a {
   margin-left: 10%;
 }
 
-/* ===== LEFT ===== */
+/*? ===== ESQUERDA ===== */
 
 .esquerda-section1 {
   margin-left: 10%;
@@ -159,7 +158,7 @@ li a {
       #ffffff 100%);
 }
 
-/* ===== SECTION2 ===== */
+/*? ===== SECTION2 ===== */
 .section2 {
   margin-left: 5%;
   margin-top: 3rem;
@@ -173,7 +172,7 @@ li a {
   color: var(--verde-escuro);
 }
 
-/* ===== CARROSSEL ===== */
+/*? ===== CARROSSEL ===== */
 
 .container {
   margin-top: 3rem;
@@ -257,6 +256,7 @@ li a {
       transparent);
 }
 
+/*? ===== ANIMACAO ===== */
 
 @keyframes animacao {
   from {
@@ -269,7 +269,7 @@ li a {
 }
 
 
-/* ===== SECTION3 ===== */
+/*? ===== SECTION3 ===== */
 
 .section3 {
   justify-content: center;
@@ -363,14 +363,14 @@ li a {
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
-  
+
 }
 
 .img-local.ativo {
   opacity: 100%;
 }
 
-/* ===== CARROSSEL ===== */
+/*? ===== CARROSSEL ===== */
 
 .container-section3 {
   margin-top: 40%;
@@ -481,6 +481,8 @@ li a {
   filter: grayscale(0%);
 }
 
+ /*? ===== ANIMACAO ===== */
+
 @keyframes animacao {
   from {
     left: 100%;
@@ -491,7 +493,7 @@ li a {
   }
 }
 
-/* ===== FOOTER ===== */
+/*? ===== FOOTER ===== */
 
 footer {
   flex-direction: column;
