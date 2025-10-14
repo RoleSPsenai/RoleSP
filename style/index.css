@@ -329,6 +329,7 @@ li a {
   font-size: 1rem;
   font-weight: 600;
   padding: 3%;
+  padding-bottom: 4%;
 }
 
 .titulo-caixa-dialogo{
@@ -350,6 +351,10 @@ li a {
   margin-top: 3%;
   margin-right: 5%;
   border-radius: 2rem;
+  opacity: 0;
+}
+.fundo-img-local.ativo {
+  opacity: 100%;
 }
 
 
@@ -358,6 +363,11 @@ li a {
   height: 100%;
   object-fit: cover;
   border-radius: 2rem;
+  
+}
+
+.img-local.ativo {
+  opacity: 100%;
 }
 
 /* ===== CARROSSEL ===== */
