@@ -201,6 +201,11 @@ li a {
   border-radius: 2rem;
   position: absolute;
   left: 100%;
+  /** Esses comandos a baixo é oque faz o carrossel funcionar*/
+  /**O animation define a animação, o tempo que ela dura, o tipo de movimento e se repete ou não*/
+  /**O animation-delay define o tempo de espera para iniciar a animação*/
+  /**O cursor para mudar o ponteiro do mause */
+  /**align-itens Joga todos os elementos para o final da tela  */
   animation: animacao 20s linear infinite;
   animation-delay: var(--delay);
   cursor: pointer;
@@ -208,6 +213,7 @@ li a {
 }
 
 .bgc1-carrossel-section1 {
+  /**definição do delay para que os itens não fassão a animação todos juntos ficando um dentro do outro  */
   --delay: 0s;
   background-image: url(../assets/Img/CarroselPrincipal/Cafeterias.png);
 }
@@ -232,11 +238,6 @@ li a {
   background-image: url(../assets/Img/CarroselPrincipal/Cultura.png);
 }
 
-
-.container:hover .item {
-  animation-play-state: paused;
-}
-
 .titulo-card {
   margin-left: 2rem;
   margin-bottom: 1rem;
@@ -257,6 +258,9 @@ li a {
 }
 
 /*? ===== ANIMACAO ===== */
+
+/** Essa é a função que faz o carrossel basicamente ela joga todos os itens para a direita fora da tela
+/** e "arrasta" para esquerda até sair da tela */
 
 @keyframes animacao {
   from {
@@ -296,6 +300,9 @@ li a {
 }
 
 .avaliacao-section3 {
+  /** Esse é o CSS para que o conteudo interativo Funcione
+  /** Coloca todas as avaliações na mesma possição e com 0 de
+  /** opacidade as deixan trasparente */
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -303,6 +310,9 @@ li a {
 }
 
 .avaliacao-section3.ativo {
+  /**Aqui é o CSS para quando a avaliação estiver ativa
+  /** Ela fica com 100% de opacidade e visivel 
+  /**e isso é manipulado pelo JavaScript */
   opacity: 100%;
   }
 
@@ -371,6 +381,8 @@ li a {
 }
 
 /*? ===== CARROSSEL ===== */
+
+/** O carrossel da section3 é igual ao da section2, porem com algumas diferenças de estilo */ 
 
 .container-section3 {
   margin-top: 40%;
