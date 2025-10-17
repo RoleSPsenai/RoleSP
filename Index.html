@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/import.css">
     <title>RolêSP</title>
 </head>
 
 <body>
-    
+
     <header class="displayFlex">
         <div>
             <img src="assets/Icon/Logos/LogoExtendidaEscuro.png" alt="Imagem da logo da empresa Rolê SP" class="Logo">
         </div>
-        <Button class="Button-Login">Entrar</Button>
+        <Button class="Button-Login" id="btn-abrir-login">Entrar</Button>
     </header>
     <nav>
         <ul class="nav displayFlex">
@@ -45,7 +45,7 @@
                     <div class="cadastre-se">
                         <p class="texto-cadastro">Ainda não tem uma conta?</p>
                         <div>
-                            <Button class="Button-cadastre-se" style="white-space: nowrap;">Cadastre-se</Button>
+                            <Button class="Button-cadastre-se" id="btn-abrir-cadastro">Cadastre-se</Button>
                         </div>
                     </div>
                 </div>
@@ -137,9 +137,9 @@
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="cafezal-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/cafezal.png"
-                        alt="Imagem do Cafezal Urbano do Instituto Biológico">
+                    <div class="fundo-img-local" id="cafezal-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/cafezal.png"
+                            alt="Imagem do Cafezal Urbano do Instituto Biológico">
 
                     </div>
                 </div>
@@ -149,16 +149,17 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">Cinemateca Brasileira</h3>
-                        <p>Mais que um cinema, é um patrimônio da cultura nacional. Sessões especiais, mostras raras e
-                            um clima nostálgico que encanta quem ama a sétima arte.</p>
+                            <p>Mais que um cinema, é um patrimônio da cultura nacional. Sessões especiais, mostras raras
+                                e
+                                um clima nostálgico que encanta quem ama a sétima arte.</p>
 
 
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="cinemateca-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/cinemateca.png"
-                        alt="Imagem da placa da Cinemateca Brasileira">
+                    <div class="fundo-img-local" id="cinemateca-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/cinemateca.png"
+                            alt="Imagem da placa da Cinemateca Brasileira">
                     </div>
                 </div>
 
@@ -167,14 +168,13 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">HiTea</h3>
-                        <p>Perfeito para quem adora chás e um toque asiático moderno. Sabores delicados, estética
-                            minimalista e sobremesas lindas que encantam tanto quanto o sabor.</p>
+                            <p>Perfeito para quem adora chás e um toque asiático moderno. Sabores delicados, estética
+                                minimalista e sobremesas lindas que encantam tanto quanto o sabor.</p>
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="hiTea-img"> <img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/HiTea.png"
-                        alt="Imagem dos produtos do HiTea">
+                    <div class="fundo-img-local" id="hiTea-img"> <img class="img-local"
+                            src="assets/Img/CarrosselSecundario/HiTea.png" alt="Imagem dos produtos do HiTea">
                     </div>
                 </div>
 
@@ -183,15 +183,16 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">Jazz Restô e Burgers</h3>
-                        <p>Combina o melhor da boa música com hambúrgueres artesanais incríveis. Clima descontraído, som
-                            ao vivo e pratos que harmonizam perfeitamente com o ritmo do jazz.</p>
+                            <p>Combina o melhor da boa música com hambúrgueres artesanais incríveis. Clima descontraído,
+                                som
+                                ao vivo e pratos que harmonizam perfeitamente com o ritmo do jazz.</p>
 
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="jazz-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/Jazz retro.png"
-                        alt="Imagem do interior do Jazz Restô e Burgers">
+                    <div class="fundo-img-local" id="jazz-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/Jazz retro.png"
+                            alt="Imagem do interior do Jazz Restô e Burgers">
                     </div>
                 </div>
 
@@ -200,16 +201,17 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">Kiki Café</h3>
-                        <p>No coração da cidade, o Kiki Café nasceu para ser muito mais do que uma simples cafeteria: é
-                            um ponto de encontro para quem ama bons momentos, conversas leves e o aconchego de um café
-                            feito com carinho</p>
+                            <p>No coração da cidade, o Kiki Café nasceu para ser muito mais do que uma simples
+                                cafeteria: é
+                                um ponto de encontro para quem ama bons momentos, conversas leves e o aconchego de um
+                                café
+                                feito com carinho</p>
 
                         </div>
                     </div>
 
-                    <div class="fundo-img-local ativo" id="kiki-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/Kiki Café.png"
-                        alt="Bebida do restaurante Kiki Café">
+                    <div class="fundo-img-local ativo" id="kiki-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/Kiki Café.png" alt="Bebida do restaurante Kiki Café">
                     </div>
                 </div>
 
@@ -218,14 +220,15 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">La Tartine</h3>
-                        <p>Charmoso bistrô francês com clima intimista e receitas autênticas. Cada prato parece contar
-                            uma história de Paris. Ideal para um jantar romântico.</p>
+                            <p>Charmoso bistrô francês com clima intimista e receitas autênticas. Cada prato parece
+                                contar
+                                uma história de Paris. Ideal para um jantar romântico.</p>
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="tartine-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/La Tertine.png"
-                        alt="Entrarada do restaurante La Tartine">
+                    <div class="fundo-img-local" id="tartine-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/La Tertine.png"
+                            alt="Entrarada do restaurante La Tartine">
 
                     </div>
                 </div>
@@ -235,15 +238,16 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">London Coffee Station</h3>
-                        <p>Inspirado nas cafeterias londrinas, tem cafés fortes, ambiente moderno e playlists perfeitas.
-                            Um ótimo ponto para trabalhar, conversar ou apenas apreciar um bom espresso.</p>
+                            <p>Inspirado nas cafeterias londrinas, tem cafés fortes, ambiente moderno e playlists
+                                perfeitas.
+                                Um ótimo ponto para trabalhar, conversar ou apenas apreciar um bom espresso.</p>
 
                         </div>
                     </div>
 
-                    <div class="fundo-img-local ativo" id="london-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/London coffee.png"
-                        alt="Interior do London Coffee Station">
+                    <div class="fundo-img-local ativo" id="london-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/London coffee.png"
+                            alt="Interior do London Coffee Station">
                     </div>
                 </div>
 
@@ -252,14 +256,13 @@
                         <img src="assets/Img/CarroselPrincipal/Cultura.png" alt="" class="personagem">
                         <div class="caixa-dialogo">
                             <h3 class="titulo-caixa-dialogo">Vila Itororó</h3>
-                        <p>Um espaço histórico que mistura arte, arquitetura e cultura. Caminhar por ali é voltar no
-                            tempo enquanto se inspira com intervenções criativas e eventos locais.</p>
+                            <p>Um espaço histórico que mistura arte, arquitetura e cultura. Caminhar por ali é voltar no
+                                tempo enquanto se inspira com intervenções criativas e eventos locais.</p>
                         </div>
                     </div>
 
-                    <div class="fundo-img-local" id="vila-img"><img class="img-local" 
-                        src="assets/Img/CarrosselSecundario/vila.png" 
-                        alt="Entrada do Vila Itororó">
+                    <div class="fundo-img-local" id="vila-img"><img class="img-local"
+                            src="assets/Img/CarrosselSecundario/vila.png" alt="Entrada do Vila Itororó">
                     </div>
                 </div>
             </div>
@@ -268,8 +271,8 @@
             <!--* Esse carrossel é o que controla o conteudo interativo acima. -->
             <div class="container-section3">
                 <div class="carrossel-section3">
-                    <div class="item-section3 bgc1-carrossel-section3" id="casaAntonia-crl" ></div>
-                    <div class="item-section3 bgc2-carrossel-section3 " id="cafezal-crl" ></div>
+                    <div class="item-section3 bgc1-carrossel-section3" id="casaAntonia-crl"></div>
+                    <div class="item-section3 bgc2-carrossel-section3 " id="cafezal-crl"></div>
                     <div class="item-section3 bgc3-carrossel-section3 " id="cinemateca-crl"></div>
                     <div class="item-section3 bgc4-carrossel-section3 " id="hiTea-crl"></div>
                     <div class="item-section3 bgc5-carrossel-section3 " id="jazz-crl"></div>
@@ -331,6 +334,87 @@
         </div>
         <div class="linha-decorativa"></div>
     </footer>
-    <script src="script/script.js" defer></script>
+    <dialog id="login-modal">
+        <main class="container-login">
+            <!-- Lado esquerdo -->
+            <aside class="painel-esquerdo"></aside>
+
+            <!-- Lado direito -->
+            <section class="painel-direito">
+                <button id="btn-fechar-login" class="fechar-modal">
+                    <img src="assets/icon/close.svg" alt="Fechar" />
+                </button>
+                <img src="assets/icon/logo.svg" alt="Logo do RolêSP" class="logo" />
+                <div class="cabecalho-modal">
+                    <h2 class="titulo-modal">Login</h2>
+                    <p class="subtitulo-modal">
+                        Entre para começar a explorar o estado de São Paulo
+                    </p>
+                </div>
+
+                <form class="form-modal">
+                    <label class="campo" for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="email@email.com" required />
+
+                    <label class="campo" for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="*********" required />
+
+                    <button type="submit" class="botao-modal">ENTRAR</button>
+
+                    <p class="erro-login">E-mail e senha incorretos</p>
+                </form>
+
+                <a href="#" class="link-esqueci texto-modal">Esqueceu sua senha?</a>
+                <p class="texto-modal p2">
+                    Não possui conta?
+                    <a href="#" class="abrir-modal-cadastro trocar-modal">Crie uma!</a>
+                </p>
+            </section>
+        </main>
+    </dialog>
+
+    <!-- Modal Cadastro -->
+    <dialog id="cadastro-modal">
+        <main class="container-login">
+            <!-- Lado esquerdo -->
+            <aside class="painel-esquerdo"></aside>
+
+            <!-- Lado direito -->
+            <section class="painel-direito">
+                <button id="btn-fechar-cadastro" class="fechar-modal">
+                    <img src="assets/icon/close.svg" alt="Fechar" />
+                </button>
+                <div class="cabecalho-modal">
+                    <h2 class="titulo-modal">Cadastro</h2>
+                    <p class="subtitulo-modal">
+                        Crie sua conta para explorar o estado de São Paulo
+                    </p>
+                </div>
+                <form class="form-modal">
+                    <label class="campo" for="usuario">Usuário:</label>
+                    <input type="text" id="usuario" placeholder="Digite seu usuário" required />
+
+                    <label class="campo" for="email-cadastro">E-mail:</label>
+                    <input type="email" id="email-cadastro" placeholder="Digite seu email" required />
+
+                    <label class="campo" for="senha-cadastro">Senha:</label>
+                    <input type="password" id="senha-cadastro" placeholder="Digite sua senha" required />
+
+                    <label class="campo" for="confirmar-senha">Confirmar senha:</label>
+                    <input type="password" id="confirmar-senha" placeholder="Confirme sua senha novamente" required />
+
+                    <button type="submit" class="botao-modal">Cadastre-se</button>
+                </form>
+                <p class="texto-modal">
+                    Já possui uma conta?
+                    <a href="#" class="abrir-modal-login trocar-modal">Entrar</a>
+                </p>
+            </section>
+        </main>
+    </dialog>
+
+    <script src="script/scriptIndex.js" defer></script>
+    <script src="script/scriptModal.js" defer></script>
 </body>
+
 </html>
