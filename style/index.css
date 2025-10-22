@@ -92,7 +92,6 @@ li a {
 .texto-cadastro {
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--texto);
 }
 
 .Button-cadastre-se {
@@ -114,20 +113,20 @@ li a {
 }
 
 .titulo-section1 {
-  font-size: 4em;
+  font-size: 5em;
   font-weight: 800;
 }
 
 .subTitulo-slogan {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .texto-slogan {
   margin-top: 5%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .gradiente {

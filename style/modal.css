@@ -1,4 +1,3 @@
-
 /* ======== HEADER ======== */
 
 .header-1 {
@@ -140,7 +139,7 @@
 
 .painel-esquerdo {
     align-items: center;
-    background-image: url(../assets/Img/backgrounds/São\ Paulo.png);
+    background-image: var(--imagem-fundo);
     background-position: center;
     background-size: cover;
     border-radius: 1em;

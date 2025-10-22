@@ -44,7 +44,6 @@ header {
 
 body {
     background-color: var(--branco);
-    color: var(--branco);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
@@ -94,10 +93,6 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-p {
-    font-size: 1rem;
-    color: var(--branco);
-}
 
 a {
     text-decoration: none;
