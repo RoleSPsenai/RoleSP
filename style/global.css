@@ -121,6 +121,7 @@ input {
     border-radius: 10px;
     font-size: 1rem;
     width: 100%;
+    padding: 10px;
 }
 
 input:focus {

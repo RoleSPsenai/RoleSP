@@ -140,7 +140,7 @@
 
 .painel-esquerdo {
     align-items: center;
-    background-image: var(--imagem-fundo);
+    background-image: url(../assets/Img/backgrounds/São\ Paulo.png);
     background-position: center;
     background-size: cover;
     border-radius: 1em;
