@@ -13,8 +13,13 @@ body {
 header {
   justify-content: space-between;
   align-items: center;
-  margin: 25px 5%;
   height: 15vh;
+  padding: 20px;
+}
+
+.logo-header{
+  height: 100%;
+  width: auto;
 }
 
 .Button-Login {
@@ -23,8 +28,7 @@ header {
   padding: .5% 4%;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /*? ===== NAV ===== */
@@ -495,13 +499,7 @@ footer {
   padding-bottom: 5rem;
 }
 
-.logo-footer {
-  width: 100%;
-  max-width: 180px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
+
 
 
 .lista-saiba-mais {
@@ -539,7 +537,7 @@ footer {
 }
 
 .logo-footer {
-  width: 5rem;
+  width: 25%;
   height: auto;
 }
 
