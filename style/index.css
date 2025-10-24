@@ -13,8 +13,8 @@ body {
 header {
   justify-content: space-between;
   align-items: center;
-  margin: 1% 5%;
-  height: 10vh;
+  margin: 25px 5%;
+  height: 15vh;
 }
 
 .Button-Login {
