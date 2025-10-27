@@ -14,8 +14,8 @@
     --amarelo: #F7C13C;
     --botao-hover: #042f28;
     --destaque: #0FFFBF;
-    --destaqueOpacity1: rgba(0, 128, 128, 0.75);
-    --destaqueOpacity2: rgba(0, 128, 64, 0.25);
+    --destaqueOpacity1: rgba(0, 128, 128, 0.9);
+    --destaqueOpacity2: rgba(0, 64, 48, 0.4);
     
     /* Outros */
     --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
@@ -105,20 +105,39 @@ a:focus {
 }
 
 label {
+    top: 45px;
+    left: 10px;
     font-weight: 600;
     align-self: flex-start;
-    margin-bottom: -0.75em;
+    position: relative; /* permite usar top para reposicionar */
+    transition: all 0.15s ease;
+    color: var(--preto)
+}
+
+label.campo.focused {
+    top: 5px;
+    font-size: 0.9rem;
+    color: var(--destaque);
 }
 
 input {
     padding: 1vh;
     border: none;
-    border-radius: 10px;
+    border-bottom: 2px solid var(--preto);
+    border-radius: 10px 10px 5px 5px;
     font-size: 1rem;
     width: 100%;
     padding: 10px;
+    text-align: center; /* centraliza o texto do input */
+}
+
+input::placeholder {
+    color: var(--preto);
+    opacity: 0.6;
+    text-align: center; /* garante que o placeholder também fique centralizado */
 }
 
 input:focus {
-    outline: 0.25em solid var(--destaque);
+    border-width: 2px;
+    border-bottom-color: var(--destaque);
 }
