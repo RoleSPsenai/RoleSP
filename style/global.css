@@ -39,7 +39,10 @@ html {
 }
 
 header {
-    color: var(--preto);
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding: 20px;
 }
 
 body {
@@ -47,6 +50,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 img, picture, video, canvas, svg {
@@ -102,6 +106,12 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
+}
+
+li a {
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--branco);
 }
 
 label {

@@ -1,96 +1,85 @@
 
+/*? ===== UTILITÁRIOS ===== */
 .displayFlex {
   display: flex;
 }
 
-
-body {
-  overflow-x: hidden;
-}
-
 /*? ===== HEADER ===== */
-
-header {
-  justify-content: space-between;
-  align-items: center;
-  height: 15vh;
-  padding: 20px;
+.Button-Login {
+  background-color: var(--verde-escuro);
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.2rem;
+  padding: .5% 4%;
+  text-decoration: none;
 }
 
-.logo-header{
+.logo-header {
   height: 100%;
   width: auto;
 }
 
-.Button-Login {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: .5% 4%;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
 /*? ===== NAV ===== */
-
 .nav {
-  justify-content: space-around;
   align-items: center;
-  list-style: none;
   background-color: var(--verde-escuro);
-  padding: 1.5%;
   font-size: 1.8rem;
   font-weight: 1rem;
   height: 5vh;
+  justify-content: space-around;
+  list-style: none;
+  padding: 1.5%;
 }
-
-li a {
-  background-color: transparent;
-  text-decoration: none;
-  color: var(--branco);
-}
-
-/*? ===== MAIN ===== */
 
 /*? ===== SECTION1 ===== */
-
+/* Estrutura Principal */
 .section1 {
-  margin-top: 3%;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
+  margin-top: 3%;
 }
 
-/*? ===== DIREITA ===== */
-
-.container-cadastre-se {
-  justify-content: center;
-  align-items: center;
-}
-
-.fundo-carro {
+/* Lado Direito */
+.Button-cadastre-se {
   background-color: var(--verde-escuro);
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  padding: 2%;
-  margin-left: 3%;
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.2rem;
+  font-weight: 1rem;
+  margin-left: 10%;
+  margin-top: 1rem;
+  padding: 4% 15%;
+}
+
+.cadastre-se {
+  align-items: center;
+  justify-content: center;
+  margin-left: 6%;
+  margin-right: 10%;
+  margin-top: 3%;
+  white-space: nowrap;
 }
 
 .carro {
   background-color: var(--verde-escuro);
   border-radius: 5%;
-  margin-top: 3%;
-  margin-right: 50%;
-  width: 50%;
   height: auto;
+  margin-right: 50%;
+  margin-top: 3%;
+  width: 50%;
 }
 
-.cadastre-se {
-  margin-left: 6%;
-  margin-top: 3%;
-  margin-right: 10%;
-  justify-content: center;
+.container-cadastre-se {
   align-items: center;
-  white-space: nowrap;
+  justify-content: center;
+}
+
+.fundo-carro {
+  background-color: var(--verde-escuro);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-left: 3%;
+  padding: 2%;
 }
 
 .texto-cadastro {
@@ -98,27 +87,18 @@ li a {
   font-weight: 500;
 }
 
-.Button-cadastre-se {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: 4% 15%;
-  margin-top: 1rem;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  font-weight: 1rem;
-  margin-left: 10%;
-}
-
-/*? ===== ESQUERDA ===== */
-
+/* Lado Esquerdo */
 .esquerda-section1 {
   margin-left: 10%;
   margin-right: 5%;
 }
 
-.titulo-section1 {
-  font-size: 5em;
-  font-weight: 800;
+.gradiente {
+  background: linear-gradient(to top,
+      #cecece 0%,
+      #ffffff 100%);
+  height: 60px;
+  width: 200%;
 }
 
 .subTitulo-slogan {
@@ -127,117 +107,114 @@ li a {
 }
 
 .texto-slogan {
-  margin-top: 5%;
   font-size: 1.5rem;
-  line-height: 1.5;
   font-weight: 400;
+  line-height: 1.5;
+  margin-top: 5%;
 }
 
-.gradiente {
-  width: 200%;
-  height: 60px;
-  background: linear-gradient(to top,
-      #cecece 0%,
-      #ffffff 100%);
+.titulo-section1 {
+  font-size: 5em;
+  font-weight: 800;
 }
 
 /*? ===== SECTION2 ===== */
+/* Estrutura Principal */
 .section2 {
+  flex-direction: column;
   margin-left: 5%;
   margin-top: 3rem;
   width: 100%;
-  flex-direction: column;
 }
 
 .titulo-section2 {
+  color: var(--verde-escuro);
   font-size: 4em;
   font-weight: 800;
-  color: var(--verde-escuro);
 }
 
-/*? ===== CARROSSEL ===== */
-
+/* Carrossel */
 .container {
-  margin-top: 3rem;
-  width: 100%;
+  box-sizing: border-box;
   height: 17rem;
+  margin-top: 3rem;
   mask-image: linear-gradient(to right,
       transparent,
       #fff 10% 90%,
       transparent);
   padding: 10px;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 .carrossel {
-  width: 100%;
   height: 100%;
   position: relative;
+  width: 100%;
 }
-
 
 .item {
-  box-shadow: 3px 3px 10px black;
-  width: 20%;
-  max-width: 340px;
-  height: 100%;
-  border-radius: 2rem;
-  position: absolute;
-  left: 100%;
-  /** Esses comandos a baixo é oque faz o carrossel funcionar*/
-  /**O animation define a animação, o tempo que ela dura, o tipo de movimento e se repete ou não*/
-  /**O animation-delay define o tempo de espera para iniciar a animação*/
-  /**O cursor para mudar o ponteiro do mause */
-  /**align-itens Joga todos os elementos para o final da tela  */
+  align-items: end;
   animation: animacao 20s linear infinite;
   animation-delay: var(--delay);
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
   cursor: pointer;
-  align-items: end;
+  height: 100%;
+  left: 100%;
+  max-width: 340px;
+  position: absolute;
+  width: 20%;
 }
 
+/* Backgrounds do Carrossel */
 .bgc1-carrossel-section1 {
-  /**definição do delay para que os itens não fassão a animação todos juntos ficando um dentro do outro  */
   --delay: 0s;
   background-image: url(../assets/Img/CarroselPrincipal/Cafeterias.png);
 }
+
 .bgc2-carrossel-section1 {
   --delay: 4s;
   background-image: url(../assets/Img/CarroselPrincipal/Museu.png);
 }
+
 .bgc3-carrossel-section1 {
   --delay: 8s;
   background-image: url(../assets/Img/CarroselPrincipal/Restaurantes.png);
 }
+
 .bgc4-carrossel-section1 {
   --delay: 12s;
   background-image: url(../assets/Img/CarroselPrincipal/Natureza.png);
 }
+
 .bgc5-carrossel-section1 {
   --delay: 16s;
   background-image: url(../assets/Img/CarroselPrincipal/Livrarias.png);
 }
+
 .bgc6-carrossel-section1 {
   --delay: 24s;
   background-image: url(../assets/Img/CarroselPrincipal/Cultura.png);
 }
 
+/* Cards do Carrossel */
+.fundo-titulo-card {
+  background: linear-gradient(to top,
+      #000000 0%,
+      transparent);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 20%;
+  width: 100%;
+}
+
 .titulo-card {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
   background-color: transparent;
   color: var(--branco);
   font-size: 1.8rem;
   font-weight: 600;
-}
-
-.fundo-titulo-card {
-  width: 100%;
-  height: 20%;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  background: linear-gradient(to top,
-      #000000 0%,
-      transparent);
+  margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 /*? ===== ANIMACAO ===== */
@@ -257,154 +234,150 @@ li a {
 
 
 /*? ===== SECTION3 ===== */
-
+/* Estrutura Principal */
 .section3 {
-  flex-direction: column;
-  height: 900px;
   background-image: url(../assets/Img/backgrounds/bgc-section3.png);
   background-repeat: no-repeat;
+  flex-direction: column;
+  height: 900px;
   position: relative;
 }
 
-
 .titulo-section3 {
-  margin-top: 100px;
   background-color: transparent;
-  justify-content: center;
-  font-size: 5em;
   color: var(--branco);
+  font-size: 5em;
+  justify-content: center;
+  margin-top: 100px;
 }
 
+/* Avaliação */
 .avaliacao-section3 {
-  /** Esse é o CSS para que o conteudo interativo Funcione
-  /** Coloca todas as avaliações na mesma possição e com 0 de
-  /** opacidade as deixan trasparente */
-  position: absolute;
-  justify-content: center;
   align-items: center;
-  opacity: 0;
   height: 60vh;
+  justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
+  opacity: 0;
   padding-bottom: 2%;
+  position: absolute;
 }
 
 .avaliacao-section3.ativo {
-  /**Aqui é o CSS para quando a avaliação estiver ativa
-  /** Ela fica com 100% de opacidade e visivel 
-  /**e isso é manipulado pelo JavaScript */
   opacity: 100%;
-  }
-
-.esquerda-section3 {
-  position: relative;
-  background-color: var(--verde-claro);
-  border-radius: 2em;
-  width: 60%;
-  height: 100%;
-  margin-right: 3%;
-  box-shadow: 3px 3px 10px black;
 }
-
 
 .caixa-dialogo {
   background-color: var(--verde-escuro);
-  color: var(--branco);
-  margin-right: 10%;
-  margin-top: 8%;
-  margin-bottom: 10%;
   border-radius: 2em;
   border-top-left-radius: 0em;
+  color: var(--branco);
   font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  margin-top: 8%;
   padding: 3%;
   padding-bottom: 4%;
 }
 
-.titulo-caixa-dialogo{
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: .5rem;
-}
-
-.personagem {
-  margin: 5%;
+.esquerda-section3 {
+  background-color: var(--verde-claro);
+  border-radius: 2em;
+  box-shadow: 3px 3px 10px black;
+  height: 100%;
   margin-right: 3%;
-  width: 40%;
-  object-fit: contain;
+  position: relative;
+  width: 60%;
 }
 
 .fundo-img-local {
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
+  height: 100%;
+  opacity: 0;
   position: relative;
   width: auto;
-  height: 100%;
-  border-radius: 2rem;
-  opacity: 0;
-  box-shadow: 3px 3px 10px black;
 }
+
 .fundo-img-local.ativo {
   opacity: 100%;
 }
 
-
 .img-local {
-  width: 100%;
+  border-radius: 2rem;
   height: 100%;
   object-fit: cover;
-  border-radius: 2rem;
-
+  width: 100%;
 }
 
 .img-local.ativo {
   opacity: 100%;
 }
 
-/*? ===== CARROSSEL ===== */
+.personagem {
+  margin: 5%;
+  margin-right: 3%;
+  object-fit: contain;
+  width: 40%;
+}
 
-/** O carrossel da section3 é igual ao da section2, porem com algumas diferenças de estilo */ 
+.titulo-caixa-dialogo {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
 
+/* Carrossel */
 .container-section3 {
-  position: absolute;
   bottom: 1%;
-  width: 100%;
+  box-sizing: border-box;
   height: 30vh;
   mask-image: linear-gradient(to right,
       transparent,
       #fff 10% 90%,
       transparent);
   padding: 10px;
-  box-sizing: border-box;
-  
+  position: absolute;
+  width: 100%;
 }
 
 .carrossel-section3 {
-  width: 100%;
   height: 100%;
   position: relative;
+  width: 100%;
 }
-
 
 .item-section3 {
-  box-shadow: 3px 3px 10px black;
-  width: 20%;
-  max-width: 340px;
-  height: 100%;
-  border-radius: 2rem;
-  position: absolute;
-  left: 100%;
+  align-items: end;
   animation: animacao 20s linear infinite;
   animation-delay: var(--delay);
-  cursor: pointer;
-  align-items: end;
-  filter: grayscale(100%);
-  transition: filter 0.2s;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
+  cursor: pointer;
+  filter: grayscale(100%);
+  height: 100%;
+  left: 100%;
+  max-width: 340px;
+  position: absolute;
+  transition: filter 0.2s;
+  width: 20%;
 }
 
+.container-section3:hover .item-section3 {
+  animation-play-state: paused;
+}
+
+.item-section3:hover {
+  filter: grayscale(0%);
+}
+
+/* Backgrounds do Carrossel */
 .bgc1-carrossel-section3 {
-  background-image: url(../assets/Img/CarrosselSecundario/a\ casa\ de\ antonia.png);
   --delay: 0s;
+  background-image: url(../assets/Img/CarrosselSecundario/a\ casa\ de\ antonia.png);
 }
 
 .bgc2-carrossel-section3 {
@@ -447,35 +420,27 @@ li a {
   background-image: url(../assets/Img/CarrosselSecundario/Kiki\ Café.png);
 }
 
+/* Cards do Carrossel */
+.fundo-titulo-card-section3 {
+  background: linear-gradient(to top,
+      #000000 0%,
+      transparent);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 20%;
+  width: 100%;
+}
+
 .titulo-card-section3 {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
   background-color: transparent;
   color: var(--branco);
   font-size: 1.8rem;
   font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
-.fundo-titulo-card-section3 {
-  width: 100%;
-  height: 20%;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  background: linear-gradient(to top,
-      #000000 0%,
-      transparent);
-}
-
-.container-section3:hover .item-section3 {
-  animation-play-state: paused;
-}
-
-.item-section3:hover {
-  filter: grayscale(0%);
-}
-
- /*? ===== ANIMACAO ===== */
-
+/* Animação */
 @keyframes animacao {
   from {
     left: 100%;
@@ -487,26 +452,55 @@ li a {
 }
 
 /*? ===== FOOTER ===== */
+.conteudo-footer {
+  background-color: var(--verde-escuro);
+  justify-content: space-around;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
 
 footer {
   flex-direction: column;
   margin-top: 5%;
 }
 
-.conteudo-footer {
-  background-color: var(--verde-escuro);
-  justify-content: space-around;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.fundo-icone {
+  align-items: center;
+  background-color: var(--branco);
+  border-radius: 10rem;
+  height: 3.5rem;
+  justify-content: center;
+  margin: .2rem;
+  width: 3.5rem;
+}
+
+.linha-decorativa {
+  background: var(--branco);
+  height: 5px;
+  margin-top: -3rem;
+  width: 100%;
 }
 
 .lista-saiba-mais {
   color: var(--branco);
-  text-decoration: none;
   flex-direction: column;
-  gap: .5rem;
   font-size: 1.3rem;
   font-weight: 600;
+  gap: .5rem;
+  text-decoration: none;
+}
+
+.logo-footer {
+  height: auto;
+  width: 25%;
+}
+
+.redes-sociais {
+  flex-direction: column;
+  gap: .1rem;
+  height: 100%;
+  list-style: none;
+  width: 20%;
 }
 
 .titulo-footer {
@@ -514,34 +508,4 @@ footer {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-}
-
-.redes-sociais {
-  width: 20%;
-  height: 100%;
-  list-style: none;
-  flex-direction: column;
-  gap: .1rem;
-}
-
-.fundo-icone {
-  background-color: var(--branco);
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 10rem;
-  justify-content: center;
-  align-items: center;
-  margin: .2rem;
-}
-
-.logo-footer {
-  width: 25%;
-  height: auto;
-}
-
-.linha-decorativa {
-  width: 100%;
-  height: 5px;
-  background: var(--branco);
-  margin-top: -3rem;
 }
