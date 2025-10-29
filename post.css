@@ -1,3 +1,4 @@
+@media(max-width: 1200)and(min-width: 360){}
 * { 
     margin: 0;
     padding: 0;
@@ -7,19 +8,23 @@
   }
   
   body {
+    max-width: 1200px;
+    min-width: 360px;
+
     background-color: #c8e3dd;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
+    padding: 10v;
     width: 100%;
+    
     
   }
   
   
   
   header {
-  width: 100%; /* mesma largura do card */
+  width: 100%; 
   height: 10vh;
   display: flex;
   margin-bottom: 30px;
@@ -28,52 +33,45 @@
   
   
   }
-
-  .topbar-inner{
-    display: flex;
-    width: 86vw;
-   
-  }
   
   .botao-voltar {
     background-color: #0c3c2e;
     color: #fff;
     border: none;
     border-radius: 20px;
-    padding: 8px 16px;
+    padding: 1vh 2vw;
     font-weight: 600;
     cursor: pointer;
     
-    margin-left: 356px;
-    height: 50%;
-    width: 6%;
+    margin-left: 16%;
+    /* height:30%;
+    width: 10%; */
     
 
   }
-  
+  .pagina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .card {
     display: flex;
     background-color: #fff;
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+    width: 50%;
     margin-bottom: 30px;
   }
   
   .card-esquerda {
-    width: 60%;
-    position: relative;
+    width: 100%;
   }
   
   .perfil {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 2;
   }
   
   .avatar {
@@ -91,34 +89,32 @@
   
   .foto {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 20px;
+    height: auto;
+    
+   
   }
   
-  .info {
+  .nome-local {
     background-color: white;
     padding: 15px;
-    position: relative;
+    
   }
   
-  .info h2 {
+  .nome-local h2 {
     font-size: 1.4em;
     margin-bottom: 5px;
   }
   
-  .info p {
+  .nome-local p {
     color: #333;
     font-size: 0.9em;
   }
   
   .icones {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
+  
   }
   
-  .icones i {
+  .icones a {
     font-size: 1.2em;
     margin-left: 10px;
     color: #0c3c2e;
