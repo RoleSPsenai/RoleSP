@@ -11,22 +11,26 @@ const botaoFecharCadastro = document.getElementById('btn-fechar-cadastro');
 botaoLogin.addEventListener('click', () => {
   modalCadastro.close();
   modalLogin.showModal();
+  updateBodyOverflow();
 });
 
 // Fechar o modal de login
 botaoFecharLogin.addEventListener('click', () => {
   modalLogin.close();
+  updateBodyOverflow();
 });
 
 // Abrir o modal de cadastro
 botaoCadastro.addEventListener('click', () => {
   modalLogin.close();
   modalCadastro.showModal();
+  updateBodyOverflow();
 });
 
 // Fechar o modal de cadastro
 botaoFecharCadastro.addEventListener('click', () => {
   modalCadastro.close();
+  updateBodyOverflow();
 });
 
 // Trocar para cadastro a partir do login
@@ -36,6 +40,7 @@ if (linkAbrirCadastro) {
     e.preventDefault();
     modalLogin.close();
     modalCadastro.showModal();
+    updateBodyOverflow();
   });
 }
 
@@ -46,6 +51,7 @@ if (linkAbrirLogin) {
     e.preventDefault();
     modalCadastro.close();
     modalLogin.showModal();
+    updateBodyOverflow();
   });
 }
 
@@ -76,3 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (input.value && input.value.trim() !== '') setFocused();
   });
 });
+
+  // Mantém o overflow do body hidden enquanto algum dialog estiver aberto
+  function updateBodyOverflow() {
+    const anyOpen = document.querySelectorAll('dialog[open]').length > 0;
+    document.body.style.overflow = anyOpen ? 'hidden' : '';
+  }
+
+  // Garante atualização caso o modal seja fechado por métodos nativos (esc, backdrop, etc.)
+  if (modalLogin) modalLogin.addEventListener('close', updateBodyOverflow);
+  if (modalCadastro) modalCadastro.addEventListener('close', updateBodyOverflow);
