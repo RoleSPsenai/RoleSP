@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/* ===== VARIAVEIS ===== */
+:root {
+    --branco: #ffffff;
+    --bg: #E6F3F1;
+    --texto: #0f172a;
+    --verde-escuro: #085E50;
+    --verde-claro: #0DA58C;
+    --azul: #00BFBF;
+    --fundo: #C8E3DD;
+    --verm: #e11d48;
+    --sombra-sm: 0 4px 14px rgba(15, 23, 42, .08);
+    --sombra-md: 0 10px 24px rgba(2, 6, 23, .08);
+}
+
+
+/* ===== GLOBAIS ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+}
+
+body {
+    background-color: var(--fundo);
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Nunito';
+}
+
+
+
+.cabecalho {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: var(--branco);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-colorido {
+    height: 12vh;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    color: var(--texto);
+
+}
+
+
+.novo-post {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-decoration: none;
+    width: 15vw;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.novo-post:hover {
+    background-color: #25675e;
+    transform: scale(1.05);
+}
+
+.conteudo{
+    top: 15vh;
+    height: 85vh;
+}
+
+.parte_lateral { 
+    position: fixed;
+    top: 15vh;
+    width: 25vw;
+    background-color: var(--fundo);
+    margin: 20px 40px 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.perfil {
+    height: 55vh;
+    background-color: var(--branco);
+    border-radius: 15px;
+    padding: 60px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.foto-usuario {
+    width: 8vw;
+    height: 18vh;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: var(--sombra-md);
+}
+
+.nome-usuario {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: black;
+    padding: 20px 20px 0;
+    font-style: italic;
+}
+
+.usuario {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+.perfil-info {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-top: 40px;
+}
+
+.perfil-info li {
+    text-align: center;
+    padding: 0 20px;
+    border-right: 2px solid var(--texto);
+    font-size: bold;
+}
+
+.perfil-info li:last-child {
+    border-right: none;
+
+}
+
+.numero {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.legenda {
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+.lista-perfil {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    gap: 4px;
+    color: var(--texto);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lista-perfil:hover {
+    transform: scale(1.05);
+}
+
+.menu-navegação {
+    padding: 15px 20px;
+    background-color: var(--branco);
+    border-radius: 15px;
+}
+
+.navegação {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lista-navegacao {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--texto);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.lista-navegacao:hover {
+    transform: scale(1.05);
+}
+
+.icone-menu {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.titulo-postagens {
+    padding-left: 450px;
+    padding-top: 125px;
+    font-size: 1.8rem;
+}
+
+.postagens {
+    padding-top: 15px;
+    padding-left: 450px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: hidden;
+    gap: 25px;
+}
+
+.post {
+    width: 32vw;
+    height: 50vh; 
+    background-color: var(--branco);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.50);
+}
+
+
+.foto {
+    width: 30vw;
+    height: 38vh; 
+    border-radius: 15px;
+    object-fit: cover;
+    background-image: url(../Img/Kiki\ Café.svg);
+    display: flex;
+    align-items: end;
+}
+
+
+.legenda-foto {
+    width: 100%;
+    height: 14%;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.80);
+    box-shadow: 0 -6px 10px -5px rgba(0, 0, 0, 0.75);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+}
+
+.acoes {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.icone-post {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.icone-post:hover {
+    transform: scale(1.2);
+}
+
+  
