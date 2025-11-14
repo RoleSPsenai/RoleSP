@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publicação</title>
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/publicacao.css" />
-  </head>
 
-  <body>
-    <!-- Botao teste pra abrir a pagina de cadastro -->
-    <button id="BotaoPublicar">Publicar</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicação</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/publicacao.css" />
+</head>
 
-    <!-- Aparecer na tela o pop up -->
-    <dialog id="TelaPublicacao" class="popup">
-      <div class="popup-content">
-        <!-- Perfil -->
-        <div class="perfil">
-          <img src="assets/img/FotoDePerfil.jpg" alt="" class="foto-perfil" />
-          <div class="info-perfil">
-            <div class="nome">Sonia Ribeiro</div>
-            <div class="usuario">Sony</div>
-          </div>
+<body>
+  <!-- Botao teste pra abrir a pagina de cadastro -->
+  <button id="BotaoPublicar">Publicar</button>
+
+  <!-- Aparecer na tela o pop up -->
+  <dialog id="TelaPublicacao" class="popup">
+    <div class="popup-content">
+      <div class="mainPopup">
+        <div class="left">
+          <label class="imgLabel" for="imgInput">
+            <input type="file" accept="image/*" id="imgInput">
+            <img src="assets/img/uploadImg.svg" alt="icone de upload de imagen" class="iconUpload">
+            <span>Upload do local</span>
+          </label>
         </div>
 
-        <div class="conteudo-publicacao">
-          <!-- Imagem do local -->
-          <div class="imagem-local-container">
-            <img src="assets/img/Ponte.jpg" alt="" class="imagem-local" />
-            <div class="avaliacao-container">
-              <div class="avaliacao">
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-              </div>
-              <button class="favorito">&#9825;</button>
-            </div>
-          </div>
-
-          <!-- Formulario Cadastro -->
-          <form class="form-publicacao">
-            <label class="label">Estabelecimento:</label>
-            <input type="text" placeholder="Digite o nome" required class="input" />
-
-            <label class="label">Endereço:</label>
-            <input type="text" placeholder="Digite o Endereco" required class="input" />
-
-            <label class="label">Comentario:</label>
-            <textarea placeholder="Digite seu Comentario" required class="input"></textarea>
-          </form>
+        <div class="right">
+          <input type="text">
         </div>
-        <button class="botao-publicar">Publicar</button>
       </div>
-    </dialog>
-    <script src="script/publicacao.js"></script>
-  </body>
+    </div>
+  </dialog>
+  <script src="script/publicacao.js"></script>
+</body>
+
 </html>
