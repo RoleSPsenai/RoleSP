@@ -17,18 +17,28 @@
   <dialog id="TelaPublicacao" class="popup">
     <div class="popup-content">
       <div class="mainPopup">
-        <div class="left">
-          <label class="imgLabel" for="imgInput">
-            <input type="file" accept="image/*" id="imgInput">
-            <img src="assets/img/uploadImg.svg" alt="icone de upload de imagen" class="iconUpload">
-            <span>Upload do local</span>
-          </label>
-        </div>
+        <!-- div left -->
+        <label class="imgLabel" for="imgInput">
+          <input type="file" accept="image/*" id="imgInput">
+          <img src="assets/img/icon/uploadImg.svg" alt="icone de upload de imagen" class="iconUpload">
+          <span>Upload do local</span>
+        </label>
 
-        <div class="right">
-          <input type="text">
+        <!-- div right -->
+        <div class="sectioInputs">
+          <label for="optionsFilters"></label>
+            <input type="checkbox" id="optionsFilters">
+          
+            <div id="selectButton">
+              <div id="selectValue">Selecione o Filtro</div>
+              <div id="icons">
+                <img src="assets/img/icon/arrowdown.svg" alt="Icone de flecha apontando para baixo">
+                <img src="assets/img/icon/arrowup.svg" alt="Icone de flecha apontando para cima">
+              </div>
+            </div>
         </div>
       </div>
+    </div>
     </div>
   </dialog>
   <script src="script/publicacao.js"></script>

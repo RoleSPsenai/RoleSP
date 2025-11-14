@@ -17,10 +17,10 @@
 }
 
 .popup-content {
-  padding: 1em 2em;
+  padding: 2% 3%;
   display: flex;
-  width: 50em;
-  height: 30em;
+  width: 70%;
+  height: 70vh;
   background: var(--verde-claro);
   border-radius: 1em;
   overflow: hidden;
@@ -32,15 +32,19 @@
 
 .mainPopup{
   display: flex;
-  gap: 20px;
+  height: 100%;
+  gap: 5%;
 }
 
 .left{
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .imgLabel{
-  width: 100%;
+  width: 50%;
+  height: 100%;
   aspect-ratio: 4/5;
   background-color: var(--branco);
   border-radius: 1em;
@@ -70,7 +74,19 @@
 
 
 
-.right{
-  flex: 1;
+#selectButton{
+  padding: 1vh;
+  border: none;
+  border-bottom: 2px solid var(--preto);
+  border-radius: 10px 10px 5px 5px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--branco);
+  color: var(--cinza-claro);
+
 }
+
+
 
