@@ -358,7 +358,11 @@ main {
     }
 
     .cabecalho {
+<<<<<<< HEAD
         padding: 1% 5%;
+=======
+        padding: 10px 45px;
+>>>>>>> ee782dacddef80c13e8a2cb6adba6b145c0e0da4
         height: 15vh;
     }
 
@@ -372,10 +376,11 @@ main {
     }
 
     .parte_lateral {
-        width: 100%;
+        width: 95%;
         display: flex;
         flex-direction: column;
         align-items: center;
+<<<<<<< HEAD
         height: 45vh;
         gap: 10px;
     }
@@ -490,6 +495,10 @@ main {
     /* @media (max-width: 500px){
     .logo-colorido {
         height: 8vh;
+=======
+        height: 35vh;
+        gap: 10px;
+>>>>>>> ee782dacddef80c13e8a2cb6adba6b145c0e0da4
     }
 
     .perfil {
@@ -501,6 +510,7 @@ main {
         padding: 2% 5%;
     }
 
+<<<<<<< HEAD
     .foto-usuario {
         width: 18vw;
         height: 12vh;
@@ -508,3 +518,67 @@ main {
     }
 
 } */
+=======
+  .foto-usuario {
+    display: flex;
+    flex-direction: column;
+        width: 15vw;
+        height: 13.5vh;
+        border-radius: 50px;
+    }
+
+    .nome-usuario,
+    .usuario {
+        display: flex;
+        text-align: left;
+        padding: 0;
+    }
+
+    .perfil-info {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu-navegação {
+        height: 10vh;
+        width: 90%;
+        align-items: center;
+        display: flex;
+        padding: 1% 15%;
+        justify-content: space-between;
+    }
+    
+    .navegação {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        /* gap: 137px; */
+    }
+ 
+
+    .lista-navegacao {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 1.0rem;
+    }
+        
+    .icone-menu {
+        width: 15px;
+        height: 15px;
+        /* margin-right: 5px; */
+    }
+
+    /* main{
+        height: auto;
+    }
+
+    .postagens {
+        grid-template-columns: 1fr;
+    } */
+}
+
+>>>>>>> ee782dacddef80c13e8a2cb6adba6b145c0e0da4
