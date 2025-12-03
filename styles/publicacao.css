@@ -22,8 +22,8 @@
 .popup-content {
   padding: 2% 3%;
   display: flex;
-  width: 70%;
-  height: 70vh;
+  width: 80%;
+  height: 80vh;
   background: var(--verde-claro);
   border-radius: 1em;
   overflow: hidden;
@@ -31,26 +31,30 @@
   flex-direction: column;
   justify-content: center;
   transition: all 0.3s ease;
+
+  position: relative;
 }
 
 /* Conteudo do POPUP */
 
-.mainPopup{
+.mainPopup {
   display: flex;
   justify-content: space-between;
+  align-items: end;
   height: 100%;
   gap: 5%;
 }
 
+
 /* input da IMG */
 
-.left{
+.left {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.imgLabel{
+.imgLabel {
   width: 50%;
   height: 100%;
   aspect-ratio: 4/5;
@@ -66,162 +70,93 @@
   transition: color 0.3s, background-color 0.3s;
 }
 
-.imgLabel:hover{
+.imgLabel:hover {
   background-color: #bbb;
   color: #777;
 }
 
-.iconUpload{
+.iconUpload {
   width: 50%;
   height: auto;
 }
 
-#imgInput{
+#imgInput {
   display: none;
 }
 
 
-/* Inputs de texto */
+/* INPUTS */
 
-.sectioInputs{
-  width: 100%;
-}
-
-.select{
-  position: relative;
-}
-
-#selectButton{
-  
-  width: 100%;
-  padding: 1vh;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 10px;
-  text-align: center;
-  background-color: var(--branco);
-  color: var(--cinza-claro);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-}
-
-.title{
-  color: var(--verde-escuro);
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-#selectButton img {
-  width: 5%;
+.sairImg {
+  width: 60%;
   height: auto;
 }
 
-#arrowup{
-  display: none;
-}
-
-#optionsFiltersLabel:checked ~ #selectButton #arrowdown{
-  display: none;
-}
-
-#optionsFiltersLabel:checked ~ #selectButton #arrowup{
-  display: block;
-}
-
-#optionsFiltersLabel{
-  all: unset;
-
-  inset: 0;
+.fechar-modal {
+  align-items: center;
+  background: transparent;
+  border-radius: 1em;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75em;
   position: absolute;
+  right: 1em;
+  top: 1em;
+}
 
+.fechar-modal:hover {
+  background-color: transparent !important;
   cursor: pointer;
-
-  z-index: 3;
 }
 
-.filters{
-  margin-top: 1%;
-
-  border-radius: 10px;
-  background-color: var(--branco);
-  display: none;
-}
-
-.filters input{
-  padding: 0;
-  width: 10%;
-}
-
-.option{
-  color: var(--verde-escuro);
-  font-size: 1rem;
-  font-weight: 600;
+.sectioInputs {
+  gap: 2%;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+}
 
-  gap: 1%;
-  padding: 1%;
+.select {
   width: 100%;
-  border-bottom: 1px solid var(--verde-escuro);
-  border-radius: 10px;
 }
 
-.option img{
-  width: 8%;
-  height: auto;
-}
-
-.option .check{
-  margin-left: auto;
-  padding: 1%;
-  display: none;
-}
-
-.option:has(input:checked) .check{
-  display: block;
-}
-
-.option input{
-  all: unset;
-
-  position: absolute;
-  inset: 0;
-
-  cursor: pointer;
-}
-
-.select:has(#optionsFiltersLabel:checked) + .filters{
-  display: block;
-}
-
- /* INPUTS */
-
- .sectioInputs{
-  gap: 2%; }
-
- .inputs,.inputs::placeholder{
+.inputs,
+.inputs::placeholder {
   width: 100%;
   border: none;
-  border-radius: 010px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 5px;
   background-color: var(--branco);
-  color: var(--cinza-claro);  
- }
+  color: var(--cinza-claro);
 
- #groupInput{
+}
+
+#groupInput {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   gap: 1%;
- }
+}
 
-#groupCep{
+#groupCep {
   width: 50%;
+}
+
+#groupBairro {
+  width: 100%;
+}
+
+.botao-publicar{
+  margin: 20px;
+}
+
+button {
+  max-width: 40%;
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.2rem;
+  padding: 1% 8%;
+  text-decoration: none;
 }

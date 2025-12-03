@@ -14,25 +14,6 @@ popup.addEventListener("click", (e) => {
     }
 });
 
-// SELECT de filtros
-
-let select = document.querySelector('.select'),
-    optionsFiltersLabel = document.getElementById('optionsFiltersLabel'),
-    selectValue = document.getElementById('selectValue'),
-    option = document.querySelectorAll('.option input');
-
-option.forEach(input => {
-    input.addEventListener('click', event => {
-        selectValue.textContent = input.dataset.lable;
-
-        const isMouseClick =
-        event.pointerType == 'mouse' ||
-        event.pointerType == 'touch';
-
-       isMouseClick && optionsFiltersLabel.click();
-})
-});
-    
 
     
      

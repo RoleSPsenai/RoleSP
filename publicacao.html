@@ -26,80 +26,41 @@
 
         <!-- div right -->
         <div class="sectioInputs">
-
+          <button id="btn-fechar-cadastro" class="fechar-modal">
+            <img src="assets/img/icon/Fechar.svg" alt="Fechar" class="sairImg"/>
+          </button>
           <div class="select">
-            <label for="optionsFiltersLabel">
-              <p class="title">Filtros</p>
-            </label>
-            <input type="checkbox" id="optionsFiltersLabel">
-
-            <div id="selectButton">
-              <div id="selectValue">Selecione o Filtro</div>
-              <img src="assets/img/icon/arrowdown.svg" alt="Icone de flecha apontando para baixo" id="arrowdown">
-              <img src="assets/img/icon/arrowup.svg" alt="Icone de flecha apontando para cima" id="arrowup">
-            </div>
+            <label for="local" class="title">Filtros</label>
+            <select class="inputs">
+              <option value="cafeteria">Cafeteria</option>
+              <option value="museu">Museu</option>
+              <option value="restaurantes">Restaurantes</option>
+              <option value="natureza">Natureza</option>
+              <option value="livraria">Livraria</option>
+              <option value="cultura">Cultura</option>
+            </select>
           </div>
-          <ul class="filters">
-            <li class="option">
-              <input type="radio" name="category" value="cafeteria" data-lable="cafeteria">
-
-              <img src="assets/img/filtrosIcones/Café.svg" alt="">
-              <span class="label">Cafeteria</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-
-            <li class="option">
-              <input type="radio" name="category" value="museu" data-lable="museu">
-
-              <img src="assets/img/filtrosIcones/Museu.svg" alt="">
-              <span class="label">Museu</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-
-            <li class="option">
-              <input type="radio" name="category" value="restaurantes" data-lable="restaurantes">
-
-              <img src="assets/img/filtrosIcones/Restaurante.svg" alt="">
-              <span class="label">Restaurantes</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-
-            <li class="option">
-              <input type="radio" name="category" value="natureza" data-lable="natureza">
-
-              <img src="assets/img/filtrosIcones/Natureza.svg" alt="">
-              <span class="label">Natureza</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-
-            <li class="option">
-              <input type="radio" name="category" value="livraria" data-lable="livraria">
-
-              <img src="assets/img/filtrosIcones/Livraria.svg" alt="">
-              <span class="label">livraria</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-
-            <li class="option">
-              <input type="radio" name="category" value="cultura" data-lable="cultura">
-
-              <img src="assets/img/filtrosIcones/Cultura.svg" alt="">
-              <span class="label">Cultura</span>
-              <img src="assets/img/filtrosIcones/Check cinza.svg" alt="" class="check">
-            </li>
-          </ul>
-          <label for="local" class="title">Local</label>
-          <input type="text" placeholder="Nome do local..." class="inputs" id="local">
-          <div id="groupInput">
-            <div id="groupCep">
-              <label for="inputCep" class="title">CEP</label>
-              <input type="text" placeholder="CEP do local..." class="inputs" id="inputCep">
+          <div>
+            <label for="local" class="title">Local</label>
+            <input type="text" placeholder="Nome do local..." class="inputs" id="local">
+            <div id="groupInput">
+              <div id="groupCep">
+                <label for="inputCep" class="title">CEP</label>
+                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCep">
+              </div>
+              <div id="groupBairro">
+                <label for="bairro" class="title">Bairro</label>
+                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
+              </div>
             </div>
-            <div>
-              <label for="bairro" class="title">Bairro</label>
-              <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
-            </div>
+            <label for="rua" class="title">Rua:</label>
+            <input type="text" placeholder="Rua do local..." class="inputs" id="rua">
+            <label for="cidade" class="title">Cidade:</label>
+            <input type="text" placeholder="Cidade do local..." class="inputs" id="cidade">
+            <label for="comentario" class="title">Comentário:</label>
+            <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentario">
           </div>
+          <button class="botao-publicar">Publicar</button>
         </div>
       </div>
     </div>
