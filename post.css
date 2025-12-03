@@ -1,134 +1,144 @@
-@media(max-width: 1200)and(min-width: 360){}
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-   box-shadow: #240f0f;
-  }
-  
-  body {
-    max-width: 1200px;
-    min-width: 360px;
+@media (max-width: 1200) and(min-width: 711px) {
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  box-shadow: #240f0f;
+}
 
-    background-color: #c8e3dd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10v;
-    width: 100%;
-    
-    
-  }
-  
-  
-  
-  header {
-  width: 100%; 
+
+  body {
+  max-width: 1200px;
+  min-width: 711px;
+  margin: 0 auto;         
+  background-color: #c8e3dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10v;
+  width: 100%;
+}
+
+header {
+  width: 100%;
   height: 10vh;
   display: flex;
   margin-bottom: 30px;
   background-color: #fff;
   align-items: center;
-  
-  
-  }
-  
-  .botao-voltar {
-    background-color: #0c3c2e;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 1vh 2vw;
-    font-weight: 600;
-    cursor: pointer;
-    
-    margin-left: 16%;
-    /* height:30%;
-    width: 10%; */
-    
+}
 
-  }
-  .pagina{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .card {
-    display: flex;
-    background-color: #fff;
-    border-radius: 20px;
-    /* overflow: hidden; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin-bottom: 30px;
-  }
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  margin-bottom: 30px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.botao-voltar {
+  background-color: #0c3c2e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 1vh 2vw;
+  font-weight: 600;
+  cursor: pointer;
+
+  margin-left: 25%;
+}
+.pagina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 15px;
+}
+.card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-bottom: 30px;
+  border-bottom-left-radius: 15px;
   
-  .card-esquerda {
-    width: 100%;
-  }
+}
+
+.card-esquerda {
+  width: 100%;
+  position: relative;
+  border-bottom-right-radius: 15px;
+}
+
+.perfil {
+  justify-content: space-between;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
   
-  .perfil {
-    display: flex;
-    align-items: center;
-  }
+
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.nome {
+  margin-left: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+.foto {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 15px;
   
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid white;
-  }
+}
+
+.nome-local {
+  background-color: white;
+  padding: 15px;
+   border-bottom-left-radius: 15px;
   
-  .nome {
-    margin-left: 8px;
-    color: white;
-    font-weight: 600;
-  }
-  
-  .foto {
-    width: 100%;
-    height: auto;
-    
-   
-  }
-  
-  .nome-local {
-    background-color: white;
-    padding: 15px;
-    
-  }
-  
-  .nome-local h2 {
-    font-size: 1.4em;
-    margin-bottom: 5px;
-  }
-  
-  .nome-local p {
-    color: #333;
-    font-size: 0.9em;
-  }
-  
-  .icones {
-  
-  }
-  
-  .icones a {
-    font-size: 1.2em;
-    margin-left: 10px;
-    color: #0c3c2e;
-    cursor: pointer;
-  }
-  
-  .card-direita {
-    width: 40%;
-    background-color: #0c3c2e;
-    color: #fff;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  
+}
+
+.nome-local h2 {
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+.nome-local p {
+  color: #333;
+  font-size: 0.9em;
+}
+
+.icones a {
+  font-size: 1.2em;
+  margin-left: 10px;
+  color: #0c3c2e;
+  cursor: pointer;
+}
+
+.card-direita {
+  width: 40%;
+  background-color: #0c3c2e;
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
