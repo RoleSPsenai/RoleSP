@@ -62,6 +62,7 @@ svg {
   max-width: 100%;
   background-size: cover;
   background-position: center;
+  object-fit: contain;
 }
 
 input,
