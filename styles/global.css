@@ -2,26 +2,25 @@
 
 :root {
   /* --- Cores --- */
-  
   /* Principais */
   --verde-escuro: #085e50;
   --verde: #0da58c;
-  --verde-claro: #b9e1cd;
+  --verde-claro: rgb(185, 225, 205);
   --aqua: #00bfbf;
 
   /* Detalhes */
   --branco: #ffffff;
-  --cinza-escuro: #404040;
-  --preto: #262626;
+  --preto: hsl(0, 0%, 15%);
   --amarelo: #f7c13c;
-  --vermelho: #ff0000;
   --botao-hover: #042f28;
   --destaque: #0fffbf;
-  --filto: rgba(15, 255, 191, 0.25);
-  
+  --destaqueOpacity1: rgba(0, 128, 128, 0.9);
+  --destaqueOpacity2: rgba(0, 64, 48, 0.4);
+
   /* Outros */
   --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
   --tipografia: "Nunito", sans-serif;
+  --imagem-fundo: url("../assets/Img/backgrounds/São\ Paulo.png");
 }
 
 *,
@@ -40,15 +39,18 @@ html {
 }
 
 header {
-  color: var(--preto);
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding: 20px;
 }
 
 body {
   background-color: var(--branco);
-  color: var(--branco);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 img,
@@ -60,6 +62,7 @@ svg {
   max-width: 100%;
   background-size: cover;
   background-position: center;
+  object-fit: contain;
 }
 
 input,
@@ -70,10 +73,11 @@ select {
 }
 
 button {
-  background-color: var(--verde-escuro);
+  background-color: var(--verde);
   color: var(--branco);
   transition: background-color 0.15s;
   border: none;
+  max-width: 10em;
 }
 
 button:hover {
@@ -82,10 +86,12 @@ button:hover {
 }
 
 dialog {
+  position: fixed;
+  width: min(95%, 75em);
+  max-width: 60em;
   border: none;
   padding: 0;
-  margin: auto;
-  position: relative;
+  box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
   color: var(--branco);
   overflow: hidden;
@@ -93,11 +99,6 @@ dialog {
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-p {
-  font-size: 1rem;
-  color: var(--branco);
 }
 
 a {
@@ -110,20 +111,64 @@ a:focus {
   text-decoration: none;
 }
 
+li a {
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--branco);
+}
+
 label {
+  top: 45px;
+  left: 10px;
   font-weight: 600;
   align-self: flex-start;
-  margin-bottom: -0.75em;
+  position: relative;
+  transition: all 0.15s ease;
+  color: var(--preto);
+}
+
+label.campo.focused {
+  top: 5px;
+  font-size: 0.9rem;
+  color: var(--destaque);
 }
 
 input {
   padding: 1vh;
   border: none;
-  border-radius: 10px;
+  border-bottom: 2px solid var(--preto);
+  border-radius: 10px 10px 5px 5px;
   font-size: 1rem;
   width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
 textarea {
-    border: none;
+  padding: 1vh;
+  border: none;
+  border-bottom: 2px solid var(--preto);
+  border-radius: 10px 10px 5px 5px;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  resize: vertical;
+  min-height: 60px;
+}
+
+input:focus, textarea:focus {
+  border-width: 2px;
+  border-bottom-color: var(--destaque);
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--preto);
+  opacity: 0.6;
+  text-align: center;
+}
+
+input::selection, textarea::selection {
+  background-color: transparent;
 }
