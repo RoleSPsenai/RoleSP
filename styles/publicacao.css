@@ -33,6 +33,14 @@
   transform: scale(1.25);
 }
 
+.estrela.hover {
+  color: var(--amarelo);
+}
+
+.estrela.selected {
+  color: var(--amarelo);
+}
+
 .estrela svg {
   display: inline-block;
   height: 1em;
@@ -52,6 +60,19 @@
   width: 240px;
 }
 
+.campo {
+  color: var(--verde-escuro);
+  font-weight: bold;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.campo.focused {
+  color: var(--destaque);
+  font-size: 0.9rem;
+  top: -15px;
+}
+
 .conteudo-publicacao {
   display: flex;
   gap: 2em;
@@ -68,8 +89,8 @@
 }
 
 .favorito:hover {
-  background-color: var(--verde-claro);
-  color: var(--vermelho);
+  background-color: transparent;
+  color: var(--destaque);
 }
 
 .favorito:active {
@@ -132,11 +153,6 @@ textarea.input {
   margin-left: 0.5em;
 }
 
-.label {
-  color: var(--verde-escuro);
-  font-weight: bold;
-}
-
 .nome {
   color: var(--cinza-escuro);
   font-weight: bold;
@@ -162,11 +178,12 @@ textarea.input {
 
 .popup-content {
   background: var(--verde-claro);
+  background-image: linear-gradient(var(--verde), var(--verde-escuro));
   border-radius: 1em;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  height: 30em;
+  height: 35em;
   overflow: hidden;
   padding: 1em 2em;
   transition: all 0.3s ease;

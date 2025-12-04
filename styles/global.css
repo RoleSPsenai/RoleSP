@@ -87,8 +87,6 @@ button:hover {
 
 dialog {
   position: fixed;
-  width: min(95%, 75em);
-  max-width: 60em;
   border: none;
   padding: 0;
   box-sizing: border-box;
