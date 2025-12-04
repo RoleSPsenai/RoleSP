@@ -19,8 +19,8 @@
         <div class="perfil">
           <img src="assets/img/FotoDePerfil.jpg" alt="" class="foto-perfil" />
           <div class="info-perfil">
-            <div class="nome">Sonia Ribeiro</div>
-            <div class="usuario">Sony</div>
+            <div class="nome">Ricardo Ribeiro</div>
+            <div class="usuario">Ric</div>
           </div>
         </div>
 
@@ -29,27 +29,126 @@
           <div class="imagem-local-container">
             <img src="assets/img/Ponte.jpg" alt="" class="imagem-local" />
             <div class="avaliacao-container">
-              <div class="avaliacao">
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
-                <span>&#9733;</span>
+              <div class="avaliacaoEstrela">
+                <button class="estrela" aria-label="Avaliar 1" data-value="1">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.267L12 19.771 4.583 23.862 6 15.595 0 9.748l8.332-1.73z"
+                    />
+                  </svg>
+                </button>
+                <button class="estrela" aria-label="Avaliar 2" data-value="2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.267L12 19.771 4.583 23.862 6 15.595 0 9.748l8.332-1.73z"
+                    />
+                  </svg>
+                </button>
+                <button class="estrela" aria-label="Avaliar 3" data-value="3">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.267L12 19.771 4.583 23.862 6 15.595 0 9.748l8.332-1.73z"
+                    />
+                  </svg>
+                </button>
+                <button class="estrela" aria-label="Avaliar 4" data-value="4">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.267L12 19.771 4.583 23.862 6 15.595 0 9.748l8.332-1.73z"
+                    />
+                  </svg>
+                </button>
+                <button class="estrela" aria-label="Avaliar 5" data-value="5">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.748l-6 5.847 1.417 8.267L12 19.771 4.583 23.862 6 15.595 0 9.748l8.332-1.73z"
+                    />
+                  </svg>
+                </button>
               </div>
-              <button class="favorito">&#9825;</button>
+              <button class="favorito" aria-label="Favoritar">
+                <svg
+                  src="assets/icon/Coracao.svg"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 3.99 4 6.5 4c1.74 0 3.41.81 4.5 2.09C12.09 4.81 13.76 4 15.5 4 18.01 4 20 6 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
 
           <!-- Formulario Cadastro -->
           <form class="form-publicacao">
             <label class="label">Estabelecimento:</label>
-            <input type="text" placeholder="Digite o nome" required class="input" />
+            <input
+              type="text"
+              placeholder="Digite o nome"
+              required
+              class="input"
+            />
 
             <label class="label">Endereço:</label>
-            <input type="text" placeholder="Digite o Endereco" required class="input" />
+            <input
+              type="text"
+              placeholder="Digite o Endereco"
+              required
+              class="input"
+            />
 
             <label class="label">Comentario:</label>
-            <textarea placeholder="Digite seu Comentario" required class="input"></textarea>
+            <textarea
+              placeholder="Digite seu Comentario"
+              required
+              class="input"
+            ></textarea>
           </form>
         </div>
         <button class="botao-publicar">Publicar</button>
