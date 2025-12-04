@@ -83,9 +83,7 @@ button:hover {
 
 dialog {
   border: none;
-  border-radius: 1em;
   padding: 0;
-  max-width: 100em;
   margin: auto;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
