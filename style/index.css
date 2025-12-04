@@ -237,8 +237,9 @@ header {
   background-image: url(../assets/Img/backgrounds/bgc-section3.png);
   background-repeat: no-repeat;
   flex-direction: column;
-  height: 115vh;
+  height: 100vh;
   position: relative;
+  margin-bottom: 3%;
 }
 
 .titulo-section3 {
@@ -252,7 +253,7 @@ header {
 /* Avaliação */
 .avaliacao-section3 {
   align-items: center;
-  height: 60vh;
+  height: 40vh;
   justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
@@ -272,7 +273,9 @@ header {
   color: var(--branco);
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 10%;
+  width: 85%;
+  width: 75%;
+  margin-bottom: 15px;
   margin-right: 10%;
   margin-top: 8%;
   padding: 3%;
@@ -314,8 +317,6 @@ header {
 }
 
 .personagem {
-  margin: 5%;
-  margin-right: 3%;
   object-fit: contain;
   width: 40%;
 }
@@ -327,7 +328,7 @@ header {
 }
 
 .texto-dialogo-section3 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
@@ -455,36 +456,36 @@ header {
 .conteudo-footer {
   background-color: var(--verde-escuro);
   justify-content: space-around;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
+  /* padding-bottom: 5rem;
+  padding-top: 5rem; */
 }
 
 footer {
   flex-direction: column;
-  margin-top: 5%;
+  height: 3vh;
 }
 
 .fundo-icone {
+  display: flex;
   align-items: center;
   background-color: var(--branco);
   border-radius: 10rem;
-  height: 3.5rem;
+  height: 2.5rem;
   justify-content: center;
   margin: 0.2rem;
-  width: 3.5rem;
+  width: 2.5rem;
 }
 
-.linha-decorativa {
-  background: var(--branco);
-  height: 5px;
-  margin-top: -3rem;
-  width: 100%;
+.icone {
+  height: 50%;
+  width: auto;
 }
+
 
 .lista-saiba-mais {
   color: var(--branco);
   flex-direction: column;
-  font-size: 1.3rem;
+  font-size: .9rem;
   font-weight: 600;
   gap: 0.5rem;
   text-decoration: none;
@@ -492,7 +493,7 @@ footer {
 
 .logo-footer {
   height: auto;
-  width: 25%;
+  width: 10%;
 }
 
 .redes-sociais {
@@ -500,12 +501,12 @@ footer {
   gap: 0.1rem;
   height: 100%;
   list-style: none;
-  width: 20%;
+  width: 10%;
 }
 
 .titulo-footer {
   color: var(--branco);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -517,16 +518,20 @@ footer {
   }
 
   .fundo-mascote {
+    height: 30vh;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mascote {
     margin: 0;
-    height: 20vh;
-    width: 80%;
+    height: 100%;
+    width: auto;
   }
 
   .esquerda-section1 {
@@ -534,8 +539,14 @@ footer {
     text-align: center;
   }
 
+  .caixa-dialogo{
+  margin-right: 5%;
+  margin-top: 5%;
+
+  }
+
   .section3 {
-    height: 140vh;
+    height: 100vh;
   }
 
 }
