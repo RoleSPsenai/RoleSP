@@ -71,7 +71,7 @@ header {
   white-space: nowrap;
 }
 
-.carro {
+.mascote {
   background-color: var(--verde-escuro);
   border-radius: 5%;
   height: auto;
@@ -86,7 +86,7 @@ header {
   justify-content: center;
 }
 
-.fundo-carro {
+.fundo-mascote {
   background-color: var(--verde-escuro);
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
@@ -516,16 +516,17 @@ footer {
     margin-bottom: 5%;
   }
 
-  .fundo-carro {
+  .fundo-mascote {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     margin: 0;
     padding: 0;
   }
 
-  .carro {
+  .mascote {
     margin: 0;
     height: 20vh;
+    width: 80%;
   }
 
   .esquerda-section1 {
@@ -537,8 +538,4 @@ footer {
     height: 140vh;
   }
 
-  .carro {
-    margin: 0;
-    width: 80%;
-  }
 }
