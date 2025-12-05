@@ -24,6 +24,8 @@
     </header>
     <main>
 
+        <div id="barraDecorativa"></div>
+
         <!--? Section1 -->
 
         <section class="section1 displayFlex">
@@ -349,7 +351,7 @@
                     </p>
                 </div>
 
-                <form class="form-modal">
+                <form class="form-modal" asp-action="Criar" asp-controller="Cadastro" method="post">
                     <label class="campo" for="email">E-mail:</label>
                     <input type="email" id="email" placeholder="email@email.com" required />
 
