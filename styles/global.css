@@ -2,27 +2,27 @@
 
 :root {
   /* --- Cores --- */
-  
   /* Principais */
   --verde-escuro: #085e50;
   --verde: #0da58c;
-  --verde-claro: #b9e1cd;
+  --verde-claro: rgb(185, 225, 205);
   --aqua: #00bfbf;
 
   /* Detalhes */
   --branco: #ffffff;
-  --cinza-escuro: #404040;
-  --cinza-claro: #A8A8A8;
-  --preto: #262626;
+  --cinza-claro: hsl(0, 0%, 40%);
+  --cinza-escuro: hsl(0, 0%, 25%);
+  --preto: hsl(0, 0%, 15%);
   --amarelo: #f7c13c;
-  --vermelho: #ff0000;
   --botao-hover: #042f28;
   --destaque: #0fffbf;
-  --filto: rgba(15, 255, 191, 0.25);
-  
+  --destaqueOpacity1: rgba(0, 128, 128, 0.9);
+  --destaqueOpacity2: rgba(0, 64, 48, 0.4);
+
   /* Outros */
   --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
   --tipografia: "Nunito", sans-serif;
+  --imagem-fundo: url("../assets/Img/backgrounds/São\ Paulo.png");
 }
 
 *,
@@ -41,15 +41,18 @@ html {
 }
 
 header {
-  color: var(--preto);
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  padding: 20px;
 }
 
 body {
   background-color: var(--branco);
-  color: var(--branco);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 img,
@@ -61,6 +64,7 @@ svg {
   max-width: 100%;
   background-size: cover;
   background-position: center;
+  object-fit: contain;
 }
 
 input,
@@ -71,10 +75,11 @@ select {
 }
 
 button {
-  background-color: var(--verde-escuro);
+  background-color: var(--verde);
   color: var(--branco);
   transition: background-color 0.15s;
   border: none;
+  max-width: 10em;
 }
 
 button:hover {
@@ -83,11 +88,10 @@ button:hover {
 }
 
 dialog {
+  position: fixed;
   border: none;
   padding: 0;
-  max-width: 100em;
-  margin: auto;
-  position: relative;
+  box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
   color: var(--branco);
   overflow: hidden;
@@ -95,11 +99,6 @@ dialog {
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-p {
-  font-size: 1rem;
-  color: var(--branco);
 }
 
 a {
@@ -127,5 +126,5 @@ input {
 }
 
 textarea {
-    border: none;
+  border: none;
 }
