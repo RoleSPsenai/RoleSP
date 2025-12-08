@@ -1,5 +1,8 @@
+using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
 using RoleSP.Data;
+using RoleSP.Models;
+using Sistema_Login.Service;
 
 namespace RoleSP.Controllers
 {
@@ -31,8 +34,26 @@ namespace RoleSP.Controllers
             }
             if(_context.Usuarios.Any(u => u.Email == email))
             {
-            
+                return Json(new {sucesso = false, mensagem = "E-mail já cadastrado"});
             }
+
+            byte[] hash = HashService.GerarHashBytes(senha);
+
+            //TODO: Implementar lógica para salvar a imagem de perfil e tirar duvida com a professora
+            
+            Usuario usuario = new Usuario
+            {
+                Nome = nome,
+                Apelido = nome,
+                Email = email,
+                SenhaHash = hash,
+                // ImagemPerfil = , 
+            };
+
+            _context.Usuarios.Add(usuario);
+            _context.SaveChanges();
+
+            return Json(new { sucesso = true});
         }
     }
 }
