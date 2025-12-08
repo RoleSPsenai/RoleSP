@@ -52,11 +52,12 @@ h2{
     width: 130px;
     background-color: #000;
     border-radius: 100%;
-    background-image: url('images.jpg');
     background-size: cover;
     background-position: center;
-   
-   
+}
+
+.userImg{
+    height: auto;
 }
 
 .ParteInicial{

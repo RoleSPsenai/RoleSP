@@ -33,3 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Você selecionou o arquivo: ' + this.files[0].name);
             }
         });
+
