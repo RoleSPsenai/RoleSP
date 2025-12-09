@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/galeria.css">
+    <link rel="stylesheet" href="Style/publicação.css">
+    <link rel="stylesheet" href="Style/global.css">
+    <link rel="stylesheet" href="Style/editar.css">
+    <link rel="stylesheet" href="Style/excluir.css">
+    <title>Galeria</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <img class="logo-colorido" src="Assets/Ícones/Logo/Logo Colorido.svg" alt="Logo">
+        </div>
+        <button id="BotaoPublicar" class="novo-post">+ Novo Post</button>
+    </header>
+
+    <div class="conteudo">
+
+        <aside class="parte_lateral">
+            <section class="perfil">
+                <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario">
+                <h2 class="nome-usuario">Carlos Eduardo</h2>
+                <h3 class="usuario">Carlinhos</h3>
+                <nav class="nav-info-perfil">
+                    <ul class="perfil-info">
+                        <li>
+                            <a class="lista-perfil" href="">
+                                <span class="numero">36</span>
+                                <span class="legenda">Visitados</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="lista-perfil" href="">
+                                <span class="numero">10</span>
+                                <span class="legenda">Favoritos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="lista-perfil" href="">
+                                <span class="numero">5</span>
+                                <span class="legenda">Destinos</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="menu-navegação">
+                <nav class="menu">
+                    <ul class="navegação">
+                        <li><a class="lista-navegacao" href=""><img class="icone-menu"
+                                    src="Assets/Ícones/Ações/Home.svg" alt="Ícone Home">Home</a></li>
+                        <li><a class="lista-navegacao" href=""><img class="icone-menu"
+                                    src="Assets/Ícones/Ações/Configurações.svg" alt="Ícone Configurações">Configurações</a></li>
+                        <li><a class="lista-navegacao" href=""><img class="icone-menu"
+                                    src="Assets/Ícones/Ações/Voltar.svg" alt="Ícone Sair">Sair</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+
+        <main>
+            <h4 class="titulo-postagens">Minhas Postagens</h4>
+            <section id="postagens" class="postagens">
+                <article class="post">
+                    <figure class="foto-postagens">
+                        <img class="foto-post" src="Assets/Img/Kiki Café.svg" alt="">
+                        <figcaption class="legenda-foto">Kiki Café</figcaption>
+                    </figure>
+                    <div class="acoes">
+                        <div class="icone-de-estado">
+                            <img class="icone-post icone-favorito" src="Assets/Ícones/Ações/Coração.svg" alt="Ícone Coração">
+                            <img class="icone-post icone-destino" src="Assets/Ícones/Ações/Localização.svg" alt="Ícone Localização">
+                        </div>
+                        <div class="configuracoes-post">
+                            <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções">
+                            <ul class="menu-post">
+                                <li class="editar-post">Editar</li>
+                                <li class="excluir-post">Excluir</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </article>
+
+
+            </section>
+        </main>
+    </div>
+
+    <!-- PUBLICAÇÃO DO POST -->
+    <dialog id="TelaPublicacao" class="popup">
+        <div class="popup-content">
+            <div class="mainPopup">
+                <label class="imgLabel" for="imgInput">
+                    <input type="file" accept="image/*" id="imgInput">
+                    <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen"
+                        class="iconUpload">
+                    <span>Upload do local</span>
+                </label>
+                <div class="sectioInputs">
+                    <button id="btn-fechar" class="fechar-modal">
+                        <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                    </button>
+                    <div class="select">
+                        <label for="local" class="title">Filtros</label>
+                        <select class="inputs">
+                            <option value="cafeteria">Cafeteria</option>
+                            <option value="museu">Museu</option>
+                            <option value="restaurantes">Restaurantes</option>
+                            <option value="natureza">Natureza</option>
+                            <option value="livraria">Livraria</option>
+                            <option value="cultura">Cultura</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="local" class="title">Local</label>
+                        <input type="text" placeholder="Nome do local..." class="inputs" id="local">
+                        <div id="groupInput">
+                            <div id="groupCep">
+                                <label for="inputCep" class="title">CEP</label>
+                                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCep">
+                            </div>
+                            <div id="groupBairro">
+                                <label for="bairro" class="title">Bairro</label>
+                                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
+                            </div>
+                        </div>
+                        <label for="rua" class="title">Rua:</label>
+                        <input type="text" placeholder="Rua do local..." class="inputs" id="rua">
+                        <label for="cidade" class="title">Cidade:</label>
+                        <input type="text" placeholder="Cidade do local..." class="inputs" id="cidade">
+                        <label for="comentario" class="title">Comentário:</label>
+                        <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentario">
+                    </div>
+                    <button class="botao-publicar" id="BotaoPost">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- EDIÇÃO DO POST -->
+     <dialog id="TelaEditar" class="popup">
+        <div class="popup-content">
+            <div class="mainPopup">
+                <label class="imgLabel" for="imgInputEditar">
+                    <input type="file" accept="image/*" id="imgInputEditar">
+                    <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagem"
+                        class="iconUpload">
+                    <span>Alterar imagem</span>
+                </label>
+                <div class="sectioInputs">
+                    <button id="btn-fechar-editar" class="fechar-modal">
+                        <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                    </button>
+                    <div class="select">
+                        <label for="local" class="title">Filtros</label>
+                        <select class="inputs">
+                            <option value="cafeteria">Cafeteria</option>
+                            <option value="museu">Museu</option>
+                            <option value="restaurantes">Restaurantes</option>
+                            <option value="natureza">Natureza</option>
+                            <option value="livraria">Livraria</option>
+                            <option value="cultura">Cultura</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="local" class="title">Local</label>
+                        <input type="text" placeholder="Nome do local..." class="inputs" id="localEditar">
+                        <div id="groupInput">
+                            <div id="groupCep">
+                                <label for="inputCep" class="title">CEP</label>
+                                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar">
+                            </div>
+                            <div id="groupBairro">
+                                <label for="bairro" class="title">Bairro</label>
+                                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar">
+                            </div>
+                        </div>
+                        <label for="rua" class="title">Rua:</label>
+                        <input type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar">
+                        <label for="cidade" class="title">Cidade:</label>
+                        <input type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar">
+                        <label for="comentario" class="title">Comentário:</label>
+                        <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar">
+                    </div>
+                    <button class="botao-publicar" id="BotaoSalvarEdicao">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+     
+    <!-- EXCLUSÃO DO POST -->
+    <dialog id="popupExcluir" class="popup-excluir">
+        <div class="popup-excluir-content">
+            <div class="exclusao" >
+                <img class="icone-excluir" src="Assets/Ícones/Ações/Lixeira.svg" alt="#">
+                <h1>Excluir Item</h1>
+            </div>
+            <h2 class="exclusao">Tem certeza de que deseja excluir este post?</h2>
+
+            <div class="acoes-excluir">
+                <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
+                <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
+            </div>
+
+        </div>
+    </dialog>
+    <!-- <dialog id="popupSair" class="popup-Sair">
+        <div class="popup-sair-da-conta">
+            <div class="Sair" >
+                <img class="icone-sair" src="Assets/Ícones/Ações/Lixeira.svg" alt="#">
+                <h1>Sair da Conta</h1>
+            </div>
+            <h2 class="sair-Conta">Tem certeza de que deseja sair da sua conta?</h2>
+
+            <div class="acoes-sair">
+                <button id="btnCancelarSair" class="btn-cancelar">Não</button>
+                <button id="btnConfirmarSair" class="btn-confirmar">Sim</button>
+            </div>
+
+        </div>
+    </dialog> -->
+    
+    <script src="Script/galeria.js"></script>
+    <script src="Script/publicação.js"></script>
+    <script src="Script/editar.js"></script>
+    <script src="Script/excluir.js"></script>
+</body>
+
+</html>

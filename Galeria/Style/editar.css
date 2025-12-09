@@ -1,0 +1,122 @@
+/* ===============================
+   POPUP DE EDIÇÃO DO POST
+   =============================== */
+
+/* Garante que segue o fundo e estilo global */
+#TelaEditar .popup-content {
+  background: var(--verde-claro);
+  z-index: 9999;
+}
+
+/* Mantém o layout igual ao popup de publicação */
+#TelaEditar .mainPopup {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 100%;
+  gap: 5%;
+}
+
+/* Área da imagem */
+#TelaEditar .imgLabel {
+  width: 50%;
+  height: 100%;
+  aspect-ratio: 4/5;
+  background-color: var(--branco);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed var(--verde-escuro);
+  cursor: pointer;
+  color: gray;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+#TelaEditar .imgLabel:hover {
+  background-color: #bbb;
+  color: #777;
+}
+
+/* Ícone */
+#TelaEditar .iconUpload {
+  width: 50%;
+  height: auto;
+}
+
+#imgInputEditar {
+    display: none;
+}
+
+
+#TelaEditar .inputs {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 5px;
+  background-color: var(--branco);
+  color: var(--cinza-claro);
+}
+
+/* Botão FECHAR */
+#TelaEditar .fechar-modal {
+  align-items: center;
+  background: transparent;
+  border-radius: 1em;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+#TelaEditar .fechar-modal:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+#BotaoSalvarEdicao {
+  background-color: var(--verde);
+  color: var(--branco);
+  font-size: 1.2rem;
+  border: none;
+  padding: 1% 8%;
+  border-radius: 30px;
+  margin-top: 1em;
+  transition: background-color 0.2s ease;
+}
+
+#BotaoSalvarEdicao:hover {
+  background-color: var(--botao-hover);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #TelaEditar .mainPopup {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  #TelaEditar .imgLabel {
+    max-width: 60%;
+    height: 40%;
+    aspect-ratio: unset;
+  }
+
+  #TelaEditar .inputs {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  #BotaoSalvarEdicao {
+    width: 100%;
+    font-size: 1rem;
+    padding: 3%;
+  }
+}
