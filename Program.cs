@@ -4,10 +4,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+
+// registra o DbContext (o namespace/classe virão do scaffold)
 builder.Services.AddDbContext<RoleSP.Data.AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
 builder.Services.AddSession();
+
 
 var app = builder.Build();
 
@@ -19,9 +24,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseRouting();
 app.UseSession();
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthorization();
 

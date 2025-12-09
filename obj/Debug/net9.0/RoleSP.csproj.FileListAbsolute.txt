@@ -557,8 +557,6 @@ C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\rjimswa.dswa.c
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\scopedcss\bundle\RoleSP.styles.css
-C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\3gbb6v517s-0dpxs4nlrx.gz
-C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\t6nzg0iy0e-kkk59sptw1.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\tz7di0k4fu-61n19gt1b8.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\1tjay0e2e7-n7vw89ghi3.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\mn3qfcqaot-t1cqhe9u97.gz
@@ -630,3 +628,9 @@ C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\refint\RoleSP.
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\RoleSP.pdb
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\RoleSP.genruntimeconfig.cache
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\ref\RoleSP.dll
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\meyjxxbcu8-qn46ihal6s.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\x56x9fuoto-05uauhvsfa.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\dbyf4hdwo3-ptnv932vbw.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\8qa4dd5lei-65p0xr4c9h.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\93smnk0osw-0dpxs4nlrx.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\ocv6kcaq9n-kkk59sptw1.gz
