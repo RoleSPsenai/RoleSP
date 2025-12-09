@@ -20,7 +20,7 @@
   /* Outros */
   --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
   --tipografia: "Nunito", sans-serif;
-  --imagem-fundo: url("../assets/Img/backgrounds/São\ Paulo.png");
+  --imagem-fundo: url("~/assets/Img/backgrounds/saoPaulo.png");
 }
 
 *,
