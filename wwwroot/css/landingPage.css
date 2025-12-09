@@ -1,0 +1,786 @@
+/*? ===== UTILITÁRIOS ===== */
+.displayFlex {
+  display: flex;
+}
+
+/*? ===== HEADER ===== */
+header {
+  justify-content: space-between;
+}
+
+.Button-Login {
+  background-color: var(--verde-escuro);
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.2rem;
+  padding: 0.5% 4%;
+  text-decoration: none;
+}
+
+.logo-header {
+  height: 100%;
+  width: auto;
+}
+
+/*? ===== NAV ===== */
+.nav {
+  align-items: center;
+  background-color: transparent;
+  font-size: 1.8rem;
+  font-weight: 1rem;
+  height: 5vh;
+  width: 40%;
+  justify-content: space-between;
+  list-style: none;
+  gap: 30%;
+}
+
+.texto-nav {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#barraDecorativa{
+  width: 100%;
+  height: 5vh;
+  background-color: var(--verde-escuro);
+}
+
+/*? ===== SECTION1 ===== */
+/* Estrutura Principal */
+.section1 {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  margin-top: 3%;
+}
+
+/* Lado Direito */
+.Button-cadastre-se {
+  background-color: var(--verde-escuro);
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.2rem;
+  font-weight: 1rem;
+  margin-left: 10%;
+  margin-top: 1rem;
+  padding: 4% 15%;
+}
+
+.cadastre-se {
+  align-items: center;
+  justify-content: center;
+  margin-left: 6%;
+  margin-right: 10%;
+  margin-top: 3%;
+  white-space: nowrap;
+}
+
+.mascote {
+  background-color: var(--verde-escuro);
+  border-radius: 5%;
+  height: auto;
+  margin-right: 50%;
+  margin-top: 3%;
+  object-fit: contain;
+  width: 50%;
+}
+
+.container-cadastre-se {
+  align-items: center;
+  justify-content: center;
+}
+
+.fundo-mascote {
+  background-color: var(--verde-escuro);
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-left: 3%;
+  padding: 0 5%;
+}
+
+.texto-cadastro {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* Lado Esquerdo */
+.esquerda-section1 {
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.subTitulo-slogan {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.texto-slogan {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 5%;
+}
+
+.titulo-section1 {
+  font-size: 5em;
+  font-weight: 800;
+}
+
+/*? ===== SECTION2 ===== */
+/* Estrutura Principal */
+.section2 {
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.titulo-section2 {
+  color: var(--verde-escuro);
+  font-size: 4em;
+  font-weight: 800;
+}
+
+/* Carrossel */
+.container {
+  box-sizing: border-box;
+  height: 17rem;
+  margin-top: 3rem;
+  mask-image: linear-gradient(to right, transparent, #fff 10% 90%, transparent);
+  padding: 10px;
+  width: 100%;
+}
+
+.carrossel {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.item {
+  align-items: end;
+  animation: animacao 20s linear infinite;
+  animation-delay: var(--delay);
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
+  cursor: pointer;
+  height: 100%;
+  left: 100%;
+  max-width: 340px;
+  position: absolute;
+  width: 20%;
+}
+
+/* Backgrounds do Carrossel */
+.bgc1-carrossel-section1 {
+  --delay: 0s;
+  background-image: url(../assets/Img/CarroselPrincipal/Cafeterias.png);
+}
+
+.bgc2-carrossel-section1 {
+  --delay: 4s;
+  background-image: url(../assets/Img/CarroselPrincipal/Museu.png);
+}
+
+.bgc3-carrossel-section1 {
+  --delay: 8s;
+  background-image: url(../assets/Img/CarroselPrincipal/Restaurantes.png);
+}
+
+.bgc4-carrossel-section1 {
+  --delay: 12s;
+  background-image: url(../assets/Img/CarroselPrincipal/Natureza.png);
+}
+
+.bgc5-carrossel-section1 {
+  --delay: 16s;
+  background-image: url(../assets/Img/CarroselPrincipal/Livrarias.png);
+}
+
+.bgc6-carrossel-section1 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarroselPrincipal/Cultura.png);
+}
+
+/* Cards do Carrossel */
+.fundo-titulo-card {
+  background: linear-gradient(to top, #000000 0%, transparent);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 20%;
+  width: 100%;
+}
+
+.titulo-card {
+  background-color: transparent;
+  color: var(--branco);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+/*? ===== ANIMACAO ===== */
+
+/** Essa é a função que faz o carrossel basicamente ela joga todos os itens para a direita fora da tela
+/** e "arrasta" para esquerda até sair da tela */
+
+@keyframes animacao {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -300px;
+  }
+}
+
+/*? ===== SECTION3 ===== */
+/* Estrutura Principal */
+.section3 {
+  background-image: url(../assets/Img/backgrounds/bgc-section3.png);
+  background-repeat: no-repeat;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 3%;
+}
+
+.titulo-section3 {
+  background-color: transparent;
+  color: var(--branco);
+  font-size: 5em;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* Avaliação */
+.avaliacao-section3 {
+  align-items: center;
+  height: 40vh;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  opacity: 0;
+  padding-bottom: 2%;
+  position: absolute;
+}
+
+.avaliacao-section3.ativo {
+  opacity: 100%;
+}
+
+.caixa-dialogo {
+  background-color: var(--verde-escuro);
+  border-radius: 2em;
+  border-top-left-radius: 0em;
+  color: var(--branco);
+  font-size: 1rem;
+  font-weight: 600;
+  width: 85%;
+  width: 75%;
+  margin-bottom: 15px;
+  margin-right: 10%;
+  margin-top: 8%;
+  padding: 3%;
+  padding-bottom: 4%;
+}
+
+.esquerda-section3 {
+  background-color: var(--verde-claro);
+  border-radius: 2em;
+  box-shadow: 3px 3px 10px black;
+  height: 100%;
+  margin-right: 3%;
+  position: relative;
+  width: 60%;
+}
+
+.fundo-img-local {
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
+  height: 100%;
+  opacity: 0;
+  position: relative;
+  width: auto;
+}
+
+.fundo-img-local.ativo {
+  opacity: 100%;
+}
+
+.img-local {
+  border-radius: 2rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.img-local.ativo {
+  opacity: 100%;
+}
+
+.personagem {
+  object-fit: contain;
+  width: 40%;
+}
+
+.titulo-caixa-dialogo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.texto-dialogo-section3 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Carrossel */
+.container-section3 {
+  bottom: 1%;
+  box-sizing: border-box;
+  height: 30vh;
+  mask-image: linear-gradient(to right, transparent, #fff 10% 90%, transparent);
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.carrossel-section3 {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.item-section3 {
+  align-items: end;
+  animation: animacao 20s linear infinite;
+  animation-delay: var(--delay);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  box-shadow: 3px 3px 10px black;
+  cursor: pointer;
+  filter: grayscale(100%);
+  height: 100%;
+  left: 100%;
+  max-width: 340px;
+  position: absolute;
+  transition: filter 0.2s;
+  width: 20%;
+}
+
+.container-section3:hover .item-section3 {
+  animation-play-state: paused;
+}
+
+.item-section3:hover {
+  filter: grayscale(0%);
+}
+
+/* Backgrounds do Carrossel */
+.bgc1-carrossel-section3 {
+  --delay: 0s;
+  background-image: url(../assets/Img/CarrosselSecundario/a\ casa\ de\ antonia.png);
+}
+
+.bgc2-carrossel-section3 {
+  --delay: 4s;
+  background-image: url(../assets/Img/CarrosselSecundario/cafezal.png);
+}
+
+.bgc3-carrossel-section3 {
+  --delay: 8s;
+  background-image: url(../assets/Img/CarrosselSecundario/cinemateca.png);
+}
+
+.bgc4-carrossel-section3 {
+  --delay: 12s;
+  background-image: url(../assets/Img/CarrosselSecundario/HiTea.png);
+}
+
+.bgc5-carrossel-section3 {
+  --delay: 16s;
+  background-image: url(../assets/Img/CarrosselSecundario/Jazz\ retro.png);
+}
+
+.bgc6-carrossel-section3 {
+  --delay: 20s;
+  background-image: url(../assets/Img/CarrosselSecundario/La\ Tertine.png);
+}
+
+.bgc7-carrossel-section3 {
+  --delay: 24s;
+  background-image: url(../assets/Img/CarrosselSecundario/London\ coffee.png);
+}
+
+.bgc8-carrossel-section3 {
+  --delay: 28s;
+  background-image: url(../assets/Img/CarrosselSecundario/vila.png);
+}
+
+.bgc9-carrossel-section3 {
+  --delay: 32s;
+  background-image: url(../assets/Img/CarrosselSecundario/Kiki\ Café.png);
+}
+
+/* Cards do Carrossel */
+.fundo-titulo-card-section3 {
+  background: linear-gradient(to top, #000000 0%, transparent);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 20%;
+  width: 100%;
+}
+
+.titulo-card-section3 {
+  background-color: transparent;
+  color: var(--branco);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+/* Animação */
+@keyframes animacao {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -300px;
+  }
+}
+
+/*? ===== FOOTER ===== */
+.conteudo-footer {
+  background-color: var(--verde-escuro);
+  justify-content: space-around;
+  /* padding-bottom: 5rem;
+  padding-top: 5rem; */
+}
+
+footer {
+  flex-direction: column;
+  height: 3vh;
+}
+
+.fundo-icone {
+  display: flex;
+  align-items: center;
+  background-color: var(--branco);
+  border-radius: 10rem;
+  height: 2.5rem;
+  justify-content: center;
+  margin: 0.2rem;
+  width: 2.5rem;
+}
+
+.icone {
+  height: 50%;
+  width: auto;
+}
+
+
+.lista-saiba-mais {
+  color: var(--branco);
+  flex-direction: column;
+  font-size: .9rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-footer {
+  height: auto;
+  width: 10%;
+}
+
+.redes-sociais {
+  flex-direction: column;
+  gap: 0.1rem;
+  height: 100%;
+  list-style: none;
+  width: 10%;
+}
+
+.titulo-footer {
+  color: var(--branco);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 960px) {
+  .section1 {
+    grid-template-columns: 1fr;
+    margin-bottom: 5%;
+  }
+
+  .fundo-mascote {
+    height: 30vh;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mascote {
+    margin: 0;
+    height: 100%;
+    width: auto;
+  }
+
+  .esquerda-section1 {
+    margin: 0 5%;
+    text-align: center;
+  }
+
+  .caixa-dialogo{
+  margin-right: 5%;
+  margin-top: 5%;
+
+  }
+
+  .section3 {
+    height: 100vh;
+  }
+
+}
+
+
+/** MODAIS */
+
+/* ======== COMPONENTES ======== */
+
+.botao-modal {
+    border: none;
+    border-radius: 2em;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0.5em;
+    padding: 1vh;
+    transition: background-color 0.1s, color 0.1s;
+    width: 50%;
+}
+
+.campo-senha {
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.container-login {
+    border-radius: 1em;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1.25fr;
+    max-width: 75em;
+    overflow: hidden;
+}
+
+.descricao {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 0 0 40vh;
+}
+
+.erro-login {
+    color: var(--erro);
+    display: none;
+    font-weight: 600;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+.fechar-modal {
+    align-items: center;
+    background: transparent;
+    border-radius: 1em;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75em;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.fechar-modal:hover {
+    background-color: var(--verde-escuro);
+}
+
+.form-modal {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+}
+
+.header-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5em;
+}
+
+.header-2 {
+    background-color: var(--verde-claro);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+.link-cadastro {
+    color: var(--amarelo);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.link-esqueci {
+    font-weight: 600;
+    margin-top: 1vh;
+    text-decoration: none;
+}
+
+.link-esqueci:hover {
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+.login {
+    background-color: var(--verde);
+    border: none;
+    border-radius: 1em;
+    color: var(--branco);
+    font-weight: 600;
+    height: 2em;
+    padding: 0.25em 1em;
+}
+
+.login-titulo {
+    align-self: center;
+}
+
+.logo-modal {
+    max-width: 12.5vw;
+    min-width: 5vw;
+}
+
+.menu {
+    font-weight: 600;
+}
+
+.p2 {
+    margin-top: -0.5em;
+}
+
+.painel-direito {
+    align-items: center;
+    background-color: var(--verde);
+    background-image: linear-gradient(to bottom, var(--verde), var(--verde-escuro));
+    background-position: center;
+    background-size: cover;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 75vh;
+    justify-content: center;
+    padding: 3em;
+}
+
+.painel-esquerdo {
+    align-items: center;
+    background-image: var(--imagem-fundo);
+    background-position: center;
+    background-size: cover;
+    border-radius: 1em;
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: center;
+}
+
+.subtitulo-modal {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.texto-modal {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.titulo-modal {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.trocar-modal {
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 800px) {
+    .container-login {
+        box-sizing: border-box;
+        grid-template-columns: 1fr;
+        height: auto;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    dialog {
+        max-width: 35em;
+    }
+
+    .fechar-modal {
+        right: 2em;
+        top: 2em;
+    }
+
+    .logo-cadastro {
+        max-width: 20vw;
+    }
+
+    .logo-modal {
+        max-width: 30vw;
+    }
+
+    .painel-direito {
+        background-image: linear-gradient(to bottom, var(--destaqueOpacity1), var(--destaqueOpacity2)),
+                          var(--imagem-fundo);
+    }
+
+    .painel-esquerdo {
+        display: none;
+    }
+
+    .subtitulo-modal {
+        font-size: 1.1em;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+    }
+    
+    .texto-modal {
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+    }
+
+    .titulo-modal {
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+    }
+}

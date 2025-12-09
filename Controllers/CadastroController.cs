@@ -39,7 +39,9 @@ namespace RoleSP.Controllers
 
             byte[] hash = HashService.GerarHashBytes(senha);
 
-            //TODO: Implementar lógica para salvar a imagem de perfil e tirar duvida com a professora
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/icon/UserDefault.png");
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            string base64 = Convert.ToBase64String(bytes);
 
             Usuario usuario = new Usuario
             {
@@ -47,7 +49,7 @@ namespace RoleSP.Controllers
                 Apelido = nome,
                 Email = email,
                 SenhaHash = hash,
-                // ImagemPerfil = , 
+                ImagemPerfil =  base64
             };
 
             _context.Usuarios.Add(usuario);
