@@ -26,21 +26,21 @@ namespace RoleSP.Controllers
             if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) ||
             string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmar))
             {
-                return Json(new { sucesso = false, mensagem = "Preencha todos os compos" });
+                return Json(new { sucesso = false, mensagem = "Preencha todos os campos" });
             }
-            if (senha !=  confirmar)
+            if (senha != confirmar)
             {
-                return Json(new{ sucesso = false, mensagem = "As senhas não conferem"});
+                return Json(new { sucesso = false, mensagem = "As senhas não conferem" });
             }
-            if(_context.Usuarios.Any(u => u.Email == email))
+            if (_context.Usuarios.Any(u => u.Email == email))
             {
-                return Json(new {sucesso = false, mensagem = "E-mail já cadastrado"});
+                return Json(new { sucesso = false, mensagem = "E-mail já cadastrado" });
             }
 
             byte[] hash = HashService.GerarHashBytes(senha);
 
             //TODO: Implementar lógica para salvar a imagem de perfil e tirar duvida com a professora
-            
+
             Usuario usuario = new Usuario
             {
                 Nome = nome,
@@ -53,7 +53,7 @@ namespace RoleSP.Controllers
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            return Json(new { sucesso = true});
+            return Json(new { sucesso = true });
         }
     }
 }

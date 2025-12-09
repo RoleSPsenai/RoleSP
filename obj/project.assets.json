@@ -7851,24 +7851,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\allan\\.nuget\\packages\\": {}
+    "C:\\Users\\46581849820\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
+      "projectUniqueName": "C:\\Users\\46581849820\\Desktop\\RoleSP\\RoleSP.csproj",
       "projectName": "RoleSP",
-      "projectPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
-      "packagesPath": "C:\\Users\\allan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\obj\\",
+      "projectPath": "C:\\Users\\46581849820\\Desktop\\RoleSP\\RoleSP.csproj",
+      "packagesPath": "C:\\Users\\46581849820\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46581849820\\Desktop\\RoleSP\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\allan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\46581849820\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
