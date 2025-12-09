@@ -6,11 +6,11 @@ using Sistema_Login.Service;
 
 namespace RoleSP.Controllers
 {
-    public class CadastroController : Controller
+    public class CadastradoController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CadastroController(AppDbContext context)
+        public CadastradoController(AppDbContext context)
         {
             _context = context;
         }
