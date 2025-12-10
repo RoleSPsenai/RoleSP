@@ -1,0 +1,64 @@
+#popupSair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+
+.icone-Sair {
+    width: 70px; 
+    height: 70px;
+}
+
+
+.confirmacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  
+}
+
+
+.popup-sair-da-conta-content {
+  background: var(--verde-claro);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: var(--sombra);
+  text-align: center;
+  justify-content: center;
+  color: var(--preto);
+  width: 50%;
+  height: 50%;
+}
+
+.popup-sair-da-conta-content h2 {
+  font-weight: 700;
+padding: 15px;
+}
+
+.acoes-sair {
+ display: flex;
+    justify-content: center;    /* botões mais próximos */
+    gap: 50px;       
+}
+
+.btn-cancelar,
+.btn-confirmar {
+  background-color: var(--verde);
+  color: var(--branco);
+  padding: 15px 35px;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover,
+.btn-confirmar:hover {
+  background-color: var(--botao-hover);
+}

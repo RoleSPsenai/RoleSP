@@ -24,12 +24,23 @@
 }
 
 body {
-    background-color: var(--fundo)!important;
+    background-color: var(--fundo) !important;
 }
 
 html {
-  scrollbar-color: var(--branco) var(--verde-escuro)!important;
+    scrollbar-color: var(--branco) var(--fundo);
 }
+
+button {
+    background: none;
+    transition:none;
+    padding: 0;
+}
+
+button:hover{
+    background-color: transparent;
+}
+
 
 
 .cabecalho {
@@ -61,7 +72,7 @@ html {
 }
 
 .novo-post {
-    background-color: var(--verde-escuro);
+    background-color: var(--verde-escuro) !important;
     color: var(--branco);
     text-decoration: none;
     width: 15vw;
@@ -94,7 +105,7 @@ html {
 }
 
 .perfil {
-    height: 55vh; 
+    height: 55vh;
     background-color: var(--branco);
     border-radius: 15px;
     padding: 14% 6%;
@@ -205,8 +216,16 @@ html {
 }
 
 .icone-menu {
-    width: 10%;
-    height: 10%;
+    width: 40px;
+    height: 40px;
+    margin-right: 18px;
+    display: inline-block;
+}
+
+.icone-menu-sair {
+    width: 40px;
+    height: 40px;
+    margin-left: 6px;
     margin-right: 12px;
     display: inline-block;
 }
@@ -255,7 +274,7 @@ main {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.50);
 }
 
-.foto-postagens{
+.foto-postagens {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -263,7 +282,7 @@ main {
 }
 
 .foto-post {
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 15px;
@@ -272,7 +291,6 @@ main {
     align-items: end;
     flex-direction: column;
 }
-
 
 .legenda-foto {
     position: absolute;
@@ -292,13 +310,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
-}
-
-.icone-de-estado{
-    display: flex;
-    gap: 10px;
-
+    padding: 10px 10px 5px;
 }
 
 .configuracoes-post {
@@ -324,8 +336,9 @@ main {
     list-style: none;
     padding: 8px 0;
     margin: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    display: none; /* escondido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    /* escondido */
     z-index: 1000;
 }
 
@@ -344,12 +357,16 @@ main {
     display: block;
 }
 
-
-
+.icone-de-estado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
 
 .icone-post {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     transition: transform 0.3s ease;
 
@@ -359,13 +376,61 @@ main {
     transform: scale(1.2);
 }
 
-.icone-favorito.ativo{
-    content: url("/Assets/Ícones/Ações/Coração Preenchido.svg");
+.icone-favorito {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.25s, transform 0.12s;
 }
 
-.icone-destino.ativo{
-    content: url("/Assets/Ícones/Ações/Destino Preenchido.svg");
+.icone-favorito:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
 }
+
+.icone-favorito svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-favorito.selected {
+    color: var(--verm);
+    transform: scale(1.12);
+}
+
+.icone-destino {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.25s, transform 0.12s;
+    background-color: transparent;
+}
+
+.icone-destino:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
+}
+
+.icone-destino svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-destino.selected {
+    color: var(--verde-escuro);
+    transform: scale(1.12);
+}
+
 
 
 @media (max-width: 1200px) {
@@ -457,7 +522,7 @@ main {
         padding: 0 10%;
     }
 
-  .foto-usuario {
+    .foto-usuario {
         display: flex;
         flex-direction: column;
         width: 15vw;
@@ -479,15 +544,16 @@ main {
     }
 
     .menu-navegação {
-        height: 10vh;        width: 90%;
+        height: 10vh;
+        width: 90%;
         align-items: center;
         display: flex;
         padding: 1% 15%;
         justify-content: space-between;
     }
-    
 
-    
+
+
     /* .menu-navegação {
         width: 90%;
         margin-top: 15px;
@@ -512,11 +578,11 @@ main {
         margin: 0;
     }
 
-    main{
+    main {
         height: auto;
     }
+
     .postagens {
         grid-template-columns: 1fr;
     }
 }
-

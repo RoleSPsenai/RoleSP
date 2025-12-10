@@ -1,0 +1,150 @@
+/* Estilo do popup */
+#config-modal {
+    animation: popupShow 0.25s ease-out;
+    background: #c8e3dd;
+    border: none;
+    border-radius: 35px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    max-height: 90%;
+    max-width: 90%;
+    padding: 20px 40px;
+    transition: all 0.3s ease;
+    width: 50em;
+  }
+  
+  #config-modal::backdrop {
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.55);
+  }
+  
+  #btn-fechar-config {
+    background-color: #c8e3dd;
+    color: #085e50;
+    font-size: 5rem;
+    font-weight: bold;
+    width: 50px;
+  }
+  
+  #openExplorerLink {
+    color: #064b40;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  #salvar-config {
+    align-self: center;
+    background-color: #064b40;
+    border-radius: 20px;
+    color: #c8e3dd;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 80px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  
+  .Alterar-Dados {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .Imagem-Usuario {
+    border-radius: 100%;
+  }
+  
+  .Parte-Imagem {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .ParteInicial {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .formulario {
+    background-color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    color: var(--cinza-claro);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .quadrado {
+    background-color: #000;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    height: 130px;
+    width: 130px;
+  }
+  
+  .userImg {
+    height: auto;
+  }
+  
+  dialog {
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  h2 {
+    color: #085e50;
+    font-size: 3rem;
+  }
+  
+  img {
+    height: auto;
+  }
+  
+  input::placeholder {
+    align-self: center;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  
+  p {
+    color: #064b40;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 600px) {
+    #btn-fechar-config {
+      font-size: 3rem;
+    }
+  
+    #config-modal {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    #salvar-config {
+      width: 100%;
+    }
+  
+    .Parte-Imagem {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .config {
+      font-size: 2em;
+    }
+  }
