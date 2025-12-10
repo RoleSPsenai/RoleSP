@@ -14,6 +14,4 @@ public partial class Destino
     public virtual Post ID_PostNavigation { get; set; } = null!;
 
     public virtual Usuario ID_UserNavigation { get; set; } = null!;
-
-    public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
 }

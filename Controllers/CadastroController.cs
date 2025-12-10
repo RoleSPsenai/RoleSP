@@ -39,9 +39,9 @@ namespace RoleSP.Controllers
 
             byte[] hash = HashService.GerarHashBytes(senhaCadastro);
 
-            // string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/Icon/iconUserDefault.png");
-            // byte[] bytes = System.IO.File.ReadAllBytes(path);
-            // string base64 = Convert.ToBase64String(bytes);
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/Icon/iconUserDefault.png");
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+            string base64 = Convert.ToBase64String(bytes);
 
             Usuario usuario = new Usuario
             {
@@ -49,7 +49,7 @@ namespace RoleSP.Controllers
                 Apelido = usuarioCadastro,
                 Email = emailCadastro,
                 SenhaHash = hash,
-                // ImagemPerfil =  base64
+                ImagemPerfil =  base64
             };
 
             _context.Usuarios.Add(usuario);

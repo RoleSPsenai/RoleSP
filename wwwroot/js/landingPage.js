@@ -159,38 +159,38 @@ function updateBodyOverflow() {
 if (modalLogin) modalLogin.addEventListener("close", updateBodyOverflow);
 if (modalCadastro) modalCadastro.addEventListener("close", updateBodyOverflow);
 
+//* =-=-=-=-=-=-==- AJAX -=-=-=-=-=-=-=-=
 
-//* =-=-=-=-=-=-==- Ajax -=-=-=-=-=-=-=-=
+document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("formCadastro").addEventListener("submit", async (e) => {
-    e.preventDefault(); // impede reload da página
+    const formCadastro = document.querySelector("#formCadastro");
 
-    const nome = document.getElementById("usuario").value;
-    const email = document.getElementById("email-cadastro").value;
-    const senha = document.getElementById("senha-cadastro").value;
-    const confirmar = document.getElementById("confirmar-senha").value;
+    formCadastro.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    const dados = new FormData();
-    dados.append("nome", nome);
-    dados.append("email", email);
-    dados.append("senha", senha);
-    dados.append("confirmar", confirmar);
+        const formData = new FormData(formCadastro);
 
-    const resposta = await fetch("/Cadastro/Criar", {
-        method: "POST",
-        body: dados
+        fetch("/Cadastro/Criar", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(resposta => {
+
+            if (!resposta.sucesso) {
+                document.querySelector("#erroCadastro").innerText = resposta.mensagem;
+                return;
+            }
+
+            
+            document.querySelector("#erroCadastro").innerText = "";
+
+            document.querySelector("#cadastro-modal").close();
+
+            document.querySelector("#login-modal").showModal();
+        })
+        .catch(err => console.error("Erro requisição:", err));
     });
 
-    const resultado = await resposta.json();
-
-    const erroBox = document.getElementById("erroCadastro");
-
-    if (!resultado.sucesso) {
-        erroBox.textContent = resultado.mensagem;
-        return;
-    }
-
-    // SUCESSO = redireciona para login
-    window.location.href = "/Login";
 });
 

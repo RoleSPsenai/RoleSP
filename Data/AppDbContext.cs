@@ -39,7 +39,7 @@ public partial class AppDbContext : DbContext
     {
         modelBuilder.Entity<Comentario>(entity =>
         {
-            entity.HasKey(e => e.ID_Comentario).HasName("PK__Comentar__E9AA9973DB539290");
+            entity.HasKey(e => e.ID_Comentario).HasName("PK__Comentar__E9AA9973D75F56F4");
 
             entity.ToTable("Comentario");
 
@@ -49,51 +49,55 @@ public partial class AppDbContext : DbContext
             entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Comentarios)
                 .HasForeignKey(d => d.ID_Post)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comentari__ID_Po__6477ECF3");
+                .HasConstraintName("FK__Comentari__ID_Po__5FB337D6");
 
             entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Comentarios)
                 .HasForeignKey(d => d.ID_User)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comentari__ID_Us__656C112C");
+                .HasConstraintName("FK__Comentari__ID_Us__60A75C0F");
         });
 
         modelBuilder.Entity<Destino>(entity =>
         {
-            entity.HasKey(e => e.ID_Destino).HasName("PK__Destino__A7BDD3CEC502C0DF");
+            entity.HasKey(e => e.ID_Destino).HasName("PK__Destino__A7BDD3CE3F3F6D9C");
 
             entity.ToTable("Destino");
+
+            entity.HasIndex(e => e.ID_Post, "IX_Destino_Post");
+
+            entity.HasIndex(e => e.ID_User, "IX_Destino_User");
 
             entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Destinos)
                 .HasForeignKey(d => d.ID_Post)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Destino__ID_Post__6383C8BA");
+                .HasConstraintName("FK__Destino__ID_Post__5BE2A6F2");
 
             entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Destinos)
                 .HasForeignKey(d => d.ID_User)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Destino__ID_User__628FA481");
+                .HasConstraintName("FK__Destino__ID_Post__5AEE82B9");
         });
 
         modelBuilder.Entity<Favorito>(entity =>
         {
-            entity.HasKey(e => e.ID_Favorito).HasName("PK__Favorito__FA228CC5B73A4A19");
+            entity.HasKey(e => e.ID_Favorito).HasName("PK__Favorito__FA228CC5736A5403");
 
             entity.ToTable("Favorito");
 
             entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Favoritos)
                 .HasForeignKey(d => d.ID_Post)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Favorito__ID_Pos__619B8048");
+                .HasConstraintName("FK__Favorito__ID_Pos__5812160E");
 
             entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Favoritos)
                 .HasForeignKey(d => d.ID_User)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Favorito__ID_Use__60A75C0F");
+                .HasConstraintName("FK__Favorito__ID_Use__571DF1D5");
         });
 
         modelBuilder.Entity<Filtro>(entity =>
         {
-            entity.HasKey(e => e.ID_Filtro).HasName("PK__Filtro__931D1A2995200EBE");
+            entity.HasKey(e => e.ID_Filtro).HasName("PK__Filtro__931D1A292DA0D936");
 
             entity.ToTable("Filtro");
 
@@ -105,21 +109,21 @@ public partial class AppDbContext : DbContext
                     r => r.HasOne<Local>().WithMany()
                         .HasForeignKey("ID_Local")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Local_Fil__ID_Lo__5DCAEF64"),
+                        .HasConstraintName("FK__Local_Fil__ID_Lo__66603565"),
                     l => l.HasOne<Filtro>().WithMany()
                         .HasForeignKey("ID_Filtro")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Local_Fil__ID_Fi__5CD6CB2B"),
+                        .HasConstraintName("FK__Local_Fil__ID_Fi__656C112C"),
                     j =>
                     {
-                        j.HasKey("ID_Filtro", "ID_Local").HasName("PK__Local_Fi__50FE51009816BC8E");
+                        j.HasKey("ID_Filtro", "ID_Local").HasName("PK__Local_Fi__50FE510068A137F2");
                         j.ToTable("Local_Filtro");
                     });
         });
 
         modelBuilder.Entity<Local>(entity =>
         {
-            entity.HasKey(e => e.ID_Local).HasName("PK__Local__3E34B29D70974B92");
+            entity.HasKey(e => e.ID_Local).HasName("PK__Local__3E34B29D410A42EF");
 
             entity.ToTable("Local");
 
@@ -129,14 +133,18 @@ public partial class AppDbContext : DbContext
             entity.HasOne(d => d.ID_ZonaNavigation).WithMany(p => p.Locals)
                 .HasForeignKey(d => d.ID_Zona)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Local__ID_Zona__5535A963");
+                .HasConstraintName("FK__Local__ID_Zona__4F7CD00D");
         });
 
         modelBuilder.Entity<Post>(entity =>
         {
-            entity.HasKey(e => e.ID_Post).HasName("PK__Post__B41D0E307ACB928E");
+            entity.HasKey(e => e.ID_Post).HasName("PK__Post__B41D0E3003FE033C");
 
             entity.ToTable("Post");
+
+            entity.HasIndex(e => e.ID_Local, "IX_Post_Local");
+
+            entity.HasIndex(e => e.ID_User, "IX_Post_User");
 
             entity.Property(e => e.DataPost).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Imagem)
@@ -144,26 +152,24 @@ public partial class AppDbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Legenda).HasMaxLength(500);
 
-            entity.HasOne(d => d.ID_FavoritoNavigation).WithMany(p => p.Posts)
-                .HasForeignKey(d => d.ID_Favorito)
-                .HasConstraintName("FK__Post__ID_Favorit__68487DD7");
-
             entity.HasOne(d => d.ID_LocalNavigation).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.ID_Local)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Post__ID_Local__6754599E");
+                .HasConstraintName("FK__Post__ID_Local__5441852A");
 
             entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.ID_User)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Post__ID_User__66603565");
+                .HasConstraintName("FK__Post__ID_User__534D60F1");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.ID_User).HasName("PK__Usuario__ED4DE44254E3FE3A");
+            entity.HasKey(e => e.ID_User).HasName("PK__Usuario__ED4DE442FA282525");
 
             entity.ToTable("Usuario");
+
+            entity.HasIndex(e => e.Email, "IX_Usuario_Email").IsUnique();
 
             entity.Property(e => e.Apelido).HasMaxLength(120);
             entity.Property(e => e.DataCriacao)
@@ -172,24 +178,14 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(120)
                 .IsUnicode(false);
-            entity.Property(e => e.ImagemPerfil)
-                .HasMaxLength(500)
-                .IsUnicode(false);
+            entity.Property(e => e.ImagemPerfil).IsUnicode(false);
             entity.Property(e => e.Nome).HasMaxLength(120);
             entity.Property(e => e.SenhaHash).HasMaxLength(32);
-
-            entity.HasOne(d => d.ID_DestinoNavigation).WithMany(p => p.Usuarios)
-                .HasForeignKey(d => d.ID_Destino)
-                .HasConstraintName("FK_Usuario_Destino");
-
-            entity.HasOne(d => d.ID_FavoritoNavigation).WithMany(p => p.Usuarios)
-                .HasForeignKey(d => d.ID_Favorito)
-                .HasConstraintName("FK_Usuario_Favorito");
         });
 
         modelBuilder.Entity<Zona>(entity =>
         {
-            entity.HasKey(e => e.ID_Zona).HasName("PK__Zona__813493234B83BF87");
+            entity.HasKey(e => e.ID_Zona).HasName("PK__Zona__813493232AA162A3");
 
             entity.ToTable("Zona");
 
