@@ -6,11 +6,11 @@ using Sistema_Login.Service;
 
 namespace RoleSP.Controllers
 {
-    public class CadastradoController : Controller
+    public class CadastroController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CadastradoController(AppDbContext context)
+        public CadastroController(AppDbContext context)
         {
             _context = context;
         }
@@ -21,41 +21,41 @@ namespace RoleSP.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(string nome, string email, string senha, string confirmar)
+        public IActionResult Criar(string usuarioCadastro, string emailCadastro, string senhaCadastro, string confirmarCadastro)
         {
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) ||
-            string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmar))
+            if (string.IsNullOrWhiteSpace(usuarioCadastro) || string.IsNullOrWhiteSpace(emailCadastro) ||
+            string.IsNullOrWhiteSpace(senhaCadastro) || string.IsNullOrWhiteSpace(confirmarCadastro))
             {
                 return Json(new { sucesso = false, mensagem = "Preencha todos os campos" });
             }
-            if (senha != confirmar)
+            if (senhaCadastro != confirmarCadastro)
             {
                 return Json(new { sucesso = false, mensagem = "As senhas não conferem" });
             }
-            if (_context.Usuarios.Any(u => u.Email == email))
+            if (_context.Usuarios.Any(u => u.Email == emailCadastro))
             {
                 return Json(new { sucesso = false, mensagem = "E-mail já cadastrado" });
             }
 
-            byte[] hash = HashService.GerarHashBytes(senha);
+            byte[] hash = HashService.GerarHashBytes(senhaCadastro);
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/icon/UserDefault.png");
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
-            string base64 = Convert.ToBase64String(bytes);
+            // string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/Icon/iconUserDefault.png");
+            // byte[] bytes = System.IO.File.ReadAllBytes(path);
+            // string base64 = Convert.ToBase64String(bytes);
 
             Usuario usuario = new Usuario
             {
-                Nome = nome,
-                Apelido = nome,
-                Email = email,
+                Nome = usuarioCadastro,
+                Apelido = usuarioCadastro,
+                Email = emailCadastro,
                 SenhaHash = hash,
-                ImagemPerfil =  base64
+                // ImagemPerfil =  base64
             };
 
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            return Json(new { sucesso = true });
+            return  Json(new { sucesso = true });
         }
     }
 }

@@ -158,3 +158,39 @@ function updateBodyOverflow() {
 // Garante atualização caso o modal seja fechado por métodos nativos (esc, backdrop, etc.)
 if (modalLogin) modalLogin.addEventListener("close", updateBodyOverflow);
 if (modalCadastro) modalCadastro.addEventListener("close", updateBodyOverflow);
+
+
+//* =-=-=-=-=-=-==- Ajax -=-=-=-=-=-=-=-=
+
+document.getElementById("formCadastro").addEventListener("submit", async (e) => {
+    e.preventDefault(); // impede reload da página
+
+    const nome = document.getElementById("usuario").value;
+    const email = document.getElementById("email-cadastro").value;
+    const senha = document.getElementById("senha-cadastro").value;
+    const confirmar = document.getElementById("confirmar-senha").value;
+
+    const dados = new FormData();
+    dados.append("nome", nome);
+    dados.append("email", email);
+    dados.append("senha", senha);
+    dados.append("confirmar", confirmar);
+
+    const resposta = await fetch("/Cadastro/Criar", {
+        method: "POST",
+        body: dados
+    });
+
+    const resultado = await resposta.json();
+
+    const erroBox = document.getElementById("erroCadastro");
+
+    if (!resultado.sucesso) {
+        erroBox.textContent = resultado.mensagem;
+        return;
+    }
+
+    // SUCESSO = redireciona para login
+    window.location.href = "/Login";
+});
+

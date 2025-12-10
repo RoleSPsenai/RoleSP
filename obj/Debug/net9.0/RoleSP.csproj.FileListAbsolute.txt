@@ -281,9 +281,6 @@ C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\refint\RoleSP.dll
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\RoleSP.pdb
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\RoleSP.genruntimeconfig.cache
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\ref\RoleSP.dll
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\3gbb6v517s-0dpxs4nlrx.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\t6nzg0iy0e-kkk59sptw1.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\1tjay0e2e7-n7vw89ghi3.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\mn3qfcqaot-t1cqhe9u97.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\iq8f6oyzmn-sejl45xvog.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\rrmsntznir-xvp3kq03qx.gz
@@ -634,3 +631,10 @@ C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\rzg
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\4xfrl648wi-65p0xr4c9h.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\3gbb6v517s-r9m1ib5et2.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\t6nzg0iy0e-kkk59sptw1.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\4x9x73iser-qn46ihal6s.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ikhdozqbze-05uauhvsfa.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\rzg75d4eso-ptnv932vbw.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\4xfrl648wi-65p0xr4c9h.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\3gbb6v517s-1d71d66mc5.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\t6nzg0iy0e-oi4zfjjnv7.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\1tjay0e2e7-7hup8x0nk7.gz
