@@ -1,26 +1,25 @@
-// Botão que abre popup
-const botao = document.getElementById("BotaoPublicar");
-const popup = document.getElementById("TelaPublicacao");
-const botaoFechar = document.getElementById("btn-fechar");
-
-// Abrir - mostrar o popup alterando display
-botao.addEventListener("click", () => {
-  popup.style.display = "flex";
-});
-
-botaoFechar.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
-// Fechar clicando fora
-popup.addEventListener("click", (e) => {
-  if (e.target === popup) {
-    popup.style.display = "none";
-  }
-});
-
-// Floating labels: adiciona/remove classe focused no label quando o input ganha/perde foco
 document.addEventListener("DOMContentLoaded", () => {
+  // Botão que abre popupPost
+  const botaoPost = document.getElementById("BotaoPublicar");
+  const popupPost = document.getElementById("TelaPublicacao");
+  const botaoPostFechar = document.getElementById("BotaoFecharPublicacao");
+  
+  // Abrir - mostrar o popupPost alterando display
+  botaoPost.addEventListener("click", () => {
+    popupPost.showModal();
+  });
+  
+  botaoPostFechar.addEventListener("click", () => {
+    popupPost.closeModal();
+  });
+  
+  // Fechar clicando fora
+  popupPost.addEventListener("click", (e) => {
+    if (e.target === popupPost) {
+      popupPost.closeModal();
+    }
+  });
+
   const inputs = document.querySelectorAll(
     ".form-publicacao input, .form-publicacao textarea"
   );

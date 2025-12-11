@@ -6,19 +6,19 @@ const botaoFecharEditar = document.getElementById("btn-fechar-editar");
 // Abrir popup ao clicar em "Editar"
 botoesEditar.forEach((btn) => {
   btn.addEventListener("click", () => {
-    popupEditar.style.display = "flex";
+    popupEditar.showModal();
   });
 });
 
 // Fechar no botão X
 botaoFecharEditar.addEventListener("click", () => {
-  popupEditar.style.display = "none";
+  popupEditar.closeModal();
 });
 
 // Fechar clicando fora do conteúdo
 popupEditar.addEventListener("click", (e) => {
   if (e.target === popupEditar) {
-    popupEditar.style.display = "none";
+    popupEditar.closeModal();
   }
 });
 

@@ -1,5 +1,14 @@
 #TelaPost {
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+    border-radius: 20px;
+    display: flex;
+}
+
+#TelaPost .legenda-post {
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 #TelaPost .endereco {
@@ -38,19 +47,6 @@
     width: 4em;
 }
 
-#TelaPost .foto-perfil img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-#TelaPost .info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 #TelaPost .local {
     display: flex;
     flex-direction: column;
@@ -59,13 +55,6 @@
     padding: 1em;
     position: relative;
     width: 100%;
-}
-
-#TelaPost .opcao {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
 }
 
 #TelaPost .painel-direito {
@@ -82,25 +71,9 @@
     min-width: 30vw;
 }
 
-#TelaPost .perfil {
+#TelaPost .perfil-post {
     align-items: center;
     display: flex;
-}
-
-#TelaPost .popup {
-    display: flex;
-    flex-direction: row;
-}
-
-#TelaPost .post {
-    border-radius: 1em;
-    height: 10em;
-    width: 10em;
-}
-
-#BotaoPost {
-    border-radius: 1em;
-    padding: 1em;
 }
 
 #FecharPost {
@@ -113,17 +86,21 @@
     position: absolute;
     right: 0.5em;
     top: 0;
+    outline: none;
+    transition: all 0.2s ease-in-out;
 }
 
-@media (max-width: 768px) {
-    #TelaPost .popup {
-        display: flex;
+#FecharPost:hover {
+    transform: scale(1.25);
+}
+
+@media (max-width: 900px) {
+    #TelaPost {
         flex-direction: column;
     }
-
+    
     #TelaPost .painel-direito {
-        max-width: 100%;
-        width: 100%;
-        padding: 2em 1em;
+        max-width: 100vw;
+        padding: 1em;
     }
 }

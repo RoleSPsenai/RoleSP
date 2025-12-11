@@ -63,7 +63,7 @@
                   alt="Ícone Home" />Home</a>
             </li>
             <li>
-              <button id="configuracao" class="lista-navegacao">
+              <button id="BotaoConfiguracao" class="lista-navegacao">
                 <img class="icone-menu" src="Assets/Ícones/Ações/Configurações.svg" alt="" />Configurações
               </button>
             </li>
@@ -129,7 +129,7 @@
           <span>Upload do local</span>
         </label>
         <div class="sectioInputs">
-          <button id="btn-fechar" class="fechar-modal">
+          <button id="BotaoFecharPublicacao" class="fechar-modal">
             <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
           </button>
           <div class="select">
@@ -222,10 +222,10 @@
   </dialog>
 
   <!-- CONFIGURAÇÕES -->
-  <dialog id="config-modal">
+  <dialog id="TelaConfiguracao">
     <div class="ParteInicial">
       <h2 class="config">Configurações</h2>
-      <button id="btn-fechar-config">X</button>
+      <button id="BotaoFecharConfiguracao"><img src="Assets/Ícones/Ações/Fechar.svg" alt=""></button>
     </div>
     <div class="Parte-Imagem">
       <div class="quadrado">
@@ -282,14 +282,14 @@
     </div>
   </dialog>
 
-  <!-- MODAL POST -->
-  <dialog id="TelaPost" class="popup">
+  <!-- TELA DO POST -->
+  <dialog id="TelaPost">
     <div class="painel-esquerdo">
       <!-- Botão de fechar -->
       <button id="FecharPost" aria-label="Fechar">&times;</button>
       <div class="local">
         <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost">
-        <div class="perfil">
+        <div class="perfil-post">
           <figure class="foto-perfil">
             <img src="Assets/Img/perfil_galeria.png" alt="Imagem do local" />
           </figure>
@@ -313,7 +313,8 @@
       </div>
     </div>
     <div class="painel-direito">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet massa vitae.</p>
+      <p class="legenda-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet
+        massa vitae.</p>
     </div>
   </dialog>
 
@@ -321,8 +322,10 @@
   <script src="Script/modalConfig.js"></script>
   <script src="Script/modalEditar.js"></script>
   <script src="Script/modalExcluir.js"></script>
+  <script src="Script/modalPost.js"></script>
   <script src="Script/modalPublicacao.js"></script>
   <script src="Script/modalSair.js"></script>
+
 </body>
 
 </html>

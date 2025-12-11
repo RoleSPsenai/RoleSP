@@ -1,5 +1,5 @@
 /* Container do popup (centraliza na tela) */
-#TelaPublicacao.popup {
+#TelaPublicacao .popup {
   position: fixed;
   top: 0;
   left: 0;
