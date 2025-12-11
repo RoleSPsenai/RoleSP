@@ -101,12 +101,63 @@ document.addEventListener("DOMContentLoaded", () => {
 //* API VIACEP
 
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
+const cepValido = (cep) => cep.length === 8 && eNumero(cep);
 
-const cepValido = (cep) => cep.lenght == 8 && eNumero(cep);
-
-const limparFormulario = (endereco) => {
+const limparFormulario = () => {
   document.getElementById("rua").value = "";
   document.getElementById("bairro").value = "";
   document.getElementById("cidade").value = "";
   document.getElementById("estado").value = "";
-}
+};
+
+const preencherFormulario = (endereco) => {
+  document.getElementById("rua").value = endereco.logradouro || "";
+  document.getElementById("bairro").value = endereco.bairro || "";
+  document.getElementById("cidade").value = endereco.localidade || "";
+  document.getElementById("estado").value = endereco.uf || "";
+};
+
+const pesquisarCep = async () => {
+  const cep = document.getElementById("cep").value.replace("-", "");
+
+  if (!cepValido(cep)) return;
+
+  const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+  try {
+    const dados = await fetch(url);
+    const endereco = await dados.json();
+
+    if (!endereco.erro) {
+      preencherFormulario(endereco);
+    }
+  } catch (e) {
+    console.log("Erro ao buscar CEP:", e);
+  }
+};
+
+const buscarCepPorEndereco = async () => {
+  const estado = document.getElementById("estado").value.trim();
+  const cidade = document.getElementById("cidade").value.trim();
+  const rua = document.getElementById("rua").value.trim();
+
+  if (!estado || !cidade || !rua) return;
+
+  const url = `https://viacep.com.br/ws/${estado}/${cidade}/${rua}/json/`;
+
+  try {
+    const resposta = await fetch(url);
+    const dados = await resposta.json();
+
+    if (Array.isArray(dados) && dados.length > 0) {
+      document.getElementById("cep").value = dados[0].cep;
+    }
+  } catch (e) {
+    console.log("Erro ao buscar CEP por endereço:", e);
+  }
+};
+
+document.getElementById("cep").addEventListener("focusout", pesquisarCep);
+document.getElementById("rua").addEventListener("focusout", buscarCepPorEndereco);
+document.getElementById("cidade").addEventListener("focusout", buscarCepPorEndereco);
+document.getElementById("estado").addEventListener("focusout", buscarCepPorEndereco);
