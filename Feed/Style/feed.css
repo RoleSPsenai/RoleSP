@@ -24,6 +24,25 @@
 }
 
 body {
+    background-color: var(--fundo) !important;
+}
+
+html {
+    scrollbar-color: var(--branco) var(--fundo);
+}
+
+button {
+    background: none;
+    transition: none;
+    padding: 0;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar
+body {
     background-color: var(--fundo);
     margin: 0;
     font-family: 'Nunito', sans-serif;
@@ -236,7 +255,7 @@ body {
 }
 
 
-main{
+main {
     width: 75vw;
     height: 85vh;
     overflow-y: scroll;
@@ -247,13 +266,13 @@ main{
     font-size: 1.8rem;
 }
 
-.recomendacao{
+.recomendacao {
     padding-top: 15px;
 }
 
 .card-recomendacao {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     align-items: center;
     background-color: var(--branco);
     border-radius: 15px;
@@ -261,6 +280,7 @@ main{
     height: 20%;
     gap: 40px;
     padding: 2% 3%;
+
 }
 
 .foto {
@@ -288,7 +308,7 @@ main{
     display: none;
     width: 0;
     height: 0;
-} 
+}
 
 .post {
     position: relative;
@@ -307,7 +327,7 @@ main{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.50);
 }
 
-.foto-feed{
+.foto-feed {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -341,13 +361,19 @@ main{
 }
 
 .acoes {
-    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 2px 10px 5px;
+}
+
+.icone-de-estado {
+    padding: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
-    bottom: 15px;
-    left: 20px;
+    border: none;
 }
 
 .icone-post {
@@ -355,43 +381,119 @@ main{
     height: 35px;
     cursor: pointer;
     transition: transform 0.3s ease;
-
+    border: none;
 }
 
 .icone-post:hover {
     transform: scale(1.2);
 }
 
-@media(max-width:1200px){
-    .filtros-estabelecimentos{
+.icone-favorito {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.25s, transform 0.12s;
+    border: none;
+    background-color: transparent;
+}
+
+.icone-favorito:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
+}
+
+.icone-favorito svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-favorito.selected {
+    color: #e11d48;
+    transform: scale(1.12);
+}
+
+.icone-destino {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.25s, transform 0.12s;
+    background-color: transparent;
+    border: none;
+}
+
+.icone-destino:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
+}
+
+.icone-destino svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-destino.selected {
+    color: var(--verde-escuro);
+    transform: scale(1.12);
+}
+
+
+.icone-informacao {
+   width: 70px;
+    border: none;
+    padding: 0;
+    display: flex;
+    color: black;
+    cursor: pointer;
+    transition: color 0.25s, transform 0.12s;
+    background-color: transparent;
+}
+
+.icone-informacao:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+    border: none;
+    color: var(--preto);
+}
+
+
+@media(max-width:1200px) {
+    .filtros-estabelecimentos {
         height: 120%;
     }
 
-    .sair{
-        height:10vh;
-        
+    .sair {
+        height: 30%;
+
     }
 
-    .feed{
+    .feed {
         height: 110%;
         width: 100%;
     }
-    .card-recomendacao{
-        height: 80%;
-        grid-template-columns: auto auto auto auto auto;
+
+
+}
+
+@media(max-width:800px) {
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
     }
-}
 
-@media(max-width:800px){
-.conteudo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-
-.parte-lateral{
-    display: contents;
-}
+    .parte-lateral {
+        display: contents;
+    }
 
 }
