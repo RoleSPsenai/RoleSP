@@ -1,8 +1,4 @@
-*, *::before, *::after {
-  box-sizing: border-box; 
-  margin: 0;
-  gap: 0 ;
-}
+
 
 :root {
   --verde: #0F6D59;
