@@ -1,44 +1,57 @@
-dialog#popupSair {
-  background: transparent !important;
+/* Configuração padrão do dialog */
+dialog {
   border: none;
-  box-shadow: none !important;
-  display: block !important;
-  left: 50%;
-  margin: 0 !important;
-  max-width: none !important;
-  padding: 0 !important;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: auto !important;
+  padding: 0;
 }
 
-dialog#popupSair::backdrop {
+/* Fundo escurecido atrás do dialog */
+dialog::backdrop {
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.55);
 }
 
-#popupSair .popup-sair-da-conta {
-  background: #c8e3dd;
-  border-radius: 15px;
-  color: #085e50;
-  margin: auto;
-  max-width: 450px;
-  padding: 40px 50px;
-  text-align: center;
-  width: 100%;
+/* Popup principal centralizado */
+#popupSair {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
+/* Conteúdo interno do popup */
+#popupSair .popup-content {
+  background: var(--fundo, #ffffff);
+  border-radius: 1em;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+  color: var(--preto);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+  max-width: 450px;
+  overflow: hidden;
+  padding: 2rem;
+  width: 80%;
+}
+
+/* Ícone */
 #popupSair .icone-sair {
   height: 50px;
   width: 50px;
 }
 
+/* Container texto + ícone */
+.logout {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+}
+
+/* Botões */
 #popupSair .acoes-sair {
   display: flex;
   gap: 40px;
   justify-content: center;
-  margin-top: 20px;
 }
 
 #popupSair .btn-cancelar,

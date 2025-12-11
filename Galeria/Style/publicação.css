@@ -1,71 +1,58 @@
-/* Botão */
-#BotaoPublicar {
-  cursor: pointer;
-  font-size: 1em;
-  padding: 0.75em 1.5em;
-}
-
-/* Popup PUBLICAÇÃO */
+/* Container do popup (centraliza na tela) */
 #TelaPublicacao.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(3px);
-  display: none;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
   z-index: 9999;
 }
 
-/* CONTEÚDO */
+/* Conteúdo principal */
 #TelaPublicacao .popup-content {
-  background: var(--verde-claro);
-  border-radius: 1em;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  padding: 2% 3%;
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  justify-content: center;
+  background: var(--fundo);
+  border-radius: 1em;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  padding: 2% 3%;
-  position: relative;
   transition: all 0.3s ease;
-  width: 80%;
 }
 
-/* LAYOUT PRINCIPAL */
+/* Layout interno */
 #TelaPublicacao .mainPopup {
-  align-items: end;
   display: flex;
+  justify-content: space-between;
+  align-items: end;
   gap: 5%;
   height: 100%;
-  justify-content: space-between;
 }
 
-/* Área esquerda — imagem */
-#TelaPublicacao .left {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-}
-
+/* Área da imagem */
 #TelaPublicacao .imgLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  aspect-ratio: 4/5;
+  width: 50%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
   background-color: var(--branco);
   border: 3px dashed var(--verde-escuro);
   border-radius: 1em;
   color: gray;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  transition: color 0.3s, background-color 0.3s;
-  width: 50%;
+  transition: 0.3s;
 }
 
 #TelaPublicacao .imgLabel:hover {
@@ -74,8 +61,8 @@
 }
 
 #TelaPublicacao .iconUpload {
-  height: auto;
   width: 50%;
+  height: auto;
 }
 
 #imgInput {
@@ -83,102 +70,85 @@
 }
 
 /* Inputs */
-#TelaPublicacao .fechar-modal {
-  align-items: center;
-  background: transparent;
-  border-radius: 1em;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.75em;
-  position: absolute;
-  right: 1em;
-  top: 1em;
-}
-
-#TelaPublicacao .fechar-modal:hover {
-  background-color: transparent !important;
-  cursor: pointer;
-}
-
-#TelaPublicacao .sectioInputs {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2%;
-}
-
-#TelaPublicacao .inputs,
-#TelaPublicacao .inputs::placeholder {
+#TelaPublicacao .inputs {
+  width: 100%;
+  padding: 10px 5px;
   background-color: var(--branco);
   border: none;
   border-radius: 10px;
   color: var(--cinza-claro);
   font-size: 1rem;
   font-weight: 600;
-  padding: 10px 5px;
-  width: 100%;
 }
 
-#TelaPublicacao #groupInput {
+/* Labels */
+#TelaPublicacao .title {
+  color: var(--cinza-escuro);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#TelaPublicacao .novo-post-form {
+  gap: 20px;
+}
+
+/* Botão fechar */
+#TelaPublicacao .fechar-modal {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 50px;
+  padding: 0.75em;
   display: flex;
-  gap: 1%;
-  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent;
+  border-radius: 1em;
 }
 
-#TelaPublicacao #groupCep {
-  width: 50%;
+#TelaPublicacao .fechar-modal:hover {
+  background-color: transparent;
+  cursor: pointer;
 }
 
-#TelaPublicacao #groupBairro {
-  width: 100%;
-}
-
-#TelaPublicacao .botao-publicar {
-  margin: 20px;
-}
-
-#TelaPublicacao button {
+/* Botão salvar */
+#BotaoPost {
+  margin-top: 1em;
+  padding: 1% 8%;
+  background-color: var(--verde);
+  border: none;
   border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
-  max-width: 40%;
-  padding: 1% 8%;
-  text-decoration: none;
+  transition: 0.2s;
 }
 
-/* RESPONSIVO */
+#BotaoPost:hover {
+  background-color: var(--botao-hover);
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   #TelaPublicacao .mainPopup {
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     gap: 2em;
-    justify-content: center;
-  }
-
-  #TelaPublicacao .left {
-    width: 80%;
   }
 
   #TelaPublicacao .imgLabel {
-    align-self: center;
+    max-width: 60%;
+    height: 40%;
     aspect-ratio: unset;
-    height: 50%;
-    margin-top: 2em;
-    max-width: 50%;
-  }
-
-  #TelaPublicacao .sectioInputs {
-    width: 100%;
   }
 
   #TelaPublicacao .inputs {
-    font-size: 0.75rem;
-    padding: 5px;
+    padding: 8px;
+    font-size: 0.9rem;
   }
 
-  #TelaPublicacao button {
+  #BotaoPost {
+    width: 100%;
+    padding: 3%;
     font-size: 1rem;
-    max-width: 100%;
-    padding: 1% 4%;
   }
 }

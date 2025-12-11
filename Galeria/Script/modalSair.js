@@ -1,33 +1,35 @@
-const botaoSair = document.getElementById("logout");     
-const popupSair = document.getElementById("popupSair");      
+const botaoSair = document.getElementById("logout");
+const popupSair = document.getElementById("popupSair");
 const btnCancelarSair = document.getElementById("btnCancelarSair");
 const btnConfirmarSair = document.getElementById("btnConfirmarSair");
 
-// --- Abrir popup de sair ---
+// Abrir popup
 botaoSair.addEventListener("click", () => {
-  popupSair.showModal();  // Exibe o dialog
+  popupSair.showModal();
 });
 
-// --- Cancelar / fechar ---
+// Cancelar
 btnCancelarSair.addEventListener("click", () => {
   popupSair.close();
 });
 
-// --- Confirmar ação ---
+// Confirmar
 btnConfirmarSair.addEventListener("click", () => {
   popupSair.close();
 });
 
-// --- Fechar clicando fora do conteúdo ---
+// Fechar clicando fora da caixa
 popupSair.addEventListener("click", (e) => {
-  // Se clicou FORA da caixa branca
-  const dialogRect = popupSair.querySelector(".popup-sair-da-conta").getBoundingClientRect();
+  const content = popupSair.querySelector(".popup-content");
+  const rect = content.getBoundingClientRect();
 
   const clickFora =
-    e.clientX < dialogRect.left ||
-    e.clientX > dialogRect.right ||
-    e.clientY < dialogRect.top ||
-    e.clientY > dialogRect.bottom;
+    e.clientX < rect.left ||
+    e.clientX > rect.right ||
+    e.clientY < rect.top ||
+    e.clientY > rect.bottom;
 
-  if (clickFora) popupSair.close();
+  if (clickFora) {
+    popupSair.close();
+  }
 });

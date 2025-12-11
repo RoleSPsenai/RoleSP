@@ -22,8 +22,8 @@ const openExplorerLink = document.getElementById('openExplorerLink');
 
 // Adiciona um ouvinte de evento de clique ao link
 openExplorerLink.addEventListener('click', function (event) {
-    event.preventDefault(); // Impede o comportamento padrão do link (navegar para #)
-    fileInput.click(); // Simula um clique no input de arquivo oculto
+    event.preventDefault();
+    fileInput.click();
 });
 
 // Opcional: Você pode adicionar um ouvinte de evento 'change' ao input para saber quando um arquivo foi selecionado

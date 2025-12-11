@@ -22,7 +22,7 @@ dialog#config-modal::backdrop {
 
 #btn-fechar-config {
   background-color: #c8e3dd;
-  color: #085e50;
+  color: var(--verde-escuro);
   font-size: 3rem;
   font-weight: bold;
   width: 50px;
@@ -93,7 +93,7 @@ dialog#config-modal::backdrop {
   background-color: #000;
   background-position: center;
   background-size: cover;
-  border-radius: 100%;
+  border-radius: 40px;
   height: 125px;
   width: 125px;
 }
@@ -103,7 +103,7 @@ dialog#config-modal::backdrop {
 }
 
 h2 {
-  color: #085e50;
+  color: var(--verde-escuro);
   font-size: 1.5rem;
 }
 

@@ -3,13 +3,13 @@ const botao = document.getElementById("BotaoPublicar");
 const popup = document.getElementById("TelaPublicacao");
 const botaoFechar = document.getElementById("btn-fechar");
 
-// Abrir
+// Abrir - mostrar o popup alterando display
 botao.addEventListener("click", () => {
-  popup.showModal();
+  popup.style.display = "flex";
 });
 
 botaoFechar.addEventListener("click", () => {
-  popup.close();
+  popup.style.display = "none";
 });
 
 // Fechar clicando fora

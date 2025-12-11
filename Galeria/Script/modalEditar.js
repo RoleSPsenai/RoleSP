@@ -1,4 +1,4 @@
-// BOTÃO QUE ABRE O POPUP DE EDITAR
+// Botão que abre popup
 const botoesEditar = document.querySelectorAll(".editar-post");
 const popupEditar = document.getElementById("TelaEditar");
 const botaoFecharEditar = document.getElementById("btn-fechar-editar");

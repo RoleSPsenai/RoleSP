@@ -1,3 +1,4 @@
+/* Popup principal de exclusão (janela modal) */
 dialog#popupExcluir {
   border: none;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -9,17 +10,20 @@ dialog#popupExcluir {
   transform: translate(-50%, -50%);
 }
 
+/* Fundo desfocado atrás do popup */
 dialog#popupExcluir::backdrop {
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.55);
 }
 
+/* Ícone de alerta/exclusão */
 #popupExcluir .icone-excluir {
   height: 70px;
   padding: 10px;
   width: 70px;
 }
 
+/* Container principal do conteúdo do popup */
 #popupExcluir .excluir {
   align-items: center;
   display: flex;
@@ -28,6 +32,7 @@ dialog#popupExcluir::backdrop {
   justify-content: center;
 }
 
+/* Caixa de conteúdo dentro do popup */
 #popupExcluir .popup-excluir-content {
   background: #c8e3dd;
   border-radius: 15px;
@@ -39,11 +44,13 @@ dialog#popupExcluir::backdrop {
   width: 100%;
 }
 
+/* Título do popup */
 #popupExcluir .popup-excluir-content h2 {
   font-weight: 700;
   padding: 10px;
 }
 
+/* Container dos botões (Cancelar e Confirmar) */
 #popupExcluir .acoes-excluir {
   display: flex;
   gap: 80px;
@@ -51,30 +58,36 @@ dialog#popupExcluir::backdrop {
   padding: 10px;
 }
 
+/* Botões padrão do popup */
 #popupExcluir .btn-cancelar,
 #popupExcluir .btn-confirmar {
   background-color: #085e50;
   border: none;
   border-radius: 20px;
-  color: white;
+  color: var(--branco);
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 15px 35px;
 }
 
+/* Efeito hover dos botões */
 #popupExcluir .btn-cancelar:hover,
 #popupExcluir .btn-confirmar:hover {
   background-color: var(--botao-hover);
 }
 
+/* Ajustes responsivos para telas menores */
 @media (max-width: 700px) {
+
+  /* Popup reduzido em dispositivos menores */
   dialog#popupExcluir {
     box-shadow: none;
     padding: 20px;
     width: 90%;
   }
 
+  /* Menor espaçamento entre botões em mobile */
   #popupExcluir .acoes-excluir {
     gap: 50px;
   }
