@@ -318,3 +318,4 @@ C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\rcy
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\jek6vmuh80-jjsuc0puko.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\mzw52681ku-9vr69e8ynj.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\1tjay0e2e7-g68575aua5.gz
+C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\sorpdiofwk-e5ifeprl1w.gz

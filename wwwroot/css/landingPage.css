@@ -572,6 +572,14 @@ footer {
   width: 50%;
 }
 
+#erroCadastro {
+  color: var(--erro);
+  font-weight: 600 ;
+  font-size: 1.5rem ;
+  margin-top: 1vh;
+  text-align: center;
+}
+
 .campo-senha {
   align-items: center;
   display: flex;
