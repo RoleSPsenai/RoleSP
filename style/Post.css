@@ -1,0 +1,193 @@
+*, *::before, *::after {
+  box-sizing: border-box; 
+  margin: 0;
+  gap: 0 ;
+}
+
+:root {
+  --verde: #0F6D59;
+  --verde-claro: #C8E3DD;
+  --branco: #fff;
+  --texto: #1E1E1E;
+  --rosa: #FF7A7A;
+  --destaque: #FFCA28;
+}
+
+body {
+  background: var(--verde-claro);
+  margin: 0;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+}
+
+.btn-voltar {
+  background: var(--verde);
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.conteudo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 0; 
+}
+
+.card {
+  display: block;
+  width: 50%;
+  background: var(--branco);
+  border-radius: 20px 0px 0px 20px;
+  overflow: hidden;
+}
+
+.imagem-container {
+  position: relative;
+}
+
+.imagem-local {
+  width: 100%;
+  height: auto;
+}
+
+.overlay-info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.perfil-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid var(--verde);
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border: none;
+}
+
+.acao {
+    display: flex;
+    gap: 10px; 
+}
+
+.like { 
+    background-color: #FF7A7A; 
+    background-image: url('assets/img/heart-icon.png'); 
+}
+
+.save { 
+    background-color: #FFCA28; 
+    background-image: url('assets/img/bookmark-icon.png'); 
+}
+
+.like:hover { background-color: var(--rosa); }
+.save:hover { background-color: var(--destaque); }
+
+.titulo-local {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  margin: 0;
+  flex-shrink: 1; 
+  min-width: 0; 
+}
+
+.endereco {
+  padding: 15px;
+  background: #ffffff;
+  font-size: 1.4rem;
+}
+
+.descricao {
+  width: 25%;
+  background: var(--verde);
+  color: white;
+  padding: 30px;
+  border-radius: 0 20px 20px 0;
+  font-size: 18px;
+}
+
+.titulo-area {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+h2{
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 868px) {
+  .conteudo {
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+    gap: 0;
+  }
+
+  .endereco{
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  .card, .descricao {
+    width: 100%; 
+    border-radius: 0;
+  }
+
+  .card {
+    margin-bottom: 15px; 
+    border-radius: 20px 20px 0 0;
+  }
+
+  .descricao {
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+  }
+
+  .topo {
+    padding: 15px 10px;
+  }
+  
+  .btn-voltar {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .titulo-local {
+    font-size: 1.5rem;
+  }
+}
