@@ -2,11 +2,27 @@
     margin: 0.5em 1em 1em;
 }
 
+#TelaPost .imagem-local {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#TelaPost h3 {
+    z-index: 3;
+    color: var(--branco);
+}
+
 #TelaPost .endereco p {
     color: var(--cinza-escuro);
 }
 
 #TelaPost .foto-perfil {
+    z-index: 2;
     align-items: center;
     border: 0.25em solid var(--verde-escuro);
     border-radius: 50%;
@@ -32,17 +48,12 @@
 }
 
 #TelaPost .local {
-    background-image: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0) 50%,
-            rgba(0, 0, 0, 1) 100%),
-        url("../Assets/Img/Kiki\ Café.svg");
-    background-position: center;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     height: 20em;
     justify-content: space-between;
     padding: 1em;
+    position: relative;
     width: 100%;
 }
 
@@ -86,6 +97,18 @@
 #BotaoPost {
     border-radius: 1em;
     padding: 1em;
+}
+
+#FecharPost {
+    background-color: transparent;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5em;
+    top: 0;
 }
 
 @media (max-width: 768px) {
