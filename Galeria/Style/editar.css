@@ -1,14 +1,10 @@
-/* ===============================
-   POPUP DE EDIÇÃO DO POST
-   =============================== */
-
-/* Garante que segue o fundo e estilo global */
+/* Conteúdo principal */
 #TelaEditar .popup-content {
   background: var(--verde-claro);
   z-index: 9999;
 }
 
-/* Mantém o layout igual ao popup de publicação */
+/* Layout */
 #TelaEditar .mainPopup {
   display: flex;
   justify-content: space-between;
@@ -17,7 +13,7 @@
   gap: 5%;
 }
 
-/* Área da imagem */
+/* Imagem */
 #TelaEditar .imgLabel {
   width: 50%;
   height: 100%;
@@ -31,7 +27,7 @@
   border: 3px dashed var(--verde-escuro);
   cursor: pointer;
   color: gray;
-  transition: color 0.3s, background-color 0.3s;
+  transition: 0.3s;
 }
 
 #TelaEditar .imgLabel:hover {
@@ -39,17 +35,16 @@
   color: #777;
 }
 
-/* Ícone */
 #TelaEditar .iconUpload {
   width: 50%;
   height: auto;
 }
 
 #imgInputEditar {
-    display: none;
+  display: none;
 }
 
-
+/* Inputs */
 #TelaEditar .inputs {
   width: 100%;
   border: none;
@@ -61,7 +56,7 @@
   color: var(--cinza-claro);
 }
 
-/* Botão FECHAR */
+/* Botão fechar */
 #TelaEditar .fechar-modal {
   align-items: center;
   background: transparent;
@@ -79,7 +74,7 @@
   cursor: pointer;
 }
 
-
+/* BOTÃO SALVAR */
 #BotaoSalvarEdicao {
   background-color: var(--verde);
   color: var(--branco);
@@ -88,14 +83,14 @@
   padding: 1% 8%;
   border-radius: 30px;
   margin-top: 1em;
-  transition: background-color 0.2s ease;
+  transition: 0.2s;
 }
 
 #BotaoSalvarEdicao:hover {
   background-color: var(--botao-hover);
 }
 
-/* Responsivo */
+/* RESPONSIVO */
 @media (max-width: 768px) {
   #TelaEditar .mainPopup {
     flex-direction: column;

@@ -33,11 +33,11 @@ html {
 
 button {
     background: none;
-    transition:none;
+    transition: none;
     padding: 0;
 }
 
-button:hover{
+button:hover {
     background-color: transparent;
 }
 
@@ -101,11 +101,11 @@ button:hover{
     margin: 20px 40px 0;
     display: flex;
     flex-direction: column;
-    gap: 5%;
+    gap: 25px;
 }
 
 .perfil {
-    height: 55vh;
+    height: 80%;
     background-color: var(--branco);
     border-radius: 15px;
     padding: 14% 6%;
@@ -116,8 +116,8 @@ button:hover{
 }
 
 .foto-usuario {
-    width: 8vw;
-    height: 18vh;
+    width: 125px;
+    height: 125px;
     object-fit: cover;
     border-radius: 40px;
     box-shadow: var(--sombra-md);
@@ -142,7 +142,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 16% 0.95% 0;
+    padding: 40px 10px 0;
 }
 
 .perfil-info li {
@@ -173,7 +173,7 @@ button:hover{
     flex-direction: column;
     text-decoration: none;
     align-items: center;
-    gap: 4%;
+    gap: 5px;
     color: var(--texto);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -184,8 +184,7 @@ button:hover{
 }
 
 .menu-navegação {
-    height: 25vh;
-    /* padding: 15px 20px; */
+    height: 50%;
     padding: 4% 10%;
     background-color: var(--branco);
     border-radius: 15px;
@@ -216,15 +215,15 @@ button:hover{
 }
 
 .icone-menu {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 18px;
     display: inline-block;
 }
 
 .icone-menu-sair {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-left: 6px;
     margin-right: 12px;
     display: inline-block;
@@ -318,14 +317,12 @@ main {
     display: inline-block;
 }
 
-/* icone de três pontos */
 .botao-opcoes {
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
 
-/* menu escondido */
 .menu-post {
     position: absolute;
     top: 28px;
@@ -342,7 +339,6 @@ main {
     z-index: 1000;
 }
 
-/* itens */
 .menu-post li {
     padding: 10px 15px;
     cursor: pointer;
@@ -435,20 +431,17 @@ main {
 
 @media (max-width: 1200px) {
     .perfil {
-        height: 45vh;
+        height: 110%;
+        padding: 20% 6% 25%;
     }
 
     .foto-usuario {
-        width: 10vw;
-        height: 16;
+        width: 115px;
+        height: 115px;
     }
 
-    .nome-usuario {
-        font-size: 1.0em;
-    }
-
-    .usuario {
-        font-size: 1.0em;
+    * .nome-usuario {
+        padding-top: 25px;
     }
 
     .numero {
@@ -459,19 +452,10 @@ main {
         font-size: 0.95rem;
     }
 
-    /* .perfil-info {
-    padding: 10% 1% 0;
-} */
 
     .perfil-info {
-        padding: 5px;
+        top: 10px;
     }
-
-    /* .postagens {
-    height: 100%;
-    width: 100%;
-    } */
-
 
     .perfil-info li {
         padding: 0 8px;
@@ -486,6 +470,7 @@ main {
 }
 
 @media (max-width: 800px) {
+
     .conteudo {
         flex-direction: column;
         align-items: center;
@@ -519,57 +504,82 @@ main {
         display: flex;
         width: 90%;
         gap: 20px;
-        padding: 0 10%;
+        height: 60%;
+        padding: 25px 50px;
+        justify-content: center;
     }
 
     .foto-usuario {
         display: flex;
         flex-direction: column;
-        width: 15vw;
-        height: 20vh;
+        width: 100px;
+        height: 100px;
         border-radius: 40px;
     }
 
-    .nome-usuario,
     .usuario {
         text-align: left;
-        padding: 0;
+        padding: 4px;
+        font-size: 1.2rem;
+    }
+
+    .nome-usuario {
+        display: none;
     }
 
     .perfil-info {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        padding: 0;
+        padding: 2px;
+        width: 100%;
+    }
+
+    .perfil-info li {
+        padding: 0 25px;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    .numero {
+        font-size: 0.9rem;
+
+    }
+
+    .legenda {
+        font-size: 0.8rem;
+        font-weight: bolder;
+    }
+
+    .lista-perfil {
+        gap: 5px;
     }
 
     .menu-navegação {
-        height: 10vh;
-        width: 90%;
-        align-items: center;
         display: flex;
-        padding: 1% 15%;
-        justify-content: space-between;
-    }
-
-
-
-    /* .menu-navegação {
+        justify-content: center;
+        /* Centraliza o conteúdo */
+        align-items: center;
         width: 90%;
-        margin-top: 15px;
-        padding: 15px 20px;
-    } */
+        height: 20%;
+    }
 
     .navegação {
+        display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        gap: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
     }
 
+
+
     .lista-navegacao {
-        flex-direction: column;
-        font-size: 0.9rem;
-        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
     }
 
     .icone-menu {
@@ -578,11 +588,28 @@ main {
         margin: 0;
     }
 
-    main {
-        height: auto;
+    .icone-menu-sair {
+        margin-right: 0;
+
     }
 
+    main {
+    overflow-y: unset !important;
+    overflow-x: hidden !important;
+
+
+}
+.postagens, .post {
+    overflow: visible !important;
+}
+
+
     .postagens {
-        grid-template-columns: 1fr;
+        gap: 85px;
+    }
+
+    .post {
+        width: 100%;
+        height: 200%;
     }
 }

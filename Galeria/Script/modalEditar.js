@@ -1,90 +1,52 @@
-// -----------------------------
-// EDITAR POST
-// -----------------------------
+// BOTÃO QUE ABRE O POPUP DE EDITAR
+const botoesEditar = document.querySelectorAll(".editar-post");
+const popupEditar = document.getElementById("TelaEditar");
+const botaoFecharEditar = document.getElementById("btn-fechar-editar");
 
-let postEmEdicao = null;
+// Abrir popup ao clicar em "Editar"
+botoesEditar.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    popupEditar.style.display = "flex";
+  });
+});
 
-// Abrir popup
-function abrirPopupEditar(post) {
-    postEmEdicao = post;
+// Fechar no botão X
+botaoFecharEditar.addEventListener("click", () => {
+  popupEditar.style.display = "none";
+});
 
-    const popupEditar = document.getElementById("TelaEditar");
-    popupEditar.style.display = "flex";  // EXATAMENTE igual ao popup de publicação
+// Fechar clicando fora do conteúdo
+popupEditar.addEventListener("click", (e) => {
+  if (e.target === popupEditar) {
+    popupEditar.style.display = "none";
+  }
+});
 
-    // Preenche campos
-    document.getElementById("localEditar").value =
-        post.querySelector(".legenda-foto").innerText || "";
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll(
+    "#TelaEditar input, #TelaEditar textarea"
+  );
 
-    document.getElementById("comentarioEditar").value =
-        post.dataset.comentario || "";
-
-    document.getElementById("inputCepEditar").value =
-        post.dataset.cep || "";
-
-    document.getElementById("bairroEditar").value =
-        post.dataset.bairro || "";
-
-    document.getElementById("ruaEditar").value =
-        post.dataset.rua || "";
-
-    document.getElementById("cidadeEditar").value =
-        post.dataset.cidade || "";
-
-    // Filtro
-    const selectFiltro = document.querySelector("#TelaEditar select");
-    selectFiltro.value = post.dataset.filtro || "cafeteria";
-
-    // Alterar imagem
-    const imgInputEditar = document.getElementById("imgInputEditar");
-    imgInputEditar.onchange = function () {
-        const arquivo = imgInputEditar.files[0];
-        if (arquivo) {
-            const img = post.querySelector(".foto-post");
-            img.src = URL.createObjectURL(arquivo);
-        }
+  inputs.forEach((input) => {
+    const setFocused = () => {
+      const label = input.previousElementSibling;
+      if (label && label.tagName.toLowerCase() === "label") {
+        label.classList.add("focused");
+      }
     };
-}
 
-// FECHAR popup ao clicar no X
-document.getElementById("btn-fechar-editar").addEventListener("click", () => {
-    document.getElementById("TelaEditar").style.display = "none";
+    const removeFocused = () => {
+      const label = input.previousElementSibling;
+      if (label && label.tagName.toLowerCase() === "label") {
+        if (input.value.trim() === "") {
+          label.classList.remove("focused");
+        }
+      }
+    };
+
+    input.addEventListener("focus", setFocused);
+    input.addEventListener("blur", removeFocused);
+
+    if (input.value && input.value.trim() !== "") setFocused();
+  });
 });
-
-// FECHAR clicando fora
-document.getElementById("TelaEditar").addEventListener("click", (e) => {
-    if (e.target.id === "TelaEditar") {
-        document.getElementById("TelaEditar").style.display = "none";
-    }
-});
-
-// SALVAR ALTERAÇÕES
-document.getElementById("BotaoSalvarEdicao").addEventListener("click", () => {
-    if (!postEmEdicao) return;
-
-    postEmEdicao.querySelector(".legenda-foto").innerText =
-        document.getElementById("localEditar").value;
-
-    postEmEdicao.dataset.comentario =
-        document.getElementById("comentarioEditar").value;
-
-    postEmEdicao.dataset.cep =
-        document.getElementById("inputCepEditar").value;
-
-    postEmEdicao.dataset.bairro =
-        document.getElementById("bairroEditar").value;
-
-    postEmEdicao.dataset.rua =
-        document.getElementById("ruaEditar").value;
-
-    postEmEdicao.dataset.cidade =
-        document.getElementById("cidadeEditar").value;
-
-    postEmEdicao.dataset.filtro =
-        document.querySelector("#TelaEditar select").value;
-
-    // FECHA POPUP
-    document.getElementById("TelaEditar").style.display = "none";
-});
-
-// Tornar global para o galeria.js
-window.abrirPopupEditar = abrirPopupEditar;

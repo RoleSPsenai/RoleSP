@@ -1,28 +1,39 @@
-// -----------------------------
-// EXCLUIR POST
-// -----------------------------
 
-let postParaExcluir = null;
+const botoesExcluir = document.querySelectorAll(".excluir-post");
 
-// Abre popup de exclusão
-function abrirPopupExcluir(post) {
-    postParaExcluir = post;
-    document.getElementById("popupExcluir").style.display = "flex";
-}
+// Popup de exclusão
+const popupExcluir = document.getElementById("popupExcluir");
+const btnCancelarExcluir = document.getElementById("btnCancelarExcluir");
+const btnConfirmarExcluir = document.getElementById("btnConfirmarExcluir");
 
-// Botão "Não"
-document.getElementById("btnCancelarExcluir").addEventListener("click", () => {
-    document.getElementById("popupExcluir").style.display = "none";
-    postParaExcluir = null;
+// Abrir popup de exclusão
+botoesExcluir.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        popupExcluir.showModal();
+    });
 });
 
-// Botão "Sim"
-document.getElementById("btnConfirmarExcluir").addEventListener("click", () => {
+// Fechar popup clicando em "Não"
+btnCancelarExcluir.addEventListener("click", () => {
+    popupExcluir.close();
+});
 
-    if (postParaExcluir) {
-        postParaExcluir.remove();
-        postParaExcluir = null;
-    }
+// Confirmar exclusão
+btnConfirmarExcluir.addEventListener("click", () => {
 
-    document.getElementById("popupExcluir").style.display = "none";
+    popupExcluir.close();
+});
+
+
+popupExcluir.addEventListener("click", (e) => {
+    const caixa = popupExcluir.querySelector(".popup-excluir-content");
+    const r = caixa.getBoundingClientRect();
+
+    const clicouFora =
+        e.clientX < r.left ||
+        e.clientX > r.right ||
+        e.clientY < r.top ||
+        e.clientY > r.bottom;
+
+    if (clicouFora) popupExcluir.close();
 });

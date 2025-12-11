@@ -1,54 +1,45 @@
-#popupSair {
+/* dialog#popupSair {
     position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     border: none;
     padding: 0;
     margin: 0;
     background: transparent;
+    box-shadow: none;
 }
 
-
-.icone-Sair {
-    width: 70px; 
-    height: 70px;
+dialog#popupSair::backdrop{
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.55);
 }
 
+#popupSair .popup-sair-da-conta {
+    background: #C8E3DD;
+    color: #085E50;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
 
-.confirmacao {
+#popupSair .icone-sair {
+    width: 50px;
+    height: 50px;
+}
+
+#popupSair .acoes-sair {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 10px;  
+    gap: 50px;
 }
 
 
-.popup-sair-da-conta-content {
-  background: var(--verde-claro);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: var(--sombra);
-  text-align: center;
-  justify-content: center;
-  color: var(--preto);
-  width: 50%;
-  height: 50%;
-}
-
-.popup-sair-da-conta-content h2 {
-  font-weight: 700;
-padding: 15px;
-}
-
-.acoes-sair {
- display: flex;
-    justify-content: center;    /* botões mais próximos */
-    gap: 50px;       
-}
-
-.btn-cancelar,
-.btn-confirmar {
+#popupSair .btn-cancelar,
+#popupSair .btn-confirmar {
   background-color: var(--verde);
   color: var(--branco);
   padding: 15px 35px;
@@ -58,7 +49,58 @@ padding: 15px;
   cursor: pointer;
 }
 
-.btn-cancelar:hover,
-.btn-confirmar:hover {
+#popupSair .btn-cancelar:hover,
+#popupSair .btn-confirmar:hover {
   background-color: var(--botao-hover);
+} */
+
+/* --- AQUI ESTÁ A CORREÇÃO REAL --- */
+dialog#popupSair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: block !important;
+    max-width: none !important;
+    width: auto !important;
+
+    box-shadow: none !important;
+}
+
+/* Fundo escuro borrado atrás */
+dialog#popupSair::backdrop {
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+}
+
+/* Container interno */
+#popupSair .popup-sair-da-conta {
+    background: #C8E3DD;
+    color: #085E50;
+    padding: 40px 50px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Ícone */
+#popupSair .icone-sair {
+    width: 50px;
+    height: 50px;
+}
+
+/* Botões */
+#popupSair .acoes-sair {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
 }

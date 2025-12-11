@@ -5,11 +5,11 @@ const botaoFechar = document.getElementById("btn-fechar");
 
 // Abrir
 botao.addEventListener("click", () => {
-  popup.style.display = "flex";
+  popup.showModal();
 });
 
 botaoFechar.addEventListener("click", () => {
-  popup.style.display = "none";
+  popup.close();
 });
 
 // Fechar clicando fora
