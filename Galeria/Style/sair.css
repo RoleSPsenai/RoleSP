@@ -28,10 +28,19 @@ dialog::backdrop {
   flex-direction: column;
   gap: 20px;
   height: auto;
-  max-width: 450px;
+  max-width: 600px;
   overflow: hidden;
   padding: 2rem;
   width: 80%;
+}
+
+#popupSair .fechar-modal {
+  top: 1em;
+  right: 1em;
+  width: 50px;
+  padding: 0.75em;
+  background: transparent;
+  border-radius: 1em;
 }
 
 /* Ícone */
@@ -41,10 +50,17 @@ dialog::backdrop {
 }
 
 /* Container texto + ícone */
-.logout {
-  align-items: center;
+#popupSair .parte-superior {
   display: flex;
-  gap: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#popupSair .logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 /* Botões */
