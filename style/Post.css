@@ -1,4 +1,11 @@
-
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--tipografia);
+}
 
 :root {
   --verde: #0F6D59;
@@ -7,6 +14,8 @@
   --texto: #1E1E1E;
   --rosa: #FF7A7A;
   --destaque: #FFCA28;
+  --verm: red;
+  --verde-escuro: #085e50;
 }
 
 body {
@@ -36,6 +45,7 @@ body {
   justify-content: center;
   padding: 20px;
   gap: 0; 
+  flex-direction: column;
 }
 
 .card {
@@ -45,6 +55,15 @@ body {
   border-radius: 20px 0px 0px 20px;
   overflow: hidden;
 }
+
+.Card-Completo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 0; 
+  /* height: 70vh; */
+}
+
 
 .imagem-container {
   position: relative;
@@ -94,18 +113,6 @@ body {
     gap: 10px; 
 }
 
-.like { 
-    background-color: #FF7A7A; 
-    background-image: url('assets/img/heart-icon.png'); 
-}
-
-.save { 
-    background-color: #FFCA28; 
-    background-image: url('assets/img/bookmark-icon.png'); 
-}
-
-.like:hover { background-color: var(--rosa); }
-.save:hover { background-color: var(--destaque); }
 
 .titulo-local {
   font-size: 2rem;
@@ -141,12 +148,104 @@ body {
   gap: 15px;
 }
 
+
+.acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 5px;
+}
+
+.icone-de-estado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-post {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.icone-post:hover {
+    transform: scale(1.2);
+}
+
+.icone-favorito {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: color 0.25s, transform 0.12s;
+}
+
+.icone-favorito:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
+}
+
+.icone-favorito svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-favorito.selected {
+    color: var(--verm);
+    transform: scale(1.12);
+}
+
+.icone-destino {
+    padding: 0;
+    display: flex;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    border: none;
+    transition: color 0.25s, transform 0.12s;
+    background-color: transparent;
+}
+
+.icone-destino:hover {
+    background-color: transparent;
+    transform: scale(1.25);
+    border: none;
+    color: var(--preto);
+}
+
+.icone-destino svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+}
+
+.icone-destino.selected {
+    color: var(--verde-escuro);
+    transform: scale(1.12);
+}
+
+
+
 h2{
+  color: white;
   margin: 0;
   font-size: 1.4rem;
 }
 
 @media (max-width: 868px) {
+
+  .Card-Completo{
+    flex-direction: column;
+  }
   .conteudo {
     flex-direction: column;
     padding: 10px;
@@ -185,5 +284,13 @@ h2{
 
   .titulo-local {
     font-size: 1.5rem;
+  }
+
+  .icone-destino{
+    font-size: 40px;
+  }
+
+  .icone-favorito{
+    font-size: 40px;
   }
 }
