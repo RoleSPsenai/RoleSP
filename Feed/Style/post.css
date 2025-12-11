@@ -113,6 +113,12 @@
     position: absolute;
     right: 0.5em;
     top: 0;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#FecharPost:hover {
+    transform: scale(1.25);
 }
 
 @media (max-width: 768px) {
