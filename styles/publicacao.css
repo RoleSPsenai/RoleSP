@@ -86,6 +86,7 @@
 }
 
 .fechar-modal {
+  width: 6%;
   align-items: center;
   background: transparent;
   border-radius: 1em;
@@ -93,8 +94,8 @@
   justify-content: flex-end;
   padding: 0.75em;
   position: absolute;
-  right: 1em;
-  top: 1em;
+  right: .5%;
+  top: .5%;
 }
 
 .fechar-modal:hover {
@@ -141,8 +142,16 @@
   width: 100%;
 }
 
+#groupCidade {
+  width: 50%;
+}
+
+#groupEstado {
+  width: 100%;
+}
+
 .botao-publicar{
-  margin: 20px;
+  margin-top: 20px;
 }
 
 button {
@@ -162,6 +171,10 @@ button {
     gap: 2em;
   }
 
+  .fechar-modal{
+    width: 15%;
+  }
+
   .left {
     width: 80%;
   }
@@ -175,6 +188,10 @@ button {
   }
 
   .sectioInputs {
+    width: 100%;
+  }
+
+  .forms{
     width: 100%;
   }
 
@@ -193,6 +210,10 @@ button {
 
   .select {
     margin-top: -10px;
+  }
+
+  .botao-publicar{
+    margin-top: 3%;
   }
 
   button {

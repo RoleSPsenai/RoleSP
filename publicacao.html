@@ -27,7 +27,7 @@
         <!-- div right -->
         <div class="sectioInputs">
           <button id="btn-fechar" class="fechar-modal">
-            <img src="assets/img/icon/Fechar.svg" alt="Fechar" class="sairImg"/>
+            <img src="assets/img/icon/Fechar.svg" alt="Fechar" class="sairImg" />
           </button>
           <div class="select">
             <label for="local" class="title">Filtros</label>
@@ -40,7 +40,7 @@
               <option value="cultura">Cultura</option>
             </select>
           </div>
-          <div>
+          <div class="forms">
             <label for="local" class="title">Local</label>
             <input type="text" placeholder="Nome do local..." class="inputs" id="local">
             <div id="groupInput">
@@ -49,14 +49,22 @@
                 <input type="text" placeholder="CEP do local..." class="inputs" id="inputCep">
               </div>
               <div id="groupBairro">
-                <label for="bairro" class="title">Bairro</label>
-                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
+                <label for="rua" class="title">Rua:</label>
+                <input type="text" placeholder="Rua do local..." class="inputs" id="rua">
               </div>
             </div>
-            <label for="rua" class="title">Rua:</label>
-            <input type="text" placeholder="Rua do local..." class="inputs" id="rua">
-            <label for="cidade" class="title">Cidade:</label>
-            <input type="text" placeholder="Cidade do local..." class="inputs" id="cidade">
+            <label for="bairro" class="title">Bairro</label>
+            <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
+            <div id="groupInput">
+              <div id="groupCidade">
+                <label for="cidade" class="title">Cidade:</label>
+                <input type="text" placeholder="Cidade do local..." class="inputs" id="cidade">
+              </div>
+              <div id="groupEstado">
+                <label for="cidade" class="title">Estado:</label>
+                <input type="text" placeholder="Estado do local..." class="inputs" id="estado">
+              </div>
+            </div>
             <label for="comentario" class="title">Comentário:</label>
             <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentario">
           </div>

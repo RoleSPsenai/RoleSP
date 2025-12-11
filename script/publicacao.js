@@ -96,3 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+//* API VIACEP
+
+const eNumero = (numero) => /^[0-9]+$/.test(numero);
+
+const cepValido = (cep) => cep.lenght == 8 && eNumero(cep);
+
+const limparFormulario = (endereco) => {
+  document.getElementById("rua").value = "";
+  document.getElementById("bairro").value = "";
+  document.getElementById("cidade").value = "";
+  document.getElementById("estado").value = "";
+}
