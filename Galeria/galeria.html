@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="Style/global.css" />
-  <link rel="stylesheet" href="Style/galeria.css" />
-  <link rel="stylesheet" href="Style/publicação.css" />
-  <link rel="stylesheet" href="Style/editar.css" />
   <link rel="stylesheet" href="Style/configuracao.css" />
+  <link rel="stylesheet" href="Style/editar.css" />
   <link rel="stylesheet" href="Style/excluir.css" />
+  <link rel="stylesheet" href="Style/galeria.css" />
+  <link rel="stylesheet" href="Style/post.css">
+  <link rel="stylesheet" href="Style/publicação.css" />
   <link rel="stylesheet" href="Style/sair.css" />
   <title>Galeria</title>
 </head>
@@ -79,43 +80,10 @@
     <main>
       <h4 class="titulo-postagens">Minhas Postagens</h4>
       <section id="postagens" class="postagens">
-        <article class="post">
+        <article class="post" data-nome="Kiki Café" data-bairro="Ipiranga, São Paulo"
+          data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/Kiki Café.svg">
           <figure class="foto-postagens">
-            <img class="foto-post" src="Assets/Img/Kiki Café.svg" alt="" />
-            <figcaption class="legenda-foto">Kiki Café</figcaption>
-          </figure>
-          <div class="acoes">
-            <div class="icone-de-estado">
-              <button class="icone-favorito" aria-label="Favoritar">
-                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                  focusable="false">
-                  <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
-                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
-                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
-                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
-                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
-                </svg>
-              </button>
-              <button class="icone-destino" aria-label="Destino">
-                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                  focusable="false">
-                  <path
-                    d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
-                </svg>
-              </button>
-            </div>
-            <div class="configuracoes-post">
-              <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções" />
-              <ul class="menu-post">
-                <li class="editar-post">Editar</li>
-                <li class="excluir-post">Excluir</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <figure class="foto-postagens">
-            <img class="foto-post" src="Assets/Img/Kiki Café.svg" alt="" />
+            <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="" />
             <figcaption class="legenda-foto">Kiki Café</figcaption>
           </figure>
           <div class="acoes">
@@ -314,6 +282,40 @@
     </div>
   </dialog>
 
+  <!-- MODAL POST -->
+  <dialog id="TelaPost" class="popup">
+    <div class="painel-esquerdo">
+      <!-- Botão de fechar -->
+      <button id="FecharPost" aria-label="Fechar">&times;</button>
+      <div class="local">
+        <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost">
+        <div class="perfil">
+          <figure class="foto-perfil">
+            <img src="Assets/Img/perfil_galeria.png" alt="Imagem do local" />
+          </figure>
+          <h3>Sony</h3>
+        </div>
+        <div class="info">
+          <h3 id="NomeDoLocal"></h3>
+          <div class="opcao">
+            <button class="curtida">
+              <span src="assets/icon/Heart.svg" alt="Curtir" class="curtir">
+            </button>
+            <button class="salvo">
+              <span src="assets/icon/Location.svg" alt="Salvar" class="salvar">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="endereco">
+        <h2 id="BairroDoLocal"></h2>
+        <p id="EnderecoDoLocal"></p>
+      </div>
+    </div>
+    <div class="painel-direito">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet massa vitae.</p>
+    </div>
+  </dialog>
 
   <script src="Script/galeria.js"></script>
   <script src="Script/modalConfig.js"></script>
