@@ -172,7 +172,7 @@
 }
 
 /* ======== RESPONSIVO ======== */
-@media (max-width: 800px) {
+@media (max-width: 960px) {
     .container-login {
         box-sizing: border-box;
         grid-template-columns: 1fr;
