@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const posts = document.querySelectorAll(".post");
 
     posts.forEach(post => {
-
         const imagem = post.querySelector(".foto-post");
-
+        
         function abrirModal() {
             const imgSrc = post.dataset.img;
             const nome = post.dataset.nome;
@@ -29,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
             telaPost.showModal();
         }
 
-        imagem.addEventListener("click", abrirModal);
-        botao.addEventListener("click", abrirModal);
+        if (imagem) {
+            imagem.addEventListener("click", abrirModal);
+        }
     });
-
-    fecharPost.addEventListener("click", () => telaPost.closeModal());
+    fecharPost.addEventListener("click", () => telaPost.close());
 });

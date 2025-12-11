@@ -1,18 +1,3 @@
-/* Container do popup (centraliza na tela) */
-#TelaEditar.popup {
-  align-items: center;
-  backdrop-filter: blur(3px);
-  background: rgba(0, 0, 0, 0.55);
-  display: none;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-}
-
 /* Conteúdo principal do popup */
 #TelaEditar .popup-content {
   background: var(--fundo);

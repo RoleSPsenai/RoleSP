@@ -1,4 +1,3 @@
-
 const botoesExcluir = document.querySelectorAll(".excluir-post");
 
 // Popup de exclusão
@@ -20,7 +19,6 @@ btnCancelarExcluir.addEventListener("click", () => {
 
 // Confirmar exclusão
 btnConfirmarExcluir.addEventListener("click", () => {
-
     popupExcluir.close();
 });
 

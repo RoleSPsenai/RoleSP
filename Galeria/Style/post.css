@@ -1,8 +1,13 @@
-#TelaPost {
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+#TelaPost[open] {
+    display: flex;
     flex-direction: row;
     border-radius: 20px;
-    display: flex;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+    margin: auto; 
+    max-width: 90vw;
+    max-height: 90vh;
+    border: none;
+    padding: 0;
 }
 
 #TelaPost .legenda-post {

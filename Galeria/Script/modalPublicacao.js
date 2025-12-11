@@ -1,22 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Botão que abre popupPost
-  const botaoPost = document.getElementById("BotaoPublicar");
-  const popupPost = document.getElementById("TelaPublicacao");
-  const botaoPostFechar = document.getElementById("BotaoFecharPublicacao");
+  // popupPublicacao
+  const botaoPublicacao = document.getElementById("BotaoPublicar");
+  const popupPublicacao = document.getElementById("TelaPublicacao");
+  const botaoPublicacaoFechar = document.getElementById("BotaoFecharPublicacao");
   
-  // Abrir - mostrar o popupPost alterando display
-  botaoPost.addEventListener("click", () => {
-    popupPost.showModal();
+  botaoPublicacao.addEventListener("click", () => {
+    popupPublicacao.showModal();
   });
   
-  botaoPostFechar.addEventListener("click", () => {
-    popupPost.closeModal();
+  botaoPublicacaoFechar.addEventListener("click", () => {
+    popupPublicacao.close();
   });
   
   // Fechar clicando fora
-  popupPost.addEventListener("click", (e) => {
-    if (e.target === popupPost) {
-      popupPost.closeModal();
+  popupPublicacao.addEventListener("click", (e) => {
+    if (e.target === popupPublicacao) {
+      popupPublicacao.close();
     }
   });
 
