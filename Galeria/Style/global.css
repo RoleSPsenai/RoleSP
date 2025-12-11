@@ -1,59 +1,89 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 :root {
-  /* --- Cores --- */
-  /* Principais */
-  --verde-escuro: #085e50;
-  --verde: #0da58c;
-  --verde-claro: rgb(185, 225, 205);
+  --amarelo: #f7c13c;
   --aqua: #00bfbf;
-
-  /* Detalhes */
+  --botao-hover: #042f28;
   --branco: #ffffff;
   --cinza-claro: hsl(0, 0%, 40%);
   --cinza-escuro: hsl(0, 0%, 25%);
-  --preto: hsl(0, 0%, 15%);
-  --amarelo: #f7c13c;
-  --botao-hover: #042f28;
   --destaque: #0fffbf;
   --destaqueOpacity1: rgba(0, 128, 128, 0.9);
   --destaqueOpacity2: rgba(0, 64, 48, 0.4);
-
-  /* Outros */
+  --imagem-fundo: url("../assets/Img/backgrounds/São\ Paulo.png");
+  --preto: hsl(0, 0%, 15%);
   --sombra: 0 5px 10px rgba(0, 0, 0, 0.5);
   --tipografia: "Nunito", sans-serif;
-  --imagem-fundo: url("../assets/Img/backgrounds/São\ Paulo.png");
+  --verde: #0da58c;
+  --verde-claro: rgb(185, 225, 205);
+  --verde-escuro: #085e50;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: var(--tipografia);
+  margin: 0;
+  padding: 0;
 }
 
-html {
-  scrollbar-width: auto;
-  scrollbar-color: var(--branco) var(--verde-escuro);
-  scroll-behavior: smooth;
+a {
+  color: var(--branco);
+  text-decoration: none;
 }
 
-header {
-  justify-content: space-between;
-  align-items: center;
-  height: 15vh;
-  padding: 20px;
+a:hover,
+a:focus {
+  text-decoration: none;
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   background-color: var(--branco);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+button {
+  background-color: var(--verde);
+  border: none;
+  color: var(--branco);
+  max-width: 10em;
+  transition: background-color 0.15s;
+}
+
+button:hover {
+  background-color: var(--botao-hover);
+  cursor: pointer;
+}
+
+dialog {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-sizing: border-box;
+  color: var(--branco);
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header {
+  align-items: center;
+  height: 15vh;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--branco) var(--verde-escuro);
+  scrollbar-width: auto;
 }
 
 img,
@@ -61,11 +91,19 @@ picture,
 video,
 canvas,
 svg {
+  background-position: center;
+  background-size: cover;
   display: block;
   max-width: 100%;
-  background-size: cover;
-  background-position: center;
   object-fit: contain;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 1vh;
+  width: 100%;
 }
 
 input,
@@ -75,55 +113,10 @@ select {
   font: inherit;
 }
 
-button {
-  background-color: var(--verde);
-  color: var(--branco);
-  transition: background-color 0.15s;
-  border: none;
-  max-width: 10em;
-}
-
-button:hover {
-  background-color: var(--botao-hover);
-  cursor: pointer;
-}
-
-dialog {
-  position: fixed;
-  border: none;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--branco);
-  overflow: hidden;
-}
-
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-a {
-  text-decoration: none;
-  color: var(--branco);
-}
-
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-
 label {
-  font-weight: 600;
   align-self: flex-start;
+  font-weight: 600;
   margin-bottom: -0.75em;
-}
-
-input {
-  padding: 1vh;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  width: 100%;
 }
 
 textarea {

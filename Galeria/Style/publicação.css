@@ -1,71 +1,71 @@
 /* Botão */
 #BotaoPublicar {
-  padding: 0.75em 1.5em;
-  font-size: 1em;
   cursor: pointer;
+  font-size: 1em;
+  padding: 0.75em 1.5em;
 }
 
 /* Popup PUBLICAÇÃO */
 #TelaPublicacao.popup {
-  display: none;
-  backdrop-filter: blur(3px);
+  align-items: center;
   background: rgba(0, 0, 0, 0.55);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  backdrop-filter: blur(3px);
+  display: none;
   height: 100%;
   justify-content: center;
-  align-items: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 9999;
 }
 
 /* CONTEÚDO */
 #TelaPublicacao .popup-content {
-  padding: 2% 3%;
-  display: flex;
-  width: 80%;
-  height: 80vh;
   background: var(--verde-claro);
   border-radius: 1em;
-  overflow: hidden;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
   flex-direction: column;
+  height: 80vh;
   justify-content: center;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 2% 3%;
   position: relative;
+  transition: all 0.3s ease;
+  width: 80%;
 }
 
 /* LAYOUT PRINCIPAL */
 #TelaPublicacao .mainPopup {
-  display: flex;
-  justify-content: space-between;
   align-items: end;
-  height: 100%;
+  display: flex;
   gap: 5%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 /* Área esquerda — imagem */
 #TelaPublicacao .left {
-  flex: 1;
   display: flex;
+  flex: 1;
   justify-content: center;
 }
 
 #TelaPublicacao .imgLabel {
-  width: 50%;
-  height: 100%;
+  align-items: center;
   aspect-ratio: 4/5;
   background-color: var(--branco);
+  border: 3px dashed var(--verde-escuro);
   border-radius: 1em;
+  color: gray;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  border: 3px dashed var(--verde-escuro);
-  cursor: pointer;
-  color: gray;
   transition: color 0.3s, background-color 0.3s;
+  width: 50%;
 }
 
 #TelaPublicacao .imgLabel:hover {
@@ -74,8 +74,8 @@
 }
 
 #TelaPublicacao .iconUpload {
-  width: 50%;
   height: auto;
+  width: 50%;
 }
 
 #imgInput {
@@ -101,28 +101,28 @@
 }
 
 #TelaPublicacao .sectioInputs {
-  gap: 2%;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2%;
 }
 
 #TelaPublicacao .inputs,
 #TelaPublicacao .inputs::placeholder {
-  width: 100%;
+  background-color: var(--branco);
   border: none;
   border-radius: 10px;
+  color: var(--cinza-claro);
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 5px;
-  background-color: var(--branco);
-  color: var(--cinza-claro);
+  width: 100%;
 }
 
 #TelaPublicacao #groupInput {
-  width: 100%;
   display: flex;
   gap: 1%;
+  width: 100%;
 }
 
 #TelaPublicacao #groupCep {
@@ -138,10 +138,10 @@
 }
 
 #TelaPublicacao button {
-  max-width: 40%;
   border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
+  max-width: 40%;
   padding: 1% 8%;
   text-decoration: none;
 }
@@ -149,10 +149,10 @@
 /* RESPONSIVO */
 @media (max-width: 768px) {
   #TelaPublicacao .mainPopup {
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
     gap: 2em;
+    justify-content: center;
   }
 
   #TelaPublicacao .left {
@@ -160,11 +160,11 @@
   }
 
   #TelaPublicacao .imgLabel {
-    margin-top: 2em;
-    max-width: 50%;
-    height: 50%;
     align-self: center;
     aspect-ratio: unset;
+    height: 50%;
+    margin-top: 2em;
+    max-width: 50%;
   }
 
   #TelaPublicacao .sectioInputs {
@@ -177,8 +177,8 @@
   }
 
   #TelaPublicacao button {
-    max-width: 100%;
     font-size: 1rem;
+    max-width: 100%;
     padding: 1% 4%;
   }
 }

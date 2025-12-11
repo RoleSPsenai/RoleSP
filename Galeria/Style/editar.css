@@ -1,33 +1,58 @@
+/* Container do popup (centraliza na tela) */
+#TelaEditar.popup {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
 /* Conteúdo principal */
 #TelaEditar .popup-content {
-  background: var(--verde-claro);
-  z-index: 9999;
+  background: var(--fundo);
+  border-radius: 1em;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-width: 900px;
+  overflow: hidden;
+  padding: 2% 3%;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 80%;
 }
 
 /* Layout */
 #TelaEditar .mainPopup {
-  display: flex;
-  justify-content: space-between;
   align-items: end;
-  height: 100%;
+  display: flex;
   gap: 5%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 /* Imagem */
 #TelaEditar .imgLabel {
-  width: 50%;
-  height: 100%;
+  align-items: center;
   aspect-ratio: 4/5;
   background-color: var(--branco);
+  border: 3px dashed var(--verde-escuro);
   border-radius: 1em;
+  color: gray;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  border: 3px dashed var(--verde-escuro);
-  cursor: pointer;
-  color: gray;
   transition: 0.3s;
+  width: 50%;
 }
 
 #TelaEditar .imgLabel:hover {
@@ -36,8 +61,8 @@
 }
 
 #TelaEditar .iconUpload {
-  width: 50%;
   height: auto;
+  width: 50%;
 }
 
 #imgInputEditar {
@@ -46,14 +71,25 @@
 
 /* Inputs */
 #TelaEditar .inputs {
-  width: 100%;
+  background-color: var(--branco);
   border: none;
   border-radius: 10px;
+  color: var(--cinza-claro);
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 5px;
-  background-color: var(--branco);
-  color: var(--cinza-claro);
+  width: 100%;
+}
+
+/* Labels */
+#TelaEditar .title {
+  color: var(--cinza-escuro);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#TelaEditar .novo-post-form {
+  gap: 20px;
 }
 
 /* Botão fechar */
@@ -67,6 +103,7 @@
   position: absolute;
   right: 1em;
   top: 1em;
+  width: 50px;
 }
 
 #TelaEditar .fechar-modal:hover {
@@ -74,15 +111,15 @@
   cursor: pointer;
 }
 
-/* BOTÃO SALVAR */
+/* Botão Salvar */
 #BotaoSalvarEdicao {
   background-color: var(--verde);
+  border: none;
+  border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
-  border: none;
-  padding: 1% 8%;
-  border-radius: 30px;
   margin-top: 1em;
+  padding: 1% 8%;
   transition: 0.2s;
 }
 
@@ -90,7 +127,33 @@
   background-color: var(--botao-hover);
 }
 
-/* RESPONSIVO */
+/* Responsivo */
+@media (max-width: 768px) {
+  #TelaEditar .mainPopup {
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  #TelaEditar .imgLabel {
+    aspect-ratio: unset;
+    height: 40%;
+    max-width: 60%;
+  }
+
+  #TelaEditar .inputs {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  #BotaoSalvarEdicao {
+    font-size: 1rem;
+    padding: 3%;
+    width: 100%;
+  }
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   #TelaEditar .mainPopup {
     flex-direction: column;
