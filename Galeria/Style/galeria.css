@@ -191,7 +191,6 @@ main {
 .menu-navegação {
   background-color: var(--branco);
   border-radius: 15px;
-  /* height: 50%; */
   padding: 5% 5%;
 }
 
@@ -487,11 +486,9 @@ main {
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 90%;
   }
 
   .navegação {
-    align-items: center;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -514,6 +511,7 @@ main {
 
   .parte_lateral {
     align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: row;
     width: 90%;
@@ -526,7 +524,7 @@ main {
     height: 100%;
     gap: 20px;
     justify-content: center;
-    padding: 25px 60px;
+    padding: 25px;
   }
 
   .usuario {
@@ -571,19 +569,20 @@ main {
   .postagens,
   .post {
     overflow: visible !important;
+    justify-content: center;
   }
 
   .post {
     height: 60%;
     width: 100%;
+    max-width: 500px;
   }
 }
 
 /* Ajustes adicionais para telefones pequenos */
-@media (max-width: 800px) {
+@media (max-width: 720px) {
   .cabecalho {
-    padding: 8px 12px;
-    height: 12vh;
+    height: 10vh;
   }
 
   .logo-colorido {
@@ -596,8 +595,17 @@ main {
     width: auto;
   }
 
+  .menu-navegação {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .navegação {
+    gap: 30px;
+  }
+
   .conteudo {
-    padding-top: 12vh;
+    padding-top: 10vh;
   }
 
   main {
@@ -608,17 +616,13 @@ main {
   }
 
   .parte_lateral {
-    width: 100%;
-    margin: 10px 12px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    width: 95%;
+    gap: 20px;
   }
 
   .perfil {
-    padding: 18px;
     height: auto;
-    width: 100%;
+    width: 60%;
     gap: 12px;
     flex-direction: column;
     align-items: center;
@@ -652,5 +656,9 @@ main {
     height: auto;
     padding: 8px;
     font-size: 0.95rem;
+  }
+
+  .titulo-postagens {
+    font-size: 1.5rem;
   }
 }
