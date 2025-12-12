@@ -76,7 +76,8 @@
                     data-nome="Kiki Café"
                     data-bairro="Ipiranga, São Paulo"
                     data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404"
-                    data-img="Assets/Img/Kiki Café.svg">
+                    data-img="Assets/Img/Kiki Café.svg"
+                    >
                     <figure class="foto-feed">
                         <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="">
                         <figcaption class="legenda-foto">Kiki Café</figcaption>
@@ -102,7 +103,7 @@
                             </button>
                         </div>
                         <div class="informacoes">
-                            <button id="BotaoPost" class="icone-informacao"><img class="icone-informacao"
+                            <button id="BotaoInfo" class="icone-informacao"><img class="icone-informacao"
                                     src="Assets/Ícones/Ações/Informação.svg" alt="">
                                 <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
                                     enable-background="new 0 0 52 52" xml:space="preserve">
@@ -145,7 +146,7 @@
                             </button>
                         </div>
                         <div class="informacoes">
-                            <button id="BotaoPost" class="icone-informacao"><img class="icone-informacao"
+                            <button id="BotaoInfo" class="icone-informacao"><img class="icone-informacao"
                                     src="Assets/Ícones/Ações/Informação.svg" alt="">
                                 <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
                                     enable-background="new 0 0 52 52" xml:space="preserve">
@@ -188,7 +189,7 @@
                             </button>
                         </div>
                         <div class="informacoes">
-                            <button id="BotaoPost" class="icone-informacao"><img class="icone-informacao"
+                            <button id="BotaoInfo" class="icone-informacao"><img class="icone-informacao"
                                     src="Assets/Ícones/Ações/Informação.svg" alt="">
                                 <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
                                     enable-background="new 0 0 52 52" xml:space="preserve">
@@ -231,7 +232,7 @@
                             </button>
                         </div>
                         <div class="informacoes">
-                            <button id="BotaoPost" class="icone-informacao"><img class="icone-informacao"
+                            <button id="BotaoInfo" class="icone-informacao"><img class="icone-informacao"
                                     src="Assets/Ícones/Ações/Informação.svg" alt="">
                                 <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
                                     enable-background="new 0 0 52 52" xml:space="preserve">
@@ -243,33 +244,18 @@
                             </button>
                         </div>
                     </div>
-                </article>
+                </article> 
             </section>
         </main>
     </div>
 
     <dialog id="TelaPost" class="popup">
         <div class="painel-esquerdo">
-            <!-- Botão de fechar -->
             <button id="FecharPost" aria-label="Fechar">&times;</button>
             <div class="local">
                 <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost">
-                <div class="perfil">
-                    <figure class="foto-perfil">
-                        <img src="Assets/Img/perfil_galeria.png" alt="Imagem do local" />
-                    </figure>
-                    <h3>Sony</h3>
-                </div>
                 <div class="info">
                     <h3 id="NomeDoLocal"></h3>
-                    <div class="opcao">
-                        <button class="curtida">
-                            <span src="assets/icon/Heart.svg" alt="Curtir" class="curtir">
-                        </button>
-                        <button class="salvo">
-                            <span src="assets/icon/Location.svg" alt="Salvar" class="salvar">
-                        </button>
-                    </div>
                 </div>
             </div>
             <div class="endereco">
@@ -281,6 +267,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet massa vitae.</p>
         </div>
     </dialog>
+    
 
     <script src="Script/feed.js"></script>
     <script src="Script/post.js"></script>

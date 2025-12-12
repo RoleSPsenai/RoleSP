@@ -443,7 +443,7 @@ main {
 }
 
 .icone-informacao {
-    width: 70px;
+    width: 40px;
     border: none;
     padding: 0;
     display: flex;
@@ -475,15 +475,177 @@ main {
     }
 }
 
+@media (max-width: 1080px) {
+  .cabecalho {
+    height: 10vh;
+    padding: 5px 15px;
+  }
+
+  .logo-colorido {
+    height: 8vh;
+  }
+
+  .conteudo {
+    height: 100vh;
+    padding-top: 10vh;
+  }
+.botao-galeria {
+    font-size: 0.95rem;
+    width: 35vw;
+  }
+
+   main {
+    overflow-x: hidden !important;
+    overflow-y: unset !important;
+  }
+
+   .feed {
+    padding: 10px;
+    gap: 50px;
+  }
+
+  .feed,
+  .post {
+    overflow: visible !important;
+    justify-content: center;
+  }
+
+  .post {
+    height: 75%;
+    width: 75%;
+    max-width: 500px;
+  }
+
+  .titulo-postagens {
+    text-align: center;
+  }
+}
+
 @media (max-width: 800px) {
-    .conteudo {
+ .conteudo{
+    height: 100vh;
+    padding-top: 0;
+ }
+
+  .cabecalho {
+    height: 10vh;
+  }
+
+  .logo-colorido {
+    height: 8vh;
+  }
+  .botao-galeria{
+     font-size: 0.95rem;
+    padding: 6px 10px;
+    width: auto;
+  }
+
+    .parte-lateral {
+        width: 70px;
+        min-width: 70px;
+        background-color: var(--branco);
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
     }
 
-    .parte-lateral {
-        display: contents;
+
+    /* esconde todos os textos dos itens */
+    .lista-navegacao span,
+    .lista-navegacao {
+        font-size: 0;
     }
-}
+
+    /* deixa só os ícones */
+    .icone-menu {
+        width: 28px;
+        height: 28px;
+        margin: 0;
+    }
+
+    .navegação {
+        padding: 0;
+        gap: 55px;
+        align-items: center;
+    }
+
+    /* usuário compactado */
+    .sair {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "foto"
+            "sair";
+        padding: 0;
+        width: 100%;
+        height: auto;
+        gap: 10px;
+        background: none;
+        margin: 20px;
+        display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .bloco-nome {
+        display: none;
+    }
+
+    .foto-usuario {
+        width: 45px;
+        height: 45px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+
+    .icone-sair-verde {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* desloca o main para não ficar por cima */
+    main {
+        width: calc(100vw - 70px);
+        margin-left: 20px;
+        padding-top: 15vh;
+    }
+
+    .feed{
+    gap: 18px;
+    padding-top: 2vh;
+
+  }
+
+  .post {
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 12px;
+  }
+    .foto-post {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .legenda-foto {
+    height: auto;
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .titulo-postagens {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .nome-usuario {
+    text-align: center;
+  }
+
+  .usuario {
+    text-align: center;
+  }
+    }
