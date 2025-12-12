@@ -19,11 +19,15 @@ public partial class Post
 
     public int ID_Local { get; set; }
 
+    public int? ID_Favorito { get; set; }
+
     public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
 
     public virtual ICollection<Destino> Destinos { get; set; } = new List<Destino>();
 
     public virtual ICollection<Favorito> Favoritos { get; set; } = new List<Favorito>();
+
+    public virtual Favorito? ID_FavoritoNavigation { get; set; }
 
     public virtual Local ID_LocalNavigation { get; set; } = null!;
 

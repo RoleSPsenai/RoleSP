@@ -320,45 +320,79 @@
         </div>
     </footer>
 
+     <dialog id="login-modal">
+        <main class="container-login">
+            <!-- Lado esquerdo -->
+            <aside class="painel-esquerdo"></aside>
+
+            <!-- Lado direito -->
+            <section class="painel-direito">
+                <button id="btn-fechar-login" class="fechar-modal">
+                    <img src="assets/icon/Moldais/Close.svg" alt="Fechar" />
+                </button>
+                <img src="assets/Icon/Logos/Logo Branco.svg" alt="Logo do RolêSP" class="logo-modal" />
+                <div class="cabecalho-modal">
+                    <h2 class="titulo-modal">Login</h2>
+                    <p class="subtitulo-modal">
+                        Entre para começar a explorar o estado de São Paulo
+                    </p>
+                </div>
+
+                <form class="form-modal" asp-action="Criar" asp-controller="Cadastro" method="post">
+                    <label class="campo" for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="email@email.com" required />
+
+                    <label class="campo" for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="*********" required />
+
+                    <button type="submit" class="botao-modal">ENTRAR</button>
+
+                    <p class="erro-login">E-mail e senha incorretos</p>
+                </form>
+
+                <a href="#" class="link-esqueci texto-modal">Esqueceu sua senha?</a>
+                <p class="texto-modal p2">
+                    Não possui conta?
+                    <a href="#" class="abrir-modal-cadastro trocar-modal">Crie uma!</a>
+                </p>
+            </section>
+        </main>
+    </dialog>
+
     <!-- Modal Cadastro -->
     <dialog id="cadastro-modal">
         <main class="container-login">
             <!-- Lado esquerdo -->
             <aside class="painel-esquerdo"></aside>
 
+            <!-- Lado direito -->
             <section class="painel-direito">
                 <button id="btn-fechar-cadastro" class="fechar-modal">
-                    <img src="~/assets/Icon/Moldais/Close.svg" alt="Fechar" />
+                    <img src="assets/icon/Moldais/Close.svg" alt="Fechar" />
                 </button>
-
                 <div class="cabecalho-modal">
                     <h2 class="titulo-modal">Cadastro</h2>
-                    <p class="subtitulo-modal">Crie sua conta para explorar o estado de São Paulo</p>
+                    <p class="subtitulo-modal">
+                        Crie sua conta para explorar o estado de São Paulo
+                    </p>
                 </div>
-
-                <form class="form-modal" id="formCadastro">
-
+                <form id="formCadastro" class="form-modal" method="post">
                     <label class="campo" for="usuario">Usuário:</label>
-                    <input name="usuarioCadastro" type="text" id="usuario" required />
+                    <input type="text" id="usuario" name="nome" placeholder="Digite seu usuário" required />
 
                     <label class="campo" for="email-cadastro">E-mail:</label>
-                    <input name="emailCadastro" type="email" id="email-cadastro" required />
+                    <input type="email" id="email-cadastro" name="email" placeholder="Digite seu email" required  />
 
                     <label class="campo" for="senha-cadastro">Senha:</label>
-                    <input name="senhaCadastro" type="password" id="senha-cadastro" required />
+                    <input type="password" id="senha-cadastro" name = "senha" placeholder="Digite sua senha" required  />
 
                     <label class="campo" for="confirmar-senha">Confirmar senha:</label>
-                    <input name="confirmarCadastro" type="password" id="confirmar-senha" required />
-
-                    <span id="erroCadastro"></span>
+                    <input type="password" id="confirmar-senha" placeholder="" name = "confirmar" required />
 
                     <button type="submit" class="botao-modal">Cadastre-se</button>
+                    <span id="erroCadastro"></span>
                 </form>
-
-
-                <p class="texto-modal">
-                    Já possui uma conta? <a href="#" class="abrir-modal-login trocar-modal">Entrar</a>
-                </p>
+    
             </section>
         </main>
     </dialog>

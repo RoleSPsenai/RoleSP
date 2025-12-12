@@ -44,8 +44,8 @@ namespace RoleSP.Controllers
                 return View("Index");
             }
 
-            HttpContext.Session.SetString("Nome", usuario.Nome);
-            HttpContext.Session.SetInt32("ID_User",usuario.ID_User);
+            HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
+            HttpContext.Session.SetInt32("UsuarioId",usuario.ID_User);
 
             return RedirectToAction("Index", "Home");
         }

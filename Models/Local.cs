@@ -9,13 +9,9 @@ public partial class Local
 
     public string? Endereco { get; set; }
 
-    public int ID_Zona { get; set; }
-
     public string? ID_NomeLocal { get; set; }
 
     public int? ID_Avaliacao { get; set; }
-
-    public virtual Zona ID_ZonaNavigation { get; set; } = null!;
 
     public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
 

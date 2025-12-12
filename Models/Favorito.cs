@@ -14,4 +14,6 @@ public partial class Favorito
     public virtual Post ID_PostNavigation { get; set; } = null!;
 
     public virtual Usuario ID_UserNavigation { get; set; } = null!;
+
+    public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
 }

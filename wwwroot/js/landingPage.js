@@ -69,12 +69,6 @@ const botaoCadastro = document.getElementById("btn-abrir-cadastro");
 const botaoFecharLogin = document.getElementById("btn-fechar-login");
 const botaoFecharCadastro = document.getElementById("btn-fechar-cadastro");
 
-// Abrir o modal de login
-botaoLogin.addEventListener("click", () => {
-  modalCadastro.close();
-  modalLogin.showModal();
-  updateBodyOverflow();
-});
 
 // Fechar o modal de login
 botaoFecharLogin.addEventListener("click", () => {
@@ -158,7 +152,6 @@ function updateBodyOverflow() {
 // Garante atualização caso o modal seja fechado por métodos nativos (esc, backdrop, etc.)
 if (modalLogin) modalLogin.addEventListener("close", updateBodyOverflow);
 if (modalCadastro) modalCadastro.addEventListener("close", updateBodyOverflow);
-
 //* =-=-=-=-=-=-==- AJAX -=-=-=-=-=-=-=-=
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -194,3 +187,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+//* =-=-=-=-=-=-==- AJAX -=-=-=-=-=-=-=-=
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const formCadastro = document.querySelector("#formCadastro");
+
+
+    if (!formCadastro) {
+        console.error("Erro: Formulário de cadastro (#formCadastro) não encontrado.");
+        return; 
+    }
+    
+    formCadastro.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(formCadastro);
+
+        fetch("/Cadastro/Criar", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(resposta => {
+
+            const erroElement = document.querySelector("#erroCadastro");
+
+            if (!resposta.sucesso) {
+                if (erroElement) {
+                    erroElement.innerText = resposta.mensagem;
+                } else {
+                    console.warn("Elemento #erroCadastro não encontrado para exibir a mensagem.");
+                }
+                return;
+            }
+
+            if (erroElement) {
+                erroElement.innerText = "";
+            }
+
+            const cadastroModal = document.querySelector("#cadastro-modal");
+            if (cadastroModal) cadastroModal.close();
+
+            const loginModal = document.querySelector("#login-modal");
+            if (loginModal) loginModal.showModal();
+        })
+        .catch(err => {
+            console.error("Erro na requisição AJAX:", err);
+            
+            const erroElement = document.querySelector("#erroCadastro");
+            if (erroElement) {
+                erroElement.innerText = "Erro ao conectar com o servidor. Tente novamente.";
+            }
+        });
+    });
+});

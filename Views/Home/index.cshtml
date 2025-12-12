@@ -4,186 +4,300 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurum Lab - Home</title>
 
-    <link rel="stylesheet" href="~/css/style.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="~/css/feed.css">
+    <link rel="stylesheet" href="~/css/post.css">
+    <link rel="stylesheet" href="~/css/sair.css">
+    <title>Feed</title>
 </head>
 
 <body>
     <header class="cabecalho">
-        <a href="#" class="barra-topo">
-            <img src="~/assets/img/icone-logo.svg" alt="Logotipo Aurum Lab" class="logo">
+        <div class="logo">
+            <img class="logo-colorido" src="Assets/Ícones/Logo/Logo Colorido.svg" alt="Logo" />
+        </div>
+        <form action="buscar" method="get" class="pesquisar-locais">
+            <div class="icone-container">
+                <img class="icone-pesquisar" src="Assets/Ícones/Ações/Lupa.svg" alt="Ícone de lupa" />
+            </div>
+            <input type="text" id="pesquisa" placeholder="Pesquise..." name="pesquisa" />
+        </form>
+
+        <a class="botao-galeria" href="#">
+            <img class="icone-galeria" src="Assets/Ícones/Ações/Galeria.svg" alt="Ícone da Galeria" />
+            <span class="galeria">Galeria</span>
         </a>
-
-        <nav class="navegacao">
-            <ul class="lista-menu">
-                <li><a href="#como-funciona" class="link-ativo">Sobre</a></li>
-
-                <!-- DASHBOARD -> Login se não logado -->
-                <li>
-                    <a href="/Home/VerificarAcesso">Dashboard</a>
-                </li>
-
-                <!-- LOGIN -->
-                <li>
-                    <a asp-controller="Login" asp-action="Index" class="item-login">
-                        <img class="cadeado" src="~/assets/icon/lock.svg" alt="">
-                        Login
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <!-- SEÇÃO BANNER -->
-        <section class="secao-banner">
-            <div class="textos-banner">
-                <h1 class="titulo-banner-principal">Bem-vindo(a) ao Aurum Lab</h1>
-                <p class="subtitulo-banner">Aqui você pode cadastrar, visualizar e gerenciar todos os dispositivos tecnológicos da escola.</p>
-            </div>
-        </section>
+    <div class="conteudo">
+        <aside class="parte-lateral">
+            <section class="filtros-estabelecimentos">
+                <nav class="menu">
+                    <ul class="navegação">
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Café.svg" alt="Ícone-Cafeteria" />Cafeteria</a>
+                        </li>
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Cultura.svg" alt="Ícone-Cultura" />Cultura</a>
+                        </li>
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Livraria.svg" alt="Ícone-Livraria" />Livraria</a>
+                        </li>
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Museu.svg" alt="Ícone-Museu" />Museu</a>
+                        </li>
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Natureza.svg" alt="Ícone-Natureza" />Natureza</a>
+                        </li>
+                        <li>
+                            <a class="lista-navegacao" href="#"><img class="icone-menu"
+                                    src="Assets/Ícones/Filtros/Restaurante.svg"
+                                    alt="Ícone-Restaurante" />Restaurante</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
 
-        <!-- SEÇÃO SERVIÇOS -->
-        <section id="dash" class="secao-servicos">
-            <div class="cabecalho-secao">
-                <h2>Explore nossos serviços</h2>
-                <span class="linha-decorativa"></span>
-            </div>
-
-            <div class="grade-servicos">
-                <div class="cartao-servico">
-                    <img src="~/assets/icon/house-laptop.svg" alt="" class="icone">
-                    <h3 class="titulo-cartao">Dispositivos</h3>
-                    <p class="descricao-cartao">Adicione, edite ou remova os equipamentos cadastrados no sistema.</p>
+            <section class="sair">
+                <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario" />
+                <div class="bloco-nome">
+                    <h1 class="usuario">Carlinhos</h1>
+                    <h2 class="nome-usuario">Carlos Eduardo</h2>
                 </div>
+                <button id="logout" class="lista-navegacao">
+                    <img class="icone-sair-verde" src="Assets/Ícones/Ações/SairConta.svg" alt="Ícone-Sair" />
+                </button>
+            </section>
+        </aside>
 
-                <div class="cartao-servico">
-                    <img src="~/assets/icon/users.svg" alt="" class="icone">
-                    <h3 class="titulo-cartao">Usuários</h3>
-                    <p class="descricao-cartao">Mantenha atualizado o cadastro dos usuários com acesso ao sistema.</p>
-                </div>
+        <main>
+            <h3 class="titulo-recomendacao">Recomendação Mensal</h3>
+            <section class="recomendacao">
+                <article class="card-recomendacao">
+                    <img class="foto" src="Assets/Img/London coffee.svg" alt=> <img class="foto"
+                        src="Assets/Img/London coffee.svg" alt=> <img class="foto" src="Assets/Img/London coffee.svg"
+                        alt=> <img class="foto" src="Assets/Img/London coffee.svg" alt=> <img class="foto"
+                        src="Assets/Img/London coffee.svg" alt=> <img class="foto" src="Assets/Img/London coffee.svg"
+                        alt=> <img class="foto" src="Assets/Img/London coffee.svg" alt=>
+                </article>
+            </section>
 
-                <div class="cartao-servico">
-                    <img src="~/assets/icon/chart-line.svg" alt="" class="icone">
-                    <h3 class="titulo-cartao">Dashboard</h3>
-                    <p class="descricao-cartao">Acompanhe o status geral dos dispositivos e visualize estatísticas.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Monitoramento -->
-        <section class="secao-monitoramento">
-            <h2 class="titulo-banner-meio">Monitore seus dispositivos em tempo real.</h2>
-        </section>
-
-        <!-- Seção Como Funciona -->
-        <section id="como-funciona" class="secao-como-funciona">
-            <div class="cabecalho-secao">
-                <h2 class="titulo-secao">Como Funciona?</h2>
-                <span class="linha-decorativa"></span>
-            </div>
-
-            <div class="grade-passos">
-                <div class="passo">
-                    <span class="numero-passo">1</span>
-                    <h3 class="titulo-passo">Login e acesso</h3>
-                    <p class="texto-passo">Autenticação segura com controle de acesso baseado em funções para administradores e usuários.</p>
-                </div>
-
-                <div class="passo">
-                    <span class="numero-passo">2</span>
-                    <h3 class="titulo-passo">Gerenciar recursos</h3>
-                    <p class="texto-passo">Crie, atualize e exclua registros de dispositivos e usuários com operações CRUD abrangentes.</p>
-                </div>
-
-                <div class="passo">
-                    <span class="numero-passo">3</span>
-                    <h3 class="titulo-passo">Monitorar e analisar</h3>
-                    <p class="texto-passo">Acompanhe o status do dispositivo, o consumo e gere relatórios detalhados por meio do painel.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Depoimentos -->
-        <section class="secao-depoimentos">
-            <div class="cabecalho-secao">
-                <h2 class="titulo-secao">O que nossos usuário dizem</h2>
-                <span class="linha-decorativa"></span>
-            </div>
-
-            <div class="grade-depoimentos">
-                <div class="depoimento">
-                    <div class="topo-depoimento">
-                        <img class="foto-usuario" src="~/assets/img/img-user1.png" alt="">
-                        <div>
-                            <h3 class="nome-usuario">Tânia Pinheiro</h3>
-                            <p class="cargo-usuario">Administradora de TI</p>
+            <section class="feed">
+                <article class="post" data-nome="Kiki Café" data-bairro="Ipiranga, São Paulo"
+                    data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/Kiki Café.svg">
+                    <figure class="foto-feed">
+                        <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="" />
+                        <figcaption class="legenda-foto">Kiki Café</figcaption>
+                    </figure>
+                    <div class="acoes">
+                        <div class="icone-de-estado">
+                            <button class="icone-favorito" aria-label="Favoritar">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                                </svg>
+                            </button>
+                            <button class="icone-destino" aria-label="Destino">
+                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="informacoes">
+                            <button id="BotaoInfo" class="icone-informacao">
+                                <svg class="icone-informacao" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                                    <path d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M26,14.1c1.7,0,3,1.3,3,3s-1.3,3-3,3
+                                            s-3-1.3-3-3S24.3,14.1,26,14.1z M31,35.1c0,0.5-0.4,0.9-1,0.9h-3c-0.4,0-3,0-3,0h-2c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1l0,0
+                                            c0.5,0,1-0.3,1-0.9v-4c0-0.5-0.4-1.1-1-1.1l0,0c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1h6c0.5,0,1,0.5,1,1.1v8
+                                            c0,0.5,0.4,0.9,1,0.9l0,0c0.5,0,1,0.5,1,1.1V35.1z" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <p class="texto-depoimento">
-                        "O Aurum Lab revolucionou a forma como gerenciamos a tecnologia da nossa escola. A interface é intuitiva e os recursos de geração de relatórios são excelentes."
-                    </p>
-                </div>
-
-                <div class="depoimento">
-                    <div class="topo-depoimento">
-                        <img src="~/assets/img/img-user2.png" alt="" class="foto-usuario">
-                        <div>
-                            <h3 class="nome-usuario">Michel Costa</h3>
-                            <p class="cargo-usuario">Diretor de Tecnologia</p>
+                </article>
+                <article class="post" data-nome="London Café" data-bairro="Ipiranga, São Paulo"
+                    data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404"
+                    data-img="Assets/Img/London coffee.svg">
+                    <figure class="foto-feed">
+                        <img class="foto-post abrir-post" src="Assets/Img/London coffee.svg" alt="" />
+                        <figcaption class="legenda-foto">London Café</figcaption>
+                    </figure>
+                    <div class="acoes">
+                        <div class="icone-de-estado">
+                            <button class="icone-favorito" aria-label="Favoritar">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                                </svg>
+                            </button>
+                            <button class="icone-destino" aria-label="Destino">
+                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="informacoes">
+                            <button id="BotaoInfo" class="icone-informacao">
+                                <svg class="icone-informacao" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                                    <path d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M26,14.1c1.7,0,3,1.3,3,3s-1.3,3-3,3
+                                            s-3-1.3-3-3S24.3,14.1,26,14.1z M31,35.1c0,0.5-0.4,0.9-1,0.9h-3c-0.4,0-3,0-3,0h-2c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1l0,0
+                                            c0.5,0,1-0.3,1-0.9v-4c0-0.5-0.4-1.1-1-1.1l0,0c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1h6c0.5,0,1,0.5,1,1.1v8
+                                            c0,0.5,0.4,0.9,1,0.9l0,0c0.5,0,1,0.5,1,1.1V35.1z" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <p class="texto-depoimento">
-                        "Os recursos de rastreamento de dispositivos e manutenção nos economizaram inúmeras horas. Altamente recomendado para instituições de ensino."
-                    </p>
-                </div>
-
-                <div class="depoimento">
-                    <div class="topo-depoimento">
-                        <img src="~/assets/img/img-user3.png" alt="" class="foto-usuario">
-                        <div>
-                            <h3 class="nome-usuario">Emily Rodriguez</h3>
-                            <p class="cargo-usuario">Diretora da escola</p>
+                </article>
+                <article class="post" data-nome="Museu Justiça" data-bairro="Ipiranga, São Paulo"
+                    data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404"
+                    data-img="Assets/Img/Museu justiça.svg">
+                    <figure class="foto-feed">
+                        <img class="foto-post abrir-post" src="Assets/Img/Museu justiça.svg" alt="" />
+                        <figcaption class="legenda-foto">Museu Justiça</figcaption>
+                    </figure>
+                    <div class="acoes">
+                        <div class="icone-de-estado">
+                            <button class="icone-favorito" aria-label="Favoritar">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                                </svg>
+                            </button>
+                            <button class="icone-destino" aria-label="Destino">
+                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="informacoes">
+                            <button id="BotaoInfo" class="icone-informacao">
+                                <svg class="icone-informacao" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                                    <path d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M26,14.1c1.7,0,3,1.3,3,3s-1.3,3-3,3
+                                            s-3-1.3-3-3S24.3,14.1,26,14.1z M31,35.1c0,0.5-0.4,0.9-1,0.9h-3c-0.4,0-3,0-3,0h-2c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1l0,0
+                                            c0.5,0,1-0.3,1-0.9v-4c0-0.5-0.4-1.1-1-1.1l0,0c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1h6c0.5,0,1,0.5,1,1.1v8
+                                            c0,0.5,0.4,0.9,1,0.9l0,0c0.5,0,1,0.5,1,1.1V35.1z" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                    <p class="texto-depoimento">
-                        "Simples, poderoso e eficaz. O Aurum Lab nos dá visibilidade completa da nossa infraestrutura tecnológica."
-                    </p>
+                </article>
+                <article class="post" data-nome="Livraria Gato sem rabo" data-bairro="Ipiranga, São Paulo"
+                    data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404"
+                    data-img="Assets/Img/Livraria Gato Sem Rabo.svg">
+                    <figure class="foto-feed">
+                        <img class="foto-post abrir-post" src="Assets/Img/Livraria Gato Sem Rabo.svg" alt="" />
+                        <figcaption class="legenda-foto">
+                            Livraria Gato sem rabo
+                        </figcaption>
+                    </figure>
+                    <div class="acoes">
+                        <div class="icone-de-estado">
+                            <button class="icone-favorito" aria-label="Favoritar">
+                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                                </svg>
+                            </button>
+                            <button class="icone-destino" aria-label="Destino">
+                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="informacoes">
+                            <button id="BotaoInfo" class="icone-informacao">
+                                <svg class="icone-informacao" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                                    <path d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M26,14.1c1.7,0,3,1.3,3,3s-1.3,3-3,3
+                                            s-3-1.3-3-3S24.3,14.1,26,14.1z M31,35.1c0,0.5-0.4,0.9-1,0.9h-3c-0.4,0-3,0-3,0h-2c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1l0,0
+                                            c0.5,0,1-0.3,1-0.9v-4c0-0.5-0.4-1.1-1-1.1l0,0c-0.5,0-1-0.3-1-0.9v-2c0-0.5,0.4-1.1,1-1.1h6c0.5,0,1,0.5,1,1.1v8
+                                            c0,0.5,0.4,0.9,1,0.9l0,0c0.5,0,1,0.5,1,1.1V35.1z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="TelaPost" class="popup">
+        <div class="painel-esquerdo">
+            <button id="FecharPost" aria-label="Fechar">&times;</button>
+            <div class="local">
+                <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost" />
+                <div class="info">
+                    <h3 id="NomeDoLocal"></h3>
                 </div>
             </div>
-
-            <!-- BOTÃO COMEÇAR AGORA -->
-            <a asp-controller="Login" asp-action="Index" class="botao-primario">Comece agora</a>
-        </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="rodape">
-        <div class="rodape-conteudo">
-            <a href="#">
-                <img src="~/assets/img/logo-horizontal.svg" alt="" class="logo-rodape">
-            </a>
-            <nav>
-                <ul class="lista-rodape">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#como-funciona">Sobre</a></li>
-                    <li><a href="#">Preços</a></li>
-                    <li><a href="#">Parceiros</a></li>
-                    <li><a href="#">Contatos</a></li>
-                </ul>
-            </nav>
+            <div class="endereco">
+                <h2 id="BairroDoLocal"></h2>
+                <p id="EnderecoDoLocal"></p>
+            </div>
         </div>
-        <div class="final-rodape">
-            <div class="linha-divisoria"></div>
-            <p class="direitos">
-                Copyright © 2025 Aurum Lab | Todos os direitos reservados
+        <div class="painel-direito">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                laoreet imperdiet massa vitae.
             </p>
         </div>
-    </footer>
+    </dialog>
+
+    <dialog id="popupSair" class="popup-sair">
+        <div class="popup-sair-content">
+            <div class="sair-topo">
+                <img class="icone-sair" src="Assets/Ícones/Ações/SairConta.svg" alt="#" />
+                <h1>Sair da Conta</h1>
+            </div>
+            <h2 class="confirmacao-sair">
+                Tem certeza de que deseja sair da sua conta?
+            </h2>
+            <div class="acoes-sair">
+                <button id="btnCancelarSair" class="btn-cancelar-sair">Não</button>
+                <button id="btnConfirmarSair" class="btn-confirmar-sair">Sim</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="~/js/feed.js"></script>
+    <script src="~/js/post.js"></script>
+    <script src="~/js/modalSair.js"></script>
 </body>
+
 </html>
