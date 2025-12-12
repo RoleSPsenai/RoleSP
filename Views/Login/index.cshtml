@@ -1,0 +1,48 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/login.css">
+    <link rel="stylesheet" href="~/css/global.css">
+</head>
+
+<body>
+
+    <div class="context">
+        <div class="left">
+            <div class="textContext">
+                <img src="Logo Colorido.svg" alt="Logo do RoleSP" class="logo">
+                <h1 class="titleLeft">
+                    Bem-vindo de volta!
+                </h1>
+                <p class="textLogin">Pronto para descobrir seu próximo destino? </p>
+            </div>
+
+            <form class="formLogin" asp-action="Criar" asp-controller="Cadastro" method="post">
+                <div class="inputs">
+                    <label class="campo" for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="email@email.com" required />
+                </div>
+                <div class="inputs">
+                    <label class="campo" for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="*********" required />
+                </div>
+                <button type="submit" class="button">Entrar</button>
+
+            </form>
+            <span class="decorativeLine"></span>
+            <p class="register">Ainda não tem conta? <a class="emphasis">Cadastre-se</a></p>
+        </div>
+        <div class="right">
+    </div>
+
+</body>
+
+</html>
