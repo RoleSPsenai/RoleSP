@@ -1,5 +1,26 @@
-/* Conteúdo principal do popup */
-#TelaEditar .popup-content {
+dialog#TelaEditar {
+  animation: popupShow 0.25s ease-out;
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
+  padding: 2% 3%;
+}
+
+dialog#TelaEditar::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* #TelaEditar .popup-content {
   background: var(--fundo);
   border-radius: 1em;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
@@ -8,11 +29,19 @@
   height: auto;
   max-width: 900px;
   overflow: hidden;
-  padding: 2% 3%;
   position: relative;
   transition: all 0.3s ease;
-  width: 80%;
+  width: 100%;
+}  */
+
+/* Conteúdo principal do popup */
+/* #TelaEditar{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
+ 
 
 /* Layout interno do popup */
 #TelaEditar .mainPopup {
@@ -38,6 +67,7 @@
   justify-content: center;
   transition: 0.3s;
   width: 50%;
+  align-self: center;
 }
 
 /* Hover da área de imagem */
@@ -76,6 +106,10 @@
   font-weight: 700;
 }
 
+#TelaEditar .sectioInputs {
+  padding: 3%;
+}
+
 /* Espaçamento entre campos */
 #TelaEditar .novo-post-form {
   gap: 20px;
@@ -93,6 +127,7 @@
   right: 1em;
   top: 1em;
   width: 50px;
+  border: none;
 }
 
 /* Hover do botão fechar */
@@ -108,9 +143,13 @@
   border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
-  margin-top: 1em;
-  padding: 1% 8%;
+  margin-top: 1.1em;
+  padding: 3% 10%;
   transition: 0.2s;
+  width: 250px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
 }
 
 /* Hover do botão salvar */
@@ -125,20 +164,22 @@
   #TelaEditar .mainPopup {
     align-items: center;
     flex-direction: column;
-    gap: 2em;
+    gap: 4px;
+
   }
 
   /* Área de imagem menor */
   #TelaEditar .imgLabel {
     aspect-ratio: unset;
-    height: 40%;
-    max-width: 60%;
+    height: 30%;
+    max-width: 40%;
+    margin: 8px;
   }
 
   /* Inputs menores */
   #TelaEditar .inputs {
-    font-size: 0.9rem;
-    padding: 8px;
+    font-size: 1.5rem;
+    padding: 4px;
   }
 
   /* Botão salvar ocupa largura total */
@@ -146,5 +187,8 @@
     font-size: 1rem;
     padding: 3%;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 }

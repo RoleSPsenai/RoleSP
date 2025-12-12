@@ -1,5 +1,29 @@
+dialog#TelaPublicacao {
+  animation: popupShow 0.25s ease-out;
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  padding: 20px 40px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
+  padding: 2% 3%;
+}
+
+dialog#TelaPublicacao::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
 /* Container do popup (centraliza na tela) */
-#TelaPublicacao .popup {
+/* #TelaPublicacao .popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +38,7 @@
 }
 
 /* Conteúdo principal */
-#TelaPublicacao .popup-content {
+/* #TelaPublicacao .popup-content {
   position: relative;
   width: 80%;
   max-width: 900px;
@@ -27,7 +51,7 @@
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   transition: all 0.3s ease;
-}
+} * */
 
 /* Layout interno */
 #TelaPublicacao .mainPopup {
@@ -40,19 +64,20 @@
 
 /* Área da imagem */
 #TelaPublicacao .imgLabel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4/5;
   background-color: var(--branco);
   border: 3px dashed var(--verde-escuro);
   border-radius: 1em;
   color: gray;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
   transition: 0.3s;
+  width: 50%;
+  align-self: center;
 }
 
 #TelaPublicacao .imgLabel:hover {
@@ -88,6 +113,10 @@
   font-weight: 700;
 }
 
+#TelaPublicacao .sectioInputs {
+  padding: 3%;
+}
+
 #TelaPublicacao .novo-post-form {
   gap: 20px;
 }
@@ -113,14 +142,18 @@
 
 /* Botão salvar */
 #BotaoPost {
-  margin-top: 1em;
-  padding: 1% 8%;
   background-color: var(--verde);
   border: none;
   border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
+  margin-top: 1.1em;
+  padding: 3% 10%;
   transition: 0.2s;
+  width: 250px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
 }
 
 #BotaoPost:hover {
@@ -130,25 +163,29 @@
 /* Responsivo */
 @media (max-width: 768px) {
   #TelaPublicacao .mainPopup {
+      align-items: center;
     flex-direction: column;
-    align-items: center;
-    gap: 2em;
+    gap: 4px;
   }
 
   #TelaPublicacao .imgLabel {
-    max-width: 60%;
-    height: 40%;
-    aspect-ratio: unset;
+      aspect-ratio: unset;
+    height: 30%;
+    max-width: 40%;
+    margin: 8px;
   }
 
   #TelaPublicacao .inputs {
-    padding: 8px;
-    font-size: 0.9rem;
+   font-size: 1.5rem;
+    padding: 4px;
   }
 
   #BotaoPost {
-    width: 100%;
-    padding: 3%;
     font-size: 1rem;
+    padding: 3%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 }

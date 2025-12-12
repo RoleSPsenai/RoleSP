@@ -111,6 +111,7 @@
               <ul class="menu-post">
                 <li class="editar-post">Editar</li>
                 <li class="excluir-post">Excluir</li>
+                <li class="info-post"><a href="#">Descrição</a></li>
               </ul>
             </div>
           </div>
@@ -265,10 +266,10 @@
     <div class="Parte-Imagem">
       <div class="quadrado">
         <!-- CLASS PRA IMAGEM -->
-        <img src="assets/img/user.png" alt="" class="userImg" />
+        <img src="Assets/Img/perfil_galeria.png" alt="" class="userImg" />
       </div>
       <input type="file" id="fileInput" style="display: none" />
-      <!-- 2. O link/botão visível -->
+       <!-- O link/botão visível -->
       <a href="#" id="openExplorerLink">Alterar foto de perfil</a>
     </div>
     <div class="Alterar-Dados">
@@ -290,7 +291,7 @@
         <img class="icone-excluir" src="Assets/Ícones/Ações/Lixeira.svg" alt="#" />
         <h1>Excluir Item</h1>
       </div>
-      <h2 class="exclusao">Tem certeza de que deseja excluir este post?</h2>
+      <h2 class="exclusao">Tem certeza de que deseja excluir este item?</h2>
       <div class="acoes-excluir">
         <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
         <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
@@ -299,33 +300,26 @@
   </dialog>
 
   <!-- SAIR DA CONTA -->
-  <dialog id="popupSair" class="sairConta">
-    <div class="popup-content">
-      <div class="parte-superior">
-        <div class="logout">
-          <img class="icone-sair" src="Assets/Ícones/Ações/Voltar.svg" alt="#" />
-          <h1>Sair da Conta</h1>
-        </div>
-        <button id="btnCancelarSair" class="fechar-modal">
-            <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
-        </button>
+  <dialog id="popupSair" class="popup-sair">
+    <div class="popup-sair-content">
+      <div class="sair-topo">
+        <img class="icone-sair" src="Assets/Ícones/Ações/SairConta.svg" alt="#" />
+        <h1>Sair da Conta</h1>
       </div>
-
-      <h2 class="confirmacao">
+      <h2 class="confirmacao-sair">
         Tem certeza de que deseja sair da sua conta?
       </h2>
-
       <div class="acoes-sair">
-        <button id="btnCancelarSair" class="btn-cancelar">Não</button>
-        <button id="btnConfirmarSair" class="btn-confirmar">Sim</button>
+        <button id="btnCancelarSair" class="btn-cancelar-sair">Não</button>
+        <button id="btnConfirmarSair" class="btn-confirmar-sair">Sim</button>
       </div>
     </div>
   </dialog>
 
-  <!-- TELA DO POST -->
+
+  <!-- TELA DO POST
   <dialog id="TelaPost">
     <div class="painel-esquerdo">
-      <!-- Botão de fechar -->
       <button id="FecharPost" aria-label="Fechar">&times;</button>
       <div class="local">
         <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost">
@@ -356,13 +350,12 @@
       <p class="legenda-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet
         massa vitae.</p>
     </div>
-  </dialog>
+  </dialog> -->
 
   <script src="Script/galeria.js"></script>
   <script src="Script/modalConfig.js"></script>
   <script src="Script/modalEditar.js"></script>
   <script src="Script/modalExcluir.js"></script>
-  <script src="Script/modalPost.js"></script>
   <script src="Script/modalPublicacao.js"></script>
   <script src="Script/modalSair.js"></script>
 

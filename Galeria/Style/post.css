@@ -1,3 +1,26 @@
+dialog#TelaEditar {
+  animation: popupShow 0.25s ease-out;
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  padding: 20px 40px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
+  padding: 2% 3%;
+}
+
+dialog#TelaEditar::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+}
+
 #TelaPost[open] {
     display: flex;
     flex-direction: row;

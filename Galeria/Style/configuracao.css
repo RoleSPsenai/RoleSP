@@ -87,18 +87,16 @@ dialog#TelaConfiguracao::backdrop {
   width: 100%;
 }
 
-.quadrado {
+.userImg {
   background-color: #000;
   background-position: center;
-  background-size: cover;
+  object-fit: cover;
   border-radius: 40px;
   height: 125px;
   width: 125px;
 }
 
-.userImg {
-  height: auto;
-}
+
 
 h2 {
   color: var(--verde-escuro);
