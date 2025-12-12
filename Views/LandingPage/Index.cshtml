@@ -17,14 +17,14 @@
 <body>
 
     <header class="displayFlex">
-        <img src="~/assets/Icon/Logos/Logo Colorido.svg" alt="Imagem da logo da empresa Rolê SP" class="logo-header">
+        <img src="../../assets/Icon/Logos/Logo Colorido.svg" alt="Imagem da logo da empresa Rolê SP" class="logo-header">
         <nav>
             <ul class="nav displayFlex">
                 <li><a href="" class="texto-nav">Sobre</a></li>
                 <li><a href="" class="texto-nav">Contato</a></li>
             </ul>
         </nav>
-        <button class="Button-Login" id="btn-abrir-login">Entrar</button>
+        <a  class="Button-Login" asp-controller="Login" asp-action="Index">Entrar</a>
     </header>
     <main>
 
@@ -319,42 +319,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Modal Login -->
-    <dialog id="login-modal">
-        <main class="container-login">
-            <!-- Lado esquerdo -->
-            <aside class="painel-esquerdo"></aside>
-
-            <section class="painel-direito">
-                <button id="btn-fechar-login" class="fechar-modal">
-                    <img src="~/assets/Icon/Moldais/Close.svg" alt="Fechar" />
-                </button>
-                <img src="~/assets/Icon/Logos/Logo Branco.svg" alt="Logo do RolêSP" class="logo-modal" />
-
-                <div class="cabecalho-modal">
-                    <h2 class="titulo-modal">Login</h2>
-                    <p class="subtitulo-modal">Entre para começar a explorar o estado de São Paulo</p>
-                </div>
-
-                <form class="form-modal" asp-action="Entrar" asp-controller="Login" method="post">
-                    <label class="campo" for="email">E-mail:</label>
-                    <input name="email-login" type="email" id="email" required />
-
-                    <label class="campo" for="senha">Senha:</label>
-                    <input name="senha-login" type="password" id="senha" required />
-
-                    <button type="submit" class="botao-modal">ENTRAR</button>
-
-                    <p class="erro-login">E-mail e senha incorretos</p>
-                </form>
-
-                <a href="#" class="link-esqueci texto-modal">Esqueceu sua senha?</a>
-                <p class="texto-modal p2">Não possui conta? <a href="#" class="abrir-modal-cadastro trocar-modal">Crie
-                        uma!</a></p>
-            </section>
-        </main>
-    </dialog>
 
     <!-- Modal Cadastro -->
     <dialog id="cadastro-modal">

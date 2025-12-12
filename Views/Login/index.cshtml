@@ -18,21 +18,21 @@
     <div class="context">
         <div class="left">
             <div class="textContext">
-                <img src="Logo Colorido.svg" alt="Logo do RoleSP" class="logo">
+                <img src="~/assets/Icon/Logos/Logo Colorido.svg" alt="Logo do RoleSP" class="logo">
                 <h1 class="titleLeft">
                     Bem-vindo de volta!
                 </h1>
                 <p class="textLogin">Pronto para descobrir seu próximo destino? </p>
             </div>
 
-            <form class="formLogin" asp-action="Criar" asp-controller="Cadastro" method="post">
+            <form id="formLogin" asp-action="Entrar" asp-controller="Login" method="post">
                 <div class="inputs">
                     <label class="campo" for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="email@email.com" required />
+                    <input type="email" id="email" placeholder="email@email.com" required class="input" />
                 </div>
                 <div class="inputs">
                     <label class="campo" for="senha">Senha:</label>
-                    <input type="password" id="senha" placeholder="*********" required />
+                    <input type="password" id="senha" placeholder="*********" required class="input"/>
                 </div>
                 <button type="submit" class="button">Entrar</button>
 
@@ -41,8 +41,9 @@
             <p class="register">Ainda não tem conta? <a class="emphasis">Cadastre-se</a></p>
         </div>
         <div class="right">
-    </div>
+        </div>
 
+        <script src="~/js/login.js" defer></script>
 </body>
 
 </html>

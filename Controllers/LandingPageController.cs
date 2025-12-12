@@ -11,13 +11,13 @@ namespace RoleSP.Controllers
 
     public IActionResult VerificarAcesso()
         {
-            var usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+            var usuarioId = HttpContext.Session.GetInt32("ID_User");
 
             if(usuarioId == null)
             {
                 return RedirectToAction("Index","Login");
             }
-            return RedirectToAction("Dashboard", "Dashboard");
+            return RedirectToAction("Index", "Home");
         }
     
     }

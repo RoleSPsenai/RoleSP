@@ -21,23 +21,23 @@ namespace RoleSP.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(string usuarioCadastro, string emailCadastro, string senhaCadastro, string confirmarCadastro)
+        public IActionResult Criar(string nome, string email, string senha, string confirmar)
         {
-            if (string.IsNullOrWhiteSpace(usuarioCadastro) || string.IsNullOrWhiteSpace(emailCadastro) ||
-            string.IsNullOrWhiteSpace(senhaCadastro) || string.IsNullOrWhiteSpace(confirmarCadastro))
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) ||
+            string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmar))
             {
                 return Json(new { sucesso = false, mensagem = "Preencha todos os campos" });
             }
-            if (senhaCadastro != confirmarCadastro)
+            if (senha != confirmar)
             {
                 return Json(new { sucesso = false, mensagem = "As senhas não conferem" });
             }
-            if (_context.Usuarios.Any(u => u.Email == emailCadastro))
+            if (_context.Usuarios.Any(u => u.Email == email))
             {
                 return Json(new { sucesso = false, mensagem = "E-mail já cadastrado" });
             }
 
-            byte[] hash = HashService.GerarHashBytes(senhaCadastro);
+            byte[] hash = HashService.GerarHashBytes(senha);
 
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/assets/Icon/iconUserDefault.png");
             byte[] bytes = System.IO.File.ReadAllBytes(path);
@@ -45,9 +45,9 @@ namespace RoleSP.Controllers
 
             Usuario usuario = new Usuario
             {
-                Nome = usuarioCadastro,
-                Apelido = usuarioCadastro,
-                Email = emailCadastro,
+                Nome = nome,
+                Apelido = nome,
+                Email = email,
                 SenhaHash = hash,
                 ImagemPerfil =  base64
             };
