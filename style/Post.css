@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+  
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: var(--tipografia);
+  font-family: "Nunito";
 }
 
 :root {
@@ -18,6 +19,7 @@
   --verde-escuro: #085e50;
 }
 
+
 body {
   background: var(--verde-claro);
   margin: 0;
@@ -28,6 +30,15 @@ body {
   align-items: center;
   background-color: white;
   padding: 20px;
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-voltar {
@@ -40,28 +51,31 @@ body {
   cursor: pointer;
 }
 
-.conteudo {
+
+main{
   display: flex;
-  justify-content: center;
-  padding: 20px;
-  gap: 0; 
+  gap: 10%; 
   flex-direction: column;
+  margin: 150px 60px;
+  height: 92vh;
+  width: 100vw;
 }
 
 .card {
   display: block;
   width: 50%;
+  height: 100%;
   background: var(--branco);
   border-radius: 20px 0px 0px 20px;
   overflow: hidden;
+  gap: 50px;
 }
 
 .Card-Completo {
   display: flex;
-  justify-content: center;
-  padding: 20px;
-  gap: 0; 
-  /* height: 70vh; */
+  align-self: center;
+  height: 70%;
+  width: 70%;
 }
 
 
@@ -71,7 +85,7 @@ body {
 
 .imagem-local {
   width: 100%;
-  height: auto;
+  height: 40%;
 }
 
 .overlay-info {
@@ -126,6 +140,7 @@ body {
   padding: 15px;
   background: #ffffff;
   font-size: 1.4rem;
+  
 }
 
 .descricao {
@@ -178,7 +193,7 @@ body {
 .icone-favorito {
     padding: 0;
     display: flex;
-    color: black;
+    color: white;
     font-size: 50px;
     cursor: pointer;
     border: none;
@@ -190,7 +205,7 @@ body {
     background-color: transparent;
     transform: scale(1.25);
     border: none;
-    color: var(--preto);
+    color:  #e0f6f1;
 }
 
 .icone-favorito svg {
@@ -207,7 +222,7 @@ body {
 .icone-destino {
     padding: 0;
     display: flex;
-    color: black;
+    color: white;
     font-size: 50px;
     cursor: pointer;
     border: none;
@@ -219,7 +234,7 @@ body {
     background-color: transparent;
     transform: scale(1.25);
     border: none;
-    color: var(--preto);
+    color: #e0f6f1;
 }
 
 .icone-destino svg {
@@ -233,6 +248,12 @@ body {
     transform: scale(1.12);
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
 
 
 h2{
@@ -241,27 +262,42 @@ h2{
   font-size: 1.4rem;
 }
 
-@media (max-width: 868px) {
+@media(max-width: 1200px){
+  .conteudo{
+  padding-top: 40vh;
+  padding-bottom: 20vh;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .conteudo{
+    padding-top: 100vh;
+    padding-bottom: 20vh;
+    flex-direction: column;
+    padding: 10px 35px;
+    }
 
   .Card-Completo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-  }
-  .conteudo {
-    flex-direction: column;
-    padding: 10px;
-    margin: 0;
     gap: 0;
+    width: 90%;
+  }
+
+  .imagem-local{
+    object-fit: cover;
+    height: 35%;
   }
 
   .endereco{
     font-size: 1.4rem;
     padding: 10px;
+    height: 50px;
   }
 
-  .card, .descricao {
-    width: 100%; 
-    border-radius: 0;
-  }
 
   .card {
     margin-bottom: 15px; 
@@ -271,6 +307,7 @@ h2{
   .descricao {
     border-radius: 0 0 20px 20px;
     padding: 20px;
+  
   }
 
   .topo {
