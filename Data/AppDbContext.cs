@@ -16,15 +16,13 @@ public partial class AppDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Comentario> Comentarios { get; set; }
+    public virtual DbSet<Avaliacao> Avaliacaos { get; set; }
 
-    public virtual DbSet<Destino> Destinos { get; set; }
-
-    public virtual DbSet<Favorito> Favoritos { get; set; }
+    public virtual DbSet<Endereco> Enderecos { get; set; }
 
     public virtual DbSet<Filtro> Filtros { get; set; }
 
-    public virtual DbSet<Local> Locals { get; set; }
+    public virtual DbSet<Locai> Locais { get; set; }
 
     public virtual DbSet<Post> Posts { get; set; }
 
@@ -35,137 +33,160 @@ public partial class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Comentario>(entity =>
+        modelBuilder.Entity<Avaliacao>(entity =>
         {
-            entity.HasKey(e => e.ID_Comentario).HasName("PK__Comentar__E9AA997398914C49");
+            entity.HasKey(e => e.ID_Avaliacao).HasName("PK__Avaliaca__E8926B16EF216AB6");
 
-            entity.ToTable("Comentario");
+            entity.ToTable("Avaliacao");
 
-            entity.Property(e => e.DataComentario).HasDefaultValueSql("(getdate())");
-            entity.Property(e => e.Texto).HasMaxLength(500);
+            entity.Property(e => e.ID_Avaliacao).ValueGeneratedNever();
+            entity.Property(e => e.Comentario)
+                .HasMaxLength(500)
+                .IsUnicode(false);
+            entity.Property(e => e.DataAvaliacao)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
+            entity.Property(e => e.Nota).HasColumnType("decimal(3, 2)");
 
-            entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Comentarios)
+            entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Avaliacaos)
                 .HasForeignKey(d => d.ID_Post)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comentari__ID_Po__4D94879B");
+                .HasConstraintName("FK__Avaliacao__ID_Po__60A75C0F");
 
-            entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Comentarios)
-                .HasForeignKey(d => d.ID_User)
+            entity.HasOne(d => d.ID_UsuarioNavigation).WithMany(p => p.Avaliacaos)
+                .HasForeignKey(d => d.ID_Usuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Comentari__ID_Us__4E88ABD4");
+                .HasConstraintName("FK__Avaliacao__Comen__59063A47");
         });
 
-        modelBuilder.Entity<Destino>(entity =>
+        modelBuilder.Entity<Endereco>(entity =>
         {
-            entity.HasKey(e => e.ID_Destino).HasName("PK__Destino__A7BDD3CECBFF9FA4");
+            entity.HasKey(e => e.ID_Endereco).HasName("PK__Endereco__FDCCCFA616F12834");
 
-            entity.ToTable("Destino");
+            entity.ToTable("Endereco");
 
-            entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Destinos)
-                .HasForeignKey(d => d.ID_Post)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Destino__ID_Post__4CA06362");
-
-            entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Destinos)
-                .HasForeignKey(d => d.ID_User)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Destino__ID_User__4BAC3F29");
-        });
-
-        modelBuilder.Entity<Favorito>(entity =>
-        {
-            entity.HasKey(e => e.ID_Favorito).HasName("PK__Favorito__FA228CC5EDC0210C");
-
-            entity.ToTable("Favorito");
-
-            entity.HasOne(d => d.ID_PostNavigation).WithMany(p => p.Favoritos)
-                .HasForeignKey(d => d.ID_Post)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Favorito__ID_Pos__4AB81AF0");
-
-            entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Favoritos)
-                .HasForeignKey(d => d.ID_User)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Favorito__ID_Use__49C3F6B7");
+            entity.Property(e => e.ID_Endereco).ValueGeneratedNever();
+            entity.Property(e => e.Bairro)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.CEP)
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.Cidade)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Rua)
+                .HasMaxLength(255)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Filtro>(entity =>
         {
-            entity.HasKey(e => e.ID_Filtro).HasName("PK__Filtro__931D1A29806E6D1F");
+            entity.HasKey(e => e.ID_Filtro).HasName("PK__Filtro__931D1A29229F3680");
 
             entity.ToTable("Filtro");
 
-            entity.Property(e => e.Nome).HasMaxLength(120);
+            entity.HasIndex(e => e.Nome, "UQ__Filtro__7D8FE3B21225AB22").IsUnique();
 
-            entity.HasMany(d => d.ID_Locals).WithMany(p => p.ID_Filtros)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Local_Filtro",
-                    r => r.HasOne<Local>().WithMany()
-                        .HasForeignKey("ID_Local")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Local_Fil__ID_Lo__48CFD27E"),
-                    l => l.HasOne<Filtro>().WithMany()
-                        .HasForeignKey("ID_Filtro")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Local_Fil__ID_Fi__47DBAE45"),
-                    j =>
-                    {
-                        j.HasKey("ID_Filtro", "ID_Local").HasName("PK__Local_Fi__50FE51005FB744F3");
-                        j.ToTable("Local_Filtro");
-                    });
+            entity.Property(e => e.ID_Filtro).ValueGeneratedNever();
+            entity.Property(e => e.Nome)
+                .HasMaxLength(100)
+                .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Local>(entity =>
+        modelBuilder.Entity<Locai>(entity =>
         {
-            entity.HasKey(e => e.ID_Local).HasName("PK__Local__3E34B29D0F5FB31F");
+            entity.HasKey(e => e.ID_Locais).HasName("PK__Locais__458CCA647161D385");
 
-            entity.ToTable("Local");
+            entity.Property(e => e.ID_Locais).ValueGeneratedNever();
 
-            entity.Property(e => e.Endereco).HasMaxLength(500);
-            entity.Property(e => e.ID_NomeLocal).HasMaxLength(200);
+            entity.HasOne(d => d.ID_EnderecoNavigation).WithMany(p => p.Locais)
+                .HasForeignKey(d => d.ID_Endereco)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Locais__ID_Ender__5441852A");
+
+            entity.HasOne(d => d.ID_FiltroNavigation).WithMany(p => p.Locais)
+                .HasForeignKey(d => d.ID_Filtro)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Locais__ID_Filtr__534D60F1");
         });
 
         modelBuilder.Entity<Post>(entity =>
         {
-            entity.HasKey(e => e.ID_Post).HasName("PK__Post__B41D0E30AA92C6D5");
+            entity.HasKey(e => e.ID_Post).HasName("PK__Post__B41D0E30F8647C25");
 
             entity.ToTable("Post");
 
-            entity.Property(e => e.DataPost).HasDefaultValueSql("(getdate())");
-            entity.Property(e => e.Imagem).IsUnicode(false);
-            entity.Property(e => e.Legenda).HasMaxLength(500);
+            entity.HasIndex(e => e.ID_Avaliacao, "UQ__Post__E8926B178635791F").IsUnique();
 
-            entity.HasOne(d => d.ID_FavoritoNavigation).WithMany(p => p.Posts)
-                .HasForeignKey(d => d.ID_Favorito)
-                .HasConstraintName("FK__Post__ID_Favorit__5165187F");
+            entity.Property(e => e.ID_Post).ValueGeneratedNever();
+            entity.Property(e => e.DataPostagem)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
+
+            entity.HasOne(d => d.ID_AvaliacaoNavigation).WithOne(p => p.Post)
+                .HasForeignKey<Post>(d => d.ID_Avaliacao)
+                .HasConstraintName("FK__Post__ID_Avaliac__5EBF139D");
 
             entity.HasOne(d => d.ID_LocalNavigation).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.ID_Local)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Post__ID_Local__5070F446");
+                .HasConstraintName("FK__Post__ID_Local__5FB337D6");
 
             entity.HasOne(d => d.ID_UserNavigation).WithMany(p => p.Posts)
                 .HasForeignKey(d => d.ID_User)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Post__ID_User__4F7CD00D");
+                .HasConstraintName("FK__Post__ID_User__5DCAEF64");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.ID_User).HasName("PK__Usuario__ED4DE44282CFE77E");
+            entity.HasKey(e => e.IdUsuario).HasName("PK__Usuario__5B65BF97DA584ADF");
 
             entity.ToTable("Usuario");
 
-            entity.Property(e => e.Apelido).HasMaxLength(120);
-            entity.Property(e => e.DataCriacao)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
-            entity.Property(e => e.Email)
-                .HasMaxLength(120)
-                .IsUnicode(false);
-            entity.Property(e => e.ImagemPerfil).IsUnicode(false);
-            entity.Property(e => e.Nome).HasMaxLength(120);
-            entity.Property(e => e.SenhaHash).HasMaxLength(32);
+            entity.HasIndex(e => e.Email, "UQ__Usuario__A9D10534F2E89FDC").IsUnique();
+
+            entity.Property(e => e.CriadoEm)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
+            entity.Property(e => e.Email).HasMaxLength(150);
+            entity.Property(e => e.NomeCompleto).HasMaxLength(200);
+            entity.Property(e => e.NomeUsuario).HasMaxLength(80);
+            entity.Property(e => e.Senha).HasMaxLength(32);
+
+            entity.HasMany(d => d.ID_Locals).WithMany(p => p.ID_Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "Destino",
+                    r => r.HasOne<Locai>().WithMany()
+                        .HasForeignKey("ID_Local")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Destino__ID_Loca__6477ECF3"),
+                    l => l.HasOne<Usuario>().WithMany()
+                        .HasForeignKey("ID_User")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Destino__ID_User__6383C8BA"),
+                    j =>
+                    {
+                        j.HasKey("ID_User", "ID_Local").HasName("PK__Destino__2EAEAF6B36F3E2A7");
+                        j.ToTable("Destino");
+                    });
+
+            entity.HasMany(d => d.ID_Posts).WithMany(p => p.ID_Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "Favorito",
+                    r => r.HasOne<Post>().WithMany()
+                        .HasForeignKey("ID_Post")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Favorito__ID_Pos__68487DD7"),
+                    l => l.HasOne<Usuario>().WithMany()
+                        .HasForeignKey("ID_User")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Favorito__ID_Use__6754599E"),
+                    j =>
+                    {
+                        j.HasKey("ID_User", "ID_Post").HasName("PK__Favorito__F60C34A1195C82F2");
+                        j.ToTable("Favorito");
+                    });
         });
 
         OnModelCreatingPartial(modelBuilder);

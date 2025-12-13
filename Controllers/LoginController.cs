@@ -38,14 +38,14 @@ namespace RoleSP.Controllers
                 return View("Index");
             }
 
-            if(!usuario.SenhaHash.SequenceEqual(senhaDigitadaHas))
+            if(!usuario.Senha.SequenceEqual(senhaDigitadaHas))
             {
                 ViewBag.Erro = "E-mail ou senha incorretos.";
                 return View("Index");
             }
 
-            HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
-            HttpContext.Session.SetInt32("UsuarioId",usuario.ID_User);
+            HttpContext.Session.SetString("UsuarioNome", usuario.NomeCompleto);
+            HttpContext.Session.SetInt32("UsuarioId",usuario.IdUsuario);
 
             return RedirectToAction("Index", "Home");
         }

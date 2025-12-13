@@ -7,29 +7,23 @@ public partial class Post
 {
     public int ID_Post { get; set; }
 
-    public int? Avaliacao { get; set; }
-
-    public DateOnly? DataPost { get; set; }
-
-    public string? Legenda { get; set; }
-
-    public string? Imagem { get; set; }
-
     public int ID_User { get; set; }
+
+    public int? ID_Avaliacao { get; set; }
 
     public int ID_Local { get; set; }
 
-    public int? ID_Favorito { get; set; }
+    public byte[]? Url_Image { get; set; }
 
-    public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+    public DateTime DataPostagem { get; set; }
 
-    public virtual ICollection<Destino> Destinos { get; set; } = new List<Destino>();
+    public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 
-    public virtual ICollection<Favorito> Favoritos { get; set; } = new List<Favorito>();
+    public virtual Avaliacao? ID_AvaliacaoNavigation { get; set; }
 
-    public virtual Favorito? ID_FavoritoNavigation { get; set; }
-
-    public virtual Local ID_LocalNavigation { get; set; } = null!;
+    public virtual Locai ID_LocalNavigation { get; set; } = null!;
 
     public virtual Usuario ID_UserNavigation { get; set; } = null!;
+
+    public virtual ICollection<Usuario> ID_Users { get; set; } = new List<Usuario>();
 }
