@@ -3,10 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const fecharPost = document.getElementById("FecharPost");
 
     // Elementos do modal
-    const imagemLocal = document.getElementById("ImagemDoPost");
+    // const imagemLocal = document.getElementById("ImagemDoPost");
+    // const nomeLocal = document.getElementById("NomeDoLocal");
+    // const bairroLocal = document.getElementById("BairroDoLocal");
+    // const enderecoLocal = document.getElementById("EnderecoDoLocal");
+    
+    const imagemPost = document.getElementById("ImagemDoPost");
+    const legendaPost = document.getElementById("LegendaPost");
     const nomeLocal = document.getElementById("NomeDoLocal");
-    const bairroLocal = document.getElementById("BairroDoLocal");
     const enderecoLocal = document.getElementById("EnderecoDoLocal");
+    // const nomeUsuario = document.getElementById("NomeUsuario");
+    // const fotoUsuario = document.getElementById("FotoUsuario");
 
     // Seleciona todos os posts
     const posts = document.querySelectorAll(".post");
