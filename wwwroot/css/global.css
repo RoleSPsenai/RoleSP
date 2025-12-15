@@ -45,33 +45,6 @@ header {
   padding: 20px;
 }
 
-body {
-  background-color: var(--branco);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-  object-fit: contain;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 button {
   background-color: var(--verde);
   color: var(--branco);
@@ -85,29 +58,8 @@ button:hover {
   cursor: pointer;
 }
 
-dialog {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(95%, 75em);
-  max-width: 60em;
-  border: none;
-  border-radius: 1em;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--branco);
-  overflow: hidden;
-}
-
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-a {
-  text-decoration: none;
-  color: var(--branco);
 }
 
 a:hover,
@@ -119,22 +71,6 @@ li a {
   background-color: transparent;
   text-decoration: none;
   color: var(--branco);
-}
-
-label {
-  top: 45px;
-  left: 10px;
-  font-weight: 600;
-  align-self: flex-start;
-  position: relative;
-  transition: all 0.15s ease;
-  color: var(--preto);
-}
-
-label.campo.focused {
-  top: 5px;
-  font-size: 0.9rem;
-  color: var(--destaque);
 }
 
 input {
