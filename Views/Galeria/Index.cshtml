@@ -30,14 +30,10 @@
   <div class="conteudo">
     <aside class="parte_lateral">
       <section class="perfil">
-        <img class="foto-usuario" 
-          src="@(Model.Usuario?.ImagemPerfil != null 
-          ? Url.Content(Model.Foto) 
-          : Url.Content("~../../assets/Cadastro -  Login/Usuario.svg"))" alt="foto_usuario" />
-
+        <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario" />
         <div class="info-usuario">
-          <h2 class="nome-usuario">@Model.Usuario?.NomeUsuario</h2>
-          <h3 class="usuario">@Model.Usuario?.Apelido</h3>
+          <h2 class="nome-usuario">Carlos Eduardo</h2>
+          <h3 class="usuario">Carlinhos</h3>
           <nav class="nav-info-perfil">
             <ul class="perfil-info">
               <li>
@@ -87,14 +83,9 @@
 
     <main>
       <h4 class="titulo-postagens">Minhas Postagens</h4>
-      <section id="postagens" class="postagens">
-        <article class="post" 
-          data-imagem="@Model.Imagem" 
-          data-legenda="@Model.TextoAvaliacao" 
-          data-local="@Model.ID_LocalNavigation.ID_NomeLocal"
-          data-endereco="@Model.ID_LocalNavigation.Endereco"
-          data-usuario="@Model.ID_UserNavigation.Nome"
-          data-foto-usuario="@Model.ID_UserNavigation.ImagemPerfil">
+     <section id="postagens" class="postagens">
+        <article class="post" data-nome="Kiki Café" data-bairro="Ipiranga, São Paulo"
+          data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/Kiki Café.svg">
           <figure class="foto-postagens">
             <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="" />
             <figcaption class="legenda-foto">Kiki Café</figcaption>
@@ -136,7 +127,7 @@
   <!-- PUBLICAÇÃO DO POST -->
   <dialog id="TelaPublicacao" class="popup">
     <div class="popup-content">
-      <form id="formPostar" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post">
+      <form id="formPostar" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post" enctype="multipart/form-data">
         <label class="imgLabel" for="imgInput">
           <input  name="imgLocal" type="file" accept="image/*" id="imgInput" />
           <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen" class="iconUpload" />
@@ -199,7 +190,7 @@
           </button>
           <div class="select">
             <label for="local" class="title">Filtros</label>
-            <select class="inputs">
+            <select name="select" class="inputs">
               <option value=1>Cafeteria</option>
               <option value=2>Museu</option>
               <option value=3>Restaurantes</option>
@@ -210,23 +201,23 @@
           </div>
           <div>
             <label for="local" class="title">Local</label>
-            <input type="text" placeholder="Nome do local..." class="inputs" id="localEditar" />
+            <input name="nomeLocal" type="text" placeholder="Nome do local..." class="inputs" id="localEditarEditar" />
             <div id="groupInput">
               <div id="groupCep">
                 <label for="inputCep" class="title">CEP</label>
-                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
+                <input name="cep" type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
               </div>
               <div id="groupBairro">
                 <label for="bairro" class="title">Bairro</label>
-                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
+                <input name="bairro" type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
               </div>
             </div>
             <label for="rua" class="title">Rua:</label>
-            <input type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
+            <input name="rua" type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
             <label for="cidade" class="title">Cidade:</label>
-            <input type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
+            <input name="cidade" type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
             <label for="comentario" class="title">Comentário:</label>
-            <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
+            <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
           </div>
           <button class="botao-publicar" id="BotaoSalvarEdicao">
             Salvar Alterações

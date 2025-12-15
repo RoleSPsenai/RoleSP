@@ -167,6 +167,7 @@ document.getElementById("estado").addEventListener("focusout", buscarCepPorEnder
 document.addEventListener("DOMContentLoaded", () => {
     // Substitua '#formPostar' pelo ID real do seu formulário HTML
     const formPostar = document.querySelector("#formPostar");
+    const popup = document.getElementById("TelaPublicacao");
 
     if (!formPostar) {
         console.error("Erro: Formulário de postagem não encontrado.");
@@ -175,6 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     formPostar.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        console.log("Evento submit capturado! Iniciando Fetch...")
 
         // FormData captura todos os campos (incluindo a imagem) automaticamente
         const formData = new FormData(formPostar);
@@ -197,8 +200,22 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(resposta => {
             if (resposta.sucesso) {
                 // Caso de sucesso: Mensagem amigável e recarregamento
+                if (popup && typeof popup.close === "function")
+                {
+                  popup.close();
+                } else {
+                  popup.style.display = "none";
+                }
+
                 alert(resposta.mensagem);
-                window.location.reload(); 
+
+                formPostar.reset();
+                
+                window.location.reload();
+
+                const labels = formPostar.querySelectorAll("label.focused");
+                labels.forEach(label => label.classList.remove("focused"));
+
             } else {
                 // Caso de erro validado pelo C#
                 if (erroElement) {
