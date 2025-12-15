@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RoleSP.Data;
-using Sistema_Login.Service;
+
+using Sistema_Login.Services;
 
 namespace RoleSP.Controllers
 {
@@ -38,14 +39,14 @@ namespace RoleSP.Controllers
                 return View("Index");
             }
 
-            if(!usuario.SenhaHash.SequenceEqual(senhaDigitadaHas))
+            if(!usuario.Senha.SequenceEqual(senhaDigitadaHas))
             {
                 ViewBag.Erro = "E-mail ou senha incorretos.";
                 return View("Index");
             }
 
-            HttpContext.Session.SetString("Nome", usuario.Nome);
-            HttpContext.Session.SetInt32("ID_User",usuario.ID_User);
+            HttpContext.Session.SetString("UsuarioNome", usuario.NomeUsuario);
+            HttpContext.Session.SetInt32("UsuarioId",usuario.IdUsuario);
 
             return RedirectToAction("Index", "Home");
         }
@@ -53,7 +54,7 @@ namespace RoleSP.Controllers
         public IActionResult Sair()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "LandingPage");
         }
 
     }

@@ -5,27 +5,27 @@ namespace RoleSP.Models;
 
 public partial class Post
 {
-    public int ID_Post { get; set; }
+    public int IdPost { get; set; }
 
-    public int? Avaliacao { get; set; }
+    public int IdUsuario { get; set; }
 
-    public DateOnly? DataPost { get; set; }
+    public int IdAvalicao { get; set; }
 
-    public string? Legenda { get; set; }
+    public int IdLocais { get; set; }
 
-    public string? Imagem { get; set; }
+    public byte[] Imagem { get; set; } = null!;
 
-    public int ID_User { get; set; }
+    public DateTime CriadoEm { get; set; }
 
-    public int ID_Local { get; set; }
+    public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 
-    public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+    public virtual Avaliacao IdAvalicaoNavigation { get; set; } = null!;
 
-    public virtual ICollection<Destino> Destinos { get; set; } = new List<Destino>();
+    public virtual Locai IdLocaisNavigation { get; set; } = null!;
 
-    public virtual ICollection<Favorito> Favoritos { get; set; } = new List<Favorito>();
+    public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
 
-    public virtual Local ID_LocalNavigation { get; set; } = null!;
+    public virtual ICollection<Usuario> IdUsuarios { get; set; } = new List<Usuario>();
 
-    public virtual Usuario ID_UserNavigation { get; set; } = null!;
+    public virtual ICollection<Usuario> IdUsuariosNavigation { get; set; } = new List<Usuario>();
 }

@@ -11,9 +11,9 @@ namespace RoleSP.Controllers
 
     public IActionResult VerificarAcesso()
         {
-            var usuarioId = HttpContext.Session.GetInt32("ID_User");
+            var ID_User = HttpContext.Session.GetInt32("IdUsuario");
 
-            if(usuarioId == null)
+            if(ID_User == null)
             {
                 return RedirectToAction("Index","Login");
             }

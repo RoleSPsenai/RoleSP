@@ -5,25 +5,29 @@ namespace RoleSP.Models;
 
 public partial class Usuario
 {
-    public int ID_User { get; set; }
+    public int IdUsuario { get; set; }
+
+    public string NomeUsuario { get; set; } = null!;
+
+    public string Apelido { get; set; } = null!;
 
     public string Email { get; set; } = null!;
 
-    public string? Nome { get; set; }
+    public byte[] Senha { get; set; } = null!;
 
-    public string? Apelido { get; set; }
+    public byte[]? Foto { get; set; }
 
-    public byte[] SenhaHash { get; set; } = null!;
+    public DateTime CriadoEm { get; set; }
 
-    public DateTime? DataCriacao { get; set; }
+    public int Destino { get; set; }
 
-    public string? ImagemPerfil { get; set; }
+    public int Favorito { get; set; }
 
-    public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
-
-    public virtual ICollection<Destino> Destinos { get; set; } = new List<Destino>();
-
-    public virtual ICollection<Favorito> Favoritos { get; set; } = new List<Favorito>();
+    public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 
     public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
+
+    public virtual ICollection<Post> IdPosts { get; set; } = new List<Post>();
+
+    public virtual ICollection<Post> IdPostsNavigation { get; set; } = new List<Post>();
 }

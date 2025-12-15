@@ -28,17 +28,22 @@
             <form id="formLogin" asp-action="Entrar" asp-controller="Login" method="post">
                 <div class="inputs">
                     <label class="campo" for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="email@email.com" required class="input" />
+                    <input name = "email" type="email" id="email" placeholder="email@email.com" required class="input" />
                 </div>
                 <div class="inputs">
                     <label class="campo" for="senha">Senha:</label>
-                    <input type="password" id="senha" placeholder="*********" required class="input"/>
+                    <input name="senha" type="password" id="senha" placeholder="*********" required class="input"/>
                 </div>
                 <button type="submit" class="button">Entrar</button>
 
             </form>
             <span class="decorativeLine"></span>
             <p class="register">Ainda não tem conta? <a class="emphasis">Cadastre-se</a></p>
+
+            @* EXIBIR ERRO SOMENTE SE HOUVER *@
+        <p class="erro-login @(ViewBag.Erro != null ? "mostrar" : "")">
+            @ViewBag.Erro
+        </p>
         </div>
         <div class="right">
         </div>

@@ -1,0 +1,103 @@
+﻿--DROP DATABASE DbRoleSP;
+--GO
+
+CREATE DATABASE DbRoleSP;
+GO
+
+USE DbRoleSP;
+GO
+
+
+
+CREATE TABLE Usuario (
+	IdUsuario INT PRIMARY KEY IDENTITY(1,1),
+	NomeUsuario NVARCHAR(120) NOT NULL,
+	Apelido NVARCHAR(120)NOT NULL,
+	Email NVARCHAR(150) NOT NULL,
+	Senha VARBINARY(32) NOT NULL,
+	Foto VARBINARY(MAX),
+	CriadoEm DATETIME2(0) NOT NULL DEFAULT DATEADD(HOUR, -3, SYSUTCDATETIME()),
+	Destino INT NOT NULL,
+	Favorito INT NOT NULL, 
+);
+GO
+
+CREATE TABLE Endereco (
+	IdEndereco INT PRIMARY KEY IDENTITY(1,1),
+	Rua VARCHAR(255) NOT NULL,
+	Bairro VARCHAR(100) NOT NULL,
+	Cidade VARCHAR(100) NOT NULL,
+	Cep INT NOT NULL
+);
+GO
+
+
+CREATE TABLE Filtro (
+	IdFiltro INT PRIMARY KEY IDENTITY(1,1),
+	NomeFiltro NVARCHAR(120) NOT NULL,
+);
+GO
+selecT * from Filtro
+INSERT INTO Filtro (NomeFiltro)
+VALUES ('cafeteria'),('museu'),('restaurantes'),('natureza'),('livraria'),('cultura');
+GO
+
+CREATE TABLE Locais (
+	IdLocais INT PRIMARY KEY IDENTITY(1,1),
+	IdFiltro INT NOT NULL CONSTRAINT IdFiltroFk FOREIGN KEY (IdFiltro) 
+	REFERENCES Filtro(IdFiltro),
+	IdEndereco INT NOT NULL CONSTRAINT IdEnderecoFk FOREIGN KEY (IdEndereco) 
+	REFERENCES Endereco (IdEndereco),
+	NomeLocal NVARCHAR(120) NOT NULL,
+);
+GO
+
+CREATE TABLE Avaliacao (
+	IdAvaliacao INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT NOT NULL CONSTRAINT IdUsuarioFkAvaliacao FOREIGN KEY (IdUsuario) 
+	REFERENCES Usuario (IdUsuario),
+	IdPost INT NULL,
+	textoAvaliacao VARCHAR(500) NOT NULL,
+);
+GO
+
+CREATE TABLE Post (
+	IdPost INT PRIMARY KEY IDENTITY(1,1),
+	IdUsuario INT NOT NULL CONSTRAINT IdUsuarioFkPost FOREIGN KEY (IdUsuario) 
+	REFERENCES Usuario (IdUsuario) ON DELETE CASCADE,
+	IdAvalicao INT NOT NULL CONSTRAINT IdAvaliacaoFk FOREIGN KEY (IdAvalicao) 
+	REFERENCES Avaliacao (IdAvaliacao),
+	IdLocais INT NOT NULL CONSTRAINT IdLocaisFk FOREIGN KEY (IdLocais) 
+	REFERENCES Locais (IdLocais),
+	Imagem VARBINARY(MAX) NOT NULL,
+	CriadoEm DATETIME2(0) NOT NULL DEFAULT DATEADD(HOUR, -3, SYSUTCDATETIME()),
+);
+GO
+
+CREATE TABLE Destino (
+	IdUsuario INT NOT NULL,
+	IdPost INT NOT NULL,
+	CONSTRAINT PkDestino PRIMARY KEY (IdUsuario,IdPost),
+	
+	CONSTRAINT IdUsuarioFkDestino FOREIGN KEY (IdUsuario) 
+		REFERENCES Usuario (IdUsuario) ON DELETE CASCADE,
+	CONSTRAINT IdPostFkDestino FOREIGN KEY (IdPost) 
+		REFERENCES Post (IdPost) ON DELETE CASCADE,
+);
+GO
+
+CREATE TABLE Favorito(
+	IdUsuario INT NOT NULL,
+	IdPost INT NOT NULL,
+	CONSTRAINT PkFavorito PRIMARY KEY (IdUsuario,IdPost),
+	
+	CONSTRAINT IdUsuarioFkFavorito FOREIGN KEY (IdUsuario) 
+		REFERENCES Usuario (IdUsuario) ON DELETE CASCADE,
+	CONSTRAINT IdPostFkFavorito FOREIGN KEY (IdPost) 
+		REFERENCES Post (IdPost) ON DELETE CASCADE,
+);
+GO
+
+ALTER TABLE Avaliacao ADD CONSTRAINT IdPost
+    FOREIGN KEY (IdPost) REFERENCES Post(IdPost);
+	GO

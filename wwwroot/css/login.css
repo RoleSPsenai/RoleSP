@@ -10,26 +10,24 @@ body {
 .context {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 40px;
-    width: 80%;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 1);
 }
 
 .left {
     background-color: var(--verde-escuro);
+    background-image: linear-gradient(to bottom, var(--verde-escuro), var(--verde));
     display: flex;
     flex-direction: column;
     padding-left: 5%;
     padding-right: 5%;
     align-items: center;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
 }
 
 .logo {
     width: 30%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 5%;
 }
 
@@ -49,6 +47,7 @@ body {
     height: 40%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .inputs {
@@ -58,31 +57,31 @@ body {
 }
 
 .button {
-    margin-top: 10%;
-    height: 20%;
-    border-radius: 20px;
-    max-width: 100%;
+    margin-top: 5%;
+    height: 18%;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 60%;
 }
 
 .decorativeLine {
     width: 80%;
     height: 2px;
     background-color: var(--branco);
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1%;
     opacity: 0.2;
 }
 
 .register {
     color: var(--branco);
     font-size: 1rem;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .emphasis {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--verde);
+    color: var(--verde-escuro);
 }
 
 .right {
@@ -91,6 +90,4 @@ body {
     background-size: cover;
     background-position: center;
     background-color: #333;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
 }
