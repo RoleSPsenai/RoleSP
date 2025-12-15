@@ -7851,11 +7851,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\54579886860\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\39318099860\\.nuget\\packages\\": {}
+>>>>>>> a1f4ca6ff59110cef83237c7e57cfbc3587ab2c3
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\54579886860\\Desktop\\RoleSP\\RoleSP.csproj",
       "projectName": "RoleSP",
       "projectPath": "C:\\Users\\54579886860\\Desktop\\RoleSP\\RoleSP.csproj",
@@ -7864,6 +7869,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\54579886860\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj",
+      "projectName": "RoleSP",
+      "projectPath": "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj",
+      "packagesPath": "C:\\Users\\39318099860\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\39318099860\\Desktop\\RoleSP\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\39318099860\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> a1f4ca6ff59110cef83237c7e57cfbc3587ab2c3
       ],
       "originalTargetFrameworks": [
         "net9.0"
