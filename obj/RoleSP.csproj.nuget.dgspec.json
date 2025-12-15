@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj": {}
+    "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj": {
+    "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
+        "projectUniqueName": "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj",
         "projectName": "RoleSP",
-        "projectPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
-        "packagesPath": "C:\\Users\\allan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\obj\\",
+        "projectPath": "C:\\Users\\39318099860\\Desktop\\RoleSP\\RoleSP.csproj",
+        "packagesPath": "C:\\Users\\39318099860\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\39318099860\\Desktop\\RoleSP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\allan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\39318099860\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
