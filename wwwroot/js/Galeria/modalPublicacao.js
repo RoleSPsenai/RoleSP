@@ -162,75 +162,61 @@ document.getElementById("rua").addEventListener("focusout", buscarCepPorEndereco
 document.getElementById("cidade").addEventListener("focusout", buscarCepPorEndereco);
 document.getElementById("estado").addEventListener("focusout", buscarCepPorEndereco);
 
-//* AJAX para submissão do formulário de postagem */
+async function enviarFormulario(e) {
+    // 1. BLOQUEIA o envio padrão e o redirecionamento
+    e.preventDefault(); 
+    
+    console.log("Iniciando envio via Fetch...");
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Substitua '#formPostar' pelo ID real do seu formulário HTML
-    const formPostar = document.querySelector("#formPostar");
+    const form = e.target;
+    const notificacao = document.getElementById("notificacao");
     const popup = document.getElementById("TelaPublicacao");
+    
+    // Captura os dados (incluindo a imagem)
+    const formData = new FormData(form);
 
-    if (!formPostar) {
-        console.error("Erro: Formulário de postagem não encontrado.");
-        return;
+    if (notificacao) {
+        notificacao.innerText = "Publicando...";
+        notificacao.style.color = "blue";
     }
 
-    formPostar.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        console.log("Evento submit capturado! Iniciando Fetch...")
-
-        // FormData captura todos os campos (incluindo a imagem) automaticamente
-        const formData = new FormData(formPostar);
-        const erroElement = document.querySelector("#erroPostar");
-
-        // Limpa mensagens de erro anteriores
-        if (erroElement) erroElement.innerText = "";
-
-        fetch("/Galeria/Postar", {
+    try {
+        // Envia para a URL gerada pelo ASP.NET (form.action)
+        const resposta = await fetch(form.action, {
             method: "POST",
             body: formData
-        })
-        .then(res => {
-            // Caso o servidor retorne um erro de sistema (500)
-            if (!res.ok) {
-                throw new Error("Erro no servidor ao processar a postagem.");
-            }
-            return res.json();
-        })
-        .then(resposta => {
-            if (resposta.sucesso) {
-                // Caso de sucesso: Mensagem amigável e recarregamento
-                if (popup && typeof popup.close === "function")
-                {
-                  popup.close();
-                } else {
-                  popup.style.display = "none";
-                }
-
-                alert(resposta.mensagem);
-
-                formPostar.reset();
-                
-                window.location.reload();
-
-                const labels = formPostar.querySelectorAll("label.focused");
-                labels.forEach(label => label.classList.remove("focused"));
-
-            } else {
-                // Caso de erro validado pelo C#
-                if (erroElement) {
-                    erroElement.innerText = resposta.mensagem;
-                    erroElement.style.color = "red";
-                } else {
-                    alert(resposta.mensagem);
-                }
-            }
-        })
-        .catch(err => {
-            console.error("Erro na requisição:", err);
-            if (erroElement) {
-                erroElement.innerText = "Houve um problema ao conectar com o servidor.";
-            }
         });
-    });
-});
+
+        if (!resposta.ok) {
+            throw new Error("Erro de rede ou servidor.");
+        }
+
+        const resultado = await resposta.json();
+
+        if (resultado.sucesso) {
+            // SUCESSO
+            alert(resultado.mensagem);
+            form.reset();
+            
+            if (popup) {
+                // Se for a tag <dialog>, usa .close(). Se for div comum, usa style.display
+                typeof popup.close === "function" ? popup.close() : popup.style.display = "none";
+            }
+            
+            // Recarrega para mostrar a foto nova
+            window.location.reload();
+        } else {
+            // ERRO VALIDADO PELO C#
+            if (notificacao) {
+                notificacao.innerText = resultado.mensagem;
+                notificacao.style.color = "red";
+            }
+        }
+    } catch (erro) {
+        console.error("Erro fatal:", erro);
+        if (notificacao) {
+            notificacao.innerText = "Erro ao conectar com o servidor.";
+            notificacao.style.color = "red";
+        }
+    }
+}

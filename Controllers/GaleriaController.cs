@@ -115,5 +115,40 @@ namespace RoleSP.Controllers
 
             return Json(new { sucesso = true, mensagem = "Postagem realizada com sucesso!" });
         }
+
+        [HttpPost]
+        public IActionResult Excluir (int id)
+        {
+            var postId = _context.Posts.FirstOrDefault(e => e.IdPost == id);
+
+            if(postId == null)
+            {
+                return NotFound();
+            }
+
+            _context.Posts.Remove(postId);
+            _context.SaveChanges();
+
+            return Json(new { sucesso = true, mensagem = "Postagem apagada com sucesso" });
+        }
+
+        // [HttpGet]
+        // public IActionResult Editar(int id)
+        // {
+        //     int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+
+        //     if(usuarioId == null)
+        //     {
+        //         return Json(new { sucesso = false, mensagem = "Usuario não encontrado" });
+        //     }
+        
+        //     var postUsuario = _context.Posts.FirstOrDefault(p => p.IdPost == id);
+            
+        //     if(postUsuario == null)
+        //     {
+                
+        //     }
+
+        // }
     }
 }

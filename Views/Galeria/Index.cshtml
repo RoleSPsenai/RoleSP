@@ -1,5 +1,5 @@
 @{
-    Layout = null;
+  Layout = null;
 }
 
 <!DOCTYPE html>
@@ -83,7 +83,7 @@
 
     <main>
       <h4 class="titulo-postagens">Minhas Postagens</h4>
-     <section id="postagens" class="postagens">
+      <section id="postagens" class="postagens">
         <article class="post" data-nome="Kiki Café" data-bairro="Ipiranga, São Paulo"
           data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/Kiki Café.svg">
           <figure class="foto-postagens">
@@ -127,53 +127,62 @@
   <!-- PUBLICAÇÃO DO POST -->
   <dialog id="TelaPublicacao" class="popup">
     <div class="popup-content">
-      <form id="formPostar" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post" enctype="multipart/form-data">
-        <label class="imgLabel" for="imgInput">
-          <input  name="imgLocal" type="file" accept="image/*" id="imgInput" />
-          <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen" class="iconUpload" />
-          <span>Upload do local</span>
-        </label>
-        <div class="sectioInputs">
-          <a id="BotaoFecharPublicacao" class="fechar-modal">
-            <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
-          </a>
-          <div class="select">
-            <label for="local" class="title">Filtros</label>
-            <select name="select" class="inputs">
-              <option value=1>Cafeteria</option>
-              <option value=2>Museu</option>
-              <option value=3>Restaurantes</option>
-              <option value=4>Natureza</option>
-              <option value=5>Livraria</option>
-              <option value=6>Cultura</option>
-            </select>
-          </div>
-          <div>
-            <label for="local" class="title">Local</label>
-            <input name="nomeLocal" type="text" placeholder="Nome do local..." class="inputs" id="localEditar" />
-            <div id="groupInput">
-              <div id="groupCep">
-                <label for="inputCep" class="title">CEP</label>
-                <input name="cep" type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
-              </div>
-              <div id="groupBairro">
-                <label for="bairro" class="title">Bairro</label>
-                <input name="bairro" type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
-              </div>
+        <form id="formPostar" onsubmit="enviarFormulario(event)" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post" enctype="multipart/form-data">
+            
+            <label class="imgLabel" for="imgInput">
+                <input name="imgLocal" type="file" accept="image/*" id="imgInput" style="display: none;" />
+                <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen" class="iconUpload" />
+                <span>Upload do local</span>
+            </label>
+
+            <div class="sectioInputs">
+                <a id="BotaoFecharPublicacao" class="fechar-modal" href="javascript:void(0)" onclick="document.getElementById('TelaPublicacao').close()">
+                    <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                </a>
+
+                <div class="select">
+                    <label for="local" class="title">Filtros</label>
+                    <select name="select" class="inputs">
+                        <option value="1">Cafeteria</option>
+                        <option value="2">Museu</option>
+                        <option value="3">Restaurantes</option>
+                        <option value="4">Natureza</option>
+                        <option value="5">Livraria</option>
+                        <option value="6">Cultura</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="nomeLocal" class="title">Local</label>
+                    <input name="nomeLocal" type="text" placeholder="Nome do local..." class="inputs" id="localEditar" />
+                    
+                    <div id="groupInput">
+                        <div id="groupCep">
+                            <label for="cep" class="title">CEP</label>
+                            <input name="cep" type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
+                        </div>
+                        <div id="groupBairro">
+                            <label for="bairro" class="title">Bairro</label>
+                            <input name="bairro" type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
+                        </div>
+                    </div>
+
+                    <label for="rua" class="title">Rua:</label>
+                    <input name="rua" type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
+                    
+                    <label for="cidade" class="title">Cidade:</label>
+                    <input name="cidade" type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
+                    
+                    <label for="comentario" class="title">Comentário:</label>
+                    <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
+                </div>
+
+                <button type="submit" class="botao-publicar" id="BotaoPost">Publicar</button>
+                <span id="notificacao"></span>
             </div>
-            <label for="rua" class="title">Rua:</label>
-            <input name="rua"  type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
-            <label  for="cidade" class="title">Cidade:</label>
-            <input name="cidade" type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
-            <label for="comentario" class="title">Comentário:</label>
-            <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
-          </div>
-          <button class="botao-publicar" id="BotaoPost">Publicar</button>
-          <span id="notificacao"></span>
-        </div>
-      </form>
+        </form>
     </div>
-  </dialog>
+</dialog>
 
   <!-- EDIÇÃO DO POST -->
   <dialog id="TelaEditar" class="popup">
@@ -217,7 +226,8 @@
             <label for="cidade" class="title">Cidade:</label>
             <input name="cidade" type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
             <label for="comentario" class="title">Comentário:</label>
-            <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
+            <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs"
+              id="comentarioEditar" />
           </div>
           <button class="botao-publicar" id="BotaoSalvarEdicao">
             Salvar Alterações
@@ -239,7 +249,7 @@
         <img src="~/assets/Img/perfil_galeria.png" alt="" class="userImg" />
       </div>
       <input type="file" id="fileInput" style="display: none" />
-       <!-- O link/botão visível -->
+      <!-- O link/botão visível -->
       <a href="#" id="openExplorerLink">Alterar foto de perfil</a>
     </div>
     <div class="Alterar-Dados">
@@ -264,7 +274,7 @@
       <h2 class="exclusao">Tem certeza de que deseja excluir este item?</h2>
       <div class="acoes-excluir">
         <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
-        <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
+        <a onsubmit="enviarFormulario(event)"  asp-controller="Galeria" asp-action="Excluir" method="post" id="btnConfirmarExcluir" class="btn-confirmar">Sim</a>
       </div>
     </div>
   </dialog>
@@ -322,11 +332,11 @@
     </div>
   </dialog> -->
 
+  <script src="~/js/Galeria/modalPublicacao.js"></script>
   <script src="~/js/Galeria/galeria.js"></script>
   <script src="~/js/Galeria/modalConfig.js"></script>
   <script src="~/js/Galeria/modalEditar.js"></script>
   <script src="~/js/Galeria/modalExcluir.js"></script>
-  <script src="~/js/Galeria/modalPublicacao.js"></script>
   <script src="~/js/Galeria/modalSair.js"></script>
 
 </body>
