@@ -1,31 +1,29 @@
-dialog#config-modal {
+dialog#TelaConfiguracao {
   animation: popupShow 0.25s ease-out;
-  background: #c8e3dd;
+  background: var(--fundo);
   border: none;
   border-radius: 35px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
   max-height: 90%;
   max-width: 90%;
   padding: 20px 40px;
-  transition: all 0.3s ease;
-  width: 50em;
   position: fixed;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
 }
 
-dialog#config-modal::backdrop {
+dialog#TelaConfiguracao::backdrop {
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.55);
 }
 
-#btn-fechar-config {
-  background-color: #c8e3dd;
-  color: #085e50;
-  font-size: 3rem;
-  font-weight: bold;
-  width: 50px;
+#BotaoFecharConfiguracao {
+  background-color: transparent;
+  color: var(--verde-escuro);
+  width: 25px;
 }
 
 #openExplorerLink {
@@ -42,14 +40,9 @@ dialog#config-modal::backdrop {
   color: var(--branco);
   font-size: 1.2rem;
   font-weight: bold;
-  /* height: 80px; */
-  padding: 15px 12px;
   margin-top: 20px;
+  padding: 15px 12px;
   width: 200px;
-}
-
-.ParteInicial {
-  align-items: center;
 }
 
 .Alterar-Dados {
@@ -94,22 +87,19 @@ dialog#config-modal::backdrop {
   width: 100%;
 }
 
-.quadrado {
+.userImg {
   background-color: #000;
   background-position: center;
-  background-size: cover;
-  border-radius: 100%;
+  object-fit: cover;
+  border-radius: 40px;
   height: 125px;
   width: 125px;
-  border-radius: 40px;
 }
 
-.userImg {
-  height: auto;
-}
+
 
 h2 {
-  color: #085e50;
+  color: var(--verde-escuro);
   font-size: 1.5rem;
 }
 
@@ -130,15 +120,12 @@ p {
 }
 
 @media (max-width: 600px) {
-  #btn-fechar-config {
-    font-size: 3rem;
+  h2 {
+    color: var(--verde-escuro);
+    font-size: 1.2rem;
   }
 
-  h2 {
-  color: #085e50;
-  font-size: 1.2rem;
-}
-  dialog#config-modal {
+  dialog#TelaConfiguracao {
     padding: 20px;
     width: 90%;
   }

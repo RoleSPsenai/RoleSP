@@ -1,32 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Botões que abrem popup
-  const botaoEditar = document.querySelectorAll(".editar-post");
-  const popupEditar = document.getElementById("TelaEditar");
-  const botaoFecharEditar = document.getElementById("BotaoFecharEditar");
-
-  botaoEditar.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      popupEditar.showModal();
-    });
+  // popupPublicacao
+  const botaoPublicacao = document.getElementById("BotaoPublicar");
+  const popupPublicacao = document.getElementById("TelaPublicacao");
+  const botaoPublicacaoFechar = document.getElementById("BotaoFecharPublicacao");
+  
+  botaoPublicacao.addEventListener("click", () => {
+    popupPublicacao.showModal();
   });
-
-  // Fechar no botão X
-  botaoFecharEditar.addEventListener("click", () => {
-    popupEditar.close(); // <-- CORRETO
+  
+  botaoPublicacaoFechar.addEventListener("click", () => {
+    popupPublicacao.close();
   });
-
+  
   // Fechar clicando fora
-  popupEditar.addEventListener("click", (e) => {
-    if (e.target === popupEditar) {
-      popupEditar.close(); // <-- CORRETO
+  popupPublicacao.addEventListener("click", (e) => {
+    if (e.target === popupPublicacao) {
+      popupPublicacao.close();
     }
   });
 
-  // Labels animadas dos inputs
   const inputs = document.querySelectorAll(
-    "#TelaEditar input, #TelaEditar textarea"
+    ".form-publicacao input, .form-publicacao textarea"
   );
-
   inputs.forEach((input) => {
     const setFocused = () => {
       const label = input.previousElementSibling;
@@ -47,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("focus", setFocused);
     input.addEventListener("blur", removeFocused);
 
+    // Se o input já tiver valor (ex.: preenchido por autocomplete), mantém o label flutuando
     if (input.value && input.value.trim() !== "") setFocused();
   });
 });

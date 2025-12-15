@@ -2,326 +2,363 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style/global.css">
-    <link rel="stylesheet" href="Style/galeria.css">
-    <link rel="stylesheet" href="Style/publicação.css">
-    <link rel="stylesheet" href="Style/editar.css">
-    <link rel="stylesheet" href="Style/configuracao.css">
-    <link rel="stylesheet" href="Style/excluir.css">
-    <title>Galeria</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Style/global.css" />
+  <link rel="stylesheet" href="Style/configuracao.css" />
+  <link rel="stylesheet" href="Style/editar.css" />
+  <link rel="stylesheet" href="Style/excluir.css" />
+  <link rel="stylesheet" href="Style/galeria.css" />
+  <link rel="stylesheet" href="Style/post.css">
+  <link rel="stylesheet" href="Style/publicação.css" />
+  <link rel="stylesheet" href="Style/sair.css" />
+  <title>Galeria</title>
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="logo">
-            <img class="logo-colorido" src="Assets/Ícones/Logo/Logo Colorido.svg" alt="Logo">
-        </div>
-        <button id="BotaoPublicar" class="novo-post">+ Novo Post</button>
-    </header>
-
-    <div class="conteudo">
-
-        <aside class="parte_lateral">
-            <section class="perfil">
-                <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario">
-                <div class="info-usuario">
-                    <h2 class="nome-usuario">Carlos Eduardo</h2>
-                    <h3 class="usuario">Carlinhos</h3>
-                    <nav class="nav-info-perfil">
-                        <ul class="perfil-info">
-                            <li>
-                                <a class="lista-perfil" href="">
-                                    <span class="numero">36</span>
-                                    <span class="legenda">Visitados</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="lista-perfil" href="">
-                                    <span class="numero">10</span>
-                                    <span class="legenda">Favoritos</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="lista-perfil" href="">
-                                    <span class="numero">5</span>
-                                    <span class="legenda">Destinos</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-
-            <section class="menu-navegação">
-                <nav class="menu">
-                    <ul class="navegação">
-                        <li><a class="lista-navegacao" href=""><img class="icone-menu"
-                                    src="Assets/Ícones/Ações/Home.svg" alt="Ícone Home">Home</a></li>
-                        <li><button id="configuracao" class="lista-navegacao"><img class="icone-menu"
-                                    src="Assets/Ícones/Ações/Configurações.svg" alt="">Configurações</button></li>
-                        <li><button id="logout" class="lista-navegacao"><img class="icone-menu-sair"
-                                    src="Assets/Ícones/Ações/Voltar.svg" alt="">Sair</button></li>
-
-                    </ul>
-                </nav>
-            </section>
-        </aside>
-
-        <main>
-            <h4 class="titulo-postagens">Minhas Postagens</h4>
-            <section id="postagens" class="postagens">
-                <article class="post">
-                    <figure class="foto-postagens">
-                        <img class="foto-post" src="Assets/Img/Kiki Café.svg" alt="">
-                        <figcaption class="legenda-foto">Kiki Café</figcaption>
-                    </figure>
-                    <div class="acoes">
-                        <div class="icone-de-estado">
-                            <button class="icone-favorito" aria-label="Favoritar">
-                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true" focusable="false">
-                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
-                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
-                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
-                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
-                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
-                                </svg>
-                            </button>
-                            <button class="icone-destino" aria-label="Destino">
-                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true" focusable="false">
-                                    <path
-                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="configuracoes-post">
-                            <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções">
-                            <ul class="menu-post">
-                                <li class="editar-post">Editar</li>
-                                <li class="excluir-post">Excluir</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-                <article class="post">
-                    <figure class="foto-postagens">
-                        <img class="foto-post" src="Assets/Img/Kiki Café.svg" alt="">
-                        <figcaption class="legenda-foto">Kiki Café</figcaption>
-                    </figure>
-                    <div class="acoes">
-                        <div class="icone-de-estado">
-                            <button class="icone-favorito" aria-label="Favoritar">
-                                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true" focusable="false">
-                                    <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
-                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
-                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
-                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
-                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
-                                </svg>
-                            </button>
-                            <button class="icone-destino" aria-label="Destino">
-                                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true" focusable="false">
-                                    <path
-                                        d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="configuracoes-post">
-                            <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções">
-                            <ul class="menu-post">
-                                <li class="editar-post">Editar</li>
-                                <li class="excluir-post">Excluir</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </article>
-            </section>
-        </main>
+  <header class="cabecalho">
+    <div class="logo">
+      <img class="logo-colorido" src="Assets/Ícones/Logo/Logo Colorido.svg" alt="Logo" />
     </div>
+    <button id="BotaoPublicar" class="novo-post">+ Novo Post</button>
+  </header>
 
-    <!-- PUBLICAÇÃO DO POST -->
-    <dialog id="TelaPublicacao" class="popup">
-        <div class="popup-content">
-            <div class="mainPopup">
-                <label class="imgLabel" for="imgInput">
-                    <input type="file" accept="image/*" id="imgInput">
-                    <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen"
-                        class="iconUpload">
-                    <span>Upload do local</span>
-                </label>
-                <div class="sectioInputs">
-                    <button id="btn-fechar" class="fechar-modal">
-                        <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
-                    </button>
-                    <div class="select">
-                        <label for="local" class="title">Filtros</label>
-                        <select class="inputs">
-                            <option value="cafeteria">Cafeteria</option>
-                            <option value="museu">Museu</option>
-                            <option value="restaurantes">Restaurantes</option>
-                            <option value="natureza">Natureza</option>
-                            <option value="livraria">Livraria</option>
-                            <option value="cultura">Cultura</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="local" class="title">Local</label>
-                        <input type="text" placeholder="Nome do local..." class="inputs" id="local">
-                        <div id="groupInput">
-                            <div id="groupCep">
-                                <label for="inputCep" class="title">CEP</label>
-                                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCep">
-                            </div>
-                            <div id="groupBairro">
-                                <label for="bairro" class="title">Bairro</label>
-                                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairro">
-                            </div>
-                        </div>
-                        <label for="rua" class="title">Rua:</label>
-                        <input type="text" placeholder="Rua do local..." class="inputs" id="rua">
-                        <label for="cidade" class="title">Cidade:</label>
-                        <input type="text" placeholder="Cidade do local..." class="inputs" id="cidade">
-                        <label for="comentario" class="title">Comentário:</label>
-                        <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentario">
-                    </div>
-                    <button class="botao-publicar" id="BotaoPost">Publicar</button>
-                </div>
-            </div>
+  <div class="conteudo">
+    <aside class="parte_lateral">
+      <section class="perfil">
+        <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario" />
+        <div class="info-usuario">
+          <h2 class="nome-usuario">Carlos Eduardo</h2>
+          <h3 class="usuario">Carlinhos</h3>
+          <nav class="nav-info-perfil">
+            <ul class="perfil-info">
+              <li>
+                <a class="lista-perfil" href="">
+                  <span class="numero">36</span>
+                  <span class="legenda">Visitados</span>
+                </a>
+              </li>
+              <li>
+                <a class="lista-perfil" href="">
+                  <span class="numero">10</span>
+                  <span class="legenda">Favoritos</span>
+                </a>
+              </li>
+              <li>
+                <a class="lista-perfil" href="">
+                  <span class="numero">5</span>
+                  <span class="legenda">Destinos</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </dialog>
+      </section>
 
-    <!-- EDIÇÃO DO POST -->
-    <dialog id="TelaEditar" class="popup">
-        <div class="popup-content">
-            <div class="mainPopup">
-                <label class="imgLabel" for="imgInputEditar">
-                    <input type="file" accept="image/*" id="imgInputEditar">
-                    <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagem"
-                        class="iconUpload">
-                    <span>Alterar imagem</span>
-                </label>
-                <div class="sectioInputs">
-                    <button id="btn-fechar-editar" class="fechar-modal">
-                        <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
-                    </button>
-                    <div class="select">
-                        <label for="local" class="title">Filtros</label>
-                        <select class="inputs">
-                            <option value="cafeteria">Cafeteria</option>
-                            <option value="museu">Museu</option>
-                            <option value="restaurantes">Restaurantes</option>
-                            <option value="natureza">Natureza</option>
-                            <option value="livraria">Livraria</option>
-                            <option value="cultura">Cultura</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="local" class="title">Local</label>
-                        <input type="text" placeholder="Nome do local..." class="inputs" id="localEditar">
-                        <div id="groupInput">
-                            <div id="groupCep">
-                                <label for="inputCep" class="title">CEP</label>
-                                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar">
-                            </div>
-                            <div id="groupBairro">
-                                <label for="bairro" class="title">Bairro</label>
-                                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar">
-                            </div>
-                        </div>
-                        <label for="rua" class="title">Rua:</label>
-                        <input type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar">
-                        <label for="cidade" class="title">Cidade:</label>
-                        <input type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar">
-                        <label for="comentario" class="title">Comentário:</label>
-                        <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar">
-                    </div>
-                    <button class="botao-publicar" id="BotaoSalvarEdicao">Salvar Alterações</button>
-                </div>
+      <section class="menu-navegação">
+        <nav class="menu">
+          <ul class="navegação">
+            <li>
+              <a class="lista-navegacao" href=""><img class="icone-menu" src="Assets/Ícones/Ações/Home.svg"
+                  alt="Ícone Home" />Home</a>
+            </li>
+            <li>
+              <button id="BotaoConfiguracao" class="lista-navegacao">
+                <img class="icone-menu" src="Assets/Ícones/Ações/Configurações.svg" alt="" />Configurações
+              </button>
+            </li>
+            <li>
+              <button id="logout" class="lista-navegacao">
+                <img class="icone-menu-sair" src="Assets/Ícones/Ações/Voltar.svg" alt="" />Sair
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </aside>
+
+    <main>
+      <h4 class="titulo-postagens">Minhas Postagens</h4>
+      <section id="postagens" class="postagens">
+        <article class="post" data-nome="Kiki Café" data-bairro="Ipiranga, São Paulo"
+          data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/Kiki Café.svg">
+          <figure class="foto-postagens">
+            <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="" />
+            <figcaption class="legenda-foto">Kiki Café</figcaption>
+          </figure>
+          <div class="acoes">
+            <div class="icone-de-estado">
+              <button class="icone-favorito" aria-label="Favoritar">
+                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                </svg>
+              </button>
+              <button class="icone-destino" aria-label="Destino">
+                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                </svg>
+              </button>
             </div>
+            <div class="configuracoes-post">
+              <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções" />
+              <ul class="menu-post">
+                <li class="editar-post">Editar</li>
+                <li class="excluir-post">Excluir</li>
+                <li class="info-post"><a href="#">Descrição</a></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="post" data-nome="London Café" data-bairro="Ipiranga, São Paulo"
+          data-endereco="Rua Bom Pastor, 2224 - 14º Andar - Sala 1404" data-img="Assets/Img/London coffee.svg">
+          <figure class="foto-postagens">
+            <img class="foto-post abrir-post" src="Assets/Img/London coffee.svg" alt="" />
+            <figcaption class="legenda-foto">London Café</figcaption>
+          </figure>
+          <div class="acoes">
+            <div class="icone-de-estado">
+              <button class="icone-favorito" aria-label="Favoritar">
+                <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674
+                                            c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349
+                                            c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492
+                                            c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331
+                                            C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                </svg>
+              </button>
+              <button class="icone-destino" aria-label="Destino">
+                <svg viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                  focusable="false">
+                  <path
+                    d="M14,2.25 C19.3847763,2.25 23.75,6.61522369 23.75,12 C23.75,16.1196455 20.855433,20.6092677 15.1401958,25.5178507 C14.4843932,26.0810927 13.5155806,26.0810925 12.8571694,25.5155993 L12.4794181,25.1881258 C7.01712282,20.4088515 4.25,16.0278108 4.25,12 C4.25,6.61522369 8.61522369,2.25 14,2.25 Z M14,8.25 C11.9289322,8.25 10.25,9.92893219 10.25,12 C10.25,14.0710678 11.9289322,15.75 14,15.75 C16.0710678,15.75 17.75,14.0710678 17.75,12 C17.75,9.92893219 16.0710678,8.25 14,8.25 Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="configuracoes-post">
+              <img class="icone-post botao-opcoes" src="Assets/Ícones/Ações/Opções.svg" alt="Opções" />
+              <ul class="menu-post">
+                <li class="editar-post">Editar</li>
+                <li class="excluir-post">Excluir</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!-- PUBLICAÇÃO DO POST -->
+  <dialog id="TelaPublicacao" class="popup">
+    <div class="popup-content">
+      <div class="mainPopup">
+        <label class="imgLabel" for="imgInput">
+          <input type="file" accept="image/*" id="imgInput" />
+          <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagen" class="iconUpload" />
+          <span>Upload do local</span>
+        </label>
+        <div class="sectioInputs">
+          <button id="BotaoFecharPublicacao" class="fechar-modal">
+            <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+          </button>
+          <div class="select">
+            <label for="local" class="title">Filtros</label>
+            <select class="inputs">
+              <option value="cafeteria">Cafeteria</option>
+              <option value="museu">Museu</option>
+              <option value="restaurantes">Restaurantes</option>
+              <option value="natureza">Natureza</option>
+              <option value="livraria">Livraria</option>
+              <option value="cultura">Cultura</option>
+            </select>
+          </div>
+          <div>
+            <label for="local" class="title">Local</label>
+            <input type="text" placeholder="Nome do local..." class="inputs" id="localEditar" />
+            <div id="groupInput">
+              <div id="groupCep">
+                <label for="inputCep" class="title">CEP</label>
+                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
+              </div>
+              <div id="groupBairro">
+                <label for="bairro" class="title">Bairro</label>
+                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
+              </div>
+            </div>
+            <label for="rua" class="title">Rua:</label>
+            <input type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
+            <label for="cidade" class="title">Cidade:</label>
+            <input type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
+            <label for="comentario" class="title">Comentário:</label>
+            <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
+          </div>
+          <button class="botao-publicar" id="BotaoPost">Publicar</button>
         </div>
-    </dialog>
+      </div>
+    </div>
+  </dialog>
 
-    <!-- CONFIGURAÇÕES -->
-    <dialog id="config-modal">
-        <div class="ParteInicial">
-            <h2 class="config">Configurações</h2>
-            <button id="btn-fechar-config">X</button>
+  <!-- EDIÇÃO DO POST -->
+  <dialog id="TelaEditar" class="popup">
+    <div class="popup-content">
+      <div class="mainPopup">
+        <label class="imgLabel" for="imgInputEditar">
+          <input type="file" accept="image/*" id="imgInputEditar" />
+          <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="icone de upload de imagem" class="iconUpload" />
+          <span>Alterar imagem</span>
+        </label>
+        <div class="sectioInputs">
+          <button id="BotaoFecharEditar" class="fechar-modal">
+            <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+          </button>
+          <div class="select">
+            <label for="local" class="title">Filtros</label>
+            <select class="inputs">
+              <option value="cafeteria">Cafeteria</option>
+              <option value="museu">Museu</option>
+              <option value="restaurantes">Restaurantes</option>
+              <option value="natureza">Natureza</option>
+              <option value="livraria">Livraria</option>
+              <option value="cultura">Cultura</option>
+            </select>
+          </div>
+          <div>
+            <label for="local" class="title">Local</label>
+            <input type="text" placeholder="Nome do local..." class="inputs" id="localEditar" />
+            <div id="groupInput">
+              <div id="groupCep">
+                <label for="inputCep" class="title">CEP</label>
+                <input type="text" placeholder="CEP do local..." class="inputs" id="inputCepEditar" />
+              </div>
+              <div id="groupBairro">
+                <label for="bairro" class="title">Bairro</label>
+                <input type="text" placeholder="Bairro do local..." class="inputs" id="bairroEditar" />
+              </div>
+            </div>
+            <label for="rua" class="title">Rua:</label>
+            <input type="text" placeholder="Rua do local..." class="inputs" id="ruaEditar" />
+            <label for="cidade" class="title">Cidade:</label>
+            <input type="text" placeholder="Cidade do local..." class="inputs" id="cidadeEditar" />
+            <label for="comentario" class="title">Comentário:</label>
+            <input type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioEditar" />
+          </div>
+          <button class="botao-publicar" id="BotaoSalvarEdicao">
+            Salvar Alterações
+          </button>
         </div>
+      </div>
+    </div>
+  </dialog>
 
-        <div class="Parte-Imagem">
-            <div class="quadrado">
-                <!-- CLASS PRA IMAGEM -->
-                <img src="assets/img/user.png" alt="" class="userImg">
-            </div>
+  <!-- CONFIGURAÇÕES -->
+  <dialog id="TelaConfiguracao">
+    <div class="ParteInicial">
+      <h2 class="config">Configurações</h2>
+      <button id="BotaoFecharConfiguracao"><img src="Assets/Ícones/Ações/Fechar.svg" alt=""></button>
+    </div>
+    <div class="Parte-Imagem">
+      <div class="quadrado">
+        <!-- CLASS PRA IMAGEM -->
+        <img src="Assets/Img/perfil_galeria.png" alt="" class="userImg" />
+      </div>
+      <input type="file" id="fileInput" style="display: none" />
+       <!-- O link/botão visível -->
+      <a href="#" id="openExplorerLink">Alterar foto de perfil</a>
+    </div>
+    <div class="Alterar-Dados">
+      <!-- <Botao></Botao> -->
+      <div class="campo">
+        <p>Nome</p>
+        <input class="formulario" id="nome" type="text" placeholder="Nome..." />
+        <p>Nome de Usuario</p>
+        <input class="formulario" id="nome" type="text" placeholder="Nome de Usuario..." />
+      </div>
+      <button id="salvar-config">Salvar</button>
+    </div>
+  </dialog>
 
-            <input type="file" id="fileInput" style="display: none;">
+  <!-- EXCLUSÃO DO POST -->
+  <dialog id="popupExcluir" class="popup-excluir">
+    <div class="popup-excluir-content">
+      <div class="excluir">
+        <img class="icone-excluir" src="Assets/Ícones/Ações/Lixeira.svg" alt="#" />
+        <h1>Excluir Item</h1>
+      </div>
+      <h2 class="exclusao">Tem certeza de que deseja excluir este item?</h2>
+      <div class="acoes-excluir">
+        <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
+        <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
+      </div>
+    </div>
+  </dialog>
 
-            <!-- 2. O link/botão visível -->
-            <a href="#" id="openExplorerLink">Alterar foto de perfil</a>
+  <!-- SAIR DA CONTA -->
+  <dialog id="popupSair" class="popup-sair">
+    <div class="popup-sair-content">
+      <div class="sair-topo">
+        <img class="icone-sair" src="Assets/Ícones/Ações/SairConta.svg" alt="#" />
+        <h1>Sair da Conta</h1>
+      </div>
+      <h2 class="confirmacao-sair">
+        Tem certeza de que deseja sair da sua conta?
+      </h2>
+      <div class="acoes-sair">
+        <button id="btnCancelarSair" class="btn-cancelar-sair">Não</button>
+        <button id="btnConfirmarSair" class="btn-confirmar-sair">Sim</button>
+      </div>
+    </div>
+  </dialog>
+
+
+  <!-- TELA DO POST
+  <dialog id="TelaPost">
+    <div class="painel-esquerdo">
+      <button id="FecharPost" aria-label="Fechar">&times;</button>
+      <div class="local">
+        <img src="" alt="Imagem do local" class="imagem-local" id="ImagemDoPost">
+        <div class="perfil-post">
+          <figure class="foto-perfil">
+            <img src="Assets/Img/perfil_galeria.png" alt="Imagem do local" />
+          </figure>
+          <h3>Sony</h3>
         </div>
-        <div class="Alterar-Dados">
-            <!-- <Botao></Botao> -->
-            <div class="campo">
-                <p>Nome</p>
-                <input class="formulario" id="nome" type="text" placeholder="Nome...">
-
-                <p>Nome de Usuario</p>
-                <input class="formulario" id="nome" type="text" placeholder="Nome de Usuario...">
-            </div>
-
-            <button id="salvar-config">Salvar</button>
-
+        <div class="info">
+          <h3 id="NomeDoLocal"></h3>
+          <div class="opcao">
+            <button class="curtida">
+              <span src="assets/icon/Heart.svg" alt="Curtir" class="curtir">
+            </button>
+            <button class="salvo">
+              <span src="assets/icon/Location.svg" alt="Salvar" class="salvar">
+            </button>
+          </div>
         </div>
-    </dialog>
+      </div>
+      <div class="endereco">
+        <h2 id="BairroDoLocal"></h2>
+        <p id="EnderecoDoLocal"></p>
+      </div>
+    </div>
+    <div class="painel-direito">
+      <p class="legenda-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet imperdiet
+        massa vitae.</p>
+    </div>
+  </dialog> -->
 
+  <script src="Script/galeria.js"></script>
+  <script src="Script/modalConfig.js"></script>
+  <script src="Script/modalEditar.js"></script>
+  <script src="Script/modalExcluir.js"></script>
+  <script src="Script/modalPublicacao.js"></script>
+  <script src="Script/modalSair.js"></script>
 
-    <!-- EXCLUSÃO DO POST -->
-    <dialog id="popupExcluir" class="popup-excluir">
-        <div class="popup-excluir-content">
-            <div class="excluir">
-                <img class="icone-excluir" src="Assets/Ícones/Ações/Lixeira.svg" alt="#">
-                <h1>Excluir Item</h1>
-            </div>
-            <h2 class="exclusao">Tem certeza de que deseja excluir este post?</h2>
-
-            <div class="acoes-excluir">
-                <button id="btnCancelarExcluir" class="btn-cancelar">Não</button>
-                <button id="btnConfirmarExcluir" class="btn-confirmar">Sim</button>
-            </div>
-
-        </div>
-    </dialog>
-
-    <!-- SAIR DA CONTA -->
-    <dialog id="popupSair" class="sairConta">
-        <div class="popup-sair-da-conta">
-            <div class="logout">
-                <img class="icone-sair" src="Assets/Ícones/Ações/Voltar.svg" alt="#">
-                <h1>Sair da Conta</h1>
-            </div>
-            <h2 class="confirmacao">Tem certeza de que deseja sair da sua conta?</h2>
-
-            <div class="acoes-sair">
-                <button id="btnCancelarSair" class="btn-cancelar">Não</button>
-                <button id="btnConfirmarSair" class="btn-confirmar">Sim</button>
-            </div>
-
-        </div>
-    </dialog>
-
-    <script src="Script/galeria.js"></script>
-    <script src="Script/modalConfig.js"></script>
-    <script src="Script/modalEditar.js"></script>
-    <script src="Script/modalExcluir.js"></script>
-    <script src="Script/modalPublicação.js"></script>
-    <script src="Script/modalSair.js"></script>
 </body>
 
 </html>

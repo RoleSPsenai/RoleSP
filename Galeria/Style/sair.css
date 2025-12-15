@@ -1,106 +1,91 @@
-/* dialog#popupSair {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: none;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-dialog#popupSair::backdrop{
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.55);
-}
-
-#popupSair .popup-sair-da-conta {
-    background: #C8E3DD;
-    color: #085E50;
-    padding: 50px;
-    border-radius: 15px;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-}
-
-#popupSair .icone-sair {
-    width: 50px;
-    height: 50px;
-}
-
-#popupSair .acoes-sair {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-
-#popupSair .btn-cancelar,
-#popupSair .btn-confirmar {
-  background-color: var(--verde);
-  color: var(--branco);
-  padding: 15px 35px;
-  border-radius: 20px;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-}
-
-#popupSair .btn-cancelar:hover,
-#popupSair .btn-confirmar:hover {
-  background-color: var(--botao-hover);
-} */
-
-/* --- AQUI ESTÁ A CORREÇÃO REAL --- */
+/* Popup principal de sair (janela modal) */
 dialog#popupSair {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: none;
-    
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
-
-    display: block !important;
-    max-width: none !important;
-    width: auto !important;
-
-    box-shadow: none !important;
+  border: none;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* Fundo escuro borrado atrás */
+/* Fundo desfocado atrás do popup */
 dialog#popupSair::backdrop {
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/* Container interno */
-#popupSair .popup-sair-da-conta {
-    background: #C8E3DD;
-    color: #085E50;
-    padding: 40px 50px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 450px;
-    margin: auto;
-    text-align: center;
-}
-
-/* Ícone */
+/* Ícone do popup de sair */
 #popupSair .icone-sair {
-    width: 50px;
-    height: 50px;
+  height: 70px;
+  width: 70px;
+  padding: 10px;
 }
 
-/* Botões */
+/* Container principal do conteúdo do popup */
+#popupSair .sair-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Caixa de conteúdo dentro do popup */
+#popupSair .popup-sair-content {
+  background: #c8e3dd;
+  border-radius: 15px;
+  color: #085e50;
+  height: 75%;
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Título do popup */
+#popupSair .confirmacao-sair {
+  font-weight: 700;
+  padding: 10px;
+}
+
+/* Container dos botões (Cancelar e Confirmar) */
 #popupSair .acoes-sair {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Botões padrão do popup */
+#popupSair .btn-cancelar-sair,
+#popupSair .btn-confirmar-sair {
+  background-color: #085e50;
+  border: none;
+  border-radius: 20px;
+  color: var(--branco);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 15px 35px;
+}
+
+/* Efeito hover dos botões */
+#popupSair .btn-cancelar-sair:hover,
+#popupSair .btn-confirmar-sair:hover {
+  background-color: var(--botao-hover);
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 700px) {
+  dialog#popupSair {
+    box-shadow: none;
+    padding: 20px;
+    width: 90%;
+  }
+
+  #popupSair .acoes-sair {
+    gap: 50px;
+  }
 }

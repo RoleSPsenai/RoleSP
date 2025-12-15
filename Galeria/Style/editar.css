@@ -1,62 +1,121 @@
-/* Conteúdo principal */
-#TelaEditar .popup-content {
-  background: var(--verde-claro);
-  z-index: 9999;
+dialog#TelaEditar {
+  animation: popupShow 0.25s ease-out;
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
+  padding: 2% 3%;
 }
 
-/* Layout */
-#TelaEditar .mainPopup {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  height: 100%;
-  gap: 5%;
+dialog#TelaEditar::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/* Imagem */
-#TelaEditar .imgLabel {
-  width: 50%;
-  height: 100%;
-  aspect-ratio: 4/5;
-  background-color: var(--branco);
+/* #TelaEditar .popup-content {
+  background: var(--fundo);
   border-radius: 1em;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 3px dashed var(--verde-escuro);
-  cursor: pointer;
-  color: gray;
-  transition: 0.3s;
+  height: auto;
+  max-width: 900px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+}  */
+
+/* Conteúdo principal do popup */
+/* #TelaEditar{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+ 
+
+/* Layout interno do popup */
+#TelaEditar .mainPopup {
+  align-items: end;
+  display: flex;
+  gap: 5%;
+  height: 100%;
+  justify-content: space-between;
 }
 
+/* Área de upload da imagem */
+#TelaEditar .imgLabel {
+  align-items: center;
+  aspect-ratio: 4/5;
+  background-color: var(--branco);
+  border: 3px dashed var(--verde-escuro);
+  border-radius: 1em;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  transition: 0.3s;
+  width: 50%;
+  align-self: center;
+}
+
+/* Hover da área de imagem */
 #TelaEditar .imgLabel:hover {
   background-color: #bbb;
   color: #777;
 }
 
+/* Ícone de upload */
 #TelaEditar .iconUpload {
-  width: 50%;
   height: auto;
+  width: 50%;
 }
 
+/* Input de imagem invisível */
 #imgInputEditar {
   display: none;
 }
 
-/* Inputs */
+/* Inputs do formulário */
 #TelaEditar .inputs {
-  width: 100%;
+  background-color: var(--branco);
   border: none;
   border-radius: 10px;
+  color: var(--cinza-claro);
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 5px;
-  background-color: var(--branco);
-  color: var(--cinza-claro);
+  width: 100%;
 }
 
-/* Botão fechar */
+/* Títulos das seções */
+#TelaEditar .title {
+  color: var(--cinza-escuro);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#TelaEditar .sectioInputs {
+  padding: 3%;
+}
+
+/* Espaçamento entre campos */
+#TelaEditar .novo-post-form {
+  gap: 20px;
+}
+
+/* Botão de fechar o popup */
 #TelaEditar .fechar-modal {
   align-items: center;
   background: transparent;
@@ -67,51 +126,69 @@
   position: absolute;
   right: 1em;
   top: 1em;
+  width: 50px;
+  border: none;
 }
 
+/* Hover do botão fechar */
 #TelaEditar .fechar-modal:hover {
   background-color: transparent;
   cursor: pointer;
 }
 
-/* BOTÃO SALVAR */
+/* Botão de salvar edição */
 #BotaoSalvarEdicao {
   background-color: var(--verde);
+  border: none;
+  border-radius: 30px;
   color: var(--branco);
   font-size: 1.2rem;
-  border: none;
-  padding: 1% 8%;
-  border-radius: 30px;
-  margin-top: 1em;
+  margin-top: 1.1em;
+  padding: 3% 10%;
   transition: 0.2s;
+  width: 250px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
 }
 
+/* Hover do botão salvar */
 #BotaoSalvarEdicao:hover {
   background-color: var(--botao-hover);
 }
 
-/* RESPONSIVO */
+/* Responsivo (mobile) */
 @media (max-width: 768px) {
+
+  /* Layout em coluna no mobile */
   #TelaEditar .mainPopup {
-    flex-direction: column;
     align-items: center;
-    gap: 2em;
+    flex-direction: column;
+    gap: 4px;
+
   }
 
+  /* Área de imagem menor */
   #TelaEditar .imgLabel {
-    max-width: 60%;
-    height: 40%;
     aspect-ratio: unset;
+    height: 30%;
+    max-width: 40%;
+    margin: 8px;
   }
 
+  /* Inputs menores */
   #TelaEditar .inputs {
-    font-size: 0.9rem;
-    padding: 8px;
+    font-size: 1.5rem;
+    padding: 4px;
   }
 
+  /* Botão salvar ocupa largura total */
   #BotaoSalvarEdicao {
-    width: 100%;
     font-size: 1rem;
     padding: 3%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 }
