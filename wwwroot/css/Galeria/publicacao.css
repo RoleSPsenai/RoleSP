@@ -167,6 +167,7 @@ button {
   font-size: 1.2rem;
   padding: 1% 8%;
   text-decoration: none;
+  background-color: var(--verde-escuro);
 }
 
 @media (max-width: 768px) {

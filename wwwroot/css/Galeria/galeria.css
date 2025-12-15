@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: var(--fundo) !important;
+  background-color: var(--verde-claro) !important;
 }
 
 button {
@@ -21,7 +21,7 @@ button:hover {
 }
 
 html {
-  scrollbar-color: var(--branco) var(--fundo);
+  scrollbar-color: var(--branco) var(--verde-claro);
 }
 
 /* CABEÇALHO */

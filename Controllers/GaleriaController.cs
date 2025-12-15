@@ -37,10 +37,12 @@ namespace RoleSP.Controllers
 
             if (select == 0 || string.IsNullOrWhiteSpace(nomeLocal)
                 || cep == 0 || string.IsNullOrWhiteSpace(bairro) || string.IsNullOrWhiteSpace(rua)
-                || string.IsNullOrWhiteSpace(cidade) || string.IsNullOrWhiteSpace(comentario))
+                || string.IsNullOrWhiteSpace(cidade) || string.IsNullOrWhiteSpace(comentario) || imgLocal == null)
             {
                 return Json(new { sucesso = false, mensagem = "Preencha todos os campos" });
             }
+
+
 
             if (locais == null)
             {
