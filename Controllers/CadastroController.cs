@@ -2,8 +2,8 @@ using System.Drawing;
 using Microsoft.AspNetCore.Mvc;
 using RoleSP.Data;
 using RoleSP.Models;
-using Sistema_Login.Service;
 using System.IO;
+using Sistema_Login.Services;
 
 namespace RoleSP.Controllers
 {
@@ -24,13 +24,8 @@ namespace RoleSP.Controllers
         [HttpPost]
         public IActionResult Criar(string nome, string email, string senha, string confirmar)
         {
-            int? ID_User = HttpContext.Session.GetInt32("ID_User");
+            int? ID_User = HttpContext.Session.GetInt32("IdUsuario");
             
-            if (ID_User == null)
-            {
-                return Json(new { sucesso = false, mensagem = "Sessão expirada. Faça login novamente." });
-            }
-
             if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmar))
             {
@@ -42,7 +37,7 @@ namespace RoleSP.Controllers
             }
             if (_context.Usuarios.Any(u => u.Email == email))
             {
-                return Json(new { sucesso = false, mensagem = "E-mail já cadastrado" });
+                return Json(new { sucesso = false, mensagem = "E-mail já cadastrado", });
             }
 
             byte[] hash = HashService.GerarHashBytes(senha);
@@ -52,8 +47,8 @@ namespace RoleSP.Controllers
 
             Usuario usuario = new Usuario
             {
-                NomeCompleto = nome,
                 NomeUsuario = nome,
+                Apelido = nome,
                 Email = email,
                 Senha = hash,
                 Foto = fotoPadraoBytes,
@@ -62,7 +57,7 @@ namespace RoleSP.Controllers
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            return Json(new { sucesso = true });
+            return Json(new { sucesso = true , RedirectUrl = Url.Action("Login", "Index") });
         }
     }
 }

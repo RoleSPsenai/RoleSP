@@ -5,17 +5,17 @@ namespace RoleSP.Models;
 
 public partial class Locai
 {
-    public int ID_Locais { get; set; }
+    public int IdLocais { get; set; }
 
-    public int ID_Filtro { get; set; }
+    public int IdFiltro { get; set; }
 
-    public int ID_Endereco { get; set; }
+    public int IdEndereco { get; set; }
 
-    public virtual Endereco ID_EnderecoNavigation { get; set; } = null!;
+    public string NomeLocal { get; set; } = null!;
 
-    public virtual Filtro ID_FiltroNavigation { get; set; } = null!;
+    public virtual Endereco IdEnderecoNavigation { get; set; } = null!;
+
+    public virtual Filtro IdFiltroNavigation { get; set; } = null!;
 
     public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
-
-    public virtual ICollection<Usuario> ID_Users { get; set; } = new List<Usuario>();
 }

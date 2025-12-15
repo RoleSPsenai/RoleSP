@@ -1,4 +1,4 @@
-@{
+  @{
     Layout = null;
 }
 
@@ -8,10 +8,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/css/global.css">
-    <link rel="stylesheet" href="~/css/feed.css">
-    <link rel="stylesheet" href="~/css/post.css">
-    <link rel="stylesheet" href="~/css/sair.css">
+    <link rel="stylesheet" href="~/css/Home/global.css">
+    <link rel="stylesheet" href="~/css/Home/feed.css">
+    <link rel="stylesheet" href="~/css/Home/post.css">
+    <link rel="stylesheet" href="~/css/Home/sair.css">
     <title>Feed</title>
 </head>
 
@@ -27,7 +27,7 @@
             <input type="text" id="pesquisa" placeholder="Pesquise..." name="pesquisa" />
         </form>
 
-        <a class="botao-galeria" href="#">
+        <a class="botao-galeria" asp-controller="Galeria" asp-action="Index">
             <img class="icone-galeria" src="~/assets/Feed/Galeria.svg" alt="Ícone da Galeria" />
             <span class="galeria">Galeria</span>
         </a>
@@ -295,9 +295,10 @@
         </div>
     </dialog>
 
-    <script src="~/js/feed.js"></script>
-    <script src="~/js/post.js"></script>
-    <script src="~/js/modalSair.js"></script>
+    <script src="~/js/Home/feed.js"></script>
+    <script src="~/js/Home/post.js"></script>
+    <script src="~/js/Home/modalSair.js"></script>
 </body>
 
-</html>
+</html> 
+

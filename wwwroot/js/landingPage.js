@@ -158,41 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formCadastro = document.querySelector("#formCadastro");
 
-    formCadastro.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(formCadastro);
-
-        fetch("/Cadastro/Criar", {
-            method: "POST",
-            body: formData
-        })
-        .then(res => res.json())
-        .then(resposta => {
-
-            if (!resposta.sucesso) {
-                document.querySelector("#erroCadastro").innerText = resposta.mensagem;
-                return;
-            }
-
-            
-            document.querySelector("#erroCadastro").innerText = "";
-
-            document.querySelector("#cadastro-modal").close();
-
-            document.querySelector("#login-modal").showModal();
-        })
-        .catch(err => console.error("Erro requisição:", err));
-    });
-
-});
-
-//* =-=-=-=-=-=-==- AJAX -=-=-=-=-=-=-=-=
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const formCadastro = document.querySelector("#formCadastro");
-
 
     if (!formCadastro) {
         console.error("Erro: Formulário de cadastro (#formCadastro) não encontrado.");
@@ -226,11 +191,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 erroElement.innerText = "";
             }
 
+
+            
+
             const cadastroModal = document.querySelector("#cadastro-modal");
             if (cadastroModal) cadastroModal.close();
 
-            const loginModal = document.querySelector("#login-modal");
-            if (loginModal) loginModal.showModal();
+
+            
+
+            if (resposta.RedirectUrl) {
+
+                window.location.href = resposta.RedirectUrl; 
+            } else {
+
+                console.warn("Cadastro realizado, mas a URL de redirecionamento (RedirectUrl) não foi encontrada na resposta.");
+            }
+
         })
         .catch(err => {
             console.error("Erro na requisição AJAX:", err);

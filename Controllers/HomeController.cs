@@ -19,7 +19,7 @@ public class HomeController : Controller
         {
             return RedirectToAction("Index", "Login");
         }
-        return RedirectToAction("Home", "Home");
+        return RedirectToAction("Index", "Home");
     }
 
 }

@@ -7,9 +7,9 @@ public partial class Usuario
 {
     public int IdUsuario { get; set; }
 
-    public string NomeCompleto { get; set; } = null!;
+    public string NomeUsuario { get; set; } = null!;
 
-    public string? NomeUsuario { get; set; }
+    public string Apelido { get; set; } = null!;
 
     public string Email { get; set; } = null!;
 
@@ -19,11 +19,15 @@ public partial class Usuario
 
     public DateTime CriadoEm { get; set; }
 
+    public int Destino { get; set; }
+
+    public int Favorito { get; set; }
+
     public virtual ICollection<Avaliacao> Avaliacaos { get; set; } = new List<Avaliacao>();
 
     public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
 
-    public virtual ICollection<Locai> ID_Locals { get; set; } = new List<Locai>();
+    public virtual ICollection<Post> IdPosts { get; set; } = new List<Post>();
 
-    public virtual ICollection<Post> ID_Posts { get; set; } = new List<Post>();
+    public virtual ICollection<Post> IdPostsNavigation { get; set; } = new List<Post>();
 }
