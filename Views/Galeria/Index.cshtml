@@ -1,3 +1,5 @@
+@model RoleSP.Models.GaleriaViewModel
+
 @{
     Layout = null;
 }
@@ -31,30 +33,30 @@
     <aside class="parte_lateral">
       <section class="perfil">
         <img class="foto-usuario" 
-          src="@(Model.Usuario?.ImagemPerfil != null 
-          ? Url.Content(Model.Foto) 
-          : Url.Content("~../../assets/Cadastro -  Login/Usuario.svg"))" alt="foto_usuario" />
+          src="@(Model.Foto != null 
+          ? Url.Content(@Model.Foto) 
+          : Url.Content("~/assets/Cadastro -  Login/Usuario.svg"))" alt="foto_usuario" />
 
         <div class="info-usuario">
-          <h2 class="nome-usuario">@Model.Usuario?.NomeUsuario</h2>
-          <h3 class="usuario">@Model.Usuario?.Apelido</h3>
+          <h2 class="nome-usuario">@Model.Nome</h2>
+          <h3 class="usuario">@Model.Apelido</h3>
           <nav class="nav-info-perfil">
             <ul class="perfil-info">
               <li>
                 <a class="lista-perfil" href="">
-                  <span class="numero">36</span>
+                  <span class="numero">@Model.TotalVisitados</span>
                   <span class="legenda">Visitados</span>
                 </a>
               </li>
               <li>
                 <a class="lista-perfil" href="">
-                  <span class="numero">10</span>
+                  <span class="numero">@Model.TotalFavoritos</span>
                   <span class="legenda">Favoritos</span>
                 </a>
               </li>
               <li>
                 <a class="lista-perfil" href="">
-                  <span class="numero">5</span>
+                  <span class="numero">@Model.TotalDestinos</span>
                   <span class="legenda">Destinos</span>
                 </a>
               </li>
@@ -91,13 +93,13 @@
         <article class="post" 
           data-imagem="@Model.Imagem" 
           data-legenda="@Model.TextoAvaliacao" 
-          data-local="@Model.ID_LocalNavigation.ID_NomeLocal"
-          data-endereco="@Model.ID_LocalNavigation.Endereco"
-          data-usuario="@Model.ID_UserNavigation.Nome"
-          data-foto-usuario="@Model.ID_UserNavigation.ImagemPerfil">
+          data-local="@Model.NomeLocal"
+          data-endereco="@Model.Enderecos"
+          data-usuario="@Model.Nome"
+          data-foto-usuario="@Model.Foto">
           <figure class="foto-postagens">
-            <img class="foto-post abrir-post" src="Assets/Img/Kiki Café.svg" alt="" />
-            <figcaption class="legenda-foto">Kiki Café</figcaption>
+            <img class="foto-post abrir-post" src="@Model.Imagem" alt="" />
+            <figcaption class="legenda-foto">@Model.NomeLocal</figcaption>
           </figure>
           <div class="acoes">
             <div class="icone-de-estado">
@@ -245,7 +247,7 @@
     <div class="Parte-Imagem">
       <div class="quadrado">
         <!-- CLASS PRA IMAGEM -->
-        <img src="~/assets/Img/perfil_galeria.png" alt="" class="userImg" />
+        <img src="@Model.Foto" alt="" class="userImg" />
       </div>
       <input type="file" id="fileInput" style="display: none" />
        <!-- O link/botão visível -->
