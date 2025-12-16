@@ -99,3 +99,7 @@ input::placeholder {
 input::selection {
   background-color: transparent;
 }
+
+label {
+  color: var(--branco);
+}
