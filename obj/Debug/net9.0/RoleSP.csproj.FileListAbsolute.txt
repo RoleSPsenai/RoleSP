@@ -589,8 +589,6 @@ C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ikhdozqbze-05uau
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\rzg75d4eso-ptnv932vbw.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\4xfrl648wi-65p0xr4c9h.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\z8f5uiq7q1-ey1x5zwh88.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\fj03is7f6i-z4vzp7fq8m.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\eycjhwwl9k-dzrxt070qz.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\1s4yx5xfjd-zi7h248di2.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ermh0i6kp5-59lhti7iok.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\o0zklvady5-c2c5001fow.gz
@@ -601,9 +599,6 @@ C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\bnx5wqqh1f-5zbcn
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\tz7di0k4fu-61n19gt1b8.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\zpdizewf5o-dr1qxvh1c4.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\7zat7cngan-bs39wknmtr.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\p5p6rmmiv8-0z2p8gb3zj.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\u4yy6yfhkq-16reyv98j6.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\l0lv9q57ph-vm9beusi5z.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ro17or4hwu-tajbjtc8vz.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\qfz9do2wos-r7begzc5jp.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\equonghk46-tajbjtc8vz.gz
@@ -713,7 +708,6 @@ C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\7ndywa932u-b1zbe
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\r51dydjp32-qfyxdrg8tw.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ywnh1ztq74-mxxq52eoh9.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\ixfx9vpa4h-vctite8hui.gz
-C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\v4ofdre4cz-9k1g1259se.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\0nueuimo2g-umvovyhuwc.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\03gwsen43e-70wj01l35e.gz
 C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\phqhwfaxzc-m99yh5gu4f.gz
@@ -770,3 +764,9 @@ C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\eyc
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\p5p6rmmiv8-67tcqv66zx.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\fj03is7f6i-oqf4l7fm4u.gz
 C:\Users\allan\OneDrive\Área de Trabalho\RoleSP\obj\Debug\net9.0\compressed\u4yy6yfhkq-0d2ha2y61j.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\fj03is7f6i-oqf4l7fm4u.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\eycjhwwl9k-hyn6xmdjfl.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\p5p6rmmiv8-67tcqv66zx.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\u4yy6yfhkq-0d2ha2y61j.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\l0lv9q57ph-ffivtwoyl4.gz
+C:\Users\54579886860\Desktop\RoleSP\obj\Debug\net9.0\compressed\v4ofdre4cz-hyrnyfqe8f.gz

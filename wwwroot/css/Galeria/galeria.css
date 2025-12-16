@@ -195,10 +195,12 @@ main {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  background-color: transparent;
 }
 
 .lista-navegacao:hover {
   transform: scale(1.05);
+  background-color: transparent;
 }
 
 .icone-menu {

@@ -1,4 +1,4 @@
-﻿--DROP DATABASE DbRoleSP;
+--DROP DATABASE DbRoleSP;
 
 --GO
 
@@ -98,30 +98,6 @@ NomeLocal NVARCHAR(120) NOT NULL,
 
 GO
 
-
-
-CREATE TABLE Avaliacao (
-
-IdAvaliacao INT PRIMARY KEY IDENTITY(1,1),
-
-IdUsuario INT NOT NULL CONSTRAINT IdUsuarioFkAvaliacao FOREIGN KEY (IdUsuario)
-
-REFERENCES Usuario (IdUsuario),
-
-IdPost INT NULL,
-
-textoAvaliacao VARCHAR(500) NOT NULL,
-
-);
-
-GO
-
-
-
-SELECT * FROM Post
-
-
-
 CREATE TABLE Post (
 
 IdPost INT PRIMARY KEY IDENTITY(1,1),
@@ -130,15 +106,13 @@ IdUsuario INT NOT NULL CONSTRAINT IdUsuarioFkPost FOREIGN KEY (IdUsuario)
 
 REFERENCES Usuario (IdUsuario) ON DELETE CASCADE,
 
-IdAvalicao INT NOT NULL CONSTRAINT IdAvaliacaoFk FOREIGN KEY (IdAvalicao)
-
-REFERENCES Avaliacao (IdAvaliacao),
-
 IdLocais INT NOT NULL CONSTRAINT IdLocaisFk FOREIGN KEY (IdLocais)
 
 REFERENCES Locais (IdLocais),
 
 Imagem VARBINARY(MAX) NOT NULL,
+
+Avaliacao NVARCHAR(500) NULL,
 
 CriadoEm DATETIME2(0) NOT NULL DEFAULT DATEADD(HOUR, -3, SYSUTCDATETIME()),
 
@@ -191,14 +165,5 @@ REFERENCES Post (IdPost) ON DELETE CASCADE,
 );
 
 GO
-
-
-
-ALTER TABLE Avaliacao ADD CONSTRAINT IdPost
-
-FOREIGN KEY (IdPost) REFERENCES Post(IdPost);
-
-GO
-
 
 
