@@ -486,11 +486,10 @@ footer {
   width: auto;
 }
 
-
 .lista-saiba-mais {
   color: var(--branco);
   flex-direction: column;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   gap: 0.5rem;
   text-decoration: none;
@@ -547,15 +546,12 @@ footer {
   .caixa-dialogo {
     margin-right: 5%;
     margin-top: 5%;
-
   }
 
   .section3 {
     height: 100vh;
   }
-
 }
-
 
 /** MODAIS */
 
@@ -574,8 +570,8 @@ footer {
 
 #erroCadastro {
   color: red;
-  font-weight: 600 ;
-  font-size: 1.5rem ;
+  font-weight: 600;
+  font-size: 1.5rem;
   margin-top: 1vh;
   text-align: center;
 }
@@ -692,9 +688,14 @@ footer {
 }
 
 .painel-direito {
+  color: var(--branco);
   align-items: center;
   background-color: var(--verde);
-  background-image: linear-gradient(to bottom, var(--verde), var(--verde-escuro));
+  background-image: linear-gradient(
+    to bottom,
+    var(--verde),
+    var(--verde-escuro)
+  );
   background-position: center;
   background-size: cover;
   border-radius: 1em;
@@ -740,6 +741,19 @@ footer {
   text-decoration: underline;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+}
+
 /* ======== RESPONSIVO ======== */
 @media (max-width: 800px) {
   .container-login {
@@ -770,7 +784,11 @@ footer {
   }
 
   .painel-direito {
-    background-image: linear-gradient(to bottom, var(--destaqueOpacity1), var(--destaqueOpacity2)),
+    background-image: linear-gradient(
+        to bottom,
+        var(--destaqueOpacity1),
+        var(--destaqueOpacity2)
+      ),
       var(--imagem-fundo);
   }
 
