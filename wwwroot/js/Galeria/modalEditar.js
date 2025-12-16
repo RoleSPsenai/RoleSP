@@ -1,52 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Botões que abrem popup
-  const botaoEditar = document.querySelectorAll(".editar-post");
-  const popupEditar = document.getElementById("TelaEditar");
-  const botaoFecharEditar = document.getElementById("BotaoFecharEditar");
+    // Seleciona todos os modais de Edição (baseado na classe que você adicionou no HTML)
+    const popupsEditar = document.querySelectorAll("dialog.TelaEditar");
 
-  botaoEditar.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      popupEditar.showModal();
-    });
-  });
+    popupsEditar.forEach((popup) => {
+        // Busca os elementos internos deste popup específico
+        const btnFechar = popup.querySelector(".fechar-modal");
+        const caixaConteudo = popup.querySelector(".popup-content");
 
-  // Fechar no botão X
-  botaoFecharEditar.addEventListener("click", () => {
-    popupEditar.close(); // <-- CORRETO
-  });
-
-  // Fechar clicando fora
-  popupEditar.addEventListener("click", (e) => {
-    if (e.target === popupEditar) {
-      popupEditar.close(); // <-- CORRETO
-    }
-  });
-
-  // Labels animadas dos inputs
-  const inputs = document.querySelectorAll(
-    "#TelaEditar input, #TelaEditar textarea"
-  );
-
-  inputs.forEach((input) => {
-    const setFocused = () => {
-      const label = input.previousElementSibling;
-      if (label && label.tagName.toLowerCase() === "label") {
-        label.classList.add("focused");
-      }
-    };
-
-    const removeFocused = () => {
-      const label = input.previousElementSibling;
-      if (label && label.tagName.toLowerCase() === "label") {
-        if (input.value.trim() === "") {
-          label.classList.remove("focused");
+        // 1. Garante que o botão de fechar (X) funcione via JS também
+        if (btnFechar) {
+            btnFechar.addEventListener("click", () => {
+                popup.close();
+            });
         }
-      }
-    };
 
-    input.addEventListener("focus", setFocused);
-    input.addEventListener("blur", removeFocused);
+        // 2. Lógica para fechar ao clicar fora (Backdrop)
+        popup.addEventListener("click", (e) => {
+            // Se por algum motivo o conteúdo não for encontrado, para a execução
+            if (!caixaConteudo) return;
 
-    if (input.value && input.value.trim() !== "") setFocused();
-  });
+            // Pega as medidas do quadrado branco (conteúdo)
+            const rect = caixaConteudo.getBoundingClientRect();
+
+            // Verifica se o clique do mouse foi fora das bordas do conteúdo
+            const clicouFora =
+                e.clientX < rect.left ||
+                e.clientX > rect.right ||
+                e.clientY < rect.top ||
+                e.clientY > rect.bottom;
+
+            if (clicouFora) {
+                popup.close();
+            }
+        });
+    });
 });

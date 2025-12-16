@@ -1,36 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const telaPost = document.getElementById("TelaPost");
-    const fecharPost = document.getElementById("FecharPost");
+    
+    /* A lógica de ABRIR o modal agora está direto no HTML (Index.cshtml)
+       nos botões com onclick="document.getElementById('...').showModal()"
+    */
 
-    // Elementos do modal
-    const imagemLocal = document.getElementById("ImagemDoPost");
-    const nomeLocal = document.getElementById("NomeDoLocal");
-    const bairroLocal = document.getElementById("BairroDoLocal");
-    const enderecoLocal = document.getElementById("EnderecoDoLocal");
+    // Seleciona TODOS os modais da página (Detalhes, Editar, Excluir, etc)
+    const dialogs = document.querySelectorAll("dialog");
 
-    // Seleciona todos os posts
-    const posts = document.querySelectorAll(".post");
+    dialogs.forEach(dialog => {
+        // Adiciona evento para fechar ao clicar no "fundo escuro" (Backdrop)
+        dialog.addEventListener("click", (e) => {
+            // Se o clique foi no elemento dialog (e não no conteúdo dele)
+            if (e.target === dialog) {
+                dialog.close();
+            }
+        });
 
-    posts.forEach(post => {
-        const imagem = post.querySelector(".foto-post");
-        
-        function abrirModal() {
-            const imgSrc = post.dataset.img;
-            const nome = post.dataset.nome;
-            const bairro = post.dataset.bairro;
-            const endereco = post.dataset.endereco;
-
-            imagemLocal.src = imgSrc;
-            nomeLocal.textContent = nome;
-            bairroLocal.textContent = bairro;
-            enderecoLocal.textContent = endereco;
-
-            telaPost.showModal();
-        }
-
-        if (imagem) {
-            imagem.addEventListener("click", abrirModal);
-        }
+        // (Opcional) Se você quiser garantir que os botões de fechar (X) funcionem via JS também,
+        // embora o seu HTML já tenha onclick="close()" neles.
+        const btnsFechar = dialog.querySelectorAll(".botao-fechar-modal, .btn-cancelar, .fechar-modal");
+        btnsFechar.forEach(btn => {
+            btn.addEventListener("click", () => dialog.close());
+        });
     });
-    fecharPost.addEventListener("click", () => telaPost.close());
 });

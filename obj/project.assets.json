@@ -7851,19 +7851,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\54579886860\\.nuget\\packages\\": {}
+    "C:\\Users\\allan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\54579886860\\Desktop\\RoleSP\\RoleSP.csproj",
+      "projectUniqueName": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
       "projectName": "RoleSP",
-      "projectPath": "C:\\Users\\54579886860\\Desktop\\RoleSP\\RoleSP.csproj",
-      "packagesPath": "C:\\Users\\54579886860\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\54579886860\\Desktop\\RoleSP\\obj\\",
+      "projectPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\RoleSP.csproj",
+      "packagesPath": "C:\\Users\\allan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\allan\\OneDrive\\Área de Trabalho\\RoleSP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\54579886860\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\allan\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -7933,16 +7933,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\54579886860\\Desktop\\RoleSP\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }

@@ -1,5 +1,5 @@
 /* Popup principal de exclusão (janela modal) */
-dialog#popupExcluir {
+dialog.popup-excluir {
   border: none;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   left: 50%;
@@ -8,23 +8,24 @@ dialog#popupExcluir {
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 40px;
 }
 
 /* Fundo desfocado atrás do popup */
-dialog#popupExcluir::backdrop {
+dialog.popupExcluir::backdrop {
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.55);
 }
 
 /* Ícone de alerta/exclusão */
-#popupExcluir .icone-excluir {
+.popup-excluir .icone-excluir {
   height: 70px;
   padding: 10px;
   width: 70px;
 }
 
 /* Container principal do conteúdo do popup */
-#popupExcluir .excluir {
+.popup-excluir .excluir {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -33,7 +34,7 @@ dialog#popupExcluir::backdrop {
 }
 
 /* Caixa de conteúdo dentro do popup */
-#popupExcluir .popup-excluir-content {
+.popup-excluir .popup-excluir-content {
   background: #c8e3dd;
   border-radius: 15px;
   color: #085e50;
@@ -45,13 +46,13 @@ dialog#popupExcluir::backdrop {
 }
 
 /* Título do popup */
-#popupExcluir .popup-excluir-content h2 {
+.popup-excluir .popup-excluir-content h2 {
   font-weight: 700;
   padding: 10px;
 }
 
 /* Container dos botões (Cancelar e Confirmar) */
-#popupExcluir .acoes-excluir {
+.popup-excluir .acoes-excluir {
   display: flex;
   gap: 80px;
   justify-content: center;
@@ -59,8 +60,8 @@ dialog#popupExcluir::backdrop {
 }
 
 /* Botões padrão do popup */
-#popupExcluir .btn-cancelar,
-#popupExcluir .btn-confirmar {
+.popup-excluir .btn-cancelar,
+.popup-excluir .btn-confirmar {
   background-color: #085e50;
   border: none;
   border-radius: 20px;
@@ -72,8 +73,8 @@ dialog#popupExcluir::backdrop {
 }
 
 /* Efeito hover dos botões */
-#popupExcluir .btn-cancelar:hover,
-#popupExcluir .btn-confirmar:hover {
+.popup-excluir .btn-cancelar:hover,
+.popup-excluir .btn-confirmar:hover {
   background-color: var(--botao-hover);
 }
 
@@ -81,14 +82,14 @@ dialog#popupExcluir::backdrop {
 @media (max-width: 700px) {
 
   /* Popup reduzido em dispositivos menores */
-  dialog#popupExcluir {
+  dialog.popup-excluir {
     box-shadow: none;
     padding: 20px;
     width: 90%;
   }
 
   /* Menor espaçamento entre botões em mobile */
-  #popupExcluir .acoes-excluir {
+  .popup-excluir .acoes-excluir {
     gap: 50px;
   }
 }

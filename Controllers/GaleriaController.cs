@@ -1,6 +1,7 @@
 namespace RoleSP.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using RoleSP.Data;
     using RoleSP.Models;
     using System.Linq;
@@ -16,7 +17,36 @@ namespace RoleSP.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+
+            if (usuarioId == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.IdUsuario == usuarioId);
+
+            var todasAsPostagens = _context.Posts.Where(p => p.IdUsuario == usuarioId)
+            .Include(p => p.IdAvalicaoNavigation)
+            .Include(p => p.IdLocaisNavigation)
+            .ThenInclude(p => p.IdEnderecoNavigation)
+            .Include(p => p.IdUsuarioNavigation)
+            .ToList();
+
+
+            GaleriaViewModel viewModel = new GaleriaViewModel
+            {
+                UsuarioLogado = usuario,
+                Posts = todasAsPostagens,
+                Nome = usuario.NomeUsuario ?? "Usuário",
+                Foto = usuario.Foto != null
+                    ? Convert.ToBase64String(usuario.Foto)
+                    : null,
+                TotalVisitados = 0,
+                TotalFavoritos = 0,
+                TotalDestinos = 0
+            };
+            return View(viewModel);
         }
 
 

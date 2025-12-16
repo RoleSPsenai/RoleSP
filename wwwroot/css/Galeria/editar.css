@@ -1,59 +1,86 @@
-dialog#TelaEditar {
-  animation: popupShow 0.25s ease-out;
+/* =======================================================
+   ESTILO GERAL DO POPUP (Vale para todos os modais .popup)
+   ======================================================= */
+
+dialog.popup {
+  /* MUDANÇA 1: Estado inicial invisível */
+  display: none;
+  opacity: 0;
+  
   background: var(--fundo);
   border: none;
   border-radius: 35px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  left: 50%;
-  max-height: 90%;
-  max-width: 90%;
+  
+  /* Centralização manual (sobrescreve o padrão do navegador) */
   position: fixed;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
-  width: 50em;
+  margin: 0; /* Remove margens padrão do dialog */
+  
+  /* Tamanhos */
+  max-height: 90vh;
+  max-width: 90vw;
+  width: 50em; 
   padding: 2% 3%;
+  
+  /* MUDANÇA 2: Altura Mínima Necessária 
+     Como seus filhos usam height: 100%, o pai precisa ter altura definida */
+  min-height: 400px; 
+  
+  transition: all 0.3s ease;
+  z-index: 9999; /* Garante que fique na frente */
+  overflow: hidden;
 }
 
-dialog#TelaEditar::backdrop {
+/* MUDANÇA 3: ESTADO ABERTO (Isso faz o modal aparecer) */
+dialog.popup[open] {
+  display: block; /* Ou flex, dependendo do layout, mas block é mais seguro para o container pai */
+  opacity: 1;
+  animation: popupShow 0.3s ease-out forwards;
+}
+
+dialog.popup::backdrop {
   backdrop-filter: blur(3px);
   background: rgba(0, 0, 0, 0.55);
+  z-index: 9998;
 }
 
-/* #TelaEditar .popup-content {
-  background: var(--fundo);
-  border-radius: 1em;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  max-width: 900px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
-  width: 100%;
-}  */
-
-/* Conteúdo principal do popup */
-/* #TelaEditar{
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+/* Animação de entrada */
+@keyframes popupShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
- 
 
-/* Layout interno do popup */
-#TelaEditar .mainPopup {
+/* =======================================================
+   LAYOUT INTERNO
+   ======================================================= */
+
+.popup .popup-content {
+    height: 100%;
+    width: 100%;
+}
+
+.popup .mainPopup {
   align-items: end;
   display: flex;
   gap: 5%;
-  height: 100%;
+  height: 100%; /* Isso só funciona porque adicionamos min-height no dialog acima */
   justify-content: space-between;
 }
 
-/* Área de upload da imagem */
-#TelaEditar .imgLabel {
+/* =======================================================
+   ÁREA DA IMAGEM (UPLOAD)
+   ======================================================= */
+
+.popup .imgLabel {
   align-items: center;
   aspect-ratio: 4/5;
   background-color: var(--branco);
@@ -63,132 +90,143 @@ dialog#TelaEditar::backdrop {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto; /* Deixe auto para respeitar o aspect-ratio */
+  min-height: 300px; /* Garante tamanho visual */
   justify-content: center;
   transition: 0.3s;
-  width: 50%;
+  width: 48%; /* Ajuste leve para não estourar o flex gap */
   align-self: center;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Hover da área de imagem */
-#TelaEditar .imgLabel:hover {
+.popup .imgLabel:hover {
   background-color: #bbb;
   color: #777;
 }
 
-/* Ícone de upload */
-#TelaEditar .iconUpload {
+.popup .iconUpload {
   height: auto;
   width: 50%;
+  z-index: 1;
+  margin-bottom: 10px;
 }
 
-/* Input de imagem invisível */
-#imgInputEditar {
+/* Esconde o input file padrão */
+.popup input[type="file"] {
   display: none;
 }
 
-/* Inputs do formulário */
-#TelaEditar .inputs {
+/* =======================================================
+   INPUTS E CAMPOS DE TEXTO
+   ======================================================= */
+
+.popup .sectioInputs {
+  width: 48%; /* Ajuste para caber ao lado da imagem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.popup .inputs {
   background-color: var(--branco);
   border: none;
   border-radius: 10px;
   color: var(--cinza-claro);
   font-size: 1rem;
   font-weight: 600;
-  padding: 10px 5px;
+  padding: 10px 15px;
   width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
-/* Títulos das seções */
-#TelaEditar .title {
+.popup .title {
   color: var(--cinza-escuro);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 2px;
 }
 
-#TelaEditar .sectioInputs {
-  padding: 3%;
+/* Agrupamentos */
+.popup #groupInput {
+  display: flex;
+  gap: 10px;
 }
 
-/* Espaçamento entre campos */
-#TelaEditar .novo-post-form {
-  gap: 20px;
-}
+/* =======================================================
+   BOTÕES (FECHAR E SALVAR)
+   ======================================================= */
 
-/* Botão de fechar o popup */
-#TelaEditar .fechar-modal {
+.popup .fechar-modal {
   align-items: center;
   background: transparent;
-  border-radius: 1em;
   display: flex;
   justify-content: flex-end;
-  padding: 0.75em;
+  padding: 0;
   position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 50px;
+  right: 20px;
+  top: 20px;
   border: none;
-}
-
-/* Hover do botão fechar */
-#TelaEditar .fechar-modal:hover {
-  background-color: transparent;
   cursor: pointer;
+  z-index: 10;
 }
 
-/* Botão de salvar edição */
-#BotaoSalvarEdicao {
+.popup .fechar-modal img {
+    width: 24px;
+    height: 24px;
+}
+
+.popup .botao-publicar {
   background-color: var(--verde);
   border: none;
   border-radius: 30px;
   color: var(--branco);
-  font-size: 1.2rem;
-  margin-top: 1.1em;
-  padding: 3% 10%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 12px 0;
   transition: 0.2s;
-  width: 250px;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  cursor: pointer;
 }
 
-/* Hover do botão salvar */
-#BotaoSalvarEdicao:hover {
+.popup .botao-publicar:hover {
   background-color: var(--botao-hover);
 }
 
-/* Responsivo (mobile) */
+/* =======================================================
+   RESPONSIVIDADE (MOBILE)
+   ======================================================= */
 @media (max-width: 768px) {
+  
+  dialog.popup {
+    width: 90%;
+    height: auto;
+    max-height: 90vh;
+    min-height: unset; /* Remove altura mínima no mobile */
+    padding: 20px;
+    overflow-y: auto;
+  }
 
-  /* Layout em coluna no mobile */
-  #TelaEditar .mainPopup {
-    align-items: center;
+  .popup .mainPopup {
     flex-direction: column;
-    gap: 4px;
-
+    gap: 20px;
+    display: flex;
+    justify-content: start;
   }
 
-  /* Área de imagem menor */
-  #TelaEditar .imgLabel {
-    aspect-ratio: unset;
-    height: 30%;
-    max-width: 40%;
-    margin: 8px;
-  }
-
-  /* Inputs menores */
-  #TelaEditar .inputs {
-    font-size: 1.5rem;
-    padding: 4px;
-  }
-
-  /* Botão salvar ocupa largura total */
-  #BotaoSalvarEdicao {
-    font-size: 1rem;
-    padding: 3%;
+  .popup .imgLabel {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+    aspect-ratio: unset;
+    height: 200px;
+    min-height: unset;
+  }
+
+  .popup .sectioInputs {
+    width: 100%;
   }
 }
