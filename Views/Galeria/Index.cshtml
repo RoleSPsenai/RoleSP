@@ -25,7 +25,7 @@
 <body>
     <header class="cabecalho">
         <div class="logo">
-            <img class="logo-colorido" src="~/assets/Ícones/Logo/Logo Colorido" alt="Logo" />
+            <img class="logo-colorido" src="~/assets/LogoColorido.svg" alt="Logo" />
         </div>
         <button onclick="document.getElementById('TelaPublicacao').showModal()" id="BotaoPublicar" class="novo-post">+ Novo Post</button>
     </header>
@@ -33,7 +33,7 @@
     <div class="conteudo">
         <aside class="parte_lateral">
             <section class="perfil">
-                <img class="foto-usuario" src="Assets/Img/perfil_galeria.png" alt="foto_usuario" />
+                <img class="foto-usuario" src="~/assets/icon/iconUserDefault.png" alt="foto_usuario" />
                 <div class="info-usuario">
                     <h2 class="nome-usuario">@Model.Nome</h2> <h3 class="usuario">@Model.Nome</h3>
                     <nav class="nav-info-perfil">
@@ -61,20 +61,20 @@
                 </div>
             </section>
 
-            <section class="menu-navegação">
+            <section class="menu-navegacao">
                 <nav class="menu">
-                    <ul class="navegação">
+                    <ul class="navegacao">
                         <li>
-                            <a class="lista-navegacao" href=""><img class="icone-menu" src="~/assets/Ícones/Ações/Home.svg" alt="Ícone Home" />Home</a>
+                            <a class="lista-navegacao icon-home" href=""><img class="icone-menu" src="~/assets/Home.png" alt="Ícone Home" />Home</a>
                         </li>
                         <li>
                             <button id="BotaoConfiguracao" class="lista-navegacao" onclick="document.getElementById('TelaConfiguracao').showModal()">
-                                <img class="icone-menu" src="~/assets/Ícones/Ações/Configurações.svg" alt="" />Configurações
+                                <img class="icone-menu" src="~/assets/Configurações.svg" alt="" />Configurações
                             </button>
                         </li>
                         <li>
                             <button id="logout" class="lista-navegacao" onclick="document.getElementById('popupSair').showModal()">
-                                <img class="icone-menu-sair" src="~/assets/Ícones/Ações/Voltar.svg" alt="" />Sair
+                                <img class="icone-menu-sair" src="~/assets/Voltar.svg" alt="" />Sair
                             </button>
                         </li>
                     </ul>
@@ -103,14 +103,14 @@
                         }
                         else 
                         {
-                             imagemBase64 = "/Assets/Img/imagem_padrao.png"; // Fallback opcional
+                             imagemBase64 = "/assets/Img/imagem_padrao.png"; // Fallback opcional
                         }
 
                         // Dados seguros com Null Coalescing
                         var nomeLocal = post.IdLocaisNavigation?.NomeLocal ?? "Local Não encontrado";
                         var bairroLocal = post.IdLocaisNavigation?.IdEnderecoNavigation?.Bairro ?? "Bairro Não encontrado";
                         var ruaLocal = post.IdLocaisNavigation?.IdEnderecoNavigation?.Rua ?? "Rua Não encontrada";
-                        var comentarioPost = post.IdAvalicaoNavigation?.TextoAvaliacao ?? "Sem Avaliação";
+                        var comentarioPost = post.Avaliacao ?? "Sem Avaliação";
 
                         /* --- CARD DO POST --- */
                         <article class="post">
@@ -128,7 +128,7 @@
                                 </button>
 
                                 <div class="configuracoes-post">
-                                    <img class="icone-post botao-opcoes" src="~/assets/Ícones/Ações/Opções.svg" alt="Opções" />
+                                    <img class="icone-post botao-opcoes" src="~/assets/Opcoes.png" alt="Opções" />
                                     <ul class="menu-post">
                                         <li class="editar-post" onclick="document.getElementById('TelaEditar-@post.IdPost').showModal()">
                                             Editar
@@ -151,7 +151,7 @@
                                     <img src="@imagemBase64" alt="Imagem do local" class="imagem-local" />
                                     <div class="perfil-post">
                                         <figure class="foto-perfil">
-                                            <img src="@(string.IsNullOrEmpty(Model.Foto) ? "Assets/Img/perfil_galeria.png" : Model.Foto)" alt="Perfil" />
+                                            <img src="@(string.IsNullOrEmpty(Model.Foto) ? "assets/Img/perfil_galeria.png" : Model.Foto)" alt="Perfil" />
                                         </figure>
                                         <h3>@Model.Nome</h3>
                                         <div class="info">
@@ -173,7 +173,7 @@
                         <dialog id="popupExcluir-@post.IdPost" class="popup-excluir">
                             <div class="popup-excluir-content">
                                 <div class="excluir">
-                                    <img class="icone-excluir" src="~/assets/Ícones/Ações/Lixeira.svg" alt="#" />
+                                    <img class="icone-excluir" src="~/assets/icon/Ações/Lixeira.svg" alt="#" />
                                     <h1>Excluir Item</h1>
                                 </div>
                                 <h2 class="exclusao">Tem certeza de que deseja excluir este item?</h2>
@@ -196,13 +196,13 @@
 
                                     <label class="imgLabel" for="imgInputEditar-@post.IdPost">
                                         <input name="imgLocal" type="file" accept="image/*" id="imgInputEditar-@post.IdPost" style="display: none;" />
-                                        <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
+                                        <img src="assets/icon/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
                                         <span>Alterar imagem</span>
                                     </label>
 
                                     <div class="sectioInputs">
                                         <button type="button" class="fechar-modal" onclick="document.getElementById('TelaEditar-@post.IdPost').close()">
-                                            <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                                            <img src="assets/icon/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
                                         </button>
 
                                         <div class="select">
@@ -260,13 +260,13 @@
             <form id="formPostar" onsubmit="enviarFormulario(event)" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post" enctype="multipart/form-data">
                 <label class="imgLabel" for="imgInput">
                     <input name="imgLocal" type="file" accept="image/*" id="imgInput" style="display: none;" />
-                    <img src="Assets/Ícones/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
+                    <img src="assets/icon/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
                     <span>Upload do local</span>
                 </label>
 
                 <div class="sectioInputs">
                     <a id="BotaoFecharPublicacao" class="fechar-modal" href="javascript:void(0)" onclick="document.getElementById('TelaPublicacao').close()">
-                        <img src="Assets/Ícones/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                        <img src="assets/icon/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
                     </a>
 
                     <div class="select">
@@ -317,7 +317,7 @@
         <div class="ParteInicial">
             <h2 class="config">Configurações</h2>
             <button type="button" onclick="document.getElementById('TelaConfiguracao').close()" id="BotaoFecharConfiguracao">
-                <img src="~/assets/Ícones/Ações/Fechar.svg" alt="Fechar">
+                <img src="~/assets/icon/Ações/Fechar.svg" alt="Fechar">
             </button>
         </div>
         <div class="Parte-Imagem">
@@ -341,7 +341,7 @@
     <dialog id="popupSair" class="popup-sair">
         <div class="popup-sair-content">
             <div class="sair-topo">
-                <img class="icone-sair" src="~/assets/Ícones/Ações/SairConta.svg" alt="#" />
+                <img class="icone-sair" src="~/assets/icon/Ações/SairConta.svg" alt="#" />
                 <h1>Sair da Conta</h1>
             </div>
             <h2 class="confirmacao-sair">

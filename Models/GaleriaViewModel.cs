@@ -15,8 +15,7 @@ namespace RoleSP.Models
         public int IdPost { get; set; }
 
         // Avaliação
-        public int IdAvaliacao { get; set; }
-        public string TextoAvaliacao { get; set; } = null!;
+        public string? Avaliacao { get; set; }
 
         // Contadores
         public int TotalVisitados { get; set; }

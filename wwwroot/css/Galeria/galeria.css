@@ -172,18 +172,19 @@ main {
 }
 
 /* NAVEGAÇÃO LATERAL */
-.menu-navegação {
+.menu-navegacao {
   background-color: var(--branco);
   border-radius: 15px;
   padding: 5% 5%;
 }
 
-.navegação {
+.navegacao {
   display: flex;
   flex-direction: column;
   gap: 20px;
   list-style: none;
   padding: 1%;
+  list-style: none;
 }
 
 .lista-navegacao {
@@ -201,6 +202,10 @@ main {
 .lista-navegacao:hover {
   transform: scale(1.05);
   background-color: transparent;
+}
+
+.icon-home {
+  padding-left: 25px;
 }
 
 .icone-menu {
@@ -281,7 +286,7 @@ main {
   width: 100%;
 }
 
-/* ÍCONES E AÇÕES */
+/* icon E AÇÕES */
 .acoes {
   align-items: center;
   display: flex;

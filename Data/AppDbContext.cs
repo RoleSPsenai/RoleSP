@@ -7,16 +7,10 @@ namespace RoleSP.Data;
 
 public partial class AppDbContext : DbContext
 {
-    public AppDbContext()
-    {
-    }
-
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }
-
-    public virtual DbSet<Avaliacao> Avaliacaos { get; set; }
 
     public virtual DbSet<Endereco> Enderecos { get; set; }
 
@@ -28,59 +22,16 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:ConexaoPadrao");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Avaliacao>(entity =>
-        {
-            entity.HasKey(e => e.IdAvaliacao).HasName("PK__Avaliaca__78C432D8DB4FCA03");
-
-            entity.ToTable("Avaliacao");
-
-            entity.Property(e => e.TextoAvaliacao)
-                .HasMaxLength(500)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.IdPostNavigation).WithMany(p => p.Avaliacaos)
-                .HasForeignKey(d => d.IdPost)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("IdPost");
-
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Avaliacaos)
-                .HasForeignKey(d => d.IdUsuario)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("IdUsuarioFkAvaliacao");
-        });
-
         modelBuilder.Entity<Endereco>(entity =>
         {
             entity.HasKey(e => e.IdEndereco).HasName("PK__Endereco__0B7C7F1731DE3CF0");
-
-            entity.ToTable("Endereco");
-
-            entity.Property(e => e.Bairro)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Cep)
-                .HasMaxLength(10)
-                .IsUnicode(false);
-            entity.Property(e => e.Cidade)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Rua)
-                .HasMaxLength(255)
-                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Filtro>(entity =>
         {
             entity.HasKey(e => e.IdFiltro).HasName("PK__Filtro__0772E7B28E97C55D");
-
-            entity.ToTable("Filtro");
-
-            entity.Property(e => e.NomeFiltro).HasMaxLength(120);
         });
 
         modelBuilder.Entity<Locai>(entity =>
@@ -88,12 +39,10 @@ public partial class AppDbContext : DbContext
             entity.HasKey(e => e.IdLocais).HasName("PK__Locais__7DE164768E4D6C7A");
 
             entity.HasOne(d => d.IdEnderecoNavigation).WithMany(p => p.Locais)
-                .HasForeignKey(d => d.IdEndereco)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("IdEnderecoFk");
 
             entity.HasOne(d => d.IdFiltroNavigation).WithMany(p => p.Locais)
-                .HasForeignKey(d => d.IdFiltro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("IdFiltroFk");
         });
@@ -102,24 +51,13 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.IdPost).HasName("PK__Post__F8DCBD4D7FB9F824");
 
-            entity.ToTable("Post");
-
-            entity.Property(e => e.CriadoEm)
-                .HasPrecision(0)
-                .HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
-
-            entity.HasOne(d => d.IdAvalicaoNavigation).WithMany(p => p.Posts)
-                .HasForeignKey(d => d.IdAvalicao)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("IdAvaliacaoFk");
+            entity.Property(e => e.CriadoEm).HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
 
             entity.HasOne(d => d.IdLocaisNavigation).WithMany(p => p.Posts)
-                .HasForeignKey(d => d.IdLocais)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("IdLocaisFk");
 
             entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Posts)
-                .HasForeignKey(d => d.IdUsuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("IdUsuarioFkPost");
         });
@@ -128,15 +66,7 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.IdUsuario).HasName("PK__Usuario__5B65BF97670C9090");
 
-            entity.ToTable("Usuario");
-
-            entity.Property(e => e.Apelido).HasMaxLength(120);
-            entity.Property(e => e.CriadoEm)
-                .HasPrecision(0)
-                .HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
-            entity.Property(e => e.Email).HasMaxLength(150);
-            entity.Property(e => e.NomeUsuario).HasMaxLength(120);
-            entity.Property(e => e.Senha).HasMaxLength(32);
+            entity.Property(e => e.CriadoEm).HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
 
             entity.HasMany(d => d.IdPosts).WithMany(p => p.IdUsuarios)
                 .UsingEntity<Dictionary<string, object>>(
