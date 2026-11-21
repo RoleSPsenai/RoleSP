@@ -1,0 +1,365 @@
+@using Microsoft.EntityFrameworkCore.Diagnostics.Internal
+@model RoleSP.Models.GaleriaViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/global.css" />
+    <link rel="stylesheet" href="~/css/Galeria/configuracao.css" />
+    <link rel="stylesheet" href="~/css/Galeria/editar.css" />
+    <link rel="stylesheet" href="~/css/Galeria/excluir.css" />
+    <link rel="stylesheet" href="~/css/Galeria/galeria.css" />
+    <link rel="stylesheet" href="~/css/Galeria/post.css">
+    <link rel="stylesheet" href="~/css/Galeria/publicacao.css" />
+    <link rel="stylesheet" href="~/css/Galeria/sair.css" />
+    <title>Galeria</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <img class="logo-colorido" src="~/assets/LogoColorido.svg" alt="Logo" />
+        </div>
+        <button onclick="document.getElementById('TelaPublicacao').showModal()" id="BotaoPublicar" class="novo-post">+ Novo Post</button>
+    </header>
+
+    <div class="conteudo">
+        <aside class="parte_lateral">
+            <section class="perfil">
+                <img class="foto-usuario" src="~/assets/icon/iconUserDefault.png" alt="foto_usuario" />
+                <div class="info-usuario">
+                    <h2 class="nome-usuario">@Model.Nome</h2> <h3 class="usuario">@Model.Nome</h3>
+                    <nav class="nav-info-perfil">
+                        <ul class="perfil-info">
+                            <li>
+                                <a class="lista-perfil" href="">
+                                    <span class="numero">@Model.TotalVisitados</span>
+                                    <span class="legenda">Visitados</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="lista-perfil" href="">
+                                    <span class="numero">@Model.TotalFavoritos</span>
+                                    <span class="legenda">Favoritos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="lista-perfil" href="">
+                                    <span class="numero">@Model.TotalDestinos</span>
+                                    <span class="legenda">Destinos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="menu-navegacao">
+                <nav class="menu">
+                    <ul class="navegacao">
+                        <li>
+                            <a class="lista-navegacao icon-home" href=""><img class="icone-menu" src="~/assets/Home.png" alt="Ícone Home" />Home</a>
+                        </li>
+                        <li>
+                            <button id="BotaoConfiguracao" class="lista-navegacao" onclick="document.getElementById('TelaConfiguracao').showModal()">
+                                <img class="icone-menu" src="~/assets/Configurações.svg" alt="" />Configurações
+                            </button>
+                        </li>
+                        <li>
+                            <button id="logout" class="lista-navegacao" onclick="document.getElementById('popupSair').showModal()">
+                                <img class="icone-menu-sair" src="~/assets/Voltar.svg" alt="" />Sair
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+
+        <main>
+            <h4 class="titulo-postagens">Minhas Postagens</h4>
+            
+            <section id="postagens" class="postagens">
+                @* CORREÇÃO: Lógica segura para verificar nulo *@
+                @if (Model.Posts == null || !Model.Posts.Any())
+                {
+                    <p>Nenhum post encontrado.</p>
+                }
+                else 
+                {
+                    @foreach (var post in Model.Posts)
+                    {
+                        // Lógica da Imagem
+                        string imagemBase64 = "";
+                        if (post.Imagem != null)
+                        {
+                            imagemBase64 = $"data:image/jpeg;base64,{Convert.ToBase64String(post.Imagem)}";
+                        }
+                        else 
+                        {
+                             imagemBase64 = "/assets/Img/imagem_padrao.png"; // Fallback opcional
+                        }
+
+                        // Dados seguros com Null Coalescing
+                        var nomeLocal = post.IdLocaisNavigation?.NomeLocal ?? "Local Não encontrado";
+                        var bairroLocal = post.IdLocaisNavigation?.IdEnderecoNavigation?.Bairro ?? "Bairro Não encontrado";
+                        var ruaLocal = post.IdLocaisNavigation?.IdEnderecoNavigation?.Rua ?? "Rua Não encontrada";
+                        var comentarioPost = post.Avaliacao ?? "Sem Avaliação";
+
+                        /* --- CARD DO POST --- */
+                        <article class="post">
+                            <figure class="foto-postagens">
+                                <img class="foto-post abrir-post" src="@imagemBase64" alt="@nomeLocal"
+                                     onclick="document.getElementById('TelaPost-@post.IdPost').showModal()" />
+                                <figcaption class="legenda-foto">@nomeLocal</figcaption>
+                            </figure>
+
+                            <div class="acoes">
+                                <button class="icone-favorito" aria-label="Favoritar">
+                                    <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M67.607,13.462c-7.009,0-13.433,3.238-17.607,8.674c-4.174-5.437-10.598-8.674-17.61-8.674c-12.266,0-22.283,10.013-22.33,22.32c-0.046,13.245,6.359,21.054,11.507,27.331l1.104,1.349c6.095,7.515,24.992,21.013,25.792,21.584c0.458,0.328,1,0.492,1.538,0.492c0.539,0,1.08-0.165,1.539-0.492c0.8-0.571,19.697-14.069,25.792-21.584l1.103-1.349c5.147-6.277,11.553-14.086,11.507-27.331C89.894,23.475,79.876,13.462,67.607,13.462z" />
+                                    </svg>
+                                </button>
+
+                                <div class="configuracoes-post">
+                                    <img class="icone-post botao-opcoes" src="~/assets/Opcoes.png" alt="Opções" />
+                                    <ul class="menu-post">
+                                        <li class="editar-post" onclick="document.getElementById('TelaEditar-@post.IdPost').showModal()">
+                                            Editar
+                                        </li>
+                                        <li class="excluir-post" onclick="document.getElementById('popupExcluir-@post.IdPost').showModal()">
+                                            Excluir
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+
+                        /* --- MODAL DE DETALHES --- */
+                        <dialog id="TelaPost-@post.IdPost" class="modal-detalhe-post">
+                            <div class="painel-esquerdo">
+                                <button type="button" class="botao-fechar-modal" onclick="document.getElementById('TelaPost-@post.IdPost').close()" style="position: absolute; top: 10px; left: 10px; background: none; border: none; font-size: 2rem; cursor: pointer;">
+                                    &times;
+                                </button>
+                                <div class="local">
+                                    <img src="@imagemBase64" alt="Imagem do local" class="imagem-local" />
+                                    <div class="perfil-post">
+                                        <figure class="foto-perfil">
+                                            <img src="@(string.IsNullOrEmpty(Model.Foto) ? "assets/Img/perfil_galeria.png" : Model.Foto)" alt="Perfil" />
+                                        </figure>
+                                        <h3>@Model.Nome</h3>
+                                        <div class="info">
+                                            <h3>@nomeLocal</h3>
+                                        </div>
+                                    </div>
+                                    <div class="endereco">
+                                        <h2>@bairroLocal</h2>
+                                        <p>@ruaLocal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="painel-direito">
+                                <p class="legenda-post">@comentarioPost</p>
+                            </div>
+                        </dialog>
+
+                        /* --- MODAL DE EXCLUSÃO --- */
+                        <dialog id="popupExcluir-@post.IdPost" class="popup-excluir">
+                            <div class="popup-excluir-content">
+                                <div class="excluir">
+                                    <img class="icone-excluir" src="~/assets/icon/Ações/Lixeira.svg" alt="#" />
+                                    <h1>Excluir Item</h1>
+                                </div>
+                                <h2 class="exclusao">Tem certeza de que deseja excluir este item?</h2>
+                                <div class="acoes-excluir">
+                                    <button class="btn-cancelar" onclick="document.getElementById('popupExcluir-@post.IdPost').close()">Não</button>
+                                    <form asp-controller="Galeria" asp-action="Excluir" method="post" style="display:inline;">
+                                        <input type="hidden" name="id" value="@post.IdPost" />
+                                        <button type="submit" class="btn-confirmar">Sim</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+
+                        /* --- MODAL DE EDIÇÃO --- */
+                        <dialog id="TelaEditar-@post.IdPost" class="popup">
+                            <div class="popup-content">
+                                <form asp-controller="Galeria" asp-action="Editar" method="post" enctype="multipart/form-data" class="mainPopup">
+                                    
+                                    <input type="hidden" name="idPost" value="@post.IdPost" />
+
+                                    <label class="imgLabel" for="imgInputEditar-@post.IdPost">
+                                        <input name="imgLocal" type="file" accept="image/*" id="imgInputEditar-@post.IdPost" style="display: none;" />
+                                        <img src="assets/icon/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
+                                        <span>Alterar imagem</span>
+                                    </label>
+
+                                    <div class="sectioInputs">
+                                        <button type="button" class="fechar-modal" onclick="document.getElementById('TelaEditar-@post.IdPost').close()">
+                                            <img src="assets/icon/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                                        </button>
+
+                                        <div class="select">
+                                            <label for="select-@post.IdPost" class="title">Filtros</label>
+                                            <select name="filtro" class="inputs" id="select-@post.IdPost">
+                                                <option value="1">Cafeteria</option>
+                                                <option value="2">Museu</option>
+                                                <option value="3">Restaurantes</option>
+                                                <option value="4">Natureza</option>
+                                                <option value="5">Livraria</option>
+                                                <option value="6">Cultura</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label for="localEditarEditar-@post.IdPost" class="title">Local</label>
+                                            <input name="nomeLocal" value="@nomeLocal" type="text" class="inputs" id="localEditarEditar-@post.IdPost" />
+
+                                            <div id="groupInput-@post.IdPost">
+                                                <div id="groupCep-@post.IdPost">
+                                                    <label for="inputCepEditar-@post.IdPost" class="title">CEP</label>
+                                                    <input name="cep" type="text" placeholder="CEP" class="inputs" id="inputCepEditar-@post.IdPost" />
+                                                </div>
+                                                <div id="groupBairro-@post.IdPost">
+                                                    <label for="bairroEditar-@post.IdPost" class="title">Bairro</label>
+                                                    <input name="bairro" value="@bairroLocal" type="text" class="inputs" id="bairroEditar-@post.IdPost" />
+                                                </div>
+                                            </div>
+
+                                            <label for="ruaEditar-@post.IdPost" class="title">Rua:</label>
+                                            <input name="rua" value="@ruaLocal" type="text" class="inputs" id="ruaEditar-@post.IdPost" />
+
+                                            <label for="cidadeEditar-@post.IdPost" class="title">Cidade:</label>
+                                            <input name="cidade" type="text" class="inputs" id="cidadeEditar-@post.IdPost" />
+
+                                            <label for="comentarioEditar-@post.IdPost" class="title">Comentário:</label>
+                                            <input name="comentario" value="@comentarioPost" type="text" class="inputs" id="comentarioEditar-@post.IdPost" />
+                                        </div>
+
+                                        <button type="submit" class="botao-publicar" id="BotaoSalvarEdicao-@post.IdPost">
+                                            Salvar Alterações
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </dialog>
+                    }
+                }
+            </section>
+        </main>
+    </div>
+
+    <dialog id="TelaPublicacao" class="popup">
+        <div class="popup-content">
+            <form id="formPostar" onsubmit="enviarFormulario(event)" class="mainPopup" asp-controller="Galeria" asp-action="Postar" method="post" enctype="multipart/form-data">
+                <label class="imgLabel" for="imgInput">
+                    <input name="imgLocal" type="file" accept="image/*" id="imgInput" style="display: none;" />
+                    <img src="assets/icon/Ações/Adicionar Foto.svg" alt="upload" class="iconUpload" />
+                    <span>Upload do local</span>
+                </label>
+
+                <div class="sectioInputs">
+                    <a id="BotaoFecharPublicacao" class="fechar-modal" href="javascript:void(0)" onclick="document.getElementById('TelaPublicacao').close()">
+                        <img src="assets/icon/Ações/Fechar.svg" alt="Fechar" class="sairImg" />
+                    </a>
+
+                    <div class="select">
+                        <label for="filtroNew" class="title">Filtros</label>
+                        <select name="select" class="inputs" id="filtroNew">
+                            <option value="1">Cafeteria</option>
+                            <option value="2">Museu</option>
+                            <option value="3">Restaurantes</option>
+                            <option value="4">Natureza</option>
+                            <option value="5">Livraria</option>
+                            <option value="6">Cultura</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="nomeLocalNew" class="title">Local</label>
+                        <input name="nomeLocal" type="text" placeholder="Nome do local..." class="inputs" id="nomeLocalNew" />
+
+                        <div id="groupInput">
+                            <div id="groupCep">
+                                <label for="cepNew" class="title">CEP</label>
+                                <input name="cep" type="text" placeholder="CEP..." class="inputs" id="cepNew" />
+                            </div>
+                            <div id="groupBairro">
+                                <label for="bairroNew" class="title">Bairro</label>
+                                <input name="bairro" type="text" placeholder="Bairro..." class="inputs" id="bairroNew" />
+                            </div>
+                        </div>
+
+                        <label for="ruaNew" class="title">Rua:</label>
+                        <input name="rua" type="text" placeholder="Rua..." class="inputs" id="ruaNew" />
+
+                        <label for="cidadeNew" class="title">Cidade:</label>
+                        <input name="cidade" type="text" placeholder="Cidade..." class="inputs" id="cidadeNew" />
+
+                        <label for="comentarioNew" class="title">Comentário:</label>
+                        <input name="comentario" type="text" placeholder="Digite seu Comentário..." class="inputs" id="comentarioNew" />
+                    </div>
+
+                    <button type="submit" class="botao-publicar" id="BotaoPost">Publicar</button>
+                    <span id="notificacao"></span>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="TelaConfiguracao">
+        <div class="ParteInicial">
+            <h2 class="config">Configurações</h2>
+            <button type="button" onclick="document.getElementById('TelaConfiguracao').close()" id="BotaoFecharConfiguracao">
+                <img src="~/assets/icon/Ações/Fechar.svg" alt="Fechar">
+            </button>
+        </div>
+        <div class="Parte-Imagem">
+            <div class="quadrado">
+                <img src="@Model.Foto" alt="" class="userImg" />
+            </div>
+            <input type="file" id="fileInput" style="display: none" />
+            <a href="#" id="openExplorerLink">Alterar foto de perfil</a>
+        </div>
+        <div class="Alterar-Dados">
+            <div class="campo">
+                <p>Nome</p>
+                <input class="formulario" id="nomeConfig" type="text" placeholder="Nome..." />
+                <p>Nome de Usuario</p>
+                <input class="formulario" id="userConfig" type="text" placeholder="Nome de Usuario..." />
+            </div>
+            <button id="salvar-config">Salvar</button>
+        </div>
+    </dialog>
+
+    <dialog id="popupSair" class="popup-sair">
+        <div class="popup-sair-content">
+            <div class="sair-topo">
+                <img class="icone-sair" src="~/assets/icon/Ações/SairConta.svg" alt="#" />
+                <h1>Sair da Conta</h1>
+            </div>
+            <h2 class="confirmacao-sair">
+                Tem certeza de que deseja sair da sua conta?
+            </h2>
+            <div class="acoes-sair">
+                <button id="btnCancelarSair" class="btn-cancelar-sair" onclick="document.getElementById('popupSair').close()">Não</button>
+                <a id="btnConfirmarSair" class="btn-confirmar-sair" asp-controller="Login" asp-action="Sair">Sim</a>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="~/js/Galeria/modalPublicacao.js"></script>
+    <script src="~/js/Galeria/galeria.js"></script>
+    <script src="~/js/Galeria/modalConfig.js"></script>
+    <script src="~/js/Galeria/modalEditar.js"></script>
+    <script src="~/js/Galeria/modalExcluir.js"></script>
+    <script src="~/js/Galeria/modalSair.js"></script>
+
+</body>
+</html>

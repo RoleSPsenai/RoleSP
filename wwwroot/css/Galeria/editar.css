@@ -1,0 +1,232 @@
+/* =======================================================
+   ESTILO GERAL DO POPUP (Vale para todos os modais .popup)
+   ======================================================= */
+
+dialog.popup {
+  /* MUDANÇA 1: Estado inicial invisível */
+  display: none;
+  opacity: 0;
+  
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  
+  /* Centralização manual (sobrescreve o padrão do navegador) */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; /* Remove margens padrão do dialog */
+  
+  /* Tamanhos */
+  max-height: 90vh;
+  max-width: 90vw;
+  width: 50em; 
+  padding: 2% 3%;
+  
+  /* MUDANÇA 2: Altura Mínima Necessária 
+     Como seus filhos usam height: 100%, o pai precisa ter altura definida */
+  min-height: 400px; 
+  
+  transition: all 0.3s ease;
+  z-index: 9999; /* Garante que fique na frente */
+  overflow: hidden;
+}
+
+/* MUDANÇA 3: ESTADO ABERTO (Isso faz o modal aparecer) */
+dialog.popup[open] {
+  display: block; /* Ou flex, dependendo do layout, mas block é mais seguro para o container pai */
+  opacity: 1;
+  animation: popupShow 0.3s ease-out forwards;
+}
+
+dialog.popup::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9998;
+}
+
+/* Animação de entrada */
+@keyframes popupShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* =======================================================
+   LAYOUT INTERNO
+   ======================================================= */
+
+.popup .popup-content {
+    height: 100%;
+    width: 100%;
+}
+
+.popup .mainPopup {
+  align-items: end;
+  display: flex;
+  gap: 5%;
+  height: 100%; /* Isso só funciona porque adicionamos min-height no dialog acima */
+  justify-content: space-between;
+}
+
+/* =======================================================
+   ÁREA DA IMAGEM (UPLOAD)
+   ======================================================= */
+
+.popup .imgLabel {
+  align-items: center;
+  aspect-ratio: 4/5;
+  background-color: var(--branco);
+  border: 3px dashed var(--verde-escuro);
+  border-radius: 1em;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Deixe auto para respeitar o aspect-ratio */
+  min-height: 300px; /* Garante tamanho visual */
+  justify-content: center;
+  transition: 0.3s;
+  width: 48%; /* Ajuste leve para não estourar o flex gap */
+  align-self: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.popup .imgLabel:hover {
+  background-color: #bbb;
+  color: #777;
+}
+
+.popup .iconUpload {
+  height: auto;
+  width: 50%;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+/* Esconde o input file padrão */
+.popup input[type="file"] {
+  display: none;
+}
+
+/* =======================================================
+   INPUTS E CAMPOS DE TEXTO
+   ======================================================= */
+
+.popup .sectioInputs {
+  width: 48%; /* Ajuste para caber ao lado da imagem */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.popup .inputs {
+  background-color: var(--branco);
+  border: none;
+  border-radius: 10px;
+  color: var(--cinza-claro);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 15px;
+  width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.popup .title {
+  color: var(--cinza-escuro);
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+/* Agrupamentos */
+.popup #groupInput {
+  display: flex;
+  gap: 10px;
+}
+
+/* =======================================================
+   BOTÕES (FECHAR E SALVAR)
+   ======================================================= */
+
+.popup .fechar-modal {
+  align-items: center;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.popup .fechar-modal img {
+    width: 24px;
+    height: 24px;
+}
+
+.popup .botao-publicar {
+  background-color: var(--verde);
+  border: none;
+  border-radius: 30px;
+  color: var(--branco);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 12px 0;
+  transition: 0.2s;
+  width: 100%;
+  cursor: pointer;
+}
+
+.popup .botao-publicar:hover {
+  background-color: var(--botao-hover);
+}
+
+/* =======================================================
+   RESPONSIVIDADE (MOBILE)
+   ======================================================= */
+@media (max-width: 768px) {
+  
+  dialog.popup {
+    width: 90%;
+    height: auto;
+    max-height: 90vh;
+    min-height: unset; /* Remove altura mínima no mobile */
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .popup .mainPopup {
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+    justify-content: start;
+  }
+
+  .popup .imgLabel {
+    width: 100%;
+    aspect-ratio: unset;
+    height: 200px;
+    min-height: unset;
+  }
+
+  .popup .sectioInputs {
+    width: 100%;
+  }
+}

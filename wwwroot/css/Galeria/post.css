@@ -1,0 +1,134 @@
+dialog#TelaEditar {
+  animation: popupShow 0.25s ease-out;
+  background: var(--fundo);
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  max-height: 90%;
+  max-width: 90%;
+  padding: 20px 40px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  width: 50em;
+  padding: 2% 3%;
+}
+
+dialog#TelaEditar::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+#TelaPost[open] {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+    margin: auto; 
+    max-width: 90vw;
+    max-height: 90vh;
+    border: none;
+    padding: 0;
+}
+
+#TelaPost .legenda-post {
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#TelaPost .endereco {
+    margin: 0.5em 1em 1em;
+}
+
+#TelaPost .imagem-local {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#TelaPost h3 {
+    z-index: 3;
+    color: var(--branco);
+}
+
+#TelaPost .endereco p {
+    color: var(--cinza-escuro);
+}
+
+#TelaPost .foto-perfil {
+    z-index: 2;
+    align-items: center;
+    border: 0.25em solid var(--verde-escuro);
+    border-radius: 50%;
+    display: flex;
+    height: 4em;
+    justify-content: center;
+    margin-right: 1em;
+    overflow: hidden;
+    width: 4em;
+}
+
+#TelaPost .local {
+    display: flex;
+    flex-direction: column;
+    height: 20em;
+    justify-content: space-between;
+    padding: 1em;
+    position: relative;
+    width: 100%;
+}
+
+#TelaPost .painel-direito {
+    align-items: center;
+    background-color: var(--verde-escuro);
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    padding: 3em 1em;
+}
+
+#TelaPost .painel-esquerdo {
+    background-color: var(--branco);
+    min-width: 30vw;
+}
+
+#TelaPost .perfil-post {
+    align-items: center;
+    display: flex;
+}
+
+#FecharPost {
+    background-color: transparent;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5em;
+    top: 0;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#FecharPost:hover {
+    transform: scale(1.25);
+}
+
+@media (max-width: 900px) {
+    #TelaPost {
+        flex-direction: column;
+    }
+    
+    #TelaPost .painel-direito {
+        max-width: 100vw;
+        padding: 1em;
+    }
+}
